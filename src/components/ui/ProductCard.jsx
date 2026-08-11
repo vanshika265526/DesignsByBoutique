@@ -9,17 +9,20 @@ export default function ProductCard({ product }) {
         name,
         category,
         originalPrice,
+        price,
         salePrice,
         discountPercentage,
+        discount,
         images,
         chapterTitle,
     } = product;
 
-    const mainImage = images && images.length > 0 ? images[0] : "/images/placeholder.jpg";
+    const currentPrice = price || salePrice;
+    const mainImage = images && images.length > 0 ? images[0] : (product.image || "/images/placeholder.jpg");
     const whatsappUrl = buildWhatsAppLink({
         productName: name,
         productCategory: category,
-        price: salePrice,
+        price: currentPrice,
         productImage: mainImage,
         productSlug: slug,
     });
@@ -43,9 +46,9 @@ export default function ProductCard({ product }) {
                             {chapterTitle}
                         </span>
                     )}
-                    {discountPercentage > 0 && (
+                    {(discountPercentage > 0 || discount) && (
                         <span className="bg-boutique-rose text-white text-[11px] font-semibold tracking-wider px-2.5 py-1 rounded-full shadow-sm ml-auto">
-                            {discountPercentage}% OFF
+                            {discount || `${discountPercentage}% OFF`}
                         </span>
                     )}
                 </div>
@@ -66,9 +69,9 @@ export default function ProductCard({ product }) {
                 <div className="pt-2 border-t border-boutique-muted-border/40 flex items-center justify-between">
                     <div className="flex items-baseline space-x-2">
                         <span className="text-lg font-serif-editorial font-bold text-boutique-rose">
-                            ₹{salePrice?.toLocaleString("en-IN")}
+                            ₹{currentPrice ? currentPrice.toLocaleString("en-IN") : "Price on Request"}
                         </span>
-                        {originalPrice && originalPrice > salePrice && (
+                        {originalPrice && originalPrice > currentPrice && (
                             <span className="text-xs text-neutral-400 line-through font-light">
                                 ₹{originalPrice?.toLocaleString("en-IN")}
                             </span>

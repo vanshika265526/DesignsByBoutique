@@ -42,8 +42,10 @@ export default function ProductDetailPage({ params }) {
         chapterNumber,
         chapterTitle,
         originalPrice,
+        price,
         salePrice,
         discountPercentage,
+        discount,
         images,
         description,
         sizes,
@@ -52,11 +54,12 @@ export default function ProductDetailPage({ params }) {
         care,
     } = product;
 
+    const currentPrice = price || salePrice;
     const whatsappUrl = buildWhatsAppLink({
         productName: name,
         productCategory: category,
-        price: salePrice,
-        productImage: images && images.length > 0 ? images[0] : null,
+        price: currentPrice,
+        productImage: images && images.length > 0 ? images[0] : (product.image || null),
         productSlug: product.slug,
     });
 
@@ -150,9 +153,9 @@ export default function ProductDetailPage({ params }) {
                         {/* Price Display */}
                         <div className="p-4 bg-boutique-bg-card rounded-2xl border border-boutique-muted-border flex items-baseline space-x-4">
                             <span className="font-serif-editorial text-3xl font-bold text-boutique-rose">
-                                ₹{salePrice?.toLocaleString("en-IN")}
+                                ₹{currentPrice ? currentPrice.toLocaleString("en-IN") : "Price on Request"}
                             </span>
-                            {originalPrice && originalPrice > salePrice && (
+                            {originalPrice && originalPrice > currentPrice && (
                                 <span className="text-sm text-neutral-400 line-through">
                                     ₹{originalPrice?.toLocaleString("en-IN")}
                                 </span>

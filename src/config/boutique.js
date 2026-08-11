@@ -8,24 +8,24 @@ export const boutiqueConfig = {
     tagline: "For Every Chapter of Her Story.",
     location: "New Delhi, India",
     fullAddress: "Design Studio & Boutique, Defence Colony / South Extension, New Delhi - 110024, India",
-    googleMapsUrl: "https://maps.google.com/?q=Designs+by+Nisha+New+Delhi",
+    googleMapsUrl: "https://share.google/oMRWNqTN0EFZn8Ac9",
 
     // Lead Generation & Direct Channels
     // Note: Phone numbers use international format without leading + or spaces for WhatsApp API
     whatsapp: {
-        number: "919876543210", // Configurable WhatsApp inquiry number
-        displayNumber: "+91 98765 43210",
+        number: "918218752043", // Configurable WhatsApp inquiry number
+        displayNumber: "+91 82187 52043",
         defaultMessage: "Hi Designs by Nisha! I'm exploring your boutique collection and would love to enquire about bespoke outfits.",
     },
 
     instagram: {
-        handle: "@designsbynisha",
-        url: "https://instagram.com/designsbynisha",
+        handle: "@designsbynisha00",
+        url: "https://www.instagram.com/designsbynisha00?igsh=Ym92OXh5emZsdm9t",
     },
 
     contact: {
         email: "enquire@designsbynisha.com",
-        phoneDisplay: "+91 98765 43210",
+        phoneDisplay: "+91 82187 52043",
         hours: "Monday – Saturday: 10:30 AM – 7:30 PM (By Appointment & Walk-ins)",
     },
 
