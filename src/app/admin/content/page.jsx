@@ -252,7 +252,7 @@ export default function AdminContentPage() {
                         <label className="relative inline-flex items-center cursor-pointer">
                             <input
                                 type="checkbox"
-                                checked={settings.announcementBanner?.enabled ?? true}
+                                checked={settings.announcementBanner?.enabled ?? false}
                                 onChange={(e) =>
                                     setSettings({
                                         ...settings,

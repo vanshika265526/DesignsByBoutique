@@ -30,7 +30,7 @@ export const boutiqueConfig = {
     },
 
     announcementBanner: {
-        enabled: true,
+        enabled: false,
         message: "Festive Season Special: Enjoy 15% off bespoke Bridal & Festive orders with code BRIDAL2026!",
         linkText: "Explore Bridal",
         linkUrl: "/collections/bridal-lehengas",
