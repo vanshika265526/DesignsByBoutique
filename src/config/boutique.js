@@ -29,6 +29,15 @@ export const boutiqueConfig = {
         hours: "Monday – Saturday: 10:30 AM – 7:30 PM (By Appointment & Walk-ins)",
     },
 
+    announcementBanner: {
+        enabled: true,
+        message: "✨ Festive Season Special: Enjoy 15% off bespoke Bridal & Festive orders with code BRIDAL2026! ✨",
+        linkText: "Explore Bridal",
+        linkUrl: "/collections/bridal-lehengas",
+        bgType: "rose",
+        speed: "normal",
+    },
+
     // SEO & Verification Placeholders
     seo: {
         siteUrl: "https://designsbynisha.com",

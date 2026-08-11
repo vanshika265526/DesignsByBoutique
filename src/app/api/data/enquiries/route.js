@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
-import { readDb, writeDb, addAuditLog } from '@/lib/db';
+import { readDb, writeDb, addAuditLog, getDbAsync } from '@/lib/db';
 
 export async function GET() {
     try {
-        const db = readDb();
+        const db = await getDbAsync();
         return NextResponse.json({ success: true, data: db.enquiries || [] });
     } catch (error) {
         return NextResponse.json({ success: false, error: error.message }, { status: 500 });

@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function CollectionsPage() {
     return (
-        <div className="pt-28 pb-24 bg-boutique-bg min-h-screen space-y-20">
+        <div className="pt-6 sm:pt-8 pb-20 bg-boutique-bg min-h-screen space-y-16">
             {/* Header Banner */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <SectionHeading

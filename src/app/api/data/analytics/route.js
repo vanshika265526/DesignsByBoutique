@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
-import { readDb, writeDb, addAuditLog } from "@/lib/db";
+import { readDb, writeDb, addAuditLog, getDbAsync } from "@/lib/db";
 
 export async function GET() {
     try {
-        const db = readDb();
+        const db = await getDbAsync();
         const analytics = db.analytics || {
             totalPageViews: 14850,
             monthlyPageViews: 4230,

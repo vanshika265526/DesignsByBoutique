@@ -1,6 +1,7 @@
 {
   "products": [
     {
+      "_id": "6a7abab3f6771d4072b70d8a",
       "id": "prod-01",
       "slug": "gulzar-chanderi-anarkali-set",
       "name": "Gulzar Chanderi Silk Anarkali Set",
@@ -12,7 +13,7 @@
       "originalPrice": 24500,
       "discount": "20% OFF",
       "featured": true,
-      "status": "draft",
+      "status": "published",
       "image": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1200&auto=format&fit=crop",
       "images": [
         "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1200&auto=format&fit=crop",
@@ -24,10 +25,10 @@
         "Pure Chanderi Silk & Organza Dupatta",
         "Custom sleeve length customization available",
         "Dry Clean Only"
-      ],
-      "updatedAt": "2026-08-11T05:23:08.399Z"
+      ]
     },
     {
+      "_id": "6a7abab3f6771d4072b70d8b",
       "id": "prod-02",
       "slug": "noor-zardozi-straight-suit",
       "name": "Noor Soft Mint Zardozi Kurta Set",
@@ -54,6 +55,7 @@
       ]
     },
     {
+      "_id": "6a7abab3f6771d4072b70d8c",
       "id": "prod-03",
       "slug": "rose-royal-embroidered-bridal-lehenga",
       "name": "Rose Royal Heirloom Bridal Lehenga",
@@ -80,6 +82,7 @@
       ]
     },
     {
+      "_id": "6a7abab3f6771d4072b70d8d",
       "id": "prod-04",
       "slug": "kesar-haldi-yellow-silk-lehenga",
       "name": "Kesar Haldi Sunshine Silk Lehenga",
@@ -106,6 +109,7 @@
       ]
     },
     {
+      "_id": "6a7abab3f6771d4072b70d8e",
       "id": "prod-05",
       "slug": "mehendi-emerald-sharara-set",
       "name": "Emerald Mehendi Embroidered Sharara",
@@ -132,6 +136,7 @@
       ]
     },
     {
+      "_id": "6a7abab3f6771d4072b70d8f",
       "id": "prod-06",
       "slug": "rooh-blush-draped-saree-gown",
       "name": "Rooh Blush Pre-Stitched Draped Saree",
@@ -157,6 +162,7 @@
       ]
     },
     {
+      "_id": "6a7abab3f6771d4072b70d90",
       "id": "prod-07",
       "slug": "grace-silk-maternity-photoshoot-gown",
       "name": "Grace Powder Pink Silk Maternity Gown",
@@ -182,6 +188,7 @@
       ]
     },
     {
+      "_id": "6a7abab3f6771d4072b70d91",
       "id": "prod-08",
       "slug": "aarya-floral-anarkali-maternity-gown",
       "name": "Aarya Floral Hand-Printed Maternity Anarkali",
@@ -207,6 +214,7 @@
       ]
     },
     {
+      "_id": "6a7abab3f6771d4072b70d92",
       "id": "prod-09",
       "slug": "nirmal-miniature-bridal-lehenga-baby",
       "name": "Nirmal Miniature Rose Baby Lehenga Set",
@@ -232,6 +240,7 @@
       ]
     },
     {
+      "_id": "6a7abab3f6771d4072b70d93",
       "id": "prod-10",
       "slug": "choti-princess-zari-kurti-skirt-set",
       "name": "Choti Princess Gold Zari Baby Kurti Set",
@@ -255,10 +264,798 @@
         "Soft Muslin Cotton & Jacquard Silk",
         "Matching headband included"
       ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70d94",
+      "id": "prod-11",
+      "slug": "aarohi-peach-georgette-anarkali",
+      "name": "Aarohi Peach Georgette Anarkali",
+      "category": "suits-anarkalis",
+      "categoryName": "Suits & Anarkalis",
+      "chapter": "her-beginnings",
+      "chapterName": "Her Beginnings",
+      "price": 12800,
+      "originalPrice": 16000,
+      "discount": "20% OFF",
+      "newArrival": true,
+      "featured": false,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Flowy peach georgette flared Anarkali with gold thread jaal embroidery all over. Comes with a matching georgette dupatta with hand-stitched tassel ends.",
+      "shortDescription": "Peach georgette Anarkali with gold jaal embroidery & tassel dupatta.",
+      "details": [
+        "Pure Georgette & Dupatta Included",
+        "Full customization on fit & sleeve style"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70d95",
+      "id": "prod-12",
+      "slug": "lavanya-lilac-chanderi-palazzo-suit",
+      "name": "Lavanya Lilac Chanderi Palazzo Suit",
+      "category": "suits-anarkalis",
+      "categoryName": "Suits & Anarkalis",
+      "chapter": "her-beginnings",
+      "chapterName": "Her Beginnings",
+      "price": 10400,
+      "originalPrice": 13000,
+      "discount": "20% OFF",
+      "newArrival": false,
+      "featured": false,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Soft lilac Chanderi cotton kurta with minimal Lucknowi chikankari patterns, paired with wide palazzo pants and a sheer organza dupatta.",
+      "shortDescription": "Lilac Chanderi chikankari kurta with wide palazzo & organza dupatta.",
+      "details": [
+        "Chanderi Cotton & Organza Dupatta",
+        "Palazzo width & kurta length customizable"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70d96",
+      "id": "prod-13",
+      "slug": "rania-deep-maroon-raw-silk-suit",
+      "name": "Rania Deep Maroon Raw Silk Suit",
+      "category": "suits-anarkalis",
+      "categoryName": "Suits & Anarkalis",
+      "chapter": "her-beginnings",
+      "chapterName": "Her Beginnings",
+      "price": 17600,
+      "originalPrice": 22000,
+      "discount": "20% OFF",
+      "newArrival": false,
+      "featured": true,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Rich deep maroon raw silk straight-cut kurta set with heavy neck embroidery, gold kaam highlights, and a banarasi brocade dupatta with gold border.",
+      "shortDescription": "Maroon raw silk kurta with gold kaam & banarasi dupatta.",
+      "details": [
+        "Raw Silk & Banarasi Brocade Dupatta",
+        "Gold zari neckline embroidery"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70d97",
+      "id": "prod-14",
+      "slug": "arjun-powder-blue-mirror-kurta",
+      "name": "Mehal Powder Blue Mirror Kurta Set",
+      "category": "suits-anarkalis",
+      "categoryName": "Suits & Anarkalis",
+      "chapter": "her-beginnings",
+      "chapterName": "Her Beginnings",
+      "price": 8960,
+      "originalPrice": 11200,
+      "discount": "20% OFF",
+      "newArrival": true,
+      "featured": false,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Festive powder blue cotton kurta adorned with intricate handmade mirror work on yoke and sleeves, paired with palazzo pants.",
+      "shortDescription": "Powder blue mirror-work cotton kurta with palazzo pants.",
+      "details": [
+        "Handblock Cotton & Kora Dupatta",
+        "Mirror work hand-stitched by artisans"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70d98",
+      "id": "prod-15",
+      "slug": "saffron-floral-anarkali-set",
+      "name": "Suraj Saffron Floral Anarkali Set",
+      "category": "suits-anarkalis",
+      "categoryName": "Suits & Anarkalis",
+      "chapter": "her-beginnings",
+      "chapterName": "Her Beginnings",
+      "price": 13200,
+      "originalPrice": 16500,
+      "discount": "20% OFF",
+      "newArrival": false,
+      "featured": false,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Vivid saffron floral printed Anarkali in breathable mul-mul cotton, ideal for festive events. Embellished with handcrafted pom-pom dupatta.",
+      "shortDescription": "Saffron floral mul-mul Anarkali with pom-pom dupatta.",
+      "details": [
+        "Hand-printed Mul-mul Cotton",
+        "Festive all-occasion wear"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70d99",
+      "id": "prod-16",
+      "slug": "ivory-zardozi-straight-kurta",
+      "name": "Shagun Ivory Zardozi Straight Kurta",
+      "category": "suits-anarkalis",
+      "categoryName": "Suits & Anarkalis",
+      "chapter": "her-beginnings",
+      "chapterName": "Her Beginnings",
+      "price": 21200,
+      "originalPrice": 26500,
+      "discount": "20% OFF",
+      "newArrival": false,
+      "featured": false,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Bridal reception-worthy ivory silk straight kurta featuring heavy Zardozi goldwork bodice, paired with wide-leg silk pants and a sheer embroidered dupatta.",
+      "shortDescription": "Ivory silk Zardozi kurta with silk pants & embroidered dupatta.",
+      "details": [
+        "Pure Silk & Sheer Net Dupatta",
+        "Heavy Zardozi gold hand embroidery"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70d9a",
+      "id": "prod-17",
+      "slug": "forest-green-organza-anarkali",
+      "name": "Vana Forest Green Organza Anarkali",
+      "category": "suits-anarkalis",
+      "categoryName": "Suits & Anarkalis",
+      "chapter": "her-beginnings",
+      "chapterName": "Her Beginnings",
+      "price": 15600,
+      "originalPrice": 19500,
+      "discount": "20% OFF",
+      "newArrival": true,
+      "featured": false,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Dramatic forest green organza Anarkali gown with hand-embroidered floral sprigs and a trail. Perfect for evening functions and sangeet nights.",
+      "shortDescription": "Forest green organza Anarkali gown with trail & floral embroidery.",
+      "details": [
+        "Layered Organza & Inner Lining",
+        "Trail length customizable"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70d9b",
+      "id": "prod-18",
+      "slug": "dusty-rose-lucknowi-anarkali",
+      "name": "Mehram Dusty Rose Lucknowi Anarkali",
+      "category": "suits-anarkalis",
+      "categoryName": "Suits & Anarkalis",
+      "chapter": "her-beginnings",
+      "chapterName": "Her Beginnings",
+      "price": 11200,
+      "originalPrice": 14000,
+      "discount": "20% OFF",
+      "newArrival": false,
+      "featured": false,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Classic dusty rose Lucknowi chikan embroidered Anarkali kurta with delicate white threadwork. Timeless everyday elegance for family functions.",
+      "shortDescription": "Dusty rose Lucknowi chikankari Anarkali for everyday elegance.",
+      "details": [
+        "Mul-mul Georgette & Chikankari Threadwork",
+        "Dry clean for longevity"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70d9c",
+      "id": "prod-19",
+      "slug": "crimson-velvet-bridal-lehenga",
+      "name": "Maharani Crimson Velvet Bridal Lehenga",
+      "category": "bridal-lehengas",
+      "categoryName": "Bridal Lehengas",
+      "chapter": "her-forever",
+      "chapterName": "Her Forever",
+      "price": 145000,
+      "originalPrice": 180000,
+      "discount": "19% OFF",
+      "newArrival": false,
+      "featured": true,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Regal crimson velvet bridal lehenga with all-over kundan stonework and antique gold dabka embroidery. Paired with velvet blouse and double net dupattas with intricate borders.",
+      "shortDescription": "Crimson velvet kundan bridal lehenga with double dupattas.",
+      "details": [
+        "Pure Velvet Silk",
+        "Custom kundan placement available",
+        "Personalized date embroidery on dupatta"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70d9d",
+      "id": "prod-20",
+      "slug": "blush-pink-sequin-bridal",
+      "name": "Rukmini Blush Pink Sequin Bridal Lehenga",
+      "category": "bridal-lehengas",
+      "categoryName": "Bridal Lehengas",
+      "chapter": "her-forever",
+      "chapterName": "Her Forever",
+      "price": 98000,
+      "originalPrice": 125000,
+      "discount": "22% OFF",
+      "newArrival": true,
+      "featured": true,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Dreamy blush pink lehenga with all-over sequin work and subtle floral cutwork on skirt. Light as a feather for the modern bride who wants to dance the night.",
+      "shortDescription": "All-over sequin blush pink bridal lehenga for the modern bride.",
+      "details": [
+        "Lightweight Sequin Net",
+        "Blouse back customizable",
+        "Custom waist fitting"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70d9e",
+      "id": "prod-21",
+      "slug": "ivory-gold-banarasi-bridal",
+      "name": "Swarna Ivory Gold Banarasi Bridal Lehenga",
+      "category": "bridal-lehengas",
+      "categoryName": "Bridal Lehengas",
+      "chapter": "her-forever",
+      "chapterName": "Her Forever",
+      "price": 120000,
+      "originalPrice": 150000,
+      "discount": "20% OFF",
+      "newArrival": false,
+      "featured": false,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Timeless ivory and gold Banarasi silk bridal lehenga woven with real gold zari. A generational heirloom piece designed for the bride who chooses heritage over trend.",
+      "shortDescription": "Ivory Banarasi silk bridal lehenga with real gold zari weave.",
+      "details": [
+        "Real Gold Zari Woven Silk",
+        "Heirloom quality weave from Varanasi",
+        "Custom hem & blouse design"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70d9f",
+      "id": "prod-22",
+      "slug": "midnight-blue-embroidered-bridal",
+      "name": "Neelambar Midnight Blue Embroidered Lehenga",
+      "category": "bridal-lehengas",
+      "categoryName": "Bridal Lehengas",
+      "chapter": "her-forever",
+      "chapterName": "Her Forever",
+      "price": 88000,
+      "originalPrice": 110000,
+      "discount": "20% OFF",
+      "newArrival": true,
+      "featured": false,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Striking midnight blue raw silk bridal lehenga with silver aari embroidery, metallic sequins and a contrast gold dupatta. For the bold modern bride.",
+      "shortDescription": "Midnight blue silk lehenga with silver aari & metallic sequins.",
+      "details": [
+        "Raw Silk & Gold Georgette Dupatta",
+        "Aari embroidery by artisans"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70da0",
+      "id": "prod-23",
+      "slug": "coral-ombre-bridal-lehenga",
+      "name": "Sandhya Coral Ombré Bridal Lehenga",
+      "category": "bridal-lehengas",
+      "categoryName": "Bridal Lehengas",
+      "chapter": "her-forever",
+      "chapterName": "Her Forever",
+      "price": 75000,
+      "originalPrice": 95000,
+      "discount": "21% OFF",
+      "newArrival": false,
+      "featured": false,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Sunset ombré coral-to-peach hand-dyed silk lehenga with resham floral butti all over and a sequin belt waistband. Sangeet & reception perfect.",
+      "shortDescription": "Coral ombré silk bridal lehenga with floral butti & sequin belt.",
+      "details": [
+        "Hand-dyed Pure Silk",
+        "Resham butti embroidered",
+        "Comes with matching choker"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70da1",
+      "id": "prod-24",
+      "slug": "pastel-mint-bridal-lehenga",
+      "name": "Sheetla Pastel Mint Bridal Lehenga",
+      "category": "bridal-lehengas",
+      "categoryName": "Bridal Lehengas",
+      "chapter": "her-forever",
+      "chapterName": "Her Forever",
+      "price": 92000,
+      "originalPrice": 115000,
+      "discount": "20% OFF",
+      "newArrival": true,
+      "featured": false,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Unconventional pastel mint silk lehenga with dense platinum-tone gota patti borders and fine cutwork skirt panels. Perfect for the fashion-forward bride.",
+      "shortDescription": "Pastel mint silk bridal lehenga with platinum gota patti borders.",
+      "details": [
+        "Pure Silk Mikado & Net Blouse",
+        "Platinum zari gota weave"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70da2",
+      "id": "prod-25",
+      "slug": "royal-wine-velvet-bridal",
+      "name": "Aahana Royal Wine Velvet Lehenga",
+      "category": "bridal-lehengas",
+      "categoryName": "Bridal Lehengas",
+      "chapter": "her-forever",
+      "chapterName": "Her Forever",
+      "price": 135000,
+      "originalPrice": 165000,
+      "discount": "18% OFF",
+      "newArrival": false,
+      "featured": true,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Rich wine velvet bridal lehenga adorned with silver kundan stonework and maroon resham embroidery. A statement piece for winter weddings.",
+      "shortDescription": "Wine velvet bridal lehenga with silver kundan for winter weddings.",
+      "details": [
+        "Pure Velvet & Brocade Dupatta",
+        "Custom fit in 4 weeks"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70da3",
+      "id": "prod-26",
+      "slug": "golden-tissue-silk-bridal-lehenga",
+      "name": "Hiranya Golden Tissue Silk Lehenga",
+      "category": "bridal-lehengas",
+      "categoryName": "Bridal Lehengas",
+      "chapter": "her-forever",
+      "chapterName": "Her Forever",
+      "price": 110000,
+      "originalPrice": 138000,
+      "discount": "20% OFF",
+      "newArrival": false,
+      "featured": false,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Shimmering golden tissue silk lehenga with all-over sequin & stone embellishment. Creates a breathtaking luminous effect for high-candlelight receptions.",
+      "shortDescription": "Golden tissue silk lehenga with all-over sequin & stone work.",
+      "details": [
+        "Tissue Silk with Full Lining",
+        "Velvet blouse included"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70da4",
+      "id": "prod-27",
+      "slug": "sunshine-yellow-peplum-lehenga",
+      "name": "Basant Sunshine Yellow Peplum Lehenga",
+      "category": "haldi-mehendi",
+      "categoryName": "Haldi & Mehendi",
+      "chapter": "her-new-chapter",
+      "chapterName": "Her New Chapter",
+      "price": 18400,
+      "originalPrice": 23000,
+      "discount": "20% OFF",
+      "newArrival": true,
+      "featured": true,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Vibrant sunshine yellow peplum kurta with mirror-sequin work, paired with a voluminous flared lehenga skirt in matching cotton silk. Designed for Haldi rituals.",
+      "shortDescription": "Sunshine yellow peplum kurta with mirror lehenga skirt for Haldi.",
+      "details": [
+        "Cotton Silk",
+        "Mirror work & sequin embellishment",
+        "Matching jutis available"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70da5",
+      "id": "prod-28",
+      "slug": "olive-green-mehendi-anarkali",
+      "name": "Vriksha Olive Green Mehendi Anarkali",
+      "category": "haldi-mehendi",
+      "categoryName": "Haldi & Mehendi",
+      "chapter": "her-new-chapter",
+      "chapterName": "Her New Chapter",
+      "price": 22400,
+      "originalPrice": 28000,
+      "discount": "20% OFF",
+      "newArrival": false,
+      "featured": false,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Regal olive green floor-length Anarkali with intricate gold zari embroidery, ideal for evening mehendi functions and sangeet nights.",
+      "shortDescription": "Olive green Anarkali with gold zari for Mehendi & Sangeet.",
+      "details": [
+        "Viscose Georgette",
+        "Gold zari tasselled dupatta included"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70da6",
+      "id": "prod-29",
+      "slug": "tangerine-mirror-sharara",
+      "name": "Narangi Tangerine Mirror Sharara Set",
+      "category": "haldi-mehendi",
+      "categoryName": "Haldi & Mehendi",
+      "chapter": "her-new-chapter",
+      "chapterName": "Her New Chapter",
+      "price": 16800,
+      "originalPrice": 21000,
+      "discount": "20% OFF",
+      "newArrival": true,
+      "featured": false,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Festive tangerine orange short kurta with dense hand-stitched mirror work and a dramatic gathered sharara paired with a kora organza dupatta.",
+      "shortDescription": "Tangerine mirror-work sharara set for festive Haldi/Mehendi occasions.",
+      "details": [
+        "Viscose Silk & Kora Organza",
+        "Hand-stitched mirrors by craftswomen"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70da7",
+      "id": "prod-30",
+      "slug": "floral-pink-mehendi-lehnga",
+      "name": "Pushpa Floral Pink Mehendi Lehenga",
+      "category": "haldi-mehendi",
+      "categoryName": "Haldi & Mehendi",
+      "chapter": "her-new-chapter",
+      "chapterName": "Her New Chapter",
+      "price": 19200,
+      "originalPrice": 24000,
+      "discount": "20% OFF",
+      "newArrival": false,
+      "featured": false,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Blush floral block-printed lehenga with gota patti borders and a sheer scalloped dupatta. Perfect for outdoor daytime Mehendi ceremonies.",
+      "shortDescription": "Floral block-print pink lehenga with gota borders for daytime Mehendi.",
+      "details": [
+        "Handblock Cotton Silk",
+        "Scalloped dupatta with mirror tassels"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70da8",
+      "id": "prod-31",
+      "slug": "turquoise-bandhani-sharara",
+      "name": "Dhaani Turquoise Bandhani Sharara",
+      "category": "haldi-mehendi",
+      "categoryName": "Haldi & Mehendi",
+      "chapter": "her-new-chapter",
+      "chapterName": "Her New Chapter",
+      "price": 14400,
+      "originalPrice": 18000,
+      "discount": "20% OFF",
+      "newArrival": false,
+      "featured": false,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Vibrant turquoise bandhani tie-dye sharara set with gold printed borders and a crushed dupatta. A playful, festive choice for Haldi or casual functions.",
+      "shortDescription": "Turquoise bandhani sharara set with gold printed borders.",
+      "details": [
+        "Rajasthani Gaji Silk Bandhani",
+        "Dupatta with embroidered hem"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70da9",
+      "id": "prod-32",
+      "slug": "saffron-green-haldi-lehenga",
+      "name": "Tilak Saffron & Green Haldi Lehenga",
+      "category": "haldi-mehendi",
+      "categoryName": "Haldi & Mehendi",
+      "chapter": "her-new-chapter",
+      "chapterName": "Her New Chapter",
+      "price": 20800,
+      "originalPrice": 26000,
+      "discount": "20% OFF",
+      "newArrival": true,
+      "featured": false,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Traditional saffron-and-green colour-blocked raw silk Haldi lehenga with gold zari borders and a sequin choli blouse. Perfect for outdoor Haldi rituals.",
+      "shortDescription": "Saffron-green raw silk Haldi lehenga with gold zari & sequin blouse.",
+      "details": [
+        "Raw Silk & Cotton Under-skirt",
+        "Elasticated waist for comfort"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70daa",
+      "id": "prod-33",
+      "slug": "marigold-embroidered-set",
+      "name": "Marigold Embroidered Ethnic Ensemble",
+      "category": "haldi-mehendi",
+      "categoryName": "Haldi & Mehendi",
+      "chapter": "her-new-chapter",
+      "chapterName": "Her New Chapter",
+      "price": 23600,
+      "originalPrice": 29500,
+      "discount": "20% OFF",
+      "newArrival": false,
+      "featured": false,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Marigold yellow kurta with dense resham floral embroidery paired with a wide flared skirt and kota dupatta. Complete festive ensemble.",
+      "shortDescription": "Marigold yellow kurta with resham embroidery & flared skirt.",
+      "details": [
+        "Katan Silk & Kota Dupatta",
+        "Embroidered by artisan craftswomen"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70dab",
+      "id": "prod-34",
+      "slug": "choti-rani-red-banarasi-baby",
+      "name": "Choti Rani Red Banarasi Baby Lehenga",
+      "category": "baby-clothes",
+      "categoryName": "Baby Clothes",
+      "chapter": "her-little-one",
+      "chapterName": "Her Little One",
+      "price": 8400,
+      "originalPrice": 10500,
+      "discount": "20% OFF",
+      "newArrival": true,
+      "featured": false,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Miniature red Banarasi brocade baby lehenga with gold zari borders and a soft muslin inner lining. Designed for first Diwali, Namakarana and baby naming ceremonies.",
+      "shortDescription": "Red Banarasi baby lehenga with gold zari & muslin inner lining.",
+      "details": [
+        "Banarasi Brocade & Muslin Lining",
+        "Zero-scratch seams, 100% cotton lined"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70dac",
+      "id": "prod-35",
+      "slug": "royal-blue-baby-sherwani-set",
+      "name": "Shehzada Royal Blue Baby Sherwani Set",
+      "category": "baby-clothes",
+      "categoryName": "Baby Clothes",
+      "chapter": "her-little-one",
+      "chapterName": "Her Little One",
+      "price": 6800,
+      "originalPrice": 8500,
+      "discount": "20% OFF",
+      "newArrival": false,
+      "featured": false,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Miniature royal blue jacquard sherwani set with a matching churidar and embroidered dupatta. For baby boys at family weddings and religious ceremonies.",
+      "shortDescription": "Royal blue jacquard baby sherwani set with churidar for boys.",
+      "details": [
+        "Jacquard Silk & Cotton Lining",
+        "Includes sherwani, churidar & stole"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70dad",
+      "id": "prod-36",
+      "slug": "mint-green-annaprashan-baby-set",
+      "name": "Prashasan Mint Green Annaprashan Set",
+      "category": "baby-clothes",
+      "categoryName": "Baby Clothes",
+      "chapter": "her-little-one",
+      "chapterName": "Her Little One",
+      "price": 7200,
+      "originalPrice": 9000,
+      "discount": "20% OFF",
+      "newArrival": true,
+      "featured": true,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Tender mint green cotton silk baby dress for Annaprashan ceremony, adorned with gold piping and a hand-smocked bodice. Hypoallergenic, soft, and stretchable.",
+      "shortDescription": "Mint green Annaprashan baby dress with gold piping & smocking.",
+      "details": [
+        "100% Cotton Silk & Hypoallergenic",
+        "Stretchable for easy dressing"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70dae",
+      "id": "prod-37",
+      "slug": "mommy-me-haldi-set",
+      "name": "Mommy & Me Haldi Matching Set",
+      "category": "baby-clothes",
+      "categoryName": "Baby Clothes",
+      "chapter": "her-little-one",
+      "chapterName": "Her Little One",
+      "price": 14400,
+      "originalPrice": 18000,
+      "discount": "20% OFF",
+      "newArrival": false,
+      "featured": true,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Coordinating Mommy & Me set — mother lehenga and baby lehenga in matching sunshine yellow cotton with identical embroidery and gota patti borders.",
+      "shortDescription": "Matching Mommy & Baby Haldi yellow lehenga set.",
+      "details": [
+        "Cotton Silk",
+        "Available in 0–12 months baby sizes",
+        "Can extend to 3 years"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70daf",
+      "id": "prod-38",
+      "slug": "peach-organza-baby-frock",
+      "name": "Mithi Peach Organza Baby Frock Set",
+      "category": "baby-clothes",
+      "categoryName": "Baby Clothes",
+      "chapter": "her-little-one",
+      "chapterName": "Her Little One",
+      "price": 5600,
+      "originalPrice": 7000,
+      "discount": "20% OFF",
+      "newArrival": false,
+      "featured": false,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Peach organza baby dress with tulle layers, satin bow and featherlight skirt for baby girls. Perfect for birthday parties, namkaran and christening ceremonies.",
+      "shortDescription": "Peach organza baby girl party frock with tulle layers & satin bow.",
+      "details": [
+        "Organza & Tulle with Cotton Lining",
+        "Adjustable back button"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70db0",
+      "id": "prod-39",
+      "slug": "saffron-baby-jamdani-kurta-set",
+      "name": "Tara Saffron Jamdani Baby Kurta Set",
+      "category": "baby-clothes",
+      "categoryName": "Baby Clothes",
+      "chapter": "her-little-one",
+      "chapterName": "Her Little One",
+      "price": 6400,
+      "originalPrice": 8000,
+      "discount": "20% OFF",
+      "newArrival": true,
+      "featured": false,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Handwoven saffron Jamdani baby kurta set with dhoti pants. Ultra-breathable heritage fabric for India's hot climate. Ideal for religious and festive occasions.",
+      "shortDescription": "Handwoven saffron Jamdani baby kurta set with dhoti pants.",
+      "details": [
+        "Heritage Jamdani Cotton",
+        "Unisex style for boys & girls"
+      ]
+    },
+    {
+      "_id": "6a7abab3f6771d4072b70db1",
+      "id": "prod-40",
+      "slug": "dainty-lavender-baby-anarkali",
+      "name": "Dainty Lavender Baby Anarkali Set",
+      "category": "baby-clothes",
+      "categoryName": "Baby Clothes",
+      "chapter": "her-little-one",
+      "chapterName": "Her Little One",
+      "price": 8800,
+      "originalPrice": 11000,
+      "discount": "20% OFF",
+      "newArrival": false,
+      "featured": false,
+      "status": "published",
+      "image": "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "description": "Sweet lavender baby anarkali set for baby girls aged 0–3 years. Features soft flared skirt, elastic waistband, and micro mirror embroidery buttons.",
+      "shortDescription": "Lavender baby anarkali with mirror buttons for 0–3 year olds.",
+      "details": [
+        "100% Cotton",
+        "Mirror button embroidery",
+        "0–3 years"
+      ]
     }
   ],
   "categories": [
     {
+      "_id": "6a7abab4f6771d4072b70db2",
       "id": "suits-anarkalis",
       "name": "Suits & Anarkalis",
       "slug": "suits-anarkalis",
@@ -270,6 +1067,7 @@
       "order": 1
     },
     {
+      "_id": "6a7abab4f6771d4072b70db3",
       "id": "bridal-lehengas",
       "name": "Bridal Lehengas",
       "slug": "bridal-lehengas",
@@ -281,6 +1079,7 @@
       "order": 2
     },
     {
+      "_id": "6a7abab4f6771d4072b70db4",
       "id": "haldi-mehendi",
       "name": "Haldi & Mehendi",
       "slug": "haldi-mehendi",
@@ -292,6 +1091,7 @@
       "order": 3
     },
     {
+      "_id": "6a7abab4f6771d4072b70db5",
       "id": "maternity-gowns",
       "name": "Maternity Gowns",
       "slug": "maternity-gowns",
@@ -303,6 +1103,7 @@
       "order": 4
     },
     {
+      "_id": "6a7abab4f6771d4072b70db6",
       "id": "baby-clothes",
       "name": "Baby Clothes",
       "slug": "baby-clothes",
@@ -316,6 +1117,7 @@
   ],
   "chapters": [
     {
+      "_id": "6a7abab4f6771d4072b70db7",
       "id": "her-beginnings",
       "number": "01",
       "title": "Her Beginnings",
@@ -326,6 +1128,7 @@
       "image": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1200&auto=format&fit=crop"
     },
     {
+      "_id": "6a7abab4f6771d4072b70db8",
       "id": "her-forever",
       "number": "02",
       "title": "Her Forever",
@@ -336,6 +1139,7 @@
       "image": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop"
     },
     {
+      "_id": "6a7abab4f6771d4072b70db9",
       "id": "her-new-chapter",
       "number": "03",
       "title": "Her New Chapter",
@@ -346,6 +1150,7 @@
       "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1200&auto=format&fit=crop"
     },
     {
+      "_id": "6a7abab4f6771d4072b70dba",
       "id": "her-motherhood",
       "number": "04",
       "title": "Her Motherhood",
@@ -356,6 +1161,7 @@
       "image": "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop"
     },
     {
+      "_id": "6a7abab4f6771d4072b70dbb",
       "id": "her-little-one",
       "number": "05",
       "title": "Her Little One",
@@ -368,6 +1174,7 @@
   ],
   "gallery": [
     {
+      "_id": "6a7abab4f6771d4072b70dbc",
       "id": "lb-01",
       "title": "Mughal Rose Bridal Story",
       "category": "Bridal",
@@ -376,6 +1183,7 @@
       "location": "Studio New Delhi"
     },
     {
+      "_id": "6a7abab4f6771d4072b70dbd",
       "id": "lb-02",
       "title": "Golden Hour Haldi Splendor",
       "category": "Festive",
@@ -384,6 +1192,7 @@
       "location": "Garden Courtyard"
     },
     {
+      "_id": "6a7abab4f6771d4072b70dbe",
       "id": "lb-03",
       "title": "Motherhood Grace & Silks",
       "category": "Maternity",
@@ -392,6 +1201,7 @@
       "location": "New Delhi Atelier"
     },
     {
+      "_id": "6a7abab4f6771d4072b70dbf",
       "id": "lb-04",
       "title": "First Celebrations & Baby Heirloom",
       "category": "Baby",
@@ -400,6 +1210,7 @@
       "location": "Boutique Lounge"
     },
     {
+      "_id": "6a7abab4f6771d4072b70dc0",
       "id": "lb-05",
       "title": "Gulzar Anarkali Flow",
       "category": "Suits",
@@ -408,6 +1219,7 @@
       "location": "Heritage Suite"
     },
     {
+      "_id": "6a7abab4f6771d4072b70dc1",
       "id": "lb-06",
       "title": "Mehendi Emerald Splendor",
       "category": "Festive",
@@ -418,6 +1230,7 @@
   ],
   "offers": [
     {
+      "_id": "6a7abab4f6771d4072b70dc2",
       "id": "offer-1",
       "title": "Festive Bridal Preview Discount",
       "code": "BRIDAL2026",
@@ -429,26 +1242,99 @@
       "endDate": "2026-10-31"
     }
   ],
+  "enquiries": [
+    {
+      "_id": "6a7abab4f6771d4072b70dc3",
+      "id": "enq-1",
+      "name": "Priya Sharma",
+      "phone": "+91 98765 43210",
+      "email": "priya@example.com",
+      "productName": "Royal Velvet Zardozi Lehenga",
+      "productCategory": "Bridal Lehengas",
+      "message": "Hi, I would like to book a bridal consultation for next month.",
+      "status": "New",
+      "createdAt": "2026-08-09T06:01:23.718Z"
+    },
+    {
+      "_id": "6a7abab4f6771d4072b70dc4",
+      "id": "enq-2",
+      "name": "Ananya Gupta",
+      "phone": "+91 98111 22334",
+      "email": "ananya@example.com",
+      "productName": "Rose Gold Silk Maternity Gown",
+      "productCategory": "Maternity Gowns",
+      "message": "Is this gown available for custom fitting?",
+      "status": "Contacted",
+      "createdAt": "2026-08-06T06:01:23.718Z"
+    }
+  ],
+  "testimonials": [
+    {
+      "_id": "6a7abab4f6771d4072b70dc5",
+      "id": "test-1",
+      "author": "Kavita Malhotra",
+      "city": "South Extension, New Delhi",
+      "rating": 5,
+      "text": "Nisha designed my custom bridal lehenga in just 3 weeks! The hand zardozi work and personal fitting sessions made me feel like royalty on my wedding day.",
+      "outfit": "Rose Royal Heirloom Bridal Lehenga",
+      "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop",
+      "featured": true
+    },
+    {
+      "_id": "6a7abab4f6771d4072b70dc6",
+      "id": "test-2",
+      "author": "Rhea Singhania",
+      "city": "Defence Colony, New Delhi",
+      "rating": 5,
+      "text": "Her maternity photoshoot gown was beyond magical! Super breathable pure silk and fitted so comfortably during my third trimester.",
+      "outfit": "Grace Powder Pink Silk Maternity Gown",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop",
+      "featured": true
+    },
+    {
+      "_id": "6a7abab4f6771d4072b70dc7",
+      "id": "test-3",
+      "author": "Pooja & Sameer Verma",
+      "city": "Gurugram",
+      "rating": 5,
+      "text": "We ordered matching Mommy & Me Haldi lehengas for our daughter's first Diwali. Zero-scratch inner lining made our baby so comfortable!",
+      "outfit": "Nirmal Miniature Rose Baby Lehenga Set",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200&auto=format&fit=crop",
+      "featured": true
+    }
+  ],
   "settings": {
+    "_id": "boutique_settings",
     "boutiqueName": "Designs by Nisha",
     "tagline": "For Every Chapter of Her Story.",
+    "phone": null,
     "phoneDisplay": "+91 98765 43210",
     "whatsappNumber": "919876543210",
     "defaultWhatsAppMessage": "Hi Designs by Nisha! I'm exploring your boutique collection and would love to enquire about bespoke outfits.",
     "email": "enquire@designsbynisha.com",
+    "address": null,
+    "city": null,
+    "state": null,
+    "zip": null,
+    "country": null,
     "fullAddress": "Design Studio & Boutique, Defence Colony / South Extension, New Delhi - 110024, India",
     "instagramUsername": "@designsbynisha",
     "instagramUrl": "https://instagram.com/designsbynisha",
-    "hours": "Mon-Sat: 10:30 AM - 8:00 PM | Sun: By Appointment",
-    "openingHours": {
-      "weekdays": "10:30 AM - 8:00 PM",
-      "sunday": "By Appointment Only",
-      "closed": "National Holidays"
+    "hours": null,
+    "announcementBanner": {
+      "enabled": true,
+      "message": "✨ Festive Season Special: Enjoy 15% off bespoke Bridal & Festive orders with code BRIDAL2026! ✨",
+      "linkText": "Explore Bridal",
+      "linkUrl": "/collections/bridal-lehengas",
+      "bgType": "rose",
+      "speed": "normal"
     },
     "seoTitle": "Designs by Nisha — Luxury Women's & Bridal Boutique | New Delhi",
-    "updatedAt": "2026-08-11T04:34:19.641Z"
+    "seoDescription": null,
+    "updatedAt": "2026-08-11T06:01:23.718Z"
   },
   "analytics": {
+    "_id": "boutique_analytics",
     "totalPageViews": 14850,
     "monthlyPageViews": 4230,
     "productViews": 8920,
@@ -600,76 +1486,13 @@
       }
     ]
   },
-  "testimonials": [
-    {
-      "id": "test-1",
-      "author": "Kavita Malhotra",
-      "city": "South Extension, New Delhi",
-      "rating": 5,
-      "text": "Nisha designed my custom bridal lehenga in just 3 weeks! The hand zardozi work and personal fitting sessions made me feel like royalty on my wedding day.",
-      "outfit": "Rose Royal Heirloom Bridal Lehenga",
-      "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop",
-      "featured": true
-    },
-    {
-      "id": "test-2",
-      "author": "Rhea Singhania",
-      "city": "Defence Colony, New Delhi",
-      "rating": 5,
-      "text": "Her maternity photoshoot gown was beyond magical! Super breathable pure silk and fitted so comfortably during my third trimester.",
-      "outfit": "Grace Powder Pink Silk Maternity Gown",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop",
-      "featured": true
-    },
-    {
-      "id": "test-3",
-      "author": "Pooja & Sameer Verma",
-      "city": "Gurugram",
-      "rating": 5,
-      "text": "We ordered matching Mommy & Me Haldi lehengas for our daughter's first Diwali. Zero-scratch inner lining made our baby so comfortable!",
-      "outfit": "Nirmal Miniature Rose Baby Lehenga Set",
-      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200&auto=format&fit=crop",
-      "featured": true
-    }
-  ],
-  "enquiries": [
-    {
-      "id": "enq-1",
-      "name": "Priya Sharma",
-      "phone": "+91 98765 43210",
-      "email": "priya@example.com",
-      "productName": "Royal Velvet Zardozi Lehenga",
-      "productCategory": "Bridal Lehengas",
-      "message": "Hi, I would like to book a bridal consultation for next month.",
-      "status": "New",
-      "createdAt": "2026-08-09T04:34:19.641Z"
-    },
-    {
-      "id": "enq-2",
-      "name": "Ananya Gupta",
-      "phone": "+91 98111 22334",
-      "email": "ananya@example.com",
-      "productName": "Rose Gold Silk Maternity Gown",
-      "productCategory": "Maternity Gowns",
-      "message": "Is this gown available for custom fitting?",
-      "status": "Contacted",
-      "createdAt": "2026-08-06T04:34:19.641Z"
-    }
-  ],
   "auditLogs": [
-    {
-      "id": "log-1786425788401",
-      "user": "Admin",
-      "action": "Product Updated",
-      "details": "Updated \"Gulzar Chanderi Silk Anarkali Set\" (ID: prod-01)",
-      "timestamp": "2026-08-11T05:23:08.401Z"
-    },
     {
       "id": "log-1",
       "user": "Admin",
       "action": "System initialized",
-      "details": "Database seeded with default boutique products, categories, and settings.",
-      "timestamp": "2026-08-11T04:34:19.641Z"
+      "details": "Database seeded with default boutique products, categories, analytics, and settings.",
+      "timestamp": "2026-08-11T08:19:03.538Z"
     }
   ]
 }

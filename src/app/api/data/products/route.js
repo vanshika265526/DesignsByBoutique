@@ -1,5 +1,4 @@
-import { NextResponse } from 'next/server';
-import { readDb, writeDb, addAuditLog } from '@/lib/db';
+import { readDb, writeDb, addAuditLog, getDbAsync } from '@/lib/db';
 
 // GET all products or filter by category/chapter
 export async function GET(request) {
@@ -10,7 +9,7 @@ export async function GET(request) {
         const status = searchParams.get('status');
         const featured = searchParams.get('featured');
 
-        const db = readDb();
+        const db = await getDbAsync();
         let products = db.products || [];
 
         if (category) {

@@ -17,6 +17,7 @@ import {
     User,
     Mail,
     MessageCircle,
+    Megaphone,
 } from "lucide-react";
 
 export default function AdminContentPage() {
@@ -208,8 +209,10 @@ export default function AdminContentPage() {
             </div>
 
             {/* Navigation Tabs */}
+            {/* Navigation Tabs */}
             <div className="flex items-center space-x-2 border-b border-neutral-200 pb-2 overflow-x-auto">
                 {[
+                    { id: "banner", label: "Announcement Banner", icon: Megaphone },
                     { id: "testimonials", label: "Client Testimonials", icon: MessageSquare },
                     { id: "contact", label: "Contact & WhatsApp", icon: Phone },
                     { id: "hours", label: "Address & Opening Hours", icon: Clock },
@@ -221,8 +224,8 @@ export default function AdminContentPage() {
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
                             className={`flex items-center space-x-2 px-4 py-2.5 rounded-xl text-xs font-semibold transition-all whitespace-nowrap ${activeTab === tab.id
-                                    ? "bg-neutral-900 text-white shadow-sm"
-                                    : "bg-white text-neutral-600 border border-neutral-200 hover:bg-neutral-50"
+                                ? "bg-neutral-900 text-white shadow-sm"
+                                : "bg-white text-neutral-600 border border-neutral-200 hover:bg-neutral-50"
                                 }`}
                         >
                             <Icon className="w-4 h-4" />
@@ -231,6 +234,157 @@ export default function AdminContentPage() {
                     );
                 })}
             </div>
+
+            {/* Tab 0: Announcement Banner */}
+            {activeTab === "banner" && (
+                <div className="bg-white p-6 rounded-2xl border border-neutral-200/80 space-y-6 shadow-2xs">
+                    <div className="flex items-center justify-between border-b border-neutral-100 pb-3">
+                        <div>
+                            <h3 className="font-serif-editorial text-xl font-bold text-boutique-charcoal">
+                                Running Announcement Banner
+                            </h3>
+                            <p className="text-xs text-neutral-500">
+                                Display an urgent announcement, sale notice, or important news ticker below the public header navbar.
+                            </p>
+                        </div>
+
+                        {/* Enable Toggle Switch */}
+                        <label className="relative inline-flex items-center cursor-pointer">
+                            <input
+                                type="checkbox"
+                                checked={settings.announcementBanner?.enabled ?? true}
+                                onChange={(e) =>
+                                    setSettings({
+                                        ...settings,
+                                        announcementBanner: {
+                                            ...(settings.announcementBanner || {}),
+                                            enabled: e.target.checked,
+                                        },
+                                    })
+                                }
+                                className="sr-only peer"
+                            />
+                            <div className="w-11 h-6 bg-neutral-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-neutral-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-boutique-rose"></div>
+                            <span className="ml-3 text-xs font-bold text-neutral-700">
+                                {settings.announcementBanner?.enabled ? "Banner ACTIVE" : "Banner HIDDEN"}
+                            </span>
+                        </label>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="md:col-span-2">
+                            <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1 font-mono">
+                                Banner Announcement Message *
+                            </label>
+                            <textarea
+                                rows={2}
+                                value={settings.announcementBanner?.message || ""}
+                                onChange={(e) =>
+                                    setSettings({
+                                        ...settings,
+                                        announcementBanner: {
+                                            ...(settings.announcementBanner || {}),
+                                            message: e.target.value,
+                                        },
+                                    })
+                                }
+                                placeholder="e.g. ✨ Festive Season Special: Enjoy 15% off bespoke orders! Use Code: BRIDAL2026 ✨"
+                                className="w-full px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-xs focus:outline-none focus:border-boutique-rose font-medium"
+                            />
+                        </div>
+
+                        <div>
+                            <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1 font-mono">
+                                Action Link Text (Optional)
+                            </label>
+                            <input
+                                type="text"
+                                value={settings.announcementBanner?.linkText || ""}
+                                onChange={(e) =>
+                                    setSettings({
+                                        ...settings,
+                                        announcementBanner: {
+                                            ...(settings.announcementBanner || {}),
+                                            linkText: e.target.value,
+                                        },
+                                    })
+                                }
+                                placeholder="e.g. Explore Collection"
+                                className="w-full px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-xs focus:outline-none focus:border-boutique-rose"
+                            />
+                        </div>
+
+                        <div>
+                            <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1 font-mono">
+                                Action Link URL (Optional)
+                            </label>
+                            <input
+                                type="text"
+                                value={settings.announcementBanner?.linkUrl || ""}
+                                onChange={(e) =>
+                                    setSettings({
+                                        ...settings,
+                                        announcementBanner: {
+                                            ...(settings.announcementBanner || {}),
+                                            linkUrl: e.target.value,
+                                        },
+                                    })
+                                }
+                                placeholder="e.g. /collections/bridal-lehengas"
+                                className="w-full px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-xs font-mono focus:outline-none focus:border-boutique-rose"
+                            />
+                        </div>
+
+                        <div>
+                            <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1 font-mono">
+                                Banner Color Theme
+                            </label>
+                            <select
+                                value={settings.announcementBanner?.bgType || "rose"}
+                                onChange={(e) =>
+                                    setSettings({
+                                        ...settings,
+                                        announcementBanner: {
+                                            ...(settings.announcementBanner || {}),
+                                            bgType: e.target.value,
+                                        },
+                                    })
+                                }
+                                className="w-full px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-xs focus:outline-none focus:border-boutique-rose"
+                            >
+                                <option value="rose">Boutique Deep Rose Gradient</option>
+                                <option value="gold">Royal Gold Gradient</option>
+                                <option value="dark">Midnight Charcoal</option>
+                                <option value="emerald">Emerald Forest</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    {/* Live Preview Box */}
+                    <div className="pt-4 border-t border-neutral-100 space-y-2">
+                        <span className="text-[11px] font-mono text-neutral-400 uppercase tracking-wider">
+                            Live Banner Preview
+                        </span>
+                        <div
+                            className={`p-3 rounded-xl border text-xs flex items-center justify-between ${settings.announcementBanner?.bgType === "gold"
+                                ? "bg-amber-950 text-amber-100 border-amber-800"
+                                : settings.announcementBanner?.bgType === "dark"
+                                    ? "bg-neutral-950 text-neutral-100 border-neutral-800"
+                                    : settings.announcementBanner?.bgType === "emerald"
+                                        ? "bg-emerald-950 text-emerald-100 border-emerald-800"
+                                        : "bg-rose-950 text-rose-50 border-rose-800"
+                                }`}
+                        >
+                            <span>{settings.announcementBanner?.message || "Sample Announcement Message"}</span>
+                            {settings.announcementBanner?.linkText && (
+                                <span className="underline font-bold text-[11px] uppercase tracking-wider">
+                                    {settings.announcementBanner.linkText} →
+                                </span>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            )}
 
             {/* Tab 1: Client Testimonials */}
             {activeTab === "testimonials" && (

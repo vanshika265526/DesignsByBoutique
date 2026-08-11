@@ -43,6 +43,7 @@ function getSeedData() {
             instagramUsername: boutiqueConfig.instagram.handle,
             instagramUrl: boutiqueConfig.instagram.url,
             hours: boutiqueConfig.hours,
+            announcementBanner: boutiqueConfig.announcementBanner,
             seoTitle: boutiqueConfig.seo.defaultTitle,
             seoDescription: boutiqueConfig.seo.defaultDescription,
             updatedAt: new Date().toISOString(),
@@ -151,6 +152,80 @@ function getSeedData() {
     };
 }
 
+import { getDatabase } from './mongodb';
+
+// Helper to seed MongoDB Atlas if collection is empty
+export async function seedMongoIfEmpty() {
+    try {
+        const db = await getDatabase();
+        const collections = ['products', 'categories', 'chapters', 'gallery', 'offers', 'enquiries', 'testimonials'];
+        const seedData = getSeedData();
+
+        for (const colName of collections) {
+            const count = await db.collection(colName).countDocuments();
+            if (count === 0 && seedData[colName] && seedData[colName].length > 0) {
+                await db.collection(colName).insertMany(seedData[colName]);
+                console.log(`[MongoDB Atlas] Seeded ${colName} with ${seedData[colName].length} items.`);
+            }
+        }
+
+        // Seed settings if empty
+        const settingsCount = await db.collection('settings').countDocuments();
+        if (settingsCount === 0 && seedData.settings) {
+            await db.collection('settings').insertOne({ _id: 'boutique_settings', ...seedData.settings });
+            console.log('[MongoDB Atlas] Seeded boutique settings.');
+        }
+
+        // Seed analytics if empty
+        const analyticsCount = await db.collection('analytics').countDocuments();
+        if (analyticsCount === 0 && seedData.analytics) {
+            await db.collection('analytics').insertOne({ _id: 'boutique_analytics', ...seedData.analytics });
+            console.log('[MongoDB Atlas] Seeded analytics data.');
+        }
+    } catch (err) {
+        console.error('[MongoDB Atlas] Seed check failed:', err.message);
+    }
+}
+
+// Asynchronous MongoDB reader with fallback to JSON
+export async function getDbAsync() {
+    try {
+        await seedMongoIfEmpty();
+        const db = await getDatabase();
+
+        const products = await db.collection('products').find({}).toArray();
+        const categories = await db.collection('categories').find({}).toArray();
+        const chapters = await db.collection('chapters').find({}).toArray();
+        const gallery = await db.collection('gallery').find({}).toArray();
+        const offers = await db.collection('offers').find({}).toArray();
+        const enquiries = await db.collection('enquiries').find({}).toArray();
+        const testimonials = await db.collection('testimonials').find({}).toArray();
+        const settingsDoc = await db.collection('settings').findOne({ _id: 'boutique_settings' });
+        const analyticsDoc = await db.collection('analytics').findOne({ _id: 'boutique_analytics' });
+        const auditLogs = await db.collection('auditLogs').find({}).sort({ timestamp: -1 }).limit(100).toArray();
+
+        const result = {
+            products: products.length > 0 ? products : getSeedData().products,
+            categories: categories.length > 0 ? categories : getSeedData().categories,
+            chapters: chapters.length > 0 ? chapters : getSeedData().chapters,
+            gallery: gallery.length > 0 ? gallery : getSeedData().gallery,
+            offers: offers.length > 0 ? offers : getSeedData().offers,
+            enquiries: enquiries.length > 0 ? enquiries : getSeedData().enquiries,
+            testimonials: testimonials.length > 0 ? testimonials : getSeedData().testimonials,
+            settings: settingsDoc || getSeedData().settings,
+            analytics: analyticsDoc || getSeedData().analytics,
+            auditLogs: auditLogs.length > 0 ? auditLogs : getSeedData().auditLogs,
+        };
+
+        // Sync local db.json
+        writeDb(result);
+        return result;
+    } catch (err) {
+        console.warn('[MongoDB Atlas] Failed to connect to Atlas, using local database:', err.message);
+        return readDb();
+    }
+}
+
 // Read database from file, auto-seeding if file does not exist
 export function readDb() {
     try {
@@ -172,7 +247,7 @@ export function readDb() {
     }
 }
 
-// Write database to file atomically
+// Write database to file atomically & sync to MongoDB Atlas
 export function writeDb(data) {
     try {
         if (!fs.existsSync(DB_DIR)) {
@@ -182,6 +257,35 @@ export function writeDb(data) {
         const tempPath = `${DB_PATH}.tmp`;
         fs.writeFileSync(tempPath, JSON.stringify(data, null, 2), 'utf-8');
         fs.renameSync(tempPath, DB_PATH);
+
+        // Async background sync to MongoDB Atlas
+        getDatabase()
+            .then(async (db) => {
+                if (data.products) {
+                    for (const p of data.products) {
+                        const { _id, ...pData } = p;
+                        await db.collection('products').updateOne({ id: p.id }, { $set: pData }, { upsert: true });
+                    }
+                }
+                if (data.settings) {
+                    const { _id, ...sData } = data.settings;
+                    await db.collection('settings').updateOne({ _id: 'boutique_settings' }, { $set: sData }, { upsert: true });
+                }
+                if (data.testimonials) {
+                    for (const t of data.testimonials) {
+                        const { _id, ...tData } = t;
+                        await db.collection('testimonials').updateOne({ id: t.id }, { $set: tData }, { upsert: true });
+                    }
+                }
+                if (data.enquiries) {
+                    for (const e of data.enquiries) {
+                        const { _id, ...eData } = e;
+                        await db.collection('enquiries').updateOne({ id: e.id }, { $set: eData }, { upsert: true });
+                    }
+                }
+            })
+            .catch((e) => console.warn('[MongoDB Sync] Warning:', e.message));
+
         return true;
     } catch (err) {
         console.error('Error writing database file:', err);
@@ -210,3 +314,4 @@ export function addAuditLog(action, details, user = 'Admin') {
         console.error('Failed to log audit event:', e);
     }
 }
+
