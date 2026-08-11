@@ -88,13 +88,13 @@ export default function ProductDetailPage({ params }) {
     };
 
     return (
-        <div className="pt-6 sm:pt-8 pb-16 bg-boutique-bg min-h-screen">
+        <div className="pt-28 pb-24 bg-boutique-bg min-h-screen">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
                 {/* Breadcrumb Navigation */}
                 <div className="flex items-center space-x-2 text-xs text-boutique-taupe">
                     <Link href="/" className="hover:text-boutique-rose transition-colors">
@@ -116,7 +116,7 @@ export default function ProductDetailPage({ params }) {
                 </div>
 
                 {/* Product Grid Layout */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
                     {/* Gallery Section Left */}
                     <div className="lg:col-span-7">
                         <ProductGallery images={images} productName={name} instagramReel={product.instagramReel} />
@@ -125,13 +125,16 @@ export default function ProductDetailPage({ params }) {
                     {/* Product Details Section Right */}
                     <div className="lg:col-span-5 space-y-6">
                         <div className="space-y-2">
-                            {discountPercentage > 0 && (
-                                <div className="flex items-center space-x-2">
-                                    <span className="bg-boutique-rose text-white text-xs font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow-xs">
-                                        {discountPercentage}% OFF FESTIVE SPECIAL
+                            <div className="flex items-center space-x-2">
+                                <span className="bg-boutique-blush/60 text-boutique-rose text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                                    CHAPTER {chapterNumber} • {chapterTitle}
+                                </span>
+                                {discountPercentage > 0 && (
+                                    <span className="bg-boutique-rose text-white text-xs font-bold px-2.5 py-0.5 rounded-full uppercase">
+                                        {discountPercentage}% OFF
                                     </span>
-                                </div>
-                            )}
+                                )}
+                            </div>
 
                             <h1 className="font-serif-editorial text-3xl sm:text-4xl text-boutique-charcoal font-bold leading-tight">
                                 {name}

@@ -1,6 +1,6 @@
 import { MongoClient } from "mongodb";
 
-const uri = process.env.MONGODB_URI || "mongodb+srv://vanshika:vanshika@cluster0.9tovefw.mongodb.net/?appName=Cluster0";
+const uri = process.env.MONGODB_URI;
 const options = {};
 
 let client;

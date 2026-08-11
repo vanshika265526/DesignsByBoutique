@@ -239,7 +239,7 @@ export default function AdminProductsPage() {
                                         {/* Product info */}
                                         <td className="py-3 px-4 max-w-xs">
                                             <div className="flex items-center space-x-2">
-                                                <p className="font-semibold text-neutral-800">
+                                                <p className="font-semibold text-neutral-800 line-clamp-1">
                                                     {product.name}
                                                 </p>
                                                 {product.newArrival && (

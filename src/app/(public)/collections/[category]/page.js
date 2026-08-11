@@ -35,12 +35,12 @@ export default function CategoryPage({ params }) {
     const categoryProducts = getProductsByCategory(categorySlug);
 
     return (
-        <div className="pt-6 sm:pt-8 pb-20 bg-boutique-bg min-h-screen space-y-12">
+        <div className="pt-28 pb-24 bg-boutique-bg min-h-screen space-y-16">
             {/* Category Editorial Hero Banner */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="bg-boutique-bg-card rounded-3xl p-8 sm:p-12 border border-boutique-muted-border shadow-sm space-y-4 text-center">
-                    <span className="inline-block px-3.5 py-1 bg-boutique-blush/60 text-boutique-rose text-xs font-bold uppercase tracking-widest rounded-full">
-                        {chapter.title}
+                    <span className="inline-block px-3 py-1 bg-boutique-blush/60 text-boutique-rose text-xs font-semibold uppercase tracking-widest rounded-full">
+                        CHAPTER {chapter.number} • {chapter.title}
                     </span>
 
                     <h1 className="font-serif-editorial text-4xl sm:text-5xl md:text-6xl text-boutique-charcoal font-bold">

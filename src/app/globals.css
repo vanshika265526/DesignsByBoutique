@@ -103,7 +103,7 @@ body {
 
 .animate-marquee {
   display: inline-flex;
-  animation: marquee 14s linear infinite;
+  animation: marquee 25s linear infinite;
 }
 
 .animate-marquee:hover {

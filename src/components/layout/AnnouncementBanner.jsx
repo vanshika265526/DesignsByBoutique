@@ -34,28 +34,24 @@ export default function AnnouncementBanner() {
 
     return (
         <div className={`relative z-40 border-b overflow-hidden text-xs py-2 px-4 shadow-sm transition-all duration-300 ${activeBgClass}`}>
-            <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
+            <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
                 {/* Ticker Content Wrapper */}
                 <div className="flex-1 overflow-hidden">
-                    <div className="flex items-center space-x-12 animate-marquee whitespace-nowrap">
-                        {[1, 2, 3, 4].map((i) => (
-                            <div key={i} className="inline-flex items-center space-x-3 flex-shrink-0">
-                                <span className="inline-flex items-center space-x-1.5 font-medium tracking-wide">
-                                    <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-pulse flex-shrink-0" />
-                                    <span>{banner.message}</span>
-                                </span>
+                    <div className="flex items-center space-x-3 animate-marquee whitespace-nowrap">
+                        <span className="inline-flex items-center space-x-1 font-semibold tracking-wide">
+                            <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-pulse flex-shrink-0" />
+                            <span>{banner.message}</span>
+                        </span>
 
-                                {banner.linkUrl && (
-                                    <Link
-                                        href={banner.linkUrl}
-                                        className="inline-flex items-center space-x-1 font-bold underline underline-offset-4 hover:text-white transition-colors uppercase tracking-wider text-[11px] ml-2"
-                                    >
-                                        <span>{banner.linkText || "Learn More"}</span>
-                                        <ArrowRight className="w-3 h-3" />
-                                    </Link>
-                                )}
-                            </div>
-                        ))}
+                        {banner.linkUrl && (
+                            <Link
+                                href={banner.linkUrl}
+                                className="inline-flex items-center space-x-1 font-bold underline underline-offset-4 hover:text-white transition-colors uppercase tracking-wider text-[11px] ml-3"
+                            >
+                                <span>{banner.linkText || "Learn More"}</span>
+                                <ArrowRight className="w-3 h-3" />
+                            </Link>
+                        )}
                     </div>
                 </div>
 

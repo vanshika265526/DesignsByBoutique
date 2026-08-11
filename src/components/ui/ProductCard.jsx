@@ -24,8 +24,8 @@ export default function ProductCard({ product }) {
 
     return (
         <div className="group bg-boutique-bg-card rounded-2xl overflow-hidden border border-boutique-muted-border/60 hover:shadow-xl transition-all duration-500 flex flex-col justify-between">
-            {/* Product Image Container (Clickable) */}
-            <Link href={`/product/${slug}`} className="block relative aspect-[3/4] overflow-hidden bg-neutral-100 cursor-pointer">
+            {/* Product Image Container */}
+            <div className="relative aspect-[3/4] overflow-hidden bg-neutral-100">
                 <Image
                     src={mainImage}
                     alt={`${name} — ${category} by Designs by Nisha New Delhi`}
@@ -34,15 +34,20 @@ export default function ProductCard({ product }) {
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
 
-                {/* Discount Badge Overlay */}
-                <div className="absolute top-3 right-3 flex items-center justify-end pointer-events-none">
+                {/* Chapter & Discount Badge Overlay */}
+                <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
+                    {chapterTitle && (
+                        <span className="bg-white/88 backdrop-blur-md text-boutique-rose text-[10px] uppercase font-medium tracking-wider px-2.5 py-1 rounded-full border border-boutique-rose/10">
+                            {chapterTitle}
+                        </span>
+                    )}
                     {discountPercentage > 0 && (
-                        <span className="bg-boutique-rose text-white text-[11px] font-semibold tracking-wider px-2.5 py-1 rounded-full shadow-sm">
+                        <span className="bg-boutique-rose text-white text-[11px] font-semibold tracking-wider px-2.5 py-1 rounded-full shadow-sm ml-auto">
                             {discountPercentage}% OFF
                         </span>
                     )}
                 </div>
-            </Link>
+            </div>
 
             {/* Content Details */}
             <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
@@ -50,7 +55,7 @@ export default function ProductCard({ product }) {
                     <span className="text-[11px] uppercase tracking-widest text-boutique-gold font-medium">
                         {category}
                     </span>
-                    <h3 className="font-serif-editorial text-xl text-boutique-charcoal group-hover:text-boutique-rose transition-colors mt-0.5 font-bold leading-tight">
+                    <h3 className="font-serif-editorial text-xl text-boutique-charcoal group-hover:text-boutique-rose transition-colors line-clamp-1 mt-0.5">
                         <Link href={`/product/${slug}`}>{name}</Link>
                     </h3>
                 </div>
