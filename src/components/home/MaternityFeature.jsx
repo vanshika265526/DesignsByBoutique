@@ -15,7 +15,7 @@ export default function MaternityFeature() {
                     {/* Feature Image */}
                     <div className="lg:col-span-6 order-2 lg:order-1 relative aspect-[4/5] rounded-3xl overflow-hidden shadow-xl border border-boutique-muted-border">
                         <Image
-                            src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop"
+                            src="/images/maternity/gown-1.png"
                             alt="Designs by Nisha Powder Pink Maternity Gown New Delhi"
                             fill
                             sizes="(max-width: 1024px) 100vw, 50vw"

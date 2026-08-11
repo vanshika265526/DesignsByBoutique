@@ -8,15 +8,6 @@ import { MessageCircle, Instagram, Menu, X, ChevronDown, Sparkles } from "lucide
 import { boutiqueConfig, buildWhatsAppLink } from "@/config/boutique";
 import { initialCategories } from "@/data/products";
 
-// Category emoji tags for visual richness
-const categoryEmoji = {
-    "suits-anarkalis": "✨",
-    "bridal-lehengas": "👰",
-    "maternity-gowns": "🌸",
-    "baby-ethnic-wear": "🎀",
-    "haldi-mehndi": "💛",
-    "festive-sarees": "🪷",
-};
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
@@ -68,10 +59,10 @@ export default function Navbar() {
                         <Image
                             src="/images/logo.png"
                             alt="Designs by Nisha Boutique New Delhi"
-                            width={200}
-                            height={90}
+                            width={220}
+                            height={110}
                             priority
-                            className="h-14 sm:h-16 w-auto object-contain transition-all duration-300 group-hover:opacity-75"
+                            className="h-14 sm:h-20 w-auto object-contain mix-blend-multiply transition-all duration-300 group-hover:scale-105"
                         />
                     </Link>
 
@@ -152,7 +143,7 @@ export default function Navbar() {
                                                     </div>
                                                     <div className="min-w-0">
                                                         <p className="text-xs font-bold text-boutique-charcoal group-hover:text-boutique-rose transition-colors line-clamp-1">
-                                                            {categoryEmoji[cat.id] || "✦"} {cat.name}
+                                                            {cat.name}
                                                         </p>
                                                         <p className="text-[10px] text-neutral-400 line-clamp-1 mt-0.5">
                                                             {cat.description}
@@ -285,7 +276,7 @@ export default function Navbar() {
                                             <Image src={cat.image} alt={cat.name} fill className="object-cover" sizes="32px" />
                                         </div>
                                         <span className="text-sm text-boutique-charcoal font-medium">
-                                            {categoryEmoji[cat.id] || "✦"} {cat.name}
+                                            {cat.name}
                                         </span>
                                     </Link>
                                 ))}

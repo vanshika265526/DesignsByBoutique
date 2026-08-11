@@ -31,7 +31,7 @@ export const boutiqueConfig = {
 
     announcementBanner: {
         enabled: true,
-        message: "✨ Festive Season Special: Enjoy 15% off bespoke Bridal & Festive orders with code BRIDAL2026! ✨",
+        message: "Festive Season Special: Enjoy 15% off bespoke Bridal & Festive orders with code BRIDAL2026!",
         linkText: "Explore Bridal",
         linkUrl: "/collections/bridal-lehengas",
         bgType: "rose",
@@ -106,7 +106,7 @@ export const boutiqueConfig = {
             tagline: "Graceful silhouettes for one of life's most divine transitions.",
             description:
                 "Breathable silk maternity gowns, photo-shoot ready draped silhouettes, and adaptable occasion wear crafted with soft lining and maximum comfort.",
-            image: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop",
+            image: "/images/maternity/gown-1.png",
             badge: "Chapter 04",
         },
         {

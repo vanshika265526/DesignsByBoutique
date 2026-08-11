@@ -354,7 +354,7 @@ export default function AdminAnalyticsPage() {
 
                     <div className="pt-4 border-t border-neutral-100 bg-neutral-50 p-4 rounded-xl">
                         <p className="text-xs text-neutral-600 font-medium">
-                            💡 <strong>Insights Note:</strong> Bridal Lehengas and Suits & Anarkalis constitute over 70% of total customer inquiries. High opportunity to feature new launches in these categories.
+                            <strong>Insights Note:</strong> Bridal Lehengas and Suits & Anarkalis constitute over 70% of total customer inquiries. High opportunity to feature new launches in these categories.
                         </p>
                     </div>
                 </div>

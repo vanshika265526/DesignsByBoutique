@@ -181,10 +181,10 @@ export default function AdminGalleryPage() {
                                     className="w-full px-3 py-2 bg-neutral-50 border border-neutral-200 rounded-xl"
                                 >
                                     <option value="Bridal">Bridal</option>
-                                    <option value="Festive">Festive</option>
+                                    <option value="Fashion">Fashion</option>
                                     <option value="Maternity">Maternity</option>
                                     <option value="Baby">Baby</option>
-                                    <option value="Suits">Suits</option>
+                                    <option value="Boutique">Boutique</option>
                                 </select>
                             </div>
 

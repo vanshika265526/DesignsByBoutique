@@ -1,13 +1,13 @@
 import { MongoClient } from "mongodb";
 
-const uri = process.env.MONGODB_URI;
+const uri = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/designs_by_nisha";
 const options = {};
 
 let client;
 let clientPromise;
 
 if (!process.env.MONGODB_URI) {
-    console.warn("MONGODB_URI is not set in environment variables. Falling back to provided Atlas URI.");
+    console.warn("MONGODB_URI is not set in environment variables. Using fallback connection string.");
 }
 
 if (process.env.NODE_ENV === "development") {

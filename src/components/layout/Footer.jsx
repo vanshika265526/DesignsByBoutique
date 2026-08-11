@@ -10,17 +10,16 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-14">
                     {/* Column 1: Brand Logo + Philosophy */}
                     <div className="md:col-span-1 space-y-4">
-                        <Link href="/" aria-label="Designs by Nisha Boutique — Home">
-                            <Image
-                                src="/images/logo.png"
-                                alt="Designs by Nisha Boutique New Delhi"
-                                width={180}
-                                height={80}
-                                className="w-40 h-auto object-contain"
-                                style={{
-                                    filter: "brightness(0) invert(1) opacity(0.9)",
-                                }}
-                            />
+                        <Link href="/" aria-label="Designs by Nisha Boutique — Home" className="inline-block group">
+                            <div className="bg-white/95 p-3 rounded-2xl border border-white/20 shadow-md inline-block transition-transform duration-300 group-hover:scale-105">
+                                <Image
+                                    src="/images/logo.png"
+                                    alt="Designs by Nisha Boutique New Delhi"
+                                    width={200}
+                                    height={100}
+                                    className="h-16 w-auto object-contain mix-blend-multiply"
+                                />
+                            </div>
                         </Link>
                         <p className="text-sm text-neutral-300 leading-relaxed italic">
                             &ldquo;{boutiqueConfig.tagline}&rdquo;

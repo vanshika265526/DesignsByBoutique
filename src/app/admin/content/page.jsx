@@ -288,7 +288,7 @@ export default function AdminContentPage() {
                                         },
                                     })
                                 }
-                                placeholder="e.g. ✨ Festive Season Special: Enjoy 15% off bespoke orders! Use Code: BRIDAL2026 ✨"
+                                placeholder="e.g. Festive Season Special: Enjoy 15% off bespoke orders! Use Code: BRIDAL2026"
                                 className="w-full px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-xs focus:outline-none focus:border-boutique-rose font-medium"
                             />
                         </div>

@@ -249,7 +249,7 @@ export default function AdminProductsPage() {
                                                 )}
                                                 {product.instagramReel && (
                                                     <span className="text-pink-600 font-mono text-[10px] font-semibold" title="Instagram Reel attached">
-                                                        📹 Reel
+                                                        Reel
                                                     </span>
                                                 )}
                                             </div>
