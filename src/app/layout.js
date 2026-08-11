@@ -1,0 +1,87 @@
+import "./globals.css";
+import { boutiqueConfig } from "@/config/boutique";
+
+export const metadata = {
+    metadataBase: new URL(boutiqueConfig.seo.siteUrl),
+    title: {
+        default: boutiqueConfig.seo.defaultTitle,
+        template: boutiqueConfig.seo.titleTemplate,
+    },
+    description: boutiqueConfig.seo.description,
+    keywords: boutiqueConfig.seo.keywords,
+    openGraph: {
+        title: boutiqueConfig.seo.defaultTitle,
+        description: boutiqueConfig.seo.description,
+        url: boutiqueConfig.seo.siteUrl,
+        siteName: boutiqueConfig.name,
+        images: [
+            {
+                url: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop",
+                width: 1200,
+                height: 630,
+                alt: "Designs by Nisha Luxury Boutique New Delhi",
+            },
+        ],
+        locale: "en_IN",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: boutiqueConfig.seo.defaultTitle,
+        description: boutiqueConfig.seo.description,
+        images: ["https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop"],
+    },
+    verification: {
+        google: boutiqueConfig.seo.googleSiteVerification,
+    },
+    alternates: {
+        canonical: boutiqueConfig.seo.siteUrl,
+    },
+};
+
+export default function RootLayout({ children }) {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": ["ClothingStore", "LocalBusiness"],
+        name: boutiqueConfig.name,
+        image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop",
+        "@id": boutiqueConfig.seo.siteUrl,
+        url: boutiqueConfig.seo.siteUrl,
+        telephone: boutiqueConfig.contact.phoneDisplay,
+        priceRange: "₹₹₹",
+        address: {
+            "@type": "PostalAddress",
+            streetAddress: "Defence Colony / South Extension",
+            addressLocality: "New Delhi",
+            addressRegion: "Delhi",
+            postalCode: "110024",
+            addressCountry: "IN",
+        },
+        geo: {
+            "@type": "GeoCoordinates",
+            latitude: 28.5704,
+            longitude: 77.2285,
+        },
+        openingHoursSpecification: {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            opens: "10:30",
+            closes: "19:30",
+        },
+        sameAs: [boutiqueConfig.instagram.url],
+    };
+
+    return (
+        <html lang="en" className="scroll-smooth">
+            <head>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                />
+            </head>
+            <body className="min-h-screen flex flex-col bg-boutique-bg text-boutique-charcoal antialiased">
+                {children}
+            </body>
+        </html>
+    );
+}

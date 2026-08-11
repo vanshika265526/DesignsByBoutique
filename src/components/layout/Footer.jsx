@@ -1,0 +1,151 @@
+import Link from "next/link";
+import Image from "next/image";
+import { MessageCircle, Instagram, MapPin, Phone, Mail, Heart } from "lucide-react";
+import { boutiqueConfig, buildWhatsAppLink } from "@/config/boutique";
+
+export default function Footer() {
+    return (
+        <footer className="bg-boutique-charcoal text-white pt-16 pb-12 border-t border-boutique-gold/20">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-14">
+                    {/* Column 1: Brand Logo + Philosophy */}
+                    <div className="md:col-span-1 space-y-4">
+                        <Link href="/" aria-label="Designs by Nisha Boutique — Home">
+                            <Image
+                                src="/images/logo.png"
+                                alt="Designs by Nisha Boutique New Delhi"
+                                width={180}
+                                height={80}
+                                className="w-40 h-auto object-contain"
+                                style={{
+                                    filter: "brightness(0) invert(1) opacity(0.9)",
+                                }}
+                            />
+                        </Link>
+                        <p className="text-sm text-neutral-300 leading-relaxed italic">
+                            &ldquo;{boutiqueConfig.tagline}&rdquo;
+                        </p>
+                        <p className="text-xs text-neutral-400 leading-relaxed">
+                            Curating luxury Indian fashion, bespoke bridal lehengas, maternity gowns, and heirloom baby outfits for life&rsquo;s grandest celebrations.
+                        </p>
+                    </div>
+
+                    {/* Column 2: The 5 Chapters */}
+                    <div className="space-y-4">
+                        <h4 className="font-serif-editorial text-lg text-boutique-gold tracking-wide">
+                            Her Chapters
+                        </h4>
+                        <ul className="space-y-2 text-xs text-neutral-300">
+                            <li>
+                                <Link href="/collections/suits-anarkalis" className="hover:text-boutique-blush transition-colors">
+                                    01. Her Beginnings (Suits &amp; Anarkalis)
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/collections/bridal-lehengas" className="hover:text-boutique-blush transition-colors">
+                                    02. Her Forever (Bridal Lehengas)
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/collections/haldi-mehendi" className="hover:text-boutique-blush transition-colors">
+                                    03. Her New Chapter (Haldi &amp; Mehendi)
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/collections/maternity-gowns" className="hover:text-boutique-blush transition-colors">
+                                    04. Her Motherhood (Maternity Gowns)
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/collections/baby-clothes" className="hover:text-boutique-blush transition-colors">
+                                    05. Her Little One (Baby Clothes)
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+
+                    {/* Column 3: Navigation Quick Links */}
+                    <div className="space-y-4">
+                        <h4 className="font-serif-editorial text-lg text-boutique-gold tracking-wide">
+                            Boutique Experience
+                        </h4>
+                        <ul className="space-y-2 text-xs text-neutral-300">
+                            <li>
+                                <Link href="/our-story" className="hover:text-boutique-blush transition-colors">
+                                    Our Atelier &amp; Story
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/gallery" className="hover:text-boutique-blush transition-colors">
+                                    Lookbook &amp; Editorial Gallery
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/collections" className="hover:text-boutique-blush transition-colors">
+                                    Browse All Collections
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/contact" className="hover:text-boutique-blush transition-colors">
+                                    Visit New Delhi Studio
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+
+                    {/* Column 4: Contact & Social */}
+                    <div className="space-y-4">
+                        <h4 className="font-serif-editorial text-lg text-boutique-gold tracking-wide">
+                            New Delhi Studio
+                        </h4>
+                        <div className="space-y-3 text-xs text-neutral-300">
+                            <p className="flex items-start space-x-2">
+                                <MapPin className="w-4 h-4 text-boutique-gold flex-shrink-0 mt-0.5" />
+                                <span>{boutiqueConfig.fullAddress}</span>
+                            </p>
+                            <p className="flex items-center space-x-2">
+                                <Phone className="w-4 h-4 text-boutique-gold flex-shrink-0" />
+                                <span>{boutiqueConfig.contact.phoneDisplay}</span>
+                            </p>
+                            <p className="flex items-center space-x-2">
+                                <Mail className="w-4 h-4 text-boutique-gold flex-shrink-0" />
+                                <span>{boutiqueConfig.contact.email}</span>
+                            </p>
+                        </div>
+
+                        <div className="pt-2 flex items-center space-x-3">
+                            <a
+                                href={boutiqueConfig.instagram.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="p-2 bg-neutral-800 hover:bg-boutique-rose rounded-full text-white transition-colors"
+                                aria-label="Instagram"
+                            >
+                                <Instagram className="w-4 h-4" />
+                            </a>
+                            <a
+                                href={buildWhatsAppLink()}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="p-2 bg-emerald-600 hover:bg-emerald-700 rounded-full text-white transition-colors"
+                                aria-label="WhatsApp"
+                            >
+                                <MessageCircle className="w-4 h-4" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Divider */}
+                <div className="border-t border-neutral-800 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-neutral-400 space-y-4 md:space-y-0">
+                    <p>© 2026 Designs by Nisha. All rights reserved.</p>
+                    <p className="flex items-center space-x-1 italic text-neutral-400">
+                        <span>Designed with</span>
+                        <Heart className="w-3.5 h-3.5 text-boutique-rose fill-boutique-rose mx-1" />
+                        <span>for every chapter of her story.</span>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    );
+}

@@ -1,0 +1,46 @@
+﻿
+> designs-by-nisha@1.0.0 build
+> next build
+
+  Γû▓ Next.js 14.2.15
+
+   Creating an optimized production build ...
+ Γ£ô Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/25) ...
+   Generating static pages (6/25) 
+   Generating static pages (12/25) 
+   Generating static pages (18/25) 
+ Γ£ô Generating static pages (25/25)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                           Size     First Load JS
+Γöî Γùï /                                                 6.38 kB         105 kB
+Γö£ Γùï /_not-found                                       873 B          88.1 kB
+Γö£ Γùï /collections                                      191 B          99.2 kB
+Γö£ ΓùÅ /collections/[category]                           191 B          99.2 kB
+Γö£   Γö£ /collections/suits-anarkalis
+Γö£   Γö£ /collections/bridal-lehengas
+Γö£   Γö£ /collections/haldi-mehendi
+Γö£   Γöö [+2 more paths]
+Γö£ Γùï /contact                                          6.46 kB        93.6 kB
+Γö£ Γùï /gallery                                          6.03 kB        98.3 kB
+Γö£ Γùï /our-story                                        191 B          99.2 kB
+Γö£ ΓùÅ /product/[slug]                                   1.14 kB         100 kB
+Γö£   Γö£ /product/gulzar-chanderi-anarkali-set
+Γö£   Γö£ /product/noor-zardozi-straight-suit
+Γö£   Γö£ /product/rose-royal-embroidered-bridal-lehenga
+Γö£   Γöö [+7 more paths]
+Γö£ Γùï /robots.txt                                       0 B                0 B
+Γöö Γùï /sitemap.xml                                      0 B                0 B
++ First Load JS shared by all                         87.2 kB
+  Γö£ chunks/117-fff2b879f1e9f8f4.js                    31.6 kB
+  Γö£ chunks/fd9d1056-4a43c3ba43a0759a.js               53.6 kB
+  Γöö other shared chunks (total)                       1.95 kB
+
+
+Γùï  (Static)  prerendered as static content
+ΓùÅ  (SSG)     prerendered as static HTML (uses getStaticProps)
+
