@@ -20,6 +20,8 @@ export default function ProductCard({ product }) {
         productName: name,
         productCategory: category,
         price: salePrice,
+        productImage: mainImage,
+        productSlug: slug,
     });
 
     return (

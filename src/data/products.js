@@ -32,7 +32,7 @@ export const initialCategories = [
         slug: "haldi-mehendi",
         chapter: "her-new-chapter",
         description: "Vibrant yellow kesar lehengas & emerald green shararas.",
-        image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1200&auto=format&fit=crop",
+        image: "/images/chapter-03.jpg",
         count: 15,
         published: true,
         order: 3
@@ -54,7 +54,7 @@ export const initialCategories = [
         slug: "baby-clothes",
         chapter: "her-little-one",
         description: "Skin-friendly heirloom baby lehengas & festive kurti sets.",
-        image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=1200&auto=format&fit=crop",
+        image: "/images/chapter-05.jpg",
         count: 16,
         published: true,
         order: 5
@@ -90,7 +90,7 @@ export const initialChapters = [
         description: "Haldi yellow lehengas, emerald Mehendi shararas, and post-wedding dinner sarees.",
         categorySlug: "haldi-mehendi",
         categoryName: "Haldi & Mehendi",
-        image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1200&auto=format&fit=crop"
+        image: "/images/chapter-03.jpg"
     },
     {
         id: "her-motherhood",
@@ -110,7 +110,7 @@ export const initialChapters = [
         description: "Zero-scratch lined miniature baby lehengas, Annaprashan outfits, and festive clothes.",
         categorySlug: "baby-clothes",
         categoryName: "Baby Clothes",
-        image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=1200&auto=format&fit=crop"
+        image: "/images/chapter-05.jpg"
     }
 ];
 

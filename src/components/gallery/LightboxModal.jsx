@@ -17,7 +17,8 @@ export default function LightboxModal({ item, onClose }) {
     if (!item) return null;
 
     const whatsappUrl = buildWhatsAppLink({
-        customMessage: `Hi Designs by Nisha! I saw the "${item.title}" (${item.category}) in your lookbook gallery and would love to know more.`,
+        customMessage: `Hi Designs by Nisha! I saw "${item.title}" (${item.category}) in your lookbook gallery and would love to know more.`,
+        productImage: item.image,
     });
 
     return (

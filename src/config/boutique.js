@@ -94,7 +94,7 @@ export const boutiqueConfig = {
             tagline: "Fashion for grand celebrations beyond the wedding day.",
             description:
                 "Sophisticated shararas, draped saree gowns, and embellished festive silhouettes for newlyweds and women hosting life's milestone dinners.",
-            image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1200&auto=format&fit=crop",
+            image: "/images/chapter-03.jpg",
             badge: "Chapter 03",
         },
         {
@@ -118,7 +118,7 @@ export const boutiqueConfig = {
             tagline: "Tiny heirloom outfits for the newest chapter of her story.",
             description:
                 "Miniature designer lehengas, soft cotton kurti sets, and ceremony outfits tailored with skin-friendly fabrics for newborns and infants.",
-            image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=1200&auto=format&fit=crop",
+            image: "/images/chapter-05.jpg",
             badge: "Chapter 05",
         },
     ],
@@ -127,15 +127,34 @@ export const boutiqueConfig = {
 /**
  * Generate a direct WhatsApp deep-link with pre-filled enquiry message
  */
-export function buildWhatsAppLink({ productName, productCategory, price, customMessage } = {}) {
+export function buildWhatsAppLink({ productName, productCategory, price, productImage, productSlug, customMessage } = {}) {
     const phone = boutiqueConfig.whatsapp.number;
     let text = boutiqueConfig.whatsapp.defaultMessage;
 
     if (productName) {
-        text = `Hi Designs by Nisha! I'm interested in the "${productName}"${productCategory ? ` (${productCategory})` : ""
-            }${price ? ` listed at ₹${price.toLocaleString("en-IN")}` : ""}. Could you please share more details, fabric samples, and customization options?`;
+        let imageRef = "";
+        if (productImage) {
+            const fullImageUrl = productImage.startsWith("http")
+                ? productImage
+                : `${boutiqueConfig.seo.siteUrl}${productImage}`;
+            imageRef = `\n\nDesign Image: ${fullImageUrl}`;
+        }
+
+        let linkRef = "";
+        if (productSlug) {
+            linkRef = `\nDesign Link: ${boutiqueConfig.seo.siteUrl}/product/${productSlug}`;
+        }
+
+        text = `Hi Designs by Nisha! I'm inquiring about "${productName}"${productCategory ? ` (${productCategory})` : ""}${price ? ` listed at ₹${price.toLocaleString("en-IN")}` : ""}.${imageRef}${linkRef}\n\nCould you please share details, fabric samples, and customization options?`;
     } else if (customMessage) {
-        text = customMessage;
+        if (productImage) {
+            const fullImageUrl = productImage.startsWith("http")
+                ? productImage
+                : `${boutiqueConfig.seo.siteUrl}${productImage}`;
+            text = `${customMessage}\n\nDesign Image: ${fullImageUrl}`;
+        } else {
+            text = customMessage;
+        }
     }
 
     return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;

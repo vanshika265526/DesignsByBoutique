@@ -56,6 +56,8 @@ export default function ProductDetailPage({ params }) {
         productName: name,
         productCategory: category,
         price: salePrice,
+        productImage: images && images.length > 0 ? images[0] : null,
+        productSlug: product.slug,
     });
 
     const relatedProducts = getRelatedProducts(product.slug, 4);
