@@ -40,6 +40,8 @@ export default function AddProductPage() {
         shortDescription: "",
         image: "/images/hero-bridal.png",
         images: ["/images/hero-bridal.png"],
+        instagramReel: "",
+        newArrival: true,
         featured: false,
         status: "published",
         details: ["Handcrafted threadwork embroidery", "Custom sizing available upon enquiry"],
@@ -302,6 +304,22 @@ export default function AddProductPage() {
                                     className="w-full px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-xs focus:outline-none focus:border-boutique-rose"
                                 />
                             </div>
+
+                            <div>
+                                <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1 font-mono">
+                                    Instagram Reel Link (Optional)
+                                </label>
+                                <input
+                                    type="text"
+                                    value={formData.instagramReel}
+                                    onChange={(e) => setFormData({ ...formData, instagramReel: e.target.value })}
+                                    placeholder="https://www.instagram.com/reel/C..."
+                                    className="w-full px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-xs font-mono focus:outline-none focus:border-boutique-rose"
+                                />
+                                <p className="text-[10px] text-neutral-400 mt-1">
+                                    Include a video reel link to showcase high-definition video of the outfit on public detail pages.
+                                </p>
+                            </div>
                         </div>
                     </div>
 
@@ -467,6 +485,19 @@ export default function AddProductPage() {
                         </h3>
 
                         <div className="space-y-3">
+                            <label className="flex items-center justify-between p-3 bg-neutral-50 rounded-xl border border-neutral-200 cursor-pointer">
+                                <div>
+                                    <p className="text-xs font-semibold text-neutral-800">New Arrival Badge</p>
+                                    <p className="text-[10px] text-neutral-500">Show 'New Arrival' tag in collection catalog</p>
+                                </div>
+                                <input
+                                    type="checkbox"
+                                    checked={formData.newArrival}
+                                    onChange={(e) => setFormData({ ...formData, newArrival: e.target.checked })}
+                                    className="w-4 h-4 text-boutique-rose rounded focus:ring-boutique-rose"
+                                />
+                            </label>
+
                             <label className="flex items-center justify-between p-3 bg-neutral-50 rounded-xl border border-neutral-200 cursor-pointer">
                                 <div>
                                     <p className="text-xs font-semibold text-neutral-800">Featured Outfit</p>

@@ -238,9 +238,21 @@ export default function AdminProductsPage() {
 
                                         {/* Product info */}
                                         <td className="py-3 px-4 max-w-xs">
-                                            <p className="font-semibold text-neutral-800 line-clamp-1">
-                                                {product.name}
-                                            </p>
+                                            <div className="flex items-center space-x-2">
+                                                <p className="font-semibold text-neutral-800 line-clamp-1">
+                                                    {product.name}
+                                                </p>
+                                                {product.newArrival && (
+                                                    <span className="bg-amber-100 text-amber-800 text-[9px] font-mono px-1.5 py-0.2 rounded font-bold uppercase border border-amber-300">
+                                                        New
+                                                    </span>
+                                                )}
+                                                {product.instagramReel && (
+                                                    <span className="text-pink-600 font-mono text-[10px] font-semibold" title="Instagram Reel attached">
+                                                        📹 Reel
+                                                    </span>
+                                                )}
+                                            </div>
                                             <p className="text-[10px] text-neutral-400 font-mono">
                                                 /{product.slug}
                                             </p>
@@ -276,8 +288,8 @@ export default function AdminProductsPage() {
                                                 onClick={() => toggleFeatured(product)}
                                                 disabled={updatingId === product.id}
                                                 className={`p-1.5 rounded-lg border transition-all ${product.featured
-                                                        ? "bg-amber-50 text-amber-600 border-amber-300 hover:bg-amber-100"
-                                                        : "bg-neutral-50 text-neutral-400 border-neutral-200 hover:text-neutral-600"
+                                                    ? "bg-amber-50 text-amber-600 border-amber-300 hover:bg-amber-100"
+                                                    : "bg-neutral-50 text-neutral-400 border-neutral-200 hover:text-neutral-600"
                                                     }`}
                                                 title="Toggle Homepage Featured Grid"
                                             >
@@ -291,8 +303,8 @@ export default function AdminProductsPage() {
                                                 onClick={() => toggleStatus(product)}
                                                 disabled={updatingId === product.id}
                                                 className={`px-2.5 py-1 rounded-full text-[10px] font-mono font-medium uppercase border transition-all ${product.status === "published" || !product.status
-                                                        ? "bg-emerald-50 text-emerald-700 border-emerald-300 hover:bg-emerald-100"
-                                                        : "bg-neutral-100 text-neutral-600 border-neutral-300 hover:bg-neutral-200"
+                                                    ? "bg-emerald-50 text-emerald-700 border-emerald-300 hover:bg-emerald-100"
+                                                    : "bg-neutral-100 text-neutral-600 border-neutral-300 hover:bg-neutral-200"
                                                     }`}
                                             >
                                                 {product.status || "published"}

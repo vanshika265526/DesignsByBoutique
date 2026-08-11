@@ -89,80 +89,89 @@ export default function Navbar() {
                             {pathname === "/" && <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-boutique-rose rounded-full" />}
                         </Link>
 
-                        {/* Collections Dropdown */}
+                        {/* Collections Mega Dropdown */}
                         <div
-                            className="relative"
+                            className="relative py-2"
                             ref={dropdownRef}
                             onMouseEnter={() => setCollectionsOpen(true)}
                             onMouseLeave={() => setCollectionsOpen(false)}
                         >
-                            <button
-                                onClick={() => setCollectionsOpen((v) => !v)}
-                                className={`flex items-center space-x-1 text-sm tracking-wide transition-colors relative py-1 font-medium ${pathname.startsWith("/collections")
+                            <Link
+                                href="/collections"
+                                onClick={() => setCollectionsOpen(false)}
+                                onFocus={() => setCollectionsOpen(true)}
+                                className={`inline-flex items-center space-x-1 text-sm tracking-wide transition-colors relative py-1 font-medium ${pathname.startsWith("/collections")
                                     ? "text-boutique-rose font-semibold"
                                     : "text-boutique-charcoal hover:text-boutique-rose"
                                     }`}
                             >
                                 <span>Collections</span>
                                 <ChevronDown
-                                    className={`w-3.5 h-3.5 transition-transform duration-200 ${collectionsOpen ? "rotate-180" : ""}`}
+                                    className={`w-3.5 h-3.5 transition-transform duration-200 ${collectionsOpen ? "rotate-180 text-boutique-rose" : ""}`}
                                 />
                                 {pathname.startsWith("/collections") && (
                                     <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-boutique-rose rounded-full" />
                                 )}
-                            </button>
+                            </Link>
 
-                            {/* Mega Dropdown */}
+                            {/* Invisible bridge container to prevent mouseleave gap & Mega Dropdown */}
                             {collectionsOpen && (
-                                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[520px] bg-white rounded-2xl shadow-2xl border border-neutral-200/80 overflow-hidden z-50 animate-in fade-in slide-in-from-top-2 duration-200">
-                                    {/* Dropdown Header */}
-                                    <div className="bg-gradient-to-r from-boutique-rose/10 to-boutique-blush/20 px-6 py-4 border-b border-neutral-100">
-                                        <p className="text-xs font-semibold text-boutique-rose uppercase tracking-[0.15em] flex items-center space-x-1.5">
-                                            <Sparkles className="w-3 h-3" />
-                                            <span>For Every Chapter of Her Story</span>
-                                        </p>
-                                        <p className="text-[11px] text-neutral-500 mt-0.5">Browse our bespoke collections</p>
-                                    </div>
+                                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[540px] z-50 animate-in fade-in slide-in-from-top-1 duration-150">
+                                    <div className="bg-white rounded-2xl shadow-2xl border border-neutral-200/90 overflow-hidden">
+                                        {/* Dropdown Header */}
+                                        <div className="bg-gradient-to-r from-boutique-rose/10 to-boutique-blush/20 px-6 py-3.5 border-b border-neutral-100 flex items-center justify-between">
+                                            <div>
+                                                <p className="text-xs font-semibold text-boutique-rose uppercase tracking-[0.15em] flex items-center space-x-1.5">
+                                                    <Sparkles className="w-3.5 h-3.5" />
+                                                    <span>For Every Chapter of Her Story</span>
+                                                </p>
+                                                <p className="text-[11px] text-neutral-500 mt-0.5">Explore our handcrafted couture & pret ensembles</p>
+                                            </div>
+                                            <span className="text-[10px] bg-white/80 border border-boutique-rose/20 text-boutique-rose font-mono px-2 py-0.5 rounded-full font-bold">
+                                                {initialCategories.length} Categories
+                                            </span>
+                                        </div>
 
-                                    {/* Category Grid */}
-                                    <div className="grid grid-cols-2 gap-0 p-2">
-                                        {initialCategories.map((cat) => (
+                                        {/* Category Grid */}
+                                        <div className="grid grid-cols-2 gap-1 p-3">
+                                            {initialCategories.map((cat) => (
+                                                <Link
+                                                    key={cat.id}
+                                                    href={`/collections/${cat.slug}`}
+                                                    onClick={() => setCollectionsOpen(false)}
+                                                    className="group flex items-center space-x-3 p-2.5 rounded-xl hover:bg-boutique-rose/5 transition-all border border-transparent hover:border-boutique-rose/20"
+                                                >
+                                                    <div className="w-11 h-11 rounded-xl overflow-hidden relative flex-shrink-0 border border-neutral-200 group-hover:border-boutique-rose/50 transition-colors shadow-2xs">
+                                                        <Image
+                                                            src={cat.image}
+                                                            alt={cat.name}
+                                                            fill
+                                                            className="object-cover group-hover:scale-110 transition-transform duration-500"
+                                                            sizes="44px"
+                                                        />
+                                                    </div>
+                                                    <div className="min-w-0">
+                                                        <p className="text-xs font-bold text-boutique-charcoal group-hover:text-boutique-rose transition-colors line-clamp-1">
+                                                            {categoryEmoji[cat.id] || "✦"} {cat.name}
+                                                        </p>
+                                                        <p className="text-[10px] text-neutral-400 line-clamp-1 mt-0.5">
+                                                            {cat.description}
+                                                        </p>
+                                                    </div>
+                                                </Link>
+                                            ))}
+                                        </div>
+
+                                        {/* View All Footer */}
+                                        <div className="border-t border-neutral-100 p-2.5 bg-neutral-50/50">
                                             <Link
-                                                key={cat.id}
-                                                href={`/collections/${cat.slug}`}
+                                                href="/collections"
                                                 onClick={() => setCollectionsOpen(false)}
-                                                className="group flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-boutique-rose/5 transition-all"
+                                                className="flex items-center justify-center w-full py-2.5 text-xs font-bold text-boutique-rose bg-white border border-boutique-rose/30 hover:bg-boutique-rose hover:text-white rounded-xl transition-all shadow-2xs"
                                             >
-                                                <div className="w-12 h-12 rounded-xl overflow-hidden relative flex-shrink-0 border border-neutral-200 group-hover:border-boutique-rose/40 transition-colors">
-                                                    <Image
-                                                        src={cat.image}
-                                                        alt={cat.name}
-                                                        fill
-                                                        className="object-cover group-hover:scale-110 transition-transform duration-500"
-                                                        sizes="48px"
-                                                    />
-                                                </div>
-                                                <div className="min-w-0">
-                                                    <p className="text-xs font-semibold text-boutique-charcoal group-hover:text-boutique-rose transition-colors line-clamp-1">
-                                                        {categoryEmoji[cat.id] || "✦"} {cat.name}
-                                                    </p>
-                                                    <p className="text-[10px] text-neutral-400 line-clamp-1 mt-0.5">
-                                                        {cat.description}
-                                                    </p>
-                                                </div>
+                                                View All Boutique Collections & Chapters →
                                             </Link>
-                                        ))}
-                                    </div>
-
-                                    {/* View All Footer */}
-                                    <div className="border-t border-neutral-100 p-3">
-                                        <Link
-                                            href="/collections"
-                                            onClick={() => setCollectionsOpen(false)}
-                                            className="flex items-center justify-center w-full py-2 text-xs font-semibold text-boutique-rose bg-boutique-rose/5 hover:bg-boutique-rose hover:text-white rounded-xl transition-all"
-                                        >
-                                            View All Collections →
-                                        </Link>
+                                        </div>
                                     </div>
                                 </div>
                             )}

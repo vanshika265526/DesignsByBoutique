@@ -21,6 +21,8 @@ import {
     X,
     UserCheck,
     Sparkles,
+    BarChart3,
+    FileText,
 } from "lucide-react";
 
 const navigationItems = [
@@ -28,6 +30,7 @@ const navigationItems = [
         title: "OVERVIEW",
         items: [
             { name: "Dashboard", href: "/admin", icon: LayoutDashboard },
+            { name: "Analytics Studio", href: "/admin/analytics", icon: BarChart3, badge: "Live" },
         ],
     },
     {
@@ -41,10 +44,10 @@ const navigationItems = [
     {
         title: "CONTENT & MARKETING",
         items: [
+            { name: "Content & Testimonials", href: "/admin/content", icon: FileText, badge: "New" },
             { name: "Lookbook Gallery", href: "/admin/gallery", icon: ImageIcon },
             { name: "Offers & Discounts", href: "/admin/offers", icon: Tag },
             { name: "Customer Enquiries", href: "/admin/enquiries", icon: MessageCircle, badge: "New" },
-            { name: "SEO & Metadata", href: "/admin/seo", icon: Globe },
         ],
     },
     {
