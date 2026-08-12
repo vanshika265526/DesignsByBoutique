@@ -11,7 +11,7 @@ export default function Hero() {
             {/* Background High-Fashion Editorial Imagery with Overlay */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1920&auto=format&fit=crop"
+                    src="https://assets2.andaazfashion.com/media/catalog/product/s/i/silk-deep-red-zari-embroidered-panelled-style-lehenga-llcv120562-1_1.jpg"
                     alt="Designs by Nisha Luxury Indian Bridal Fashion New Delhi"
                     fill
                     priority

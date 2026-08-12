@@ -10,7 +10,7 @@ export const initialCategories = [
         slug: "suits-anarkalis",
         chapter: "her-beginnings",
         description: "Graceful daily luxury & celebratory silk Anarkali suits.",
-        image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1200&auto=format&fit=crop",
+        image: "https://assets2.andaazfashion.com/media/catalog/product/s/i/silk-deep-red-zari-embroidered-panelled-style-lehenga-llcv120562-1_1.jpg",
         count: 24,
         published: true,
         order: 1
@@ -21,7 +21,7 @@ export const initialCategories = [
         slug: "bridal-lehengas",
         chapter: "her-forever",
         description: "Hand-embroidered zardozi bridal masterpieces for her big day.",
-        image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop",
+        image: "https://preview.redd.it/any-recommendations-for-fusion-bridal-lehengas-inspired-by-v0-wncwu7sx93re1.jpg?width=1024&format=pjpg&auto=webp&s=6199a0c5f23e63995ea5d0237e8fc61d74a39d55",
         count: 18,
         published: true,
         order: 2
@@ -32,7 +32,7 @@ export const initialCategories = [
         slug: "haldi-mehendi",
         chapter: "her-new-chapter",
         description: "Vibrant yellow kesar lehengas & emerald green shararas.",
-        image: "/images/chapter-03.jpg",
+        image: "https://assets2.andaazfashion.com/media/catalog/product/t/e/teal-green-chiffon-trouser-suit-with-zari-work-for-mehndi-lstv141798-1.jpg?tr=w-800,h-1200,c-at_max,q-70",
         count: 15,
         published: true,
         order: 3
@@ -54,7 +54,7 @@ export const initialCategories = [
         slug: "baby-clothes",
         chapter: "her-little-one",
         description: "Skin-friendly heirloom baby lehengas & festive kurti sets.",
-        image: "/images/chapter-05.jpg",
+        image: "https://assets2.andaazfashion.com/media/catalog/product/o/l/olive-green-tissue-sequins-embroidered-girl-anarkali-suit-for-party-wear-lstv145726-1_1.jpg",
         count: 16,
         published: true,
         order: 5
@@ -70,7 +70,7 @@ export const initialChapters = [
         description: "Elegance in everyday luxury, college festive days, and light family celebrations.",
         categorySlug: "suits-anarkalis",
         categoryName: "Suits & Anarkalis",
-        image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1200&auto=format&fit=crop"
+        image: "https://assets2.andaazfashion.com/media/catalog/product/s/i/silk-deep-red-zari-embroidered-panelled-style-lehenga-llcv120562-1_1.jpg"
     },
     {
         id: "her-forever",
@@ -80,7 +80,7 @@ export const initialChapters = [
         description: "Heirloom bridal lehengas, royal red velvets, and hand-worked zardozi ensembles.",
         categorySlug: "bridal-lehengas",
         categoryName: "Bridal Lehengas",
-        image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop"
+        image: "https://preview.redd.it/any-recommendations-for-fusion-bridal-lehengas-inspired-by-v0-wncwu7sx93re1.jpg?width=1024&format=pjpg&auto=webp&s=6199a0c5f23e63995ea5d0237e8fc61d74a39d55"
     },
     {
         id: "her-new-chapter",
@@ -90,7 +90,7 @@ export const initialChapters = [
         description: "Haldi yellow lehengas, emerald Mehendi shararas, and post-wedding dinner sarees.",
         categorySlug: "haldi-mehendi",
         categoryName: "Haldi & Mehendi",
-        image: "/images/chapter-03.jpg"
+        image: "https://assets2.andaazfashion.com/media/catalog/product/t/e/teal-green-chiffon-trouser-suit-with-zari-work-for-mehndi-lstv141798-1.jpg?tr=w-800,h-1200,c-at_max,q-70"
     },
     {
         id: "her-motherhood",
@@ -128,10 +128,12 @@ export const initialProducts = [
         discount: "20% OFF",
         featured: true,
         status: "published",
-        image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1200&auto=format&fit=crop",
+        image: "https://assets2.andaazfashion.com/media/catalog/product/s/i/silk-deep-red-zari-embroidered-panelled-style-lehenga-llcv120562-1_1.jpg",
         images: [
-            "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1200&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop",
+            "https://assets2.andaazfashion.com/media/catalog/product/s/i/silk-deep-red-zari-embroidered-panelled-style-lehenga-llcv120562-1_1.jpg",
+            "https://assets2.andaazfashion.com/media/catalog/product/r/e/resham-embroidered-georgette-burgundy-maroon-anarkali-suit-lstv01058-maroon-1_1.jpg",
+            "https://assets2.andaazfashion.com/media/catalog/product/v/e/velvet-dream-red-dupion-embroidered-anarkali-suit-1-1979_7.jpg",
+            "https://preview.redd.it/any-recommendations-for-fusion-bridal-lehengas-inspired-by-v0-wncwu7sx93re1.jpg?width=1024&format=pjpg&auto=webp&s=6199a0c5f23e63995ea5d0237e8fc61d74a39d55",
         ],
         description: "A breathtaking floor-length Chanderi silk Anarkali in soft blush rose, featuring delicate hand-worked Gota Patti borders, organza dupatta with scalloped edges, and tailored fitted churidar.",
         shortDescription: "Soft blush rose Chanderi silk Anarkali with Gota Patti embroidery.",
@@ -150,10 +152,12 @@ export const initialProducts = [
         discount: "20% OFF",
         featured: false,
         status: "published",
-        image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1200&auto=format&fit=crop",
+        image: "https://assets2.andaazfashion.com/media/catalog/product/r/e/resham-embroidered-georgette-burgundy-maroon-anarkali-suit-lstv01058-maroon-1_1.jpg",
         images: [
-            "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1200&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1200&auto=format&fit=crop",
+            "https://assets2.andaazfashion.com/media/catalog/product/r/e/resham-embroidered-georgette-burgundy-maroon-anarkali-suit-lstv01058-maroon-1_1.jpg",
+            "https://byshree.com/cdn/shop/articles/How_To_Create_A_Pinterest-worthy_Aesthetic_With_Ethnic_Outfits_32d3c966-75dd-4468-97e7-11673383e124.jpg?v=1782389027&width=1920",
+            "https://assets2.andaazfashion.com/media/catalog/product/b/l/black-velvet-embroidered-anarkali-suit-with-skirt-lstv03688-1.jpg",
+            "https://assets2.andaazfashion.com/media/catalog/product/1/9/1979-black.jpg",
         ],
         description: "Elegant pastel mint straight kurta ensemble rendered in handloom Tussar silk, detailed with fine antique gold Zardozi thread work along the neckline and sleeves.",
         shortDescription: "Pastel mint straight Tussar silk kurta set with Zardozi detailing.",
@@ -172,10 +176,12 @@ export const initialProducts = [
         discount: "20% OFF",
         featured: true,
         status: "published",
-        image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop",
+        image: "https://preview.redd.it/any-recommendations-for-fusion-bridal-lehengas-inspired-by-v0-wncwu7sx93re1.jpg?width=1024&format=pjpg&auto=webp&s=6199a0c5f23e63995ea5d0237e8fc61d74a39d55",
         images: [
-            "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1200&auto=format&fit=crop",
+            "https://preview.redd.it/any-recommendations-for-fusion-bridal-lehengas-inspired-by-v0-wncwu7sx93re1.jpg?width=1024&format=pjpg&auto=webp&s=6199a0c5f23e63995ea5d0237e8fc61d74a39d55",
+            "https://assets2.andaazfashion.com/media/catalog/product/d/e/deep-red-net-embroidered-anarkali-suit-lstv07512-1.jpg",
+            "https://assets2.andaazfashion.com/media/catalog/product/p/a/pale-pink-sequins-embroidered-floor-length-net-gown-lstv135801-1.jpg",
+            "https://assets2.andaazfashion.com/media/catalog/product/1/9/1979-blue.jpg",
         ],
         description: "An heirloom masterpiece crafted for the quintessential bride. Deep crimson silk lehenga intricately embroidered with Mughal floral motifs, dabka work, zardozi gold threadwork, and paired with double organza dupattas.",
         shortDescription: "Crimson silk heirloom bridal lehenga with Zardozi & double dupattas.",
@@ -216,10 +222,10 @@ export const initialProducts = [
         discount: "20% OFF",
         featured: true,
         status: "published",
-        image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1200&auto=format&fit=crop",
+        image: "https://assets2.andaazfashion.com/media/catalog/product/t/e/teal-green-chiffon-trouser-suit-with-zari-work-for-mehndi-lstv141798-1.jpg?tr=w-800,h-1200,c-at_max,q-70",
         images: [
+            "https://assets2.andaazfashion.com/media/catalog/product/t/e/teal-green-chiffon-trouser-suit-with-zari-work-for-mehndi-lstv141798-1.jpg?tr=w-800,h-1200,c-at_max,q-70",
             "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1200&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1200&auto=format&fit=crop",
         ],
         description: "A rich forest green georgette short kurta and dramatic tiered sharara set adorned with intricate mirror work, resham threadwork, and a sheer embroidered scalloped dupatta.",
         shortDescription: "Forest green georgette sharara set with mirror & resham threadwork.",

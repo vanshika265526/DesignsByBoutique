@@ -1,112 +1,187 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
-import { Star, Quote } from "lucide-react";
-import SectionHeading from "@/components/ui/SectionHeading";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
-const defaultTestimonials = [
+const defaultReviews = [
     {
         id: "t1",
-        author: "Meera & Rohan Kapoor",
-        city: "Defence Colony, New Delhi",
+        author: "Ananya Iyer",
+        city: "Kanpur",
         rating: 5,
-        text: "Designs by Nisha crafted my dream royal red bridal lehenga and my husband's matching Sherwani dupatta. The intricate zardozi work and personal fitting sessions at their Delhi studio were pure luxury.",
-        outfit: "Custom Velvet Bridal Lehenga",
-        avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop",
+        text: "Beautiful collection! Found so many outfits for my daughter. The kids section is amazing - great variety and super cute designs.",
+        outfit: "Kids Lehenga Set",
+        avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop",
     },
     {
         id: "t2",
-        author: "Ananya Sharma",
-        city: "South Extension, New Delhi",
+        author: "Karan Verma",
+        city: "Varanasi",
         rating: 5,
-        text: "Finding graceful maternity gowns for my pre-baby shoot felt impossible until I visited Nisha's atelier. The silk drape was featherlight and photographically breathtaking.",
-        outfit: "Rose Silk Maternity Gown",
-        avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop",
+        text: "The gown fit like a dream. Ordered two in different colors and both are fantastic. Will definitely shop here again!",
+        outfit: "Designer Evening Gown",
+        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
     },
     {
         id: "t3",
-        author: "Pooja & Vikram Malhotra",
-        city: "Vasant Vihar, New Delhi",
+        author: "Sneha Kapoor",
+        city: "New Delhi",
         rating: 5,
-        text: "We ordered matching mother-daughter outfits for our baby girl's first birthday. The skin-friendly soft lining and custom embroidery detail surpassed all our expectations.",
-        outfit: "Heirloom Baby Lehenga & Anarkali",
-        avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop",
+        text: "Got so many compliments wearing the Indo Western gown! Easy fitting and great customer support. Love Designs by Nisha!",
+        outfit: "Indo Western Gown",
+        avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200&auto=format&fit=crop",
+    },
+    {
+        id: "t4",
+        author: "Meera Mehta",
+        city: "Mumbai",
+        rating: 5,
+        text: "Ordered a party wear evening gown and I am amazed by the stitching and silk quality. The drape is elegant and photogenic.",
+        outfit: "Silk Party Wear Gown",
+        avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop",
+    },
+    {
+        id: "t5",
+        author: "Pooja Sharma",
+        city: "Gurugram",
+        rating: 5,
+        text: "Finding graceful maternity gowns felt impossible until I visited Nisha's boutique. Featherlight silk and super comfortable fit!",
+        outfit: "Rose Silk Maternity Gown",
+        avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop",
+    },
+    {
+        id: "t6",
+        author: "Rhea Singhania",
+        city: "South Extension, Delhi",
+        rating: 5,
+        text: "Custom bridal reception gown handcrafted in just 3 weeks! The zardozi work and fitting sessions were pure luxury.",
+        outfit: "Ivory Bridal Reception Gown",
+        avatar: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=200&auto=format&fit=crop",
     },
 ];
 
 export default function TestimonialsSection() {
-    const [testimonials, setTestimonials] = useState(defaultTestimonials);
+    const [reviews, setReviews] = useState(defaultReviews);
+    const scrollRef = useRef(null);
 
     useEffect(() => {
         fetch("/api/data/testimonials")
             .then((res) => res.json())
             .then((json) => {
                 if (json.success && json.data && json.data.length > 0) {
-                    setTestimonials(json.data);
+                    // Combine fetched reviews with defaults for continuous scrolling
+                    setReviews([...json.data, ...defaultReviews]);
                 }
             })
-            .catch(() => {
-                // Fallback to default client reviews
-            });
+            .catch(() => {});
     }, []);
 
+    // Duplicate array for seamless infinite marquee loop
+    const marqueeReviews = [...reviews, ...reviews];
+
+    const scrollLeft = () => {
+        if (scrollRef.current) {
+            scrollRef.current.scrollBy({ left: -350, behavior: "smooth" });
+        }
+    };
+
+    const scrollRight = () => {
+        if (scrollRef.current) {
+            scrollRef.current.scrollBy({ left: 350, behavior: "smooth" });
+        }
+    };
+
     return (
-        <section className="py-24 bg-boutique-bg-card border-y border-boutique-muted-border/50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-                <SectionHeading
-                    badge="CLIENT EXPERIENCES"
-                    title="Words from Our Patrons"
-                    subtitle="Heartfelt stories from brides, mothers, and families who trusted us with their special moments."
-                />
+        <section className="py-16 md:py-24 bg-boutique-bg-card border-y border-boutique-muted-border/40 overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+                {/* Header matching Image 2 */}
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div className="text-center sm:text-left mx-auto sm:mx-0">
+                        <h2 className="font-serif-editorial text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-boutique-charcoal uppercase">
+                            WHAT OUR CUSTOMERS SAY
+                        </h2>
+                        <div className="h-[2px] w-14 bg-gradient-to-r from-boutique-rose via-boutique-gold to-boutique-rose mx-auto sm:mx-0 my-3 rounded-full" />
+                    </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {testimonials.map((review) => (
-                        <div
-                            key={review.id}
-                            className="bg-white p-8 rounded-3xl border border-boutique-muted-border shadow-sm flex flex-col justify-between space-y-6 relative hover:shadow-md transition-shadow duration-300"
+                    {/* Manual Navigation Buttons */}
+                    <div className="hidden sm:flex items-center space-x-2">
+                        <button
+                            onClick={scrollLeft}
+                            aria-label="Previous review"
+                            className="w-9 h-9 rounded-full bg-white hover:bg-boutique-rose hover:text-white border border-boutique-muted-border flex items-center justify-center text-boutique-charcoal transition-colors duration-200 shadow-xs"
                         >
-                            <Quote className="w-10 h-10 text-boutique-rose/20 absolute top-6 right-6" />
+                            <ChevronLeft className="w-5 h-5" />
+                        </button>
+                        <button
+                            onClick={scrollRight}
+                            aria-label="Next review"
+                            className="w-9 h-9 rounded-full bg-white hover:bg-boutique-rose hover:text-white border border-boutique-muted-border flex items-center justify-center text-boutique-charcoal transition-colors duration-200 shadow-xs"
+                        >
+                            <ChevronRight className="w-5 h-5" />
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-                            <div className="space-y-4 relative z-10">
-                                {/* Star Rating */}
+            {/* Continuous Marquee Scrolling Container */}
+            <div
+                ref={scrollRef}
+                className="overflow-x-auto no-scrollbar scroll-smooth py-3 px-4"
+            >
+                <div className="animate-marquee-slow flex space-x-6">
+                    {marqueeReviews.map((rev, index) => (
+                        <div
+                            key={`${rev.id}-${index}`}
+                            className="w-[280px] sm:w-[320px] lg:w-[350px] flex-shrink-0 bg-white rounded-3xl p-6 sm:p-7 border border-boutique-muted-border/60 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-between space-y-5"
+                        >
+                            {/* Top Star Rating & Review Text */}
+                            <div className="space-y-3">
                                 <div className="flex items-center space-x-1">
-                                    {[...Array(review.rating || 5)].map((_, i) => (
+                                    {[...Array(rev.rating || 5)].map((_, i) => (
                                         <Star
                                             key={i}
-                                            className="w-4 h-4 text-amber-500 fill-amber-500"
+                                            className="w-4 h-4 text-amber-400 fill-amber-400"
                                         />
                                     ))}
                                 </div>
 
-                                <p className="text-sm text-boutique-charcoal font-light leading-relaxed italic">
-                                    &ldquo;{review.text}&rdquo;
+                                <p className="text-xs sm:text-sm text-boutique-charcoal/90 font-light italic leading-relaxed line-clamp-4">
+                                    &ldquo;{rev.text}&rdquo;
                                 </p>
                             </div>
 
-                            <div className="flex items-center space-x-4 pt-4 border-t border-boutique-muted-border/60">
-                                {review.avatar ? (
-                                    <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0 border border-boutique-rose/30">
+                            {/* Outfit Tag Pill matching Image 2 */}
+                            <div>
+                                <span className="inline-block px-3 py-1 rounded-full bg-boutique-blush/60 text-boutique-rose text-[11px] font-semibold tracking-wide">
+                                    {rev.outfit || "Custom Couture Gown"}
+                                </span>
+                            </div>
+
+                            {/* Customer Profile Info at Bottom */}
+                            <div className="flex items-center space-x-3 pt-3 border-t border-boutique-muted-border/40">
+                                {rev.avatar ? (
+                                    <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border border-boutique-rose/20">
                                         <Image
-                                            src={review.avatar}
-                                            alt={review.author}
+                                            src={rev.avatar}
+                                            alt={rev.author}
                                             fill
                                             className="object-cover"
-                                            sizes="48px"
+                                            sizes="40px"
                                         />
                                     </div>
                                 ) : (
-                                    <div className="w-12 h-12 rounded-full bg-boutique-blush/40 flex items-center justify-center text-boutique-rose font-bold font-serif-editorial text-base flex-shrink-0">
-                                        {review.author?.charAt(0) || "C"}
+                                    <div className="w-10 h-10 rounded-full bg-boutique-blush/50 text-boutique-rose font-bold font-serif-editorial text-sm flex items-center justify-center flex-shrink-0">
+                                        {rev.author?.charAt(0) || "C"}
                                     </div>
                                 )}
 
                                 <div className="min-w-0">
-                                    <h4 className="font-serif-editorial text-base font-bold text-boutique-charcoal truncate">
-                                        {review.author}
-                                    </h4>
-                                    <p className="text-[11px] text-boutique-taupe truncate">
-                                        {review.outfit || review.city}
+                                    <h3 className="font-serif-editorial text-sm font-bold text-boutique-charcoal truncate">
+                                        {rev.author}
+                                    </h3>
+                                    <p className="text-[11px] text-boutique-taupe capitalize truncate">
+                                        {rev.city || "New Delhi"}
                                     </p>
                                 </div>
                             </div>

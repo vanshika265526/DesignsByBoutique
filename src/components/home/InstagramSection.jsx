@@ -8,10 +8,8 @@ import SectionHeading from "@/components/ui/SectionHeading";
 export default function InstagramSection({ settings = {} }) {
     const instagramUrl =
         settings.instagramUrl || boutiqueConfig.instagram.url;
-    const instagramHandle =
-        settings.instagramUsername
-            ? `@${settings.instagramUsername}`
-            : boutiqueConfig.instagram.handle;
+    const rawHandle = settings.instagramUsername || boutiqueConfig.instagram.handle || "designsbynisha00";
+    const instagramHandle = `@${rawHandle.replace(/^@+/, '')}`;
 
     return (
         <section className="py-24 bg-boutique-bg">

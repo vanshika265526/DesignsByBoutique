@@ -19,7 +19,7 @@ export const boutiqueConfig = {
     },
 
     instagram: {
-        handle: "@designsbynisha00",
+        handle: "designsbynisha00",
         url: "https://www.instagram.com/designsbynisha00?igsh=Ym92OXh5emZsdm9t",
     },
 
