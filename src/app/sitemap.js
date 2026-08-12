@@ -1,8 +1,11 @@
 import { boutiqueConfig } from "@/config/boutique";
-import { products } from "@/data/products";
+import { getDbAsync } from "@/lib/db";
 
-export default function sitemap() {
+export const dynamic = "force-dynamic";
+
+export default async function sitemap() {
     const baseUrl = boutiqueConfig.seo.siteUrl;
+    const db = await getDbAsync();
 
     const staticRoutes = [
         "",
@@ -13,21 +16,25 @@ export default function sitemap() {
     ].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date(),
-        changeFrequency: "weekly",
+        changeFrequency: route === "" ? "daily" : "weekly",
         priority: route === "" ? 1.0 : 0.8,
     }));
 
-    const categoryRoutes = boutiqueConfig.chapters.map((ch) => ({
-        url: `${baseUrl}/collections/${ch.slug}`,
+    const chapters = db.chapters || boutiqueConfig.chapters || [];
+    const categoryRoutes = chapters.map((ch) => ({
+        url: `${baseUrl}/collections/${ch.slug || ch.categorySlug || ch.id}`,
         lastModified: new Date(),
         changeFrequency: "weekly",
         priority: 0.9,
     }));
 
-    const productRoutes = products.map((p) => ({
+    const products = db.products || [];
+    const publishedProducts = products.filter((p) => p.status === "published" || !p.status);
+
+    const productRoutes = publishedProducts.map((p) => ({
         url: `${baseUrl}/product/${p.slug}`,
         lastModified: new Date(),
-        changeFrequency: "monthly",
+        changeFrequency: "weekly",
         priority: 0.8,
     }));
 

@@ -1,3 +1,4 @@
+import { NextResponse } from 'next/server';
 import { readDb, writeDb, addAuditLog, getDbAsync } from '@/lib/db';
 
 // GET all products or filter by category/chapter

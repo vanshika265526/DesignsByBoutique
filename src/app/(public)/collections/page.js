@@ -2,23 +2,29 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import CollectionCard from "@/components/ui/CollectionCard";
 import ProductCard from "@/components/ui/ProductCard";
 import { boutiqueConfig } from "@/config/boutique";
-import { products } from "@/data/products";
+import { getDbAsync } from "@/lib/db";
+
+export const dynamic = "force-dynamic";
 
 export const metadata = {
-    title: "Collections — For Every Chapter of Her Story",
+    title: "Collections — Suits, Bridal Lehengas & Maternity Wear | Chattarpur New Delhi",
     description:
-        "Explore Designs by Nisha's luxury collections: Suits & Anarkalis, Bridal Lehengas, Haldi & Mehendi outfits, Maternity Gowns, and Baby Clothes in New Delhi.",
+        "Explore Designs by Nisha's luxury collections in Chattarpur, New Delhi: Suits & Anarkalis, Bridal Lehengas, Haldi & Mehendi outfits, Maternity Gowns, and Baby Clothes (318, near Aayushman Arogya Mandir).",
 };
 
-export default function CollectionsPage() {
+export default async function CollectionsPage() {
+    const db = await getDbAsync();
+    const products = (db.products || []).filter((product) => product.status === "published" || !product.status);
+    const chapters = db.chapters || boutiqueConfig.chapters;
+
     return (
         <div className="pt-28 pb-24 bg-boutique-bg min-h-screen space-y-20">
             {/* Header Banner */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <SectionHeading
-                    badge="OUR CATALOGUE"
+                    badge="OUR BOUTIQUE CATALOGUE"
                     title="For Every Chapter of Her Story"
-                    subtitle="Explore hand-crafted Indian ethnic wear, bespoke bridal lehengas, maternity occasion gowns, and baby outfits."
+                    subtitle="Explore hand-crafted Indian ethnic wear, bespoke bridal lehengas, maternity occasion gowns, and baby outfits crafted in Chattarpur, New Delhi."
                 />
             </div>
 
@@ -28,8 +34,8 @@ export default function CollectionsPage() {
                     Explore by Chapter
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {boutiqueConfig.chapters.map((chapter) => (
-                        <CollectionCard key={chapter.id} chapter={chapter} />
+                    {chapters.map((chapter, idx) => (
+                        <CollectionCard key={chapter.id || idx} chapter={chapter} />
                     ))}
                 </div>
             </div>
@@ -41,7 +47,7 @@ export default function CollectionsPage() {
                         All Boutique Outfits ({products.length})
                     </h3>
                     <span className="text-xs text-boutique-taupe uppercase tracking-wider font-medium">
-                        New Delhi Atelier Selection
+                        Chattarpur, New Delhi Atelier Selection
                     </span>
                 </div>
 

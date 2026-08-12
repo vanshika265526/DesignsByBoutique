@@ -112,7 +112,7 @@ function getSeedData() {
             {
                 id: "test-1",
                 author: "Kavita Malhotra",
-                city: "South Extension, New Delhi",
+                address: "318, near Aayushman Arogya Mandir (Dispensary, Block A1, Chattarpur, Chhatarpur, New Delhi, Delhi 110074",
                 rating: 5,
                 text: "Nisha designed my custom bridal lehenga in just 3 weeks! The hand zardozi work and personal fitting sessions made me feel like royalty on my wedding day.",
                 outfit: "Rose Royal Heirloom Bridal Lehenga",

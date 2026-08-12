@@ -1252,8 +1252,9 @@
       "productName": "Royal Velvet Zardozi Lehenga",
       "productCategory": "Bridal Lehengas",
       "message": "Hi, I would like to book a bridal consultation for next month.",
-      "status": "New",
-      "createdAt": "2026-08-09T06:01:23.718Z"
+      "status": "Contacted",
+      "createdAt": "2026-08-09T06:01:23.718Z",
+      "updatedAt": "2026-08-12T03:51:37.162Z"
     },
     {
       "_id": "6a7abab4f6771d4072b70dc4",
@@ -1331,7 +1332,8 @@
     },
     "seoTitle": "Designs by Nisha — Luxury Women's & Bridal Boutique | New Delhi",
     "seoDescription": null,
-    "updatedAt": "2026-08-11T06:01:23.718Z"
+    "updatedAt": "2026-08-12T03:38:07.798Z",
+    "googleMapsUrl": "https://share.google/oMRWNqTN0EFZn8Ac9"
   },
   "analytics": {
     "_id": "boutique_analytics",
@@ -1492,7 +1494,7 @@
       "user": "Admin",
       "action": "System initialized",
       "details": "Database seeded with default boutique products, categories, analytics, and settings.",
-      "timestamp": "2026-08-12T03:36:39.555Z"
+      "timestamp": "2026-08-12T04:03:28.314Z"
     }
   ]
 }

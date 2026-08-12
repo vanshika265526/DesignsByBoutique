@@ -1,69 +1,102 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
-import { MessageCircle, ShieldCheck, Sparkles, Scissors, ArrowLeft } from "lucide-react";
+import { MessageCircle, ShieldCheck, Sparkles, Scissors } from "lucide-react";
 import ProductGallery from "@/components/products/ProductGallery";
 import ProductCard from "@/components/ui/ProductCard";
 import { boutiqueConfig, buildWhatsAppLink } from "@/config/boutique";
-import { getProductBySlug, getRelatedProducts, products } from "@/data/products";
+import { getDbAsync } from "@/lib/db";
+
+// Force dynamic so every request reads the latest DB data — admin edits appear immediately
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }) {
-    const product = getProductBySlug(params.slug);
+    const db = await getDbAsync();
+    const product = (db.products || []).find((p) => p.slug === params.slug);
     if (!product) return { title: "Outfit | Designs by Nisha New Delhi" };
 
+    const productImages =
+        product.images && product.images.length > 0
+            ? product.images
+            : product.image
+                ? [product.image]
+                : [];
+
     return {
-        title: `${product.name} — ${product.category}`,
+        title: `${product.name} — ${product.categoryName || product.category}`,
         description: `${product.description} Available at Designs by Nisha Boutique, New Delhi.`,
         openGraph: {
             title: product.name,
             description: product.description,
-            images: [{ url: product.images[0] }],
+            images: productImages.length > 0 ? [{ url: productImages[0] }] : [],
         },
     };
 }
 
-export async function generateStaticParams() {
-    return products.map((p) => ({
-        slug: p.slug,
-    }));
-}
+export default async function ProductDetailPage({ params }) {
+    const db = await getDbAsync();
+    const allProducts = db.products || [];
 
-export default function ProductDetailPage({ params }) {
-    const product = getProductBySlug(params.slug);
+    // Find product by slug from the live database
+    const product = allProducts.find((p) => p.slug === params.slug);
 
-    if (!product) {
+    if (!product || (product.status && product.status !== "published")) {
         notFound();
     }
 
     const {
         name,
         category,
-        categorySlug,
-        chapterNumber,
-        chapterTitle,
+        categoryName,
         originalPrice,
         price,
         salePrice,
-        discountPercentage,
         discount,
-        images,
         description,
         sizes,
         fabric,
         customization,
         care,
+        details,
     } = product;
 
+    // Normalize images array
+    const images =
+        product.images && product.images.length > 0
+            ? product.images
+            : product.image
+                ? [product.image]
+                : [];
+
     const currentPrice = price || salePrice;
+    const displayCategory = categoryName || category || "";
+    const displayChapterTitle = product.chapterTitle || product.chapterName || "";
+
+    // Compute discount percentage
+    const computedDiscount =
+        product.discountPercentage ||
+        (originalPrice && currentPrice && originalPrice > currentPrice
+            ? Math.round(((originalPrice - currentPrice) / originalPrice) * 100)
+            : 0);
+
     const whatsappUrl = buildWhatsAppLink({
         productName: name,
-        productCategory: category,
+        productCategory: displayCategory,
         price: currentPrice,
-        productImage: images && images.length > 0 ? images[0] : (product.image || null),
+        productImage: images.length > 0 ? images[0] : null,
         productSlug: product.slug,
     });
 
-    const relatedProducts = getRelatedProducts(product.slug, 4);
+    // Related products: same category, published, different slug, up to 4
+    const relatedProducts = allProducts
+        .filter(
+            (p) =>
+                (p.category === product.category ||
+                    p.categorySlug === product.categorySlug ||
+                    p.category === product.categorySlug) &&
+                p.slug !== product.slug &&
+                (p.status === "published" || !p.status)
+        )
+        .slice(0, 4);
 
     // JSON-LD Product Schema
     const jsonLd = {
@@ -73,33 +106,27 @@ export default function ProductDetailPage({ params }) {
         image: images,
         description: description,
         sku: product.id,
-        brand: {
-            "@type": "Brand",
-            name: "Designs by Nisha",
-        },
+        brand: { "@type": "Brand", name: "Designs by Nisha" },
         offers: {
             "@type": "Offer",
             url: `${boutiqueConfig.seo.siteUrl}/product/${product.slug}`,
             priceCurrency: "INR",
-            price: salePrice,
+            price: currentPrice,
             priceValidUntil: "2027-12-31",
             itemCondition: "https://schema.org/NewCondition",
             availability: "https://schema.org/InStock",
-            seller: {
-                "@type": "Organization",
-                name: "Designs by Nisha New Delhi",
-            },
+            seller: { "@type": "Organization", name: "Designs by Nisha New Delhi" },
         },
     };
 
     return (
-        <div className="pt-28 pb-24 bg-boutique-bg min-h-screen">
+        <div className="pt-8 md:pt-10 pb-24 bg-boutique-bg min-h-screen">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
                 {/* Breadcrumb Navigation */}
                 <div className="flex items-center space-x-2 text-xs text-boutique-taupe">
                     <Link href="/" className="hover:text-boutique-rose transition-colors">
@@ -111,10 +138,10 @@ export default function ProductDetailPage({ params }) {
                     </Link>
                     <span>/</span>
                     <Link
-                        href={`/collections/${categorySlug}`}
+                        href={`/collections/${product.category || product.categorySlug}`}
                         className="hover:text-boutique-rose transition-colors capitalize"
                     >
-                        {category}
+                        {displayCategory}
                     </Link>
                     <span>/</span>
                     <span className="text-boutique-rose font-medium truncate">{name}</span>
@@ -124,19 +151,30 @@ export default function ProductDetailPage({ params }) {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
                     {/* Gallery Section Left */}
                     <div className="lg:col-span-7">
-                        <ProductGallery images={images} productName={name} instagramReel={product.instagramReel} />
+                        <ProductGallery
+                            images={images}
+                            productName={name}
+                            instagramReel={product.instagramReel}
+                        />
                     </div>
 
                     {/* Product Details Section Right */}
                     <div className="lg:col-span-5 space-y-6">
                         <div className="space-y-2">
-                            <div className="flex items-center space-x-2">
-                                <span className="bg-boutique-blush/60 text-boutique-rose text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
-                                    CHAPTER {chapterNumber} • {chapterTitle}
-                                </span>
-                                {discountPercentage > 0 && (
+                            <div className="flex items-center flex-wrap gap-2">
+                                {displayChapterTitle && (
+                                    <span className="bg-boutique-blush/60 text-boutique-rose text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                                        {displayChapterTitle}
+                                    </span>
+                                )}
+                                {computedDiscount > 0 && (
                                     <span className="bg-boutique-rose text-white text-xs font-bold px-2.5 py-0.5 rounded-full uppercase">
-                                        {discountPercentage}% OFF
+                                        {computedDiscount}% OFF
+                                    </span>
+                                )}
+                                {product.newArrival && (
+                                    <span className="bg-amber-100 text-amber-800 text-xs font-bold px-2.5 py-0.5 rounded-full uppercase border border-amber-300">
+                                        New Arrival
                                     </span>
                                 )}
                             </div>
@@ -146,18 +184,21 @@ export default function ProductDetailPage({ params }) {
                             </h1>
 
                             <p className="text-xs uppercase tracking-widest text-boutique-gold font-semibold">
-                                {category} • NEW DELHI ATELIER
+                                {displayCategory} • NEW DELHI ATELIER
                             </p>
                         </div>
 
                         {/* Price Display */}
                         <div className="p-4 bg-boutique-bg-card rounded-2xl border border-boutique-muted-border flex items-baseline space-x-4">
                             <span className="font-serif-editorial text-3xl font-bold text-boutique-rose">
-                                ₹{currentPrice ? currentPrice.toLocaleString("en-IN") : "Price on Request"}
+                                ₹
+                                {currentPrice
+                                    ? Number(currentPrice).toLocaleString("en-IN")
+                                    : "Price on Request"}
                             </span>
                             {originalPrice && originalPrice > currentPrice && (
                                 <span className="text-sm text-neutral-400 line-through">
-                                    ₹{originalPrice?.toLocaleString("en-IN")}
+                                    ₹{Number(originalPrice).toLocaleString("en-IN")}
                                 </span>
                             )}
                             <span className="text-xs text-neutral-500 font-light ml-auto">
@@ -166,16 +207,20 @@ export default function ProductDetailPage({ params }) {
                         </div>
 
                         {/* Description */}
-                        <p className="text-sm text-boutique-taupe font-light leading-relaxed">
-                            {description}
-                        </p>
+                        {description && (
+                            <p className="text-sm text-boutique-taupe font-light leading-relaxed">
+                                {description}
+                            </p>
+                        )}
 
                         {/* Sizes */}
-                        {sizes && (
+                        {sizes && sizes.length > 0 && (
                             <div className="space-y-2 pt-2">
                                 <label className="text-xs uppercase tracking-wider font-semibold text-boutique-charcoal flex items-center justify-between">
                                     <span>Available Size Options</span>
-                                    <span className="text-boutique-rose text-[11px] lowercase">Custom sizing included</span>
+                                    <span className="text-boutique-rose text-[11px] lowercase">
+                                        Custom sizing included
+                                    </span>
                                 </label>
                                 <div className="flex flex-wrap gap-2">
                                     {sizes.map((s, idx) => (
@@ -190,38 +235,58 @@ export default function ProductDetailPage({ params }) {
                             </div>
                         )}
 
-                        {/* Specs & Features */}
-                        <div className="space-y-3 pt-4 border-t border-boutique-muted-border/60 text-xs">
-                            {fabric && (
-                                <div className="flex items-start space-x-3">
-                                    <Sparkles className="w-4 h-4 text-boutique-gold flex-shrink-0 mt-0.5" />
-                                    <div>
-                                        <span className="font-semibold text-boutique-charcoal">Fabric & Embellishment: </span>
-                                        <span className="text-boutique-taupe">{fabric}</span>
+                        {/* Details list */}
+                        {details && details.length > 0 && (
+                            <div className="space-y-3 pt-4 border-t border-boutique-muted-border/60 text-xs">
+                                {details.map((detail, idx) => (
+                                    <div key={idx} className="flex items-start space-x-3">
+                                        <Sparkles className="w-4 h-4 text-boutique-gold flex-shrink-0 mt-0.5" />
+                                        <span className="text-boutique-taupe">{detail}</span>
                                     </div>
-                                </div>
-                            )}
-                            {customization && (
-                                <div className="flex items-start space-x-3">
-                                    <Scissors className="w-4 h-4 text-boutique-rose flex-shrink-0 mt-0.5" />
-                                    <div>
-                                        <span className="font-semibold text-boutique-charcoal">Bespoke Customization: </span>
-                                        <span className="text-boutique-taupe">{customization}</span>
-                                    </div>
-                                </div>
-                            )}
-                            {care && (
-                                <div className="flex items-start space-x-3">
-                                    <ShieldCheck className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
-                                    <div>
-                                        <span className="font-semibold text-boutique-charcoal">Garment Care: </span>
-                                        <span className="text-boutique-taupe">{care}</span>
-                                    </div>
-                                </div>
-                            )}
-                        </div>
+                                ))}
+                            </div>
+                        )}
 
-                        {/* Direct WhatsApp Conversion Action */}
+                        {/* Typed spec fields (fabric, customization, care) */}
+                        {(fabric || customization || care) && (
+                            <div className="space-y-3 pt-4 border-t border-boutique-muted-border/60 text-xs">
+                                {fabric && (
+                                    <div className="flex items-start space-x-3">
+                                        <Sparkles className="w-4 h-4 text-boutique-gold flex-shrink-0 mt-0.5" />
+                                        <div>
+                                            <span className="font-semibold text-boutique-charcoal">
+                                                Fabric &amp; Embellishment:{" "}
+                                            </span>
+                                            <span className="text-boutique-taupe">{fabric}</span>
+                                        </div>
+                                    </div>
+                                )}
+                                {customization && (
+                                    <div className="flex items-start space-x-3">
+                                        <Scissors className="w-4 h-4 text-boutique-rose flex-shrink-0 mt-0.5" />
+                                        <div>
+                                            <span className="font-semibold text-boutique-charcoal">
+                                                Bespoke Customization:{" "}
+                                            </span>
+                                            <span className="text-boutique-taupe">{customization}</span>
+                                        </div>
+                                    </div>
+                                )}
+                                {care && (
+                                    <div className="flex items-start space-x-3">
+                                        <ShieldCheck className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                                        <div>
+                                            <span className="font-semibold text-boutique-charcoal">
+                                                Garment Care:{" "}
+                                            </span>
+                                            <span className="text-boutique-taupe">{care}</span>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        )}
+
+                        {/* WhatsApp Enquiry CTA */}
                         <div className="pt-6 space-y-3">
                             <a
                                 href={whatsappUrl}
@@ -234,7 +299,8 @@ export default function ProductDetailPage({ params }) {
                             </a>
 
                             <p className="text-[11px] text-center text-boutique-taupe italic">
-                                Direct consultation with Designs by Nisha atelier in New Delhi. No checkout required.
+                                Direct consultation with Designs by Nisha atelier in New Delhi. No checkout
+                                required.
                             </p>
                         </div>
                     </div>

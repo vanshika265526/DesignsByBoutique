@@ -6,9 +6,9 @@
 export const boutiqueConfig = {
     name: "Designs by Nisha",
     tagline: "For Every Chapter of Her Story.",
-    location: "New Delhi, India",
-    fullAddress: "Design Studio & Boutique, Defence Colony / South Extension, New Delhi - 110024, India",
-    googleMapsUrl: "https://share.google/oMRWNqTN0EFZn8Ac9",
+    location: "Chattarpur, Chhatarpur, New Delhi, Delhi 110074",
+    fullAddress: "318, near Aayushman Arogya Mandir (Dispensary, Block A1, Chattarpur, Chhatarpur, New Delhi, Delhi 110074",
+    googleMapsUrl: "https://maps.google.com/?q=318+Block+A1+Chattarpur+Chhatarpur+New+Delhi+110074",
 
     // Lead Generation & Direct Channels
     // Note: Phone numbers use international format without leading + or spaces for WhatsApp API
@@ -38,21 +38,22 @@ export const boutiqueConfig = {
         speed: "normal",
     },
 
-    // SEO & Verification Placeholders
+    // SEO & Verification
     seo: {
         siteUrl: "https://designsbynisha.com",
-        defaultTitle: "Designs by Nisha — Luxury Women's & Bridal Boutique | New Delhi",
-        titleTemplate: "%s | Designs by Nisha Boutique New Delhi",
+        defaultTitle: "Designs by Nisha — Luxury Women's & Bridal Boutique | Chattarpur, New Delhi",
+        titleTemplate: "%s | Designs by Nisha Boutique Chattarpur New Delhi",
         description:
-            "Luxury Indian women's fashion & bespoke bridal boutique in New Delhi. Thoughtfully curated Suits, Anarkalis, Bridal Lehengas, Maternity Gowns & Baby Clothes for every chapter of her story.",
+            "Luxury Indian women's fashion & bespoke bridal boutique in Chattarpur, Chhatarpur, New Delhi (318, near Aayushman Arogya Mandir Dispensary). Handcrafted Suits, Anarkalis, Bridal Lehengas, Maternity Gowns & Baby Clothes for every chapter of her story.",
         keywords: [
-            "Women's boutique in New Delhi",
-            "Bridal lehenga boutique Delhi",
-            "Suits and Anarkalis Delhi",
-            "Haldi and Mehendi outfits Delhi",
-            "Maternity gowns New Delhi",
-            "Baby occasion wear Delhi",
-            "Bespoke Indian designer boutique",
+            "Women's boutique in Chattarpur New Delhi",
+            "Bridal lehenga boutique Chattarpur Chhatarpur Delhi",
+            "Boutique near Aayushman Arogya Mandir Chattarpur",
+            "Suits and Anarkalis Chattarpur Delhi",
+            "Haldi and Mehendi outfits Chhatarpur Delhi",
+            "Maternity gowns Chattarpur New Delhi",
+            "Baby occasion wear Chattarpur Delhi",
+            "Bespoke Indian designer boutique Chattarpur",
             "Designs by Nisha",
         ],
         googleAnalyticsId: process.env.NEXT_PUBLIC_GA_ID || "G-XXXXXXXXXX",
@@ -101,61 +102,52 @@ export const boutiqueConfig = {
             id: "chapter-04",
             number: "04",
             title: "HER MOTHERHOOD",
-            category: "Maternity Gowns",
+            category: "Maternity & Feeding Gowns",
             slug: "maternity-gowns",
-            tagline: "Graceful silhouettes for one of life's most divine transitions.",
+            tagline: "Elegance, softness, and room to glow as she steps into mothering.",
             description:
-                "Breathable silk maternity gowns, photo-shoot ready draped silhouettes, and adaptable occasion wear crafted with soft lining and maximum comfort.",
-            image: "/images/maternity/gown-1.png",
+                "Breathable silk-cotton baby shower gowns, empire-waist maternity dresses, and nursing-friendly festive outfits tailored for expectant mothers.",
+            image: "https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=1200&auto=format&fit=crop",
             badge: "Chapter 04",
         },
         {
             id: "chapter-05",
             number: "05",
             title: "HER LITTLE ONE",
-            category: "Baby Clothes & Occasion Wear",
+            category: "Baby & Toddler Outfits",
             slug: "baby-clothes",
-            tagline: "Tiny heirloom outfits for the newest chapter of her story.",
+            tagline: "Miniature royalty for her child's first celebrations.",
             description:
-                "Miniature designer lehengas, soft cotton kurti sets, and ceremony outfits tailored with skin-friendly fabrics for newborns and infants.",
-            image: "/images/chapter-05.jpg",
+                "Soft lining lehenga cholis, baby boy kurta sets, and matching mother-baby celebratory outfits crafted with skin-safe luxury fabrics.",
+            image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=1200&auto=format&fit=crop",
             badge: "Chapter 05",
         },
     ],
 };
 
-/**
- * Generate a direct WhatsApp deep-link with pre-filled enquiry message
- */
-export function buildWhatsAppLink({ productName, productCategory, price, productImage, productSlug, customMessage } = {}) {
-    const phone = boutiqueConfig.whatsapp.number;
-    let text = boutiqueConfig.whatsapp.defaultMessage;
+export function buildWhatsAppLink({
+    productName,
+    productCategory,
+    price,
+    productImage,
+    productSlug,
+    customMessage,
+} = {}) {
+    const baseUrl = `https://wa.me/${boutiqueConfig.whatsapp.number}`;
 
-    if (productName) {
-        let imageRef = "";
-        if (productImage) {
-            const fullImageUrl = productImage.startsWith("http")
-                ? productImage
-                : `${boutiqueConfig.seo.siteUrl}${productImage}`;
-            imageRef = `\n\nDesign Image: ${fullImageUrl}`;
-        }
-
-        let linkRef = "";
-        if (productSlug) {
-            linkRef = `\nDesign Link: ${boutiqueConfig.seo.siteUrl}/product/${productSlug}`;
-        }
-
-        text = `Hi Designs by Nisha! I'm inquiring about "${productName}"${productCategory ? ` (${productCategory})` : ""}${price ? ` listed at ₹${price.toLocaleString("en-IN")}` : ""}.${imageRef}${linkRef}\n\nCould you please share details, fabric samples, and customization options?`;
-    } else if (customMessage) {
-        if (productImage) {
-            const fullImageUrl = productImage.startsWith("http")
-                ? productImage
-                : `${boutiqueConfig.seo.siteUrl}${productImage}`;
-            text = `${customMessage}\n\nDesign Image: ${fullImageUrl}`;
-        } else {
-            text = customMessage;
-        }
+    if (customMessage) {
+        return `${baseUrl}?text=${encodeURIComponent(customMessage)}`;
     }
 
-    return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+    let message = boutiqueConfig.whatsapp.defaultMessage;
+
+    if (productName) {
+        message = `Hi Designs by Nisha! I am interested in inquiring about "${productName}"`;
+        if (productCategory) message += ` (${productCategory})`;
+        if (price) message += ` priced at ₹${Number(price).toLocaleString("en-IN")}`;
+        if (productSlug) message += `. View outfit link: ${boutiqueConfig.seo.siteUrl}/product/${productSlug}`;
+        message += `. Please let me know custom fitting availability and turn-around time.`;
+    }
+
+    return `${baseUrl}?text=${encodeURIComponent(message)}`;
 }

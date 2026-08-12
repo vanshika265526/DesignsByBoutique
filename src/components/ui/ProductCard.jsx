@@ -30,7 +30,11 @@ export default function ProductCard({ product }) {
     return (
         <div className="group bg-boutique-bg-card rounded-2xl overflow-hidden border border-boutique-muted-border/60 hover:shadow-xl transition-all duration-500 flex flex-col justify-between">
             {/* Product Image Container */}
-            <div className="relative aspect-[3/4] overflow-hidden bg-neutral-100">
+            <Link
+                href={`/product/${slug}`}
+                className="relative block aspect-[3/4] overflow-hidden bg-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-boutique-rose focus-visible:ring-offset-2"
+                aria-label={`View details for ${name}`}
+            >
                 <Image
                     src={mainImage}
                     alt={`${name} — ${category} by Designs by Nisha New Delhi`}
@@ -52,7 +56,7 @@ export default function ProductCard({ product }) {
                         </span>
                     )}
                 </div>
-            </div>
+            </Link>
 
             {/* Content Details */}
             <div className="p-5 flex-1 flex flex-col justify-between space-y-3">

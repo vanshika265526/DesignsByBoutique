@@ -1,3 +1,4 @@
+import { getDbAsync } from "@/lib/db";
 import Hero from "@/components/home/Hero";
 import Philosophy from "@/components/home/Philosophy";
 import HerJourney from "@/components/home/HerJourney";
@@ -10,19 +11,34 @@ import TestimonialsSection from "@/components/home/TestimonialsSection";
 import InstagramSection from "@/components/home/InstagramSection";
 import SignatureCTA from "@/components/home/SignatureCTA";
 
-export default function HomePage() {
+// Force dynamic so homepage always reflects latest DB data (featured products, chapters, etc.)
+export const dynamic = "force-dynamic";
+
+export default async function HomePage() {
+    const db = await getDbAsync();
+
+    const chapters = db.chapters || [];
+    const settings = db.settings || {};
+
+    // Featured products: published + featured flag
+    const featuredProducts = (db.products || [])
+        .filter((p) => p.featured && (p.status === "published" || !p.status));
+
+    // Testimonials
+    const testimonials = db.testimonials || [];
+
     return (
         <>
-            <Hero />
+            <Hero settings={settings} />
             <Philosophy />
-            <HerJourney />
-            <FeaturedCollections />
-            <FeaturedProducts />
+            <HerJourney chapters={chapters} />
+            <FeaturedCollections chapters={chapters} />
+            <FeaturedProducts products={featuredProducts} />
             <BridalFeature />
             <GalleryPreviewSection />
             <MaternityFeature />
-            <TestimonialsSection />
-            <InstagramSection />
+            <TestimonialsSection testimonials={testimonials} />
+            <InstagramSection settings={settings} />
             <SignatureCTA />
         </>
     );
