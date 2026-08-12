@@ -6,20 +6,20 @@ import { MessageCircle, Scissors, CalendarCheck, Sparkles } from "lucide-react";
 import { boutiqueConfig, buildWhatsAppLink } from "@/config/boutique";
 
 const trustBadges = [
-    { icon: Scissors, title: "Bespoke Tailoring", subtitle: "Handcrafted to your measurements" },
-    { icon: CalendarCheck, title: "By Appointment & Walk-ins", subtitle: "Mon–Sat, 10:30 AM – 7:30 PM" },
-    { icon: MessageCircle, title: "Direct WhatsApp Enquiry", subtitle: "No cart, no checkout — just chat" },
+    { icon: Scissors, title: "Made Just for You", subtitle: "Stitched to your size and style" },
+    { icon: CalendarCheck, title: "Visit or Book a Time", subtitle: "Open Mon–Sat, 10:30 AM – 7:30 PM" },
+    { icon: MessageCircle, title: "Ask on WhatsApp", subtitle: "Message us anytime — it's quick and easy" },
 ];
 
 export default function Hero({ settings = {} }) {
-    const tagline = settings.tagline || boutiqueConfig.tagline;
+    const heroImage = settings.heroImage || "/images/hero.png";
 
     return (
         <section className="w-full bg-boutique-bg">
             {/* Full-bleed editorial hero */}
             <div className="relative w-full h-[78vh] min-h-[520px] md:h-[86vh] overflow-hidden">
                 <Image
-                    src="/images/hero.png"
+                    src={heroImage}
                     alt="Designs by Nisha — Luxury Indian bridal & women's couture, New Delhi"
                     fill
                     priority

@@ -3,9 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import {
-    LogOut,
     LayoutDashboard,
     ShoppingBag,
     Grid,
@@ -38,6 +37,7 @@ const navigationItems = [
         items: [
             { name: "Products", href: "/admin/products", icon: ShoppingBag },
             { name: "Categories", href: "/admin/categories", icon: Grid },
+            { name: "Her Chapters", href: "/admin/chapters", icon: BookOpen },
         ],
     },
     {
@@ -59,24 +59,8 @@ const navigationItems = [
 
 export default function AdminLayout({ children }) {
     const pathname = usePathname();
-    const router = useRouter();
     const [mobileOpen, setMobileOpen] = useState(false);
     const [notificationsOpen, setNotificationsOpen] = useState(false);
-
-    const logout = async () => {
-        try {
-            await fetch("/api/admin/logout", { method: "POST" });
-        } catch {
-            // ignore
-        }
-        router.replace("/admin/login");
-        router.refresh();
-    };
-
-    // The login page renders without the admin dashboard chrome.
-    if (pathname === "/admin/login") {
-        return <>{children}</>;
-    }
 
     return (
         <div className="min-h-screen bg-[#FDFBF7] text-neutral-800 flex flex-col md:flex-row font-sans">
@@ -193,14 +177,6 @@ export default function AdminLayout({ children }) {
                         </div>
                         <UserCheck className="w-4 h-4 text-emerald-400 shrink-0" />
                     </div>
-
-                    <button
-                        onClick={logout}
-                        className="w-full py-2.5 px-3 bg-boutique-rose/90 hover:bg-boutique-rose text-white text-xs font-semibold rounded-xl flex items-center justify-center space-x-2 transition-colors"
-                    >
-                        <LogOut className="w-3.5 h-3.5" />
-                        <span>Log Out</span>
-                    </button>
                 </div>
             </aside>
 

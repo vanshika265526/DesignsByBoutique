@@ -32,6 +32,7 @@ export default function AdminCategoriesPage() {
     const [slugTouched, setSlugTouched] = useState(false);
     const [saving, setSaving] = useState(false);
     const [uploading, setUploading] = useState(false);
+    const [uploadingEdit, setUploadingEdit] = useState(false);
     const [error, setError] = useState("");
 
     const loadData = () => {
@@ -106,6 +107,23 @@ export default function AdminCategoriesPage() {
             console.error("Upload error:", err);
         } finally {
             setUploading(false);
+        }
+    };
+
+    const handleEditUpload = async (e) => {
+        const file = e.target.files?.[0];
+        if (!file) return;
+        setUploadingEdit(true);
+        const data = new FormData();
+        data.append("file", file);
+        try {
+            const res = await fetch("/api/data/upload", { method: "POST", body: data });
+            const json = await res.json();
+            if (json.success && json.url) setEditCatForm((prev) => ({ ...prev, image: json.url }));
+        } catch (err) {
+            console.error("Upload error:", err);
+        } finally {
+            setUploadingEdit(false);
         }
     };
 
@@ -230,13 +248,19 @@ export default function AdminCategoriesPage() {
                                                         onChange={(e) => setEditCatForm({ ...editCatForm, description: e.target.value })}
                                                         className="w-full text-[11px] px-2 py-1 bg-white border border-neutral-300 rounded"
                                                     />
-                                                    <input
-                                                        type="text"
-                                                        value={editCatForm.image}
-                                                        onChange={(e) => setEditCatForm({ ...editCatForm, image: e.target.value })}
-                                                        placeholder="Image URL..."
-                                                        className="w-full text-[10px] font-mono px-2 py-1 bg-white border border-neutral-300 rounded"
-                                                    />
+                                                    <div className="flex items-center gap-1.5">
+                                                        <input
+                                                            type="text"
+                                                            value={editCatForm.image}
+                                                            onChange={(e) => setEditCatForm({ ...editCatForm, image: e.target.value })}
+                                                            placeholder="Image URL..."
+                                                            className="flex-1 text-[10px] font-mono px-2 py-1 bg-white border border-neutral-300 rounded"
+                                                        />
+                                                        <label className="text-[10px] font-semibold px-2 py-1 bg-boutique-charcoal text-white rounded cursor-pointer hover:bg-neutral-800 whitespace-nowrap">
+                                                            {uploadingEdit ? "…" : "Upload"}
+                                                            <input type="file" accept="image/*" onChange={handleEditUpload} className="hidden" />
+                                                        </label>
+                                                    </div>
                                                 </div>
                                             ) : (
                                                 <div>

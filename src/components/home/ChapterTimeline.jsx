@@ -1,175 +1,193 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { initialChapters } from "@/data/products";
 
-const DURATION = 4200; // ms each phase stays on screen
+// Soft alternating tints (warm, cohesive with cream — no heavy green)
+const TINTS = ["#E7EFE6", "#F6E7D6", "#EFE9DC", "#F4E6DF", "#F0E7CD"];
+
+// Hand-drawn style curved connector that draws itself
+function Connector({ flip, reduce }) {
+    return (
+        <div className="flex justify-center py-1" aria-hidden="true">
+            <svg
+                width="220"
+                height="96"
+                viewBox="0 0 220 96"
+                fill="none"
+                className={`w-44 sm:w-56 md:w-64 h-auto ${flip ? "-scale-x-100" : ""}`}
+            >
+                {/* curve sweeping from the top circle toward the next card */}
+                <motion.path
+                    d="M26 12 C 74 30, 128 40, 190 84"
+                    stroke="#B08C4F"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    fill="none"
+                    initial={reduce ? { pathLength: 1 } : { pathLength: 0 }}
+                    whileInView={{ pathLength: 1 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.9, ease: "easeInOut" }}
+                />
+                {/* arrowhead pointing into the next card */}
+                <motion.path
+                    d="M171 80 L192 86 L184 66"
+                    stroke="#B08C4F"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    fill="none"
+                    initial={reduce ? { opacity: 1 } : { opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ delay: 0.75, duration: 0.3 }}
+                />
+            </svg>
+        </div>
+    );
+}
 
 export default function ChapterTimeline() {
     const reduce = useReducedMotion();
     const chapters = initialChapters || [];
     const count = chapters.length;
-
     const [active, setActive] = useState(0);
     const [paused, setPaused] = useState(false);
-    const timer = useRef(null);
 
-    const go = useCallback((i) => setActive(((i % count) + count) % count), [count]);
-    const next = useCallback(() => setActive((p) => (p + 1) % count), [count]);
-    const prev = useCallback(() => setActive((p) => (p - 1 + count) % count), [count]);
-
+    // Auto-cycle the highlighted phase down the journey
     useEffect(() => {
         if (reduce || paused || count <= 1) return;
-        timer.current = setTimeout(next, DURATION);
-        return () => clearTimeout(timer.current);
-    }, [active, paused, reduce, next, count]);
+        const t = setTimeout(() => setActive((p) => (p + 1) % count), 2600);
+        return () => clearTimeout(t);
+    }, [active, paused, reduce, count]);
 
     if (count === 0) return null;
 
     return (
-        <section className="relative overflow-hidden bg-boutique-charcoal text-white py-20 md:py-28">
-            {/* Soft warm glow (no green) */}
-            <div className="pointer-events-none absolute -top-24 -right-24 w-96 h-96 rounded-full bg-boutique-gold/10 blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-32 -left-24 w-96 h-96 rounded-full bg-boutique-gold/5 blur-3xl" />
-
-            <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section
+            className="relative overflow-hidden bg-boutique-bg py-20 md:py-28"
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+        >
+            <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="text-center max-w-2xl mx-auto mb-10 md:mb-14">
-                    <p className="text-[11px] uppercase tracking-[0.3em] text-boutique-gold-light font-semibold mb-4">
+                <div className="text-center max-w-2xl mx-auto mb-14 md:mb-20">
+                    <p className="text-[11px] uppercase tracking-[0.3em] text-boutique-gold font-semibold mb-4">
                         The Journey
                     </p>
-                    <h2 className="font-serif-editorial text-3xl sm:text-4xl md:text-5xl font-light leading-tight">
+                    <h2 className="font-serif-editorial text-3xl sm:text-4xl md:text-5xl font-light leading-tight text-boutique-charcoal">
                         For Every Chapter <span className="italic">of Her Story</span>
                     </h2>
-                    <p className="mt-5 text-sm sm:text-base text-white/65 font-light leading-relaxed">
+                    <p className="mt-5 text-sm sm:text-base text-boutique-taupe font-light leading-relaxed">
                         One boutique, dressing every phase of her life — from her first celebrations
                         to bridal vows, motherhood, and her little one&apos;s earliest milestones.
                     </p>
                 </div>
 
-                {/* Progress segments */}
-                <div className="flex gap-2 mb-5 max-w-4xl mx-auto">
-                    {chapters.map((_, i) => (
-                        <button
-                            key={i}
-                            onClick={() => go(i)}
-                            aria-label={`Go to chapter ${i + 1}`}
-                            className="flex-1 h-[3px] rounded-full bg-white/15 overflow-hidden"
-                        >
-                            {i < active && <span className="block h-full w-full bg-boutique-gold" />}
-                            {i === active && (
-                                <motion.span
-                                    key={`fill-${active}-${paused}`}
-                                    className="block h-full bg-boutique-gold"
-                                    initial={{ width: reduce ? "100%" : "0%" }}
-                                    animate={{ width: "100%" }}
-                                    transition={{ duration: reduce || paused ? 0 : DURATION / 1000, ease: "linear" }}
-                                />
-                            )}
-                        </button>
-                    ))}
-                </div>
+                {/* Journey of circles + connectors */}
+                <div className="flex flex-col items-stretch">
+                    {chapters.map((ch, i) => {
+                        const left = i % 2 === 0;
+                        const isActive = i === active;
+                        return (
+                            <div key={ch.id || i}>
+                                <motion.div
+                                    initial={reduce ? false : { opacity: 0, y: 40 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "-60px" }}
+                                    transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                                    className={`flex ${left ? "justify-start" : "justify-end"}`}
+                                >
+                                    <Link
+                                        href={`/collections/${ch.categorySlug}`}
+                                        onMouseEnter={() => setActive(i)}
+                                        className={`group flex items-center gap-5 sm:gap-8 text-left ${
+                                            left ? "" : "flex-row-reverse"
+                                        }`}
+                                    >
+                                        {/* Circle node */}
+                                        <div className="relative flex-shrink-0">
+                                            {/* soft tint backing */}
+                                            <span
+                                                className={`absolute rounded-full transition-all duration-500 ${
+                                                    left ? "-left-3 -top-3" : "-right-3 -top-3"
+                                                }`}
+                                                style={{
+                                                    backgroundColor: TINTS[i % TINTS.length],
+                                                    width: "100%",
+                                                    height: "100%",
+                                                }}
+                                            />
+                                            <motion.div
+                                                animate={
+                                                    reduce
+                                                        ? {}
+                                                        : { scale: isActive ? 1.06 : 1 }
+                                                }
+                                                transition={{ type: "spring", stiffness: 200, damping: 16 }}
+                                                className={`relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full overflow-hidden shadow-lg ring-4 transition-colors duration-500 ${
+                                                    isActive ? "ring-boutique-gold" : "ring-white"
+                                                }`}
+                                            >
+                                                <Image
+                                                    src={ch.image}
+                                                    alt={`${ch.title} — ${ch.categoryName}`}
+                                                    fill
+                                                    sizes="(max-width: 768px) 40vw, 12rem"
+                                                    className="object-cover object-center"
+                                                />
+                                            </motion.div>
+                                            {/* chapter number chip */}
+                                            <span
+                                                className={`absolute -bottom-1 ${
+                                                    left ? "-right-1" : "-left-1"
+                                                } w-9 h-9 rounded-full bg-boutique-charcoal text-white font-serif-editorial text-sm flex items-center justify-center shadow-md`}
+                                            >
+                                                {ch.number}
+                                            </span>
+                                        </div>
 
-                {/* Carousel */}
-                <div
-                    className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl"
-                    onMouseEnter={() => setPaused(true)}
-                    onMouseLeave={() => setPaused(false)}
-                >
-                    <div
-                        className="flex transition-transform duration-700 ease-[cubic-bezier(0.65,0,0.35,1)]"
-                        style={{ transform: `translateX(-${active * 100}%)` }}
-                    >
-                        {chapters.map((ch, i) => (
-                            <div key={ch.id || i} className="relative w-full flex-shrink-0">
-                                <div className="relative h-[460px] sm:h-[520px] md:h-[560px] w-full">
-                                    <Image
-                                        src={ch.image}
-                                        alt={`${ch.title} — ${ch.categoryName}`}
-                                        fill
-                                        priority={i === 0}
-                                        sizes="(max-width: 1024px) 100vw, 1152px"
-                                        className="object-cover object-center"
-                                    />
-                                    {/* Neutral cinematic darken for legibility */}
-                                    <div className="absolute inset-0 bg-gradient-to-r from-boutique-charcoal via-boutique-charcoal/70 to-transparent" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-boutique-charcoal/60 to-transparent" />
-
-                                    {/* Text */}
-                                    <div className="absolute inset-0 flex items-center">
-                                        <div className="px-6 sm:px-10 md:px-14 max-w-xl">
-                                            <div className="flex items-center gap-3 mb-3">
-                                                <span className="font-serif-editorial text-5xl sm:text-6xl font-light text-boutique-gold-light leading-none">
-                                                    {ch.number}
-                                                </span>
-                                                <span className="text-[11px] uppercase tracking-[0.25em] text-boutique-gold-light font-semibold">
-                                                    {ch.categoryName}
-                                                </span>
-                                            </div>
-                                            <h3 className="font-serif-editorial text-3xl sm:text-4xl md:text-5xl font-medium leading-tight">
+                                        {/* Side label */}
+                                        <div className={`max-w-[15rem] ${left ? "text-left" : "text-right"}`}>
+                                            <p className="text-[10px] uppercase tracking-[0.2em] text-boutique-gold font-semibold">
+                                                Chapter {ch.number}
+                                            </p>
+                                            <h3 className="font-serif-editorial text-2xl sm:text-3xl font-medium text-boutique-charcoal leading-tight mt-1">
                                                 {ch.title}
                                             </h3>
-                                            <p className="text-sm text-white/60 italic mt-2">{ch.subtitle}</p>
-                                            <p className="text-sm sm:text-base text-white/80 font-light mt-4 leading-relaxed line-clamp-3 max-w-md">
-                                                {ch.description}
+                                            <p className="text-xs text-boutique-taupe italic mt-1">
+                                                {ch.categoryName}
                                             </p>
-                                            <Link
-                                                href={`/collections/${ch.categorySlug}`}
-                                                className="mt-6 inline-flex items-center gap-2 bg-boutique-gold hover:bg-boutique-gold-light text-boutique-charcoal px-6 py-3 text-[11px] font-semibold tracking-[0.18em] uppercase transition-colors"
+                                            <span
+                                                className={`mt-3 inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.15em] text-boutique-rose ${
+                                                    left ? "" : "flex-row-reverse"
+                                                }`}
                                             >
-                                                <span>Discover {ch.categoryName}</span>
+                                                <span>Explore Collection</span>
                                                 <ArrowRight className="w-3.5 h-3.5" />
-                                            </Link>
+                                            </span>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                                    </Link>
+                                </motion.div>
 
-                    {/* Arrows */}
-                    <button
-                        onClick={prev}
-                        aria-label="Previous chapter"
-                        className="absolute top-1/2 -translate-y-1/2 right-16 sm:right-20 md:right-24 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm flex items-center justify-center transition-colors"
-                    >
-                        <ChevronLeft className="w-5 h-5" />
-                    </button>
-                    <button
-                        onClick={next}
-                        aria-label="Next chapter"
-                        className="absolute top-1/2 -translate-y-1/2 right-4 sm:right-6 md:right-8 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm flex items-center justify-center transition-colors"
-                    >
-                        <ChevronRight className="w-5 h-5" />
-                    </button>
+                                {i < count - 1 && <Connector flip={!left} reduce={reduce} />}
+                            </div>
+                        );
+                    })}
                 </div>
 
-                {/* Numbered phase nav */}
-                <div className="mt-8 grid grid-cols-5 gap-2 sm:gap-4 max-w-4xl mx-auto">
-                    {chapters.map((ch, i) => (
-                        <button
-                            key={ch.id || i}
-                            onClick={() => go(i)}
-                            className={`group text-left transition-opacity ${
-                                i === active ? "opacity-100" : "opacity-45 hover:opacity-80"
-                            }`}
-                        >
-                            <span
-                                className={`font-serif-editorial text-lg sm:text-xl ${
-                                    i === active ? "text-boutique-gold-light" : "text-white"
-                                }`}
-                            >
-                                {ch.number}
-                            </span>
-                            <span className="hidden sm:block text-[10px] uppercase tracking-[0.14em] text-white/70 mt-1 leading-tight line-clamp-2">
-                                {ch.title}
-                            </span>
-                        </button>
-                    ))}
+                {/* Closing CTA */}
+                <div className="text-center mt-16 md:mt-20">
+                    <Link
+                        href="/collections"
+                        className="inline-flex items-center gap-2 bg-boutique-rose hover:bg-boutique-rose-dark text-white px-8 py-3.5 text-xs font-semibold tracking-[0.2em] uppercase transition-colors"
+                    >
+                        Explore Every Collection
+                    </Link>
                 </div>
             </div>
         </section>
