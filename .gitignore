@@ -43,3 +43,7 @@ Thumbs.db
 *.log
 *.tmp
 *.temp
+# Local working/backup folders (not for deployment)
+_backup_before_redesign/
+_to_delete/
+*.tgz
