@@ -7,7 +7,7 @@ import { boutiqueConfig, buildWhatsAppLink } from "@/config/boutique";
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-boutique-bg">
+        <section className="relative -mt-[84px] min-h-screen w-full flex items-start justify-center overflow-hidden bg-boutique-bg pt-[84px] md:-mt-[90px] md:pt-[90px]">
             {/* Background High-Fashion Editorial Imagery with Overlay */}
             <div className="absolute inset-0 z-0">
                 <Image
@@ -24,7 +24,7 @@ export default function Hero() {
             </div>
 
             {/* Hero Content Container */}
-            <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-16 space-y-6">
+            <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-8 md:pt-10 pb-10 space-y-4 md:space-y-5">
                 {/* Sub-Header Location Tag */}
                 <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-boutique-blush/40 border border-boutique-rose/20 backdrop-blur-md">
                     <Sparkles className="w-3.5 h-3.5 text-boutique-rose" />
@@ -44,16 +44,16 @@ export default function Hero() {
                 </div>
 
                 {/* Story Narrative Lines */}
-                <p className="text-sm sm:text-base md:text-lg text-boutique-taupe max-w-2xl mx-auto font-light leading-relaxed pt-2">
+                <p className="text-sm sm:text-base md:text-lg text-boutique-taupe max-w-2xl mx-auto font-light leading-relaxed">
                     From her first celebrations, to her wedding day, to motherhood and beyond.
                     Crafting bespoke Indian ethnic wear, bridal lehengas, maternity gowns, and baby clothes.
                 </p>
 
                 {/* Action Buttons */}
-                <div className="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4">
                     <Link
                         href="#her-journey"
-                        className="w-full sm:w-auto inline-flex items-center justify-center space-x-3 bg-boutique-rose hover:bg-boutique-rose-dark text-white px-8 py-4 rounded-full text-xs font-semibold tracking-[0.2em] uppercase transition-all shadow-lg hover:shadow-xl hover:scale-105"
+                        className="w-full sm:w-auto inline-flex items-center justify-center space-x-3 bg-boutique-rose hover:bg-boutique-rose-dark text-white px-8 py-3.5 rounded-full text-xs font-semibold tracking-[0.2em] uppercase transition-all shadow-lg hover:shadow-xl hover:scale-105"
                     >
                         <span>Explore Her Story</span>
                     </Link>
@@ -62,7 +62,7 @@ export default function Hero() {
                         href={buildWhatsAppLink()}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-emerald-700 hover:bg-emerald-800 text-white px-7 py-4 rounded-full text-xs font-semibold tracking-[0.15em] uppercase transition-all shadow-md"
+                        className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-emerald-700 hover:bg-emerald-800 text-white px-7 py-3.5 rounded-full text-xs font-semibold tracking-[0.15em] uppercase transition-all shadow-md"
                     >
                         <MessageCircle className="w-4 h-4 text-white" />
                         <span>Chat on WhatsApp</span>
@@ -70,7 +70,7 @@ export default function Hero() {
                 </div>
 
                 {/* Scroll Indicator */}
-                <div className="pt-14 flex flex-col items-center justify-center space-y-2 opacity-80 hover:opacity-100 transition-opacity">
+                <div className="pt-4 flex flex-col items-center justify-center space-y-1.5 opacity-80 hover:opacity-100 transition-opacity">
                     <span className="text-[10px] uppercase tracking-[0.3em] text-boutique-taupe font-medium">
                         SCROLL TO EXPLORE
                     </span>

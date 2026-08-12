@@ -95,29 +95,24 @@ export default function AdminLayout({ children }) {
             >
                 <div>
                     {/* Brand Header */}
-                    <div className="p-6 border-b border-neutral-800">
+                    <div className="px-5 py-3 border-b border-neutral-800">
                         <Link href="/" aria-label="Designs by Nisha Home">
                             <Image
-                                src="/images/logo.png"
+                                src="/images/logo.png?v=20260812"
                                 alt="Designs by Nisha Boutique Logo"
-                                width={160}
-                                height={70}
-                                className="h-10 w-auto object-contain mb-2"
+                                width={200}
+                                height={100}
+                                className="h-14 w-auto object-contain"
                                 style={{ filter: "brightness(0) invert(1)", opacity: 0.95 }}
                             />
                         </Link>
-                        <div className="flex items-center justify-between">
-                            <span className="text-[10px] tracking-[0.2em] text-boutique-gold uppercase font-medium">
-                                MANAGEMENT STUDIO
-                            </span>
-                            <span className="text-[9px] bg-emerald-950 text-emerald-300 border border-emerald-800 px-2 py-0.5 rounded-full font-mono">
-                                Single Truth API
-                            </span>
-                        </div>
+                        <span className="mt-1 block text-[10px] leading-none tracking-[0.2em] text-boutique-gold uppercase font-medium">
+                            Management Studio
+                        </span>
                     </div>
 
                     {/* Nav Items */}
-                    <nav className="px-4 py-6 space-y-6 overflow-y-auto max-h-[calc(100vh-200px)]">
+                    <nav className="px-4 py-5 space-y-6 overflow-y-auto max-h-[calc(100vh-180px)]">
                         {navigationItems.map((group, idx) => (
                             <div key={idx} className="space-y-1">
                                 <h4 className="px-3 text-[10px] font-semibold text-neutral-400 tracking-wider uppercase font-mono">

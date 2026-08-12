@@ -6,8 +6,8 @@ import FloatingWhatsApp from "@/components/layout/FloatingWhatsApp";
 export default function PublicLayout({ children }) {
     return (
         <>
-            <Navbar />
             <AnnouncementBanner />
+            <Navbar />
             <main className="flex-1">{children}</main>
             <Footer />
             <FloatingWhatsApp />

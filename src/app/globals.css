@@ -90,24 +90,20 @@ body {
   border: 1px solid rgba(229, 220, 211, 0.6);
 }
 
-/* Marquee Ticker Keyframes */
-@keyframes marquee {
+/* The opening promotion moves through once, then is removed for this visit. */
+@keyframes announcement-once {
   0% {
     transform: translateX(0%);
   }
 
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-105%);
   }
 }
 
-.animate-marquee {
+.animate-announcement-once {
   display: inline-flex;
-  animation: marquee 25s linear infinite;
-}
-
-.animate-marquee:hover {
-  animation-play-state: paused;
+  animation: announcement-once 12s linear 1 forwards;
 }
 
 /* Reduced Motion Respect */

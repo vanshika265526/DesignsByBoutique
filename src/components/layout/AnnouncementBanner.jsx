@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { Sparkles, ArrowRight, X } from "lucide-react";
 
@@ -8,16 +8,30 @@ export default function AnnouncementBanner() {
     const [banner, setBanner] = useState(null);
     const [dismissed, setDismissed] = useState(false);
 
+    const dismissBanner = useCallback(() => {
+        setDismissed(true);
+    }, []);
+
     useEffect(() => {
         fetch("/api/data/settings")
             .then((r) => r.json())
             .then((json) => {
                 if (json.success && json.data?.announcementBanner) {
                     setBanner(json.data.announcementBanner);
+                    setDismissed(false);
                 }
             })
             .catch(() => { });
     }, []);
+
+    useEffect(() => {
+        if (!banner || dismissed || !banner.enabled || !banner.message) return;
+
+        // Show the promotion once at the beginning of each page load, then
+        // remove it after the single ticker pass.
+        const timeout = window.setTimeout(dismissBanner, 12000);
+        return () => window.clearTimeout(timeout);
+    }, [banner, dismissed, dismissBanner]);
 
     if (dismissed || !banner || !banner.enabled || !banner.message) {
         return null;
@@ -33,11 +47,11 @@ export default function AnnouncementBanner() {
     const activeBgClass = bgStyles[banner.bgType || "rose"] || bgStyles.rose;
 
     return (
-        <div className={`relative z-40 border-b overflow-hidden text-xs py-2 px-4 shadow-sm transition-all duration-300 ${activeBgClass}`}>
+        <div className={`relative z-40 h-9 border-b overflow-hidden text-xs px-4 shadow-sm transition-all duration-300 ${activeBgClass}`}>
             <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
                 {/* Ticker Content Wrapper */}
-                <div className="flex-1 overflow-hidden">
-                    <div className="flex items-center space-x-3 animate-marquee whitespace-nowrap">
+                <div className="flex h-9 flex-1 items-center overflow-hidden">
+                    <div className="flex items-center space-x-3 animate-announcement-once whitespace-nowrap">
                         <span className="inline-flex items-center space-x-1 font-semibold tracking-wide">
                             <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-pulse flex-shrink-0" />
                             <span>{banner.message}</span>
@@ -57,8 +71,8 @@ export default function AnnouncementBanner() {
 
                 {/* Dismiss Button */}
                 <button
-                    onClick={() => setDismissed(true)}
-                    className="p-1 rounded-full hover:bg-white/10 text-white/70 hover:text-white transition-colors flex-shrink-0 ml-2"
+                    onClick={dismissBanner}
+                    className="p-1 rounded-full hover:bg-white/10 text-white/70 hover:text-white transition-colors flex-shrink-0 ml-2 self-center"
                     title="Dismiss Announcement"
                 >
                     <X className="w-3.5 h-3.5" />

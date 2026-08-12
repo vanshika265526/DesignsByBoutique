@@ -49,21 +49,23 @@ export default function Navbar() {
 
     return (
         <header
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "glass-nav shadow-sm py-3" : "bg-transparent py-5"
+            className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "glass-nav shadow-sm" : "bg-transparent"
                 }`}
         >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between">
+            <div className="w-full px-4 sm:px-6 lg:px-10">
+                <div className="flex h-[84px] md:h-[90px] items-center justify-between">
                     {/* Logo */}
                     <Link href="/" className="group focus:outline-none flex-shrink-0" aria-label="Designs by Nisha Boutique — Home">
+                        <span className="relative block h-[76px] w-[148px] md:h-[84px] md:w-[164px]">
                         <Image
-                            src="/images/logo.png"
+                            src="/images/logo.png?v=20260812-layout"
                             alt="Designs by Nisha Boutique New Delhi"
-                            width={220}
-                            height={110}
+                            fill
                             priority
-                            className="h-14 sm:h-20 w-auto object-contain mix-blend-multiply transition-all duration-300 group-hover:scale-105"
+                            sizes="(min-width: 768px) 164px, 148px"
+                            className="object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105"
                         />
+                        </span>
                     </Link>
 
                     {/* Desktop Navigation */}
