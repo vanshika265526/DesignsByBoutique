@@ -24,15 +24,6 @@ export default function AnnouncementBanner() {
             .catch(() => { });
     }, []);
 
-    useEffect(() => {
-        if (!banner || dismissed || !banner.enabled || !banner.message) return;
-
-        // Show the promotion once at the beginning of each page load, then
-        // remove it after the single ticker pass.
-        const timeout = window.setTimeout(dismissBanner, 12000);
-        return () => window.clearTimeout(timeout);
-    }, [banner, dismissed, dismissBanner]);
-
     if (dismissed || !banner || !banner.enabled || !banner.message) {
         return null;
     }
@@ -51,21 +42,25 @@ export default function AnnouncementBanner() {
             <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
                 {/* Ticker Content Wrapper */}
                 <div className="flex h-9 flex-1 items-center overflow-hidden">
-                    <div className="flex items-center space-x-3 animate-announcement-once whitespace-nowrap">
-                        <span className="inline-flex items-center space-x-1 font-semibold tracking-wide">
-                            <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-pulse flex-shrink-0" />
-                            <span>{banner.message}</span>
-                        </span>
+                    <div className="flex items-center animate-announcement-marquee whitespace-nowrap">
+                        {[0, 1].map((item) => (
+                            <div key={item} className="flex items-center space-x-3 pr-12">
+                                <span className="inline-flex items-center space-x-1 font-semibold tracking-wide">
+                                    <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-pulse flex-shrink-0" />
+                                    <span>{banner.message}</span>
+                                </span>
 
-                        {banner.linkUrl && (
-                            <Link
-                                href={banner.linkUrl}
-                                className="inline-flex items-center space-x-1 font-bold underline underline-offset-4 hover:text-white transition-colors uppercase tracking-wider text-[11px] ml-3"
-                            >
-                                <span>{banner.linkText || "Learn More"}</span>
-                                <ArrowRight className="w-3 h-3" />
-                            </Link>
-                        )}
+                                {banner.linkUrl && (
+                                    <Link
+                                        href={banner.linkUrl}
+                                        className="inline-flex items-center space-x-1 font-bold underline underline-offset-4 hover:text-white transition-colors uppercase tracking-wider text-[11px] ml-3"
+                                    >
+                                        <span>{banner.linkText || "Learn More"}</span>
+                                        <ArrowRight className="w-3 h-3" />
+                                    </Link>
+                                )}
+                            </div>
+                        ))}
                     </div>
                 </div>
 

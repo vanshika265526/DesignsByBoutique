@@ -90,20 +90,25 @@ body {
   border: 1px solid rgba(229, 220, 211, 0.6);
 }
 
-/* The opening promotion moves through once, then is removed for this visit. */
-@keyframes announcement-once {
+/* Announcement ticker stays active until the visitor dismisses it. */
+@keyframes announcement-marquee {
   0% {
     transform: translateX(0%);
   }
 
   100% {
-    transform: translateX(-105%);
+    transform: translateX(-50%);
   }
 }
 
-.animate-announcement-once {
+.animate-announcement-marquee {
   display: inline-flex;
-  animation: announcement-once 12s linear 1 forwards;
+  min-width: max-content;
+  animation: announcement-marquee 18s linear infinite;
+}
+
+.animate-announcement-marquee:hover {
+  animation-play-state: paused;
 }
 
 /* Reduced Motion Respect */
