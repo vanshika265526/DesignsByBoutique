@@ -30,11 +30,11 @@ export const boutiqueConfig = {
     },
 
     announcementBanner: {
-        enabled: false,
-        message: "Festive Season Special: Enjoy 15% off bespoke Bridal & Festive orders with code BRIDAL2026!",
+        enabled: true,
+        message: "Now booking bespoke bridal & festive appointments — enquire directly on WhatsApp.",
         linkText: "Explore Bridal",
         linkUrl: "/collections/bridal-lehengas",
-        bgType: "rose",
+        bgType: "emerald",
         speed: "normal",
     },
 

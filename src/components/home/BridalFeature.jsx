@@ -72,7 +72,7 @@ export default function BridalFeature() {
                     {/* Bridal Feature Image */}
                     <div className="lg:col-span-6 relative aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl border border-white/20">
                         <Image
-                            src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop"
+                            src="https://images.pexels.com/photos/9418855/pexels-photo-9418855.jpeg?auto=compress&cs=tinysrgb&w=1600"
                             alt="Designs by Nisha Heirloom Crimson Bridal Lehenga New Delhi"
                             fill
                             sizes="(max-width: 1024px) 100vw, 50vw"

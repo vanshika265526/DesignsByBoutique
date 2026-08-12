@@ -2,71 +2,71 @@
 
 import Image from "next/image";
 import Link from "next/link";
-
-const categories = [
-    {
-        id: "men",
-        name: "MEN",
-        image: "https://assets2.andaazfashion.com/media/catalog/product/m/e/mens-ethnic-maroon-kurta-for-eid-mkpv0712.jpg",
-        link: "/collections/suits-anarkalis",
-        gradientOverlay: "from-[#6B2135]/80 via-[#6B2135]/20 to-transparent",
-    },
-    {
-        id: "women",
-        name: "WOMEN",
-        image: "https://assets2.andaazfashion.com/media/catalog/product/d/u/dusty-orange-tissue-gharara-suit-with-dori-hand-embroidered-for-wedding-wear-lstv146809-1_3.jpg",
-        link: "/collections/bridal-lehengas",
-        gradientOverlay: "from-[#7A283E]/80 via-[#7A283E]/20 to-transparent",
-    },
-    {
-        id: "kids",
-        name: "KIDS",
-        image: "https://assets2.andaazfashion.com/media/catalog/product/o/l/olive-green-tissue-sequins-embroidered-girl-anarkali-suit-for-party-wear-lstv145726-1_1.jpg",
-        link: "/collections/baby-clothes",
-        gradientOverlay: "from-[#8B3B4B]/80 via-[#8B3B4B]/20 to-transparent",
-    },
-];
+import { ArrowUpRight } from "lucide-react";
+import { initialCategories } from "@/data/products";
 
 export default function ShopByCategory() {
     return (
-        <section className="py-16 md:py-24 bg-boutique-bg-alt border-y border-boutique-muted-border/40">
+        <section className="py-16 md:py-24 bg-boutique-bg">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-                    <h2 className="font-serif-editorial text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-boutique-charcoal uppercase">
-                        SHOP BY CATEGORY
+                    <p className="text-[11px] uppercase tracking-[0.3em] text-boutique-gold font-semibold mb-3">
+                        The Boutique
+                    </p>
+                    <h2 className="font-serif-editorial text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-boutique-charcoal">
+                        Shop by Category
                     </h2>
-                    <div className="h-[2px] w-14 bg-gradient-to-r from-boutique-rose via-boutique-gold to-boutique-rose mx-auto my-3 rounded-full" />
+                    <p className="mt-3 text-sm sm:text-base text-boutique-taupe font-light">
+                        Curated selections for every occasion in her story.
+                    </p>
                 </div>
 
-                {/* 3 Cards Side-by-Side on all screen sizes */}
-                <div className="grid grid-cols-3 gap-2.5 sm:gap-8">
-                    {categories.map((cat) => (
+                {/* Category Grid */}
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
+                    {initialCategories.map((cat) => (
                         <Link
-                            key={cat.id}
-                            href={cat.link}
-                            className="group relative rounded-2xl sm:rounded-3xl overflow-hidden aspect-[3/4] sm:aspect-[4/5] shadow-md hover:shadow-2xl transition-all duration-500 block border border-boutique-muted-border/40"
+                            key={cat.id || cat.slug}
+                            href={`/collections/${cat.slug}`}
+                            className="group relative rounded-xl sm:rounded-2xl overflow-hidden aspect-[4/5] shadow-sm hover:shadow-xl transition-all duration-500 block border border-boutique-muted-border/50"
                         >
-                            {/* Image */}
                             <Image
-                                src={cat.image}
+                                src={cat.image || "/images/placeholder.jpg"}
                                 alt={cat.name}
                                 fill
-                                sizes="(max-width: 768px) 33vw, 33vw"
-                                className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-108"
+                                sizes="(max-width: 768px) 50vw, 33vw"
+                                className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
                             />
 
                             {/* Bottom Gradient Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent group-hover:from-boutique-rose/80 group-hover:via-boutique-rose/30 transition-colors duration-500" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-boutique-charcoal/85 via-boutique-charcoal/10 to-transparent" />
 
-                            {/* Category Title Centered at Bottom */}
-                            <div className="absolute inset-x-0 bottom-0 pb-4 sm:pb-8 text-center z-10 px-1">
-                                <h3 className="font-serif-editorial text-lg sm:text-4xl lg:text-5xl font-bold tracking-wider text-white drop-shadow-md group-hover:scale-105 transition-transform duration-300">
+                            {/* Category Label */}
+                            <div className="absolute inset-x-0 bottom-0 p-4 sm:p-6 z-10">
+                                <h3 className="font-serif-editorial text-lg sm:text-2xl font-semibold tracking-wide text-white leading-tight">
                                     {cat.name}
                                 </h3>
+                                <span className="mt-1 inline-flex items-center gap-1 text-[10px] sm:text-xs uppercase tracking-[0.2em] text-white/85 font-medium">
+                                    Explore
+                                    <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                                </span>
                             </div>
                         </Link>
                     ))}
+
+                    {/* View-all card to balance the grid */}
+                    <Link
+                        href="/collections"
+                        className="group relative rounded-xl sm:rounded-2xl overflow-hidden aspect-[4/5] flex flex-col items-center justify-center text-center p-6 bg-boutique-rose text-white transition-all duration-500 hover:bg-boutique-rose-dark"
+                    >
+                        <span className="font-serif-editorial text-xl sm:text-2xl font-semibold leading-tight">
+                            View All Collections
+                        </span>
+                        <span className="mt-3 inline-flex items-center gap-1 text-[10px] sm:text-xs uppercase tracking-[0.2em] text-boutique-gold-light font-medium">
+                            Browse the Boutique
+                            <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        </span>
+                    </Link>
                 </div>
             </div>
         </section>

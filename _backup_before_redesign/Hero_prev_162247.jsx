@@ -19,7 +19,7 @@ export default function Hero({ settings = {} }) {
             {/* Full-bleed editorial hero */}
             <div className="relative w-full h-[78vh] min-h-[520px] md:h-[86vh] overflow-hidden">
                 <Image
-                    src="/images/hero.png"
+                    src="https://images.pexels.com/photos/17001511/pexels-photo-17001511.jpeg?auto=compress&cs=tinysrgb&w=1600"
                     alt="Designs by Nisha — Luxury Indian bridal & women's couture, New Delhi"
                     fill
                     priority

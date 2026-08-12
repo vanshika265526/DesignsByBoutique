@@ -9,20 +9,25 @@ module.exports = {
         extend: {
             colors: {
                 boutique: {
-                    bg: "#FAF7F2",
-                    "bg-alt": "#F5EFEB",
-                    "bg-card": "#FDFBF7",
-                    cream: "#EFE7DE",
-                    rose: "#6B2135",
-                    "rose-dark": "#4A1523",
-                    "rose-light": "#7A283E",
-                    blush: "#E8D5D8",
-                    "blush-hover": "#D9B4B8",
-                    gold: "#C5A059",
-                    "gold-light": "#E5D4AA",
-                    charcoal: "#2A2424",
-                    taupe: "#6E6564",
-                    "muted-border": "#E5DCD3",
+                    // Cream / ivory base
+                    bg: "#F7F4EE",
+                    "bg-alt": "#EFEBE3",
+                    "bg-card": "#FCFAF5",
+                    cream: "#EAE4D9",
+                    // Primary accent: remapped from maroon -> deep emerald (luxury editorial)
+                    rose: "#1F4A3B",
+                    "rose-dark": "#123026",
+                    "rose-light": "#2E6350",
+                    // Soft sage tint (was blush)
+                    blush: "#DDE7DE",
+                    "blush-hover": "#C4D5C7",
+                    // Muted warm gold accent
+                    gold: "#B08C4F",
+                    "gold-light": "#E1D2AC",
+                    // Near-black ink
+                    charcoal: "#1A1917",
+                    taupe: "#6B655E",
+                    "muted-border": "#E3DCD1",
                 },
             },
             fontFamily: {

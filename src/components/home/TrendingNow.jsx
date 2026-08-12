@@ -17,7 +17,7 @@ const gownsData = [
         originalPrice: 10500,
         sizes: "XS, S, M, L, XL",
         tags: ["TRENDING", "NEW"],
-        image: "https://assets2.andaazfashion.com/media/catalog/product/p/a/pale-pink-sequins-embroidered-floor-length-net-gown-lstv135801-1.jpg",
+        image: "https://images.pexels.com/photos/36391529/pexels-photo-36391529.jpeg?auto=compress&cs=tinysrgb&w=1200",
         category: "Floor Length Net Gowns",
     },
     {
@@ -29,7 +29,7 @@ const gownsData = [
         originalPrice: 9500,
         sizes: "S, M, L, XL",
         tags: ["TRENDING"],
-        image: "https://assets2.andaazfashion.com/media/catalog/product/r/e/resham-embroidered-georgette-burgundy-maroon-anarkali-suit-lstv01058-maroon-1_1.jpg",
+        image: "https://images.pexels.com/photos/36634909/pexels-photo-36634909.jpeg?auto=compress&cs=tinysrgb&w=1200",
         category: "Resham Georgette Anarkalis",
     },
     {
@@ -41,7 +41,7 @@ const gownsData = [
         originalPrice: 10990,
         sizes: "XS, S, M, L",
         tags: ["BESTSELLER"],
-        image: "https://assets2.andaazfashion.com/media/catalog/product/1/9/1979-blue.jpg",
+        image: "https://images.pexels.com/photos/35591476/pexels-photo-35591476.jpeg?auto=compress&cs=tinysrgb&w=1200",
         category: "Designer Anarkali Gowns",
     },
     {
@@ -53,7 +53,7 @@ const gownsData = [
         originalPrice: 11800,
         sizes: "S, M, L, XL, XXL",
         tags: ["TRENDING", "NEW"],
-        image: "https://assets2.andaazfashion.com/media/catalog/product/d/e/deep-red-net-embroidered-anarkali-suit-lstv07512-1.jpg",
+        image: "https://images.pexels.com/photos/28604240/pexels-photo-28604240.jpeg?auto=compress&cs=tinysrgb&w=1200",
         category: "Bridal & Festive Anarkalis",
     },
     {
@@ -65,7 +65,7 @@ const gownsData = [
         originalPrice: 11200,
         sizes: "XS, S, M, L",
         tags: ["NEW"],
-        image: "https://assets2.andaazfashion.com/media/catalog/product/b/l/black-velvet-embroidered-anarkali-suit-with-skirt-lstv03688-1.jpg",
+        image: "https://images.pexels.com/photos/35591654/pexels-photo-35591654.jpeg?auto=compress&cs=tinysrgb&w=1200",
         category: "Royal Velvet Couture",
     },
     {
@@ -77,7 +77,7 @@ const gownsData = [
         originalPrice: 10800,
         sizes: "S, M, L, XL",
         tags: ["POPULAR"],
-        image: "https://assets2.andaazfashion.com/media/catalog/product/1/9/1979-black.jpg",
+        image: "https://images.pexels.com/photos/5922738/pexels-photo-5922738.jpeg?auto=compress&cs=tinysrgb&w=1200",
         category: "Festive Evening Wear",
     },
     {
@@ -89,7 +89,7 @@ const gownsData = [
         originalPrice: 12500,
         sizes: "XS, S, M, L, XL",
         tags: ["LUXURY"],
-        image: "https://assets2.andaazfashion.com/media/catalog/product/v/e/velvet-dream-red-dupion-embroidered-anarkali-suit-1-1979_7.jpg",
+        image: "https://images.pexels.com/photos/28604242/pexels-photo-28604242.jpeg?auto=compress&cs=tinysrgb&w=1200",
         category: "Royal Velvet Couture",
     },
     {
