@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { MessageCircle, Scissors, CalendarCheck, Sparkles } from "lucide-react";
@@ -11,21 +12,56 @@ const trustBadges = [
     { icon: MessageCircle, title: "Ask on WhatsApp", subtitle: "Message us anytime — it's quick and easy" },
 ];
 
+// Auto-rotating hero slides. First entry is the existing/admin hero image;
+// the rest are the studio editorial shots in /public/images/hero/.
+const SLIDE_INTERVAL_MS = 5000;
+
 export default function Hero({ settings = {} }) {
-    const heroImage = settings.heroImage || "/images/hero.png";
+    const allImages = [
+        settings.heroImage || "/images/hero.png",
+        "/images/hero/slide-1.png",
+        "/images/hero/slide-2.png",
+        "/images/hero/slide-3.png",
+    ];
+
+    // Drop any slide whose file fails to load, so a not-yet-added image never
+    // shows as a blank/broken frame in the rotation.
+    const [broken, setBroken] = useState({});
+    const heroImages = allImages.filter((src) => !broken[src]);
+
+    const [active, setActive] = useState(0);
+
+    useEffect(() => {
+        if (heroImages.length <= 1) return;
+        const id = setInterval(() => {
+            setActive((i) => (i + 1) % heroImages.length);
+        }, SLIDE_INTERVAL_MS);
+        return () => clearInterval(id);
+    }, [heroImages.length]);
+
+    // Keep the active index valid if the list shrinks (a slide failed to load).
+    useEffect(() => {
+        if (active >= heroImages.length) setActive(0);
+    }, [heroImages.length, active]);
 
     return (
         <section className="w-full bg-boutique-bg">
             {/* Full-bleed editorial hero */}
-            <div className="relative w-full h-[78vh] min-h-[520px] md:h-[86vh] overflow-hidden">
-                <Image
-                    src={heroImage}
-                    alt="Designs by Nisha — Luxury Indian bridal & women's couture, New Delhi"
-                    fill
-                    priority
-                    sizes="100vw"
-                    className="object-cover object-center"
-                />
+            <div className="relative w-full h-[78vh] min-h-[520px] md:h-[86vh] overflow-hidden bg-boutique-charcoal">
+                {heroImages.map((src, i) => (
+                    <Image
+                        key={src}
+                        src={src}
+                        alt="Designs by Nisha — Luxury Indian bridal & women's couture, New Delhi"
+                        fill
+                        priority={i === 0}
+                        sizes="100vw"
+                        onError={() => setBroken((b) => ({ ...b, [src]: true }))}
+                        className={`object-cover object-center transition-opacity duration-1000 ease-in-out ${
+                            i === active ? "opacity-100" : "opacity-0"
+                        }`}
+                    />
+                ))}
                 {/* Legibility overlay */}
                 <div className="absolute inset-0 bg-gradient-to-b from-boutique-charcoal/40 via-boutique-charcoal/25 to-boutique-charcoal/60" />
 
@@ -64,6 +100,22 @@ export default function Hero({ settings = {} }) {
                         </a>
                     </div>
                 </div>
+
+                {/* Slide indicators */}
+                {heroImages.length > 1 && (
+                    <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
+                        {heroImages.map((_, i) => (
+                            <button
+                                key={i}
+                                onClick={() => setActive(i)}
+                                aria-label={`Show slide ${i + 1}`}
+                                className={`h-1.5 rounded-full transition-all duration-300 ${
+                                    i === active ? "w-6 bg-white" : "w-1.5 bg-white/50 hover:bg-white/80"
+                                }`}
+                            />
+                        ))}
+                    </div>
+                )}
             </div>
 
             {/* Trust badge strip */}

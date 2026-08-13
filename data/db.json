@@ -1224,7 +1224,7 @@
       "slug": "suits-anarkalis",
       "chapter": "her-beginnings",
       "description": "Graceful daily luxury & celebratory silk Anarkali suits.",
-      "image": "https://images.pexels.com/photos/4336823/pexels-photo-4336823.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "image": "/api/uploads/whatsapp-image-2026-08-13-at-11-21-35-am-1786600522868.jpeg",
       "count": 24,
       "published": true,
       "order": 1
@@ -1235,7 +1235,7 @@
       "slug": "bridal-lehengas",
       "chapter": "her-forever",
       "description": "Hand-embroidered zardozi bridal masterpieces for her big day.",
-      "image": "https://images.pexels.com/photos/12579916/pexels-photo-12579916.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "image": "/api/uploads/whatsapp-image-2026-08-13-at-11-22-58-am-1786600543276.jpeg",
       "count": 18,
       "published": true,
       "order": 2
@@ -1246,7 +1246,7 @@
       "slug": "haldi-mehendi",
       "chapter": "her-new-chapter",
       "description": "Vibrant yellow kesar lehengas & emerald green shararas.",
-      "image": "https://images.pexels.com/photos/23623618/pexels-photo-23623618.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "image": "/api/uploads/whatsapp-image-2026-08-13-at-11-24-27-am-1786600560823.jpeg",
       "count": 15,
       "published": true,
       "order": 3
@@ -1643,6 +1643,48 @@
     ]
   },
   "auditLogs": [
+    {
+      "id": "log-1786601029781",
+      "user": "Admin",
+      "action": "Category Updated",
+      "details": "Updated category \"Suits & Anarkalis\"",
+      "timestamp": "2026-08-13T06:03:49.781Z"
+    },
+    {
+      "id": "log-1786601028484",
+      "user": "Admin",
+      "action": "Category Updated",
+      "details": "Updated category \"Suits & Anarkalis\"",
+      "timestamp": "2026-08-13T06:03:48.484Z"
+    },
+    {
+      "id": "log-1786600562937",
+      "user": "Admin",
+      "action": "Category Updated",
+      "details": "Updated category \"Haldi & Mehendi\"",
+      "timestamp": "2026-08-13T05:56:02.937Z"
+    },
+    {
+      "id": "log-1786600545273",
+      "user": "Admin",
+      "action": "Category Updated",
+      "details": "Updated category \"Bridal Lehengas\"",
+      "timestamp": "2026-08-13T05:55:45.273Z"
+    },
+    {
+      "id": "log-1786600532705",
+      "user": "Admin",
+      "action": "Category Updated",
+      "details": "Updated category \"Bridal Lehengas\"",
+      "timestamp": "2026-08-13T05:55:32.705Z"
+    },
+    {
+      "id": "log-1786600526469",
+      "user": "Admin",
+      "action": "Category Updated",
+      "details": "Updated category \"Suits & Anarkalis\"",
+      "timestamp": "2026-08-13T05:55:26.469Z"
+    },
     {
       "id": "log-1",
       "user": "Admin",

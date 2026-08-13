@@ -154,8 +154,11 @@ function getSeedData() {
 
 import { getDatabase } from './mongodb';
 
-// Helper to seed MongoDB Atlas if collection is empty
+// Helper to seed MongoDB Atlas if collection is empty.
+// Runs at most once per server instance — the empty-check is only meaningful on
+// a fresh database, so repeating it on every request just wastes round-trips.
 export async function seedMongoIfEmpty() {
+    if (globalThis.__dbSeedChecked) return;
     try {
         const db = await getDatabase();
         const collections = ['products', 'categories', 'chapters', 'gallery', 'offers', 'enquiries', 'testimonials'];
@@ -182,27 +185,62 @@ export async function seedMongoIfEmpty() {
             await db.collection('analytics').insertOne({ _id: 'boutique_analytics', ...seedData.analytics });
             console.log('[MongoDB Atlas] Seeded analytics data.');
         }
+
+        // Mark as checked only after a successful pass so a transient failure retries.
+        globalThis.__dbSeedChecked = true;
     } catch (err) {
         console.error('[MongoDB Atlas] Seed check failed:', err.message);
     }
 }
 
-// Asynchronous MongoDB reader with fallback to JSON
+// Short-lived in-memory cache so bursts of reads (a single request often calls
+// getDbAsync several times — metadata + page + params) and rapid navigation
+// don't each hit Atlas. Invalidated immediately on any writeDb().
+let _dbCache = null;
+let _dbCacheAt = 0;
+const DB_CACHE_TTL_MS = 15 * 1000;
+
+export function invalidateDbCache() {
+    _dbCache = null;
+    _dbCacheAt = 0;
+}
+
+// Asynchronous MongoDB reader with fallback to JSON.
 export async function getDbAsync() {
+    const now = Date.now();
+    if (_dbCache && now - _dbCacheAt < DB_CACHE_TTL_MS) {
+        return _dbCache;
+    }
+
     try {
         await seedMongoIfEmpty();
         const db = await getDatabase();
 
-        const products = await db.collection('products').find({}).toArray();
-        const categories = await db.collection('categories').find({}).toArray();
-        const chapters = await db.collection('chapters').find({}).toArray();
-        const gallery = await db.collection('gallery').find({}).toArray();
-        const offers = await db.collection('offers').find({}).toArray();
-        const enquiries = await db.collection('enquiries').find({}).toArray();
-        const testimonials = await db.collection('testimonials').find({}).toArray();
-        const settingsDoc = await db.collection('settings').findOne({ _id: 'boutique_settings' });
-        const analyticsDoc = await db.collection('analytics').findOne({ _id: 'boutique_analytics' });
-        const auditLogs = await db.collection('auditLogs').find({}).sort({ timestamp: -1 }).limit(100).toArray();
+        // Read every collection in parallel instead of sequentially — turns
+        // ~10 serial round-trips into a single round-trip's worth of latency.
+        const [
+            products,
+            categories,
+            chapters,
+            gallery,
+            offers,
+            enquiries,
+            testimonials,
+            settingsDoc,
+            analyticsDoc,
+            auditLogs,
+        ] = await Promise.all([
+            db.collection('products').find({}).toArray(),
+            db.collection('categories').find({}).toArray(),
+            db.collection('chapters').find({}).toArray(),
+            db.collection('gallery').find({}).toArray(),
+            db.collection('offers').find({}).toArray(),
+            db.collection('enquiries').find({}).toArray(),
+            db.collection('testimonials').find({}).toArray(),
+            db.collection('settings').findOne({ _id: 'boutique_settings' }),
+            db.collection('analytics').findOne({ _id: 'boutique_analytics' }),
+            db.collection('auditLogs').find({}).sort({ timestamp: -1 }).limit(100).toArray(),
+        ]);
 
         const result = {
             products: products.length > 0 ? products : getSeedData().products,
@@ -217,8 +255,11 @@ export async function getDbAsync() {
             auditLogs: auditLogs.length > 0 ? auditLogs : getSeedData().auditLogs,
         };
 
-        // Sync local db.json
-        writeDb(result);
+        // NOTE: intentionally NO writeDb() here. Writing the whole dataset back
+        // to Atlas on every read added ~55 serial upserts per page load and was
+        // the main cause of slowness. Admin actions persist via writeDb directly.
+        _dbCache = result;
+        _dbCacheAt = now;
         return result;
     } catch (err) {
         console.warn('[MongoDB Atlas] Failed to connect to Atlas, using local database:', err.message);
@@ -254,41 +295,58 @@ export function writeDb(data) {
             fs.mkdirSync(DB_DIR, { recursive: true });
         }
 
-        const tempPath = `${DB_PATH}.tmp`;
-        fs.writeFileSync(tempPath, JSON.stringify(data, null, 2), 'utf-8');
-        fs.renameSync(tempPath, DB_PATH);
+        // Best-effort local file write. On serverless (Vercel) the filesystem is
+        // read-only, so this can throw — that must NOT abort the Atlas sync below,
+        // which is the real source of truth in production.
+        try {
+            const tempPath = `${DB_PATH}.tmp`;
+            fs.writeFileSync(tempPath, JSON.stringify(data, null, 2), 'utf-8');
+            fs.renameSync(tempPath, DB_PATH);
+        } catch (fileErr) {
+            console.warn('[writeDb] Local file write skipped:', fileErr.message);
+        }
 
-        // Async background sync to MongoDB Atlas
+        // Any write makes the read cache stale — drop it so the next read is fresh.
+        invalidateDbCache();
+
+        // Sync to MongoDB Atlas — every id-keyed collection plus the singletons,
+        // so admin edits to ANY content type (categories, gallery, offers, …)
+        // actually reach production, not just products/settings/testimonials.
+        const ID_COLLECTIONS = [
+            'products', 'categories', 'chapters', 'gallery', 'offers', 'testimonials', 'enquiries',
+        ];
         getDatabase()
             .then(async (db) => {
-                if (data.products) {
-                    for (const p of data.products) {
-                        const { _id, ...pData } = p;
-                        await db.collection('products').updateOne({ id: p.id }, { $set: pData }, { upsert: true });
+                for (const col of ID_COLLECTIONS) {
+                    if (!Array.isArray(data[col])) continue;
+                    for (const item of data[col]) {
+                        if (!item || !item.id) continue;
+                        const { _id, ...rest } = item;
+                        await db.collection(col).updateOne({ id: item.id }, { $set: rest }, { upsert: true });
+                    }
+                    // Prune docs that were removed in the admin (delete propagation),
+                    // but only when we have a non-empty desired state to compare against
+                    // (guards against wiping a collection on a degraded read).
+                    const ids = data[col].map((x) => x && x.id).filter(Boolean);
+                    if (ids.length > 0) {
+                        await db.collection(col).deleteMany({ id: { $nin: ids } });
                     }
                 }
                 if (data.settings) {
                     const { _id, ...sData } = data.settings;
                     await db.collection('settings').updateOne({ _id: 'boutique_settings' }, { $set: sData }, { upsert: true });
                 }
-                if (data.testimonials) {
-                    for (const t of data.testimonials) {
-                        const { _id, ...tData } = t;
-                        await db.collection('testimonials').updateOne({ id: t.id }, { $set: tData }, { upsert: true });
-                    }
-                }
-                if (data.enquiries) {
-                    for (const e of data.enquiries) {
-                        const { _id, ...eData } = e;
-                        await db.collection('enquiries').updateOne({ id: e.id }, { $set: eData }, { upsert: true });
-                    }
+                if (data.analytics) {
+                    const { _id, ...aData } = data.analytics;
+                    await db.collection('analytics').updateOne({ _id: 'boutique_analytics' }, { $set: aData }, { upsert: true });
                 }
             })
             .catch((e) => console.warn('[MongoDB Sync] Warning:', e.message));
 
+        // Return true even if only the file write failed — Atlas is authoritative.
         return true;
     } catch (err) {
-        console.error('Error writing database file:', err);
+        console.error('Error writing database:', err);
         return false;
     }
 }
