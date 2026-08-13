@@ -2,7 +2,8 @@
 
 import { useEffect } from "react";
 import Image from "next/image";
-import { X, MessageCircle, MapPin } from "lucide-react";
+import { X, MapPin } from "lucide-react";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import { buildWhatsAppLink } from "@/config/boutique";
 
 export default function LightboxModal({ item, onClose }) {
@@ -71,7 +72,7 @@ export default function LightboxModal({ item, onClose }) {
                             rel="noopener noreferrer"
                             className="w-full bg-emerald-700 hover:bg-emerald-800 text-white py-3.5 px-4 rounded-xl text-xs font-semibold uppercase tracking-wider flex items-center justify-center space-x-2 transition-colors"
                         >
-                            <MessageCircle className="w-4 h-4" />
+                            <WhatsAppIcon className="w-4 h-4" />
                             <span>Enquire About Outfit</span>
                         </a>
 

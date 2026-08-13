@@ -7,6 +7,7 @@ import GalleryPreviewSection from "@/components/home/GalleryPreviewSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import InstagramSection from "@/components/home/InstagramSection";
 import SignatureCTA from "@/components/home/SignatureCTA";
+import HomeContactForm from "@/components/home/HomeContactForm";
 
 // Force dynamic so homepage always reflects latest DB data (products, settings, etc.)
 export const dynamic = "force-dynamic";
@@ -45,6 +46,9 @@ export default async function HomePage() {
 
             {/* 8 — Call / Instagram / WhatsApp CTA */}
             <SignatureCTA />
+
+            {/* 9 — Send us a message form */}
+            <HomeContactForm />
         </>
     );
 }

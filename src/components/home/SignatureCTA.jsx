@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { MessageCircle, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import { buildWhatsAppLink } from "@/config/boutique";
 
 export default function SignatureCTA() {
@@ -36,7 +37,7 @@ export default function SignatureCTA() {
                         rel="noopener noreferrer"
                         className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-emerald-700 hover:bg-emerald-800 text-white px-8 py-4 rounded-full text-xs font-semibold tracking-[0.15em] uppercase transition-all shadow-md"
                     >
-                        <MessageCircle className="w-4 h-4 text-white" />
+                        <WhatsAppIcon className="w-4 h-4 text-white" />
                         <span>Chat With Us on WhatsApp</span>
                     </a>
                 </div>

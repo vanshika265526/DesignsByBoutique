@@ -4,15 +4,8 @@ import { useState, useEffect } from "react";
 import { useRouter, useParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import {
-    ArrowLeft,
-    Upload,
-    Plus,
-    X,
-    Eye,
-    Sparkles,
-    MessageCircle,
-} from "lucide-react";
+import { ArrowLeft, Upload, Plus, X, Eye, Sparkles } from "lucide-react";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 
 export default function EditProductPage() {
     const router = useRouter();
@@ -658,7 +651,7 @@ export default function EditProductPage() {
 
                             <div className="pt-2">
                                 <div className="w-full bg-emerald-600 text-white text-xs font-semibold py-2.5 rounded-xl flex items-center justify-center space-x-2">
-                                    <MessageCircle className="w-4 h-4" />
+                                    <WhatsAppIcon className="w-4 h-4" />
                                     <span>Enquire via WhatsApp</span>
                                 </div>
                             </div>

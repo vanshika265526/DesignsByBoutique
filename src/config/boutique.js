@@ -26,7 +26,7 @@ export const boutiqueConfig = {
     contact: {
         email: "enquire@designsbynisha.com",
         phoneDisplay: "+91 82187 52043",
-        hours: "Monday – Saturday: 10:30 AM – 7:30 PM (By Appointment & Walk-ins)",
+        hours: "Monday – Sunday: 10 AM – 9 PM (By Appointment & Walk-ins)",
     },
 
     announcementBanner: {

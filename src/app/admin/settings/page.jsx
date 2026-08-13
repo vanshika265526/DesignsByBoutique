@@ -13,7 +13,7 @@ export default function AdminSettingsPage() {
         email: "enquire@designsbynisha.com",
         address: "318, near Aayushman Arogya Mandir (Dispensary, Block A1, Chattarpur, Chhatarpur, New Delhi, Delhi 110074",
         instagram: "https://www.instagram.com/designsbynisha00?igsh=Ym92OXh5emZsdm9t",
-        businessHours: "Monday – Saturday: 10:30 AM – 7:30 PM (By Appointment & Walk-ins)",
+        businessHours: "Monday – Sunday: 10 AM – 9 PM (By Appointment & Walk-ins)",
         announcementBanner: {
             enabled: true,
             message: "✨ Festive Season Special: Enjoy 15% off bespoke Bridal & Festive orders with code BRIDAL2026! ✨",

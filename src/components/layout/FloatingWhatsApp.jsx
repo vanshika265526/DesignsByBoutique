@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { MessageCircle, X } from "lucide-react";
+import { X } from "lucide-react";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import { buildWhatsAppLink } from "@/config/boutique";
 
 export default function FloatingWhatsApp() {
@@ -31,7 +32,7 @@ export default function FloatingWhatsApp() {
                 className="bg-emerald-600 hover:bg-emerald-700 text-white p-3.5 rounded-full shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center relative focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
                 aria-label="Chat with Designs by Nisha on WhatsApp"
             >
-                <MessageCircle className="w-6 h-6 text-white" />
+                <WhatsAppIcon className="w-6 h-6 text-white" />
                 <span className="absolute -top-1 -right-1 flex h-3 w-3">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>

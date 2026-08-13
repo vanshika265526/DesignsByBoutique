@@ -68,9 +68,9 @@ export default function RootLayout({ children }) {
         },
         openingHoursSpecification: {
             "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-            opens: "10:30",
-            closes: "19:30",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            opens: "10:00",
+            closes: "21:00",
         },
         sameAs: [boutiqueConfig.instagram.url],
     };

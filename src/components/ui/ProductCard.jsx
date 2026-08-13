@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MessageCircle, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import { buildWhatsAppLink } from "@/config/boutique";
 
 export default function ProductCard({ product }) {
@@ -98,7 +99,7 @@ export default function ProductCard({ product }) {
                     rel="noopener noreferrer"
                     className="w-full mt-3 bg-emerald-700 hover:bg-emerald-800 text-white py-2.5 px-4 rounded-xl text-xs font-medium tracking-wider uppercase flex items-center justify-center space-x-2 transition-colors shadow-sm"
                 >
-                    <MessageCircle className="w-4 h-4 text-white" />
+                    <WhatsAppIcon className="w-4 h-4 text-white" />
                     <span>Enquire on WhatsApp</span>
                 </a>
             </div>

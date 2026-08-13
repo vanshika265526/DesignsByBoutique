@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Heart, MessageCircle } from "lucide-react";
+import { Heart } from "lucide-react";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import { buildWhatsAppLink } from "@/config/boutique";
 
 export default function MaternityFeature() {
@@ -61,7 +62,7 @@ export default function MaternityFeature() {
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center space-x-2 border border-boutique-rose text-boutique-rose hover:bg-boutique-blush/30 px-6 py-3.5 rounded-full text-xs uppercase tracking-widest font-semibold transition-colors"
                             >
-                                <MessageCircle className="w-4 h-4 text-boutique-rose" />
+                                <WhatsAppIcon className="w-4 h-4 text-boutique-rose" />
                                 <span>Enquire on WhatsApp</span>
                             </a>
                         </div>

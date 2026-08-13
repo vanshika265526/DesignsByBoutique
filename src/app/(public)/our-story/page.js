@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { Sparkles, MessageCircle, Heart, Award, MapPin } from "lucide-react";
+import { Sparkles, Heart, Award, MapPin } from "lucide-react";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { boutiqueConfig, buildWhatsAppLink } from "@/config/boutique";
 
@@ -103,7 +104,7 @@ export default function OurStoryPage() {
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center space-x-2 bg-boutique-rose hover:bg-boutique-rose-dark text-white px-6 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all shadow-md"
                             >
-                                <MessageCircle className="w-4 h-4 text-white" />
+                                <WhatsAppIcon className="w-4 h-4 text-white" />
                                 <span>Speak With Our Designer</span>
                             </a>
 

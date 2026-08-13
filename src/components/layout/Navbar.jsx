@@ -4,7 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { MessageCircle, Instagram, Menu, X, ChevronDown } from "lucide-react";
+import { Instagram, Menu, X, ChevronDown } from "lucide-react";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import { boutiqueConfig, buildWhatsAppLink } from "@/config/boutique";
 import { initialCategories } from "@/data/products";
 
@@ -31,8 +32,18 @@ export default function Navbar() {
     }, [pathname]);
 
     const linkClass = (active) =>
-        `text-[11px] uppercase tracking-[0.18em] font-medium transition-colors ${
-            active ? "text-boutique-rose" : "text-boutique-charcoal hover:text-boutique-rose"
+        `text-[11px] uppercase tracking-[0.18em] transition-colors ${
+            active ? "text-boutique-rose font-bold" : "text-boutique-charcoal font-medium hover:text-boutique-rose"
+        }`;
+
+    // Mobile drawer links — make the active page unmistakable: bold rose text,
+    // a rose left-accent bar and a soft blush background (transparent bar on
+    // inactive keeps everything aligned).
+    const mobileLinkClass = (active) =>
+        `flex items-center font-serif-editorial text-lg py-2.5 pl-3 border-b border-boutique-muted-border/50 border-l-4 rounded-r transition-colors ${
+            active
+                ? "text-boutique-rose font-bold bg-boutique-blush/40 border-l-boutique-rose"
+                : "text-boutique-charcoal font-normal border-l-transparent hover:text-boutique-rose"
         }`;
 
     const isCollections = pathname.startsWith("/collections");
@@ -125,7 +136,7 @@ export default function Navbar() {
                             rel="noopener noreferrer"
                             className="hidden md:inline-flex items-center gap-2 bg-boutique-rose hover:bg-boutique-rose-dark text-white px-4 py-2 text-[10px] font-semibold tracking-[0.18em] uppercase transition-all"
                         >
-                            <MessageCircle className="w-3.5 h-3.5" />
+                            <WhatsAppIcon className="w-3.5 h-3.5" />
                             Enquire
                         </a>
 
@@ -137,7 +148,7 @@ export default function Navbar() {
                             className="md:hidden p-2 bg-boutique-rose text-white rounded-full"
                             aria-label="WhatsApp"
                         >
-                            <MessageCircle className="w-4 h-4" />
+                            <WhatsAppIcon className="w-4 h-4" />
                         </a>
                         <button
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -153,14 +164,18 @@ export default function Navbar() {
             {/* Mobile drawer */}
             {mobileMenuOpen && (
                 <div className="md:hidden glass-nav border-t border-boutique-muted-border px-6 py-5 space-y-1 animate-in slide-in-from-top duration-300">
-                    <Link href="/" onClick={() => setMobileMenuOpen(false)} className={`block font-serif-editorial text-lg py-2.5 border-b border-boutique-muted-border/50 ${pathname === "/" ? "text-boutique-rose" : "text-boutique-charcoal"}`}>Home</Link>
+                    <Link href="/" onClick={() => setMobileMenuOpen(false)} className={mobileLinkClass(pathname === "/")}>Home</Link>
 
                     <div className="border-b border-boutique-muted-border/50">
                         <button
                             onClick={() => setMobileCollectionsOpen((v) => !v)}
-                            className="w-full flex items-center justify-between font-serif-editorial text-lg py-2.5 text-boutique-charcoal"
+                            className={`w-full flex items-center justify-between font-serif-editorial text-lg py-2.5 pl-3 pr-1 border-l-4 rounded-r transition-colors ${
+                                isCollections
+                                    ? "text-boutique-rose font-bold bg-boutique-blush/40 border-l-boutique-rose"
+                                    : "text-boutique-charcoal font-normal border-l-transparent"
+                            }`}
                         >
-                            <span className={isCollections ? "text-boutique-rose" : ""}>Collections</span>
+                            <span>Collections</span>
                             <ChevronDown className={`w-4 h-4 transition-transform ${mobileCollectionsOpen ? "rotate-180" : ""}`} />
                         </button>
                         {mobileCollectionsOpen && (
@@ -192,7 +207,7 @@ export default function Navbar() {
                             key={link.name}
                             href={link.href}
                             onClick={() => setMobileMenuOpen(false)}
-                            className={`block font-serif-editorial text-lg py-2.5 border-b border-boutique-muted-border/50 ${pathname.startsWith(link.href) ? "text-boutique-rose" : "text-boutique-charcoal"}`}
+                            className={mobileLinkClass(pathname.startsWith(link.href))}
                         >
                             {link.name}
                         </Link>
@@ -204,7 +219,7 @@ export default function Navbar() {
                             <span>{boutiqueConfig.instagram.handle}</span>
                         </a>
                         <a href={buildWhatsAppLink()} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-boutique-rose text-white px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em]">
-                            <MessageCircle className="w-4 h-4" />
+                            <WhatsAppIcon className="w-4 h-4" />
                             Enquire
                         </a>
                     </div>

@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { MapPin, Phone, Clock, MessageCircle, Instagram, Send, Sparkles, CheckCircle } from "lucide-react";
+import { MapPin, Phone, Clock, Instagram, Send, Sparkles, CheckCircle } from "lucide-react";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { boutiqueConfig, buildWhatsAppLink } from "@/config/boutique";
 
@@ -118,7 +119,7 @@ export default function ContactPage() {
                                 rel="noopener noreferrer"
                                 className="w-full bg-emerald-700 hover:bg-emerald-800 text-white py-3.5 px-4 rounded-xl text-xs font-semibold uppercase tracking-wider flex items-center justify-center space-x-2 transition-colors shadow-sm"
                             >
-                                <MessageCircle className="w-4 h-4 text-white" />
+                                <WhatsAppIcon className="w-4 h-4 text-white" />
                                 <span>Chat Directly on WhatsApp</span>
                             </a>
 

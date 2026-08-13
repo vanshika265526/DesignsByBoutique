@@ -3,13 +3,14 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { MessageCircle, Scissors, CalendarCheck, Sparkles } from "lucide-react";
+import { Scissors, CalendarCheck, Sparkles } from "lucide-react";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import { boutiqueConfig, buildWhatsAppLink } from "@/config/boutique";
 
 const trustBadges = [
     { icon: Scissors, title: "Made Just for You", subtitle: "Stitched to your size and style" },
-    { icon: CalendarCheck, title: "Visit or Book a Time", subtitle: "Open Mon–Sat, 10:30 AM – 7:30 PM" },
-    { icon: MessageCircle, title: "Ask on WhatsApp", subtitle: "Message us anytime — it's quick and easy" },
+    { icon: CalendarCheck, title: "Visit or Book a Time", subtitle: "Open Mon–Sun, 10 AM – 9 PM" },
+    { icon: WhatsAppIcon, title: "Ask on WhatsApp", subtitle: "Message us anytime — it's quick and easy" },
 ];
 
 // Auto-rotating hero slides. First entry is the existing/admin hero image;
@@ -72,9 +73,11 @@ export default function Hero({ settings = {} }) {
                         Bespoke Couture · New Delhi
                     </p>
 
-                    <h1 className="font-serif-editorial text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-tight text-white leading-[0.98] max-w-4xl">
-                        For Every Chapter
-                        <span className="block italic font-normal">of Her Story</span>
+                    <h1
+                        lang="hi"
+                        className="font-devanagari text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white max-w-4xl"
+                    >
+                        हर सफ़र खूबसूरती के साथ
                     </h1>
 
                     <p className="mt-6 max-w-xl text-sm sm:text-base text-white/85 font-light leading-relaxed">
@@ -95,7 +98,7 @@ export default function Hero({ settings = {} }) {
                             rel="noopener noreferrer"
                             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/70 hover:bg-white hover:text-boutique-charcoal text-white px-8 py-3.5 text-[11px] sm:text-xs font-semibold tracking-[0.2em] uppercase transition-all"
                         >
-                            <MessageCircle className="w-4 h-4" />
+                            <WhatsAppIcon className="w-4 h-4" />
                             Enquire on WhatsApp
                         </a>
                     </div>
@@ -118,15 +121,26 @@ export default function Hero({ settings = {} }) {
                 )}
             </div>
 
-            {/* Trust badge strip */}
+            {/* Trust badge strip.
+                Mobile: 2 columns — first two badges share a row, the third spans
+                the full width below. Desktop (sm+): 3 equal columns in one row. */}
             <div className="border-b border-boutique-muted-border/70 bg-boutique-bg-card">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-boutique-muted-border/60">
-                    {trustBadges.map((b) => (
-                        <div key={b.title} className="flex items-center gap-3 py-4 sm:py-6 sm:px-6 justify-center sm:justify-start">
-                            <b.icon className="w-5 h-5 text-boutique-rose flex-shrink-0" />
-                            <div className="leading-tight">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-3">
+                    {trustBadges.map((b, i) => (
+                        <div
+                            key={b.title}
+                            className={[
+                                "flex items-start sm:items-center gap-2.5 sm:gap-3 px-3 py-5 sm:py-6 sm:px-6 border-boutique-muted-border/60",
+                                i === 0 ? "border-r sm:border-r-0" : "",       // mobile divider between the first two
+                                i > 0 ? "sm:border-l" : "",                     // desktop vertical dividers
+                                // third badge: full-width row below, centered on mobile
+                                i === 2 ? "col-span-2 border-t justify-center sm:col-span-1 sm:border-t-0 sm:justify-start" : "justify-start",
+                            ].join(" ")}
+                        >
+                            <b.icon className="w-5 h-5 mt-0.5 sm:mt-0 text-boutique-rose flex-shrink-0" />
+                            <div className="leading-snug">
                                 <p className="text-xs font-semibold uppercase tracking-wider text-boutique-charcoal">{b.title}</p>
-                                <p className="text-[11px] text-boutique-taupe font-light">{b.subtitle}</p>
+                                <p className="text-[11px] text-boutique-taupe font-light mt-0.5">{b.subtitle}</p>
                             </div>
                         </div>
                     ))}

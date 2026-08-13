@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Sparkles, MessageCircle } from "lucide-react";
+import { Sparkles } from "lucide-react";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import { buildWhatsAppLink } from "@/config/boutique";
 
 export default function BridalFeature() {
@@ -56,7 +57,7 @@ export default function BridalFeature() {
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center space-x-2 bg-boutique-gold hover:bg-amber-600 text-boutique-charcoal font-semibold px-6 py-3.5 rounded-full text-xs uppercase tracking-widest transition-all shadow-lg"
                             >
-                                <MessageCircle className="w-4 h-4 text-boutique-charcoal" />
+                                <WhatsAppIcon className="w-4 h-4 text-boutique-charcoal" />
                                 <span>Book Bridal Consultation</span>
                             </a>
 

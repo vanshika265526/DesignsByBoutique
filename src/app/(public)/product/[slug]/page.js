@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { MessageCircle, ShieldCheck, Sparkles, Scissors } from "lucide-react";
+import { ShieldCheck, Sparkles, Scissors } from "lucide-react";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import ProductGallery from "@/components/products/ProductGallery";
 import ProductCard from "@/components/ui/ProductCard";
 import { boutiqueConfig, buildWhatsAppLink } from "@/config/boutique";
@@ -294,7 +295,7 @@ export default async function ProductDetailPage({ params }) {
                                 rel="noopener noreferrer"
                                 className="w-full bg-emerald-700 hover:bg-emerald-800 text-white py-4 px-6 rounded-2xl text-xs font-semibold tracking-widest uppercase flex items-center justify-center space-x-3 transition-all shadow-lg hover:shadow-xl"
                             >
-                                <MessageCircle className="w-5 h-5 text-white" />
+                                <WhatsAppIcon className="w-5 h-5 text-white" />
                                 <span>Enquire on WhatsApp</span>
                             </a>
 

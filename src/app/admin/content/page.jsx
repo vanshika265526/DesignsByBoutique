@@ -576,7 +576,7 @@ export default function AdminContentPage() {
                                 type="text"
                                 value={settings.hours || settings.openingHours?.weekdays || ""}
                                 onChange={(e) => setSettings({ ...settings, hours: e.target.value })}
-                                placeholder="10:30 AM - 8:00 PM"
+                                placeholder="10 AM - 9 PM"
                                 className="w-full px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-xs focus:outline-none focus:border-boutique-rose"
                             />
                         </div>

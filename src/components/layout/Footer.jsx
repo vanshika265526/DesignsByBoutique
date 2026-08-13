@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MessageCircle, Instagram, MapPin, Phone, Mail, Heart } from "lucide-react";
+import { Instagram, MapPin, Phone, Mail, Heart } from "lucide-react";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import { boutiqueConfig, buildWhatsAppLink } from "@/config/boutique";
 
 export default function Footer() {
@@ -112,6 +113,27 @@ export default function Footer() {
                             </p>
                         </div>
 
+                        {/* Mini map — opens full Google Maps on click */}
+                        <a
+                            href={boutiqueConfig.googleMapsUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Open Designs by Nisha studio location in Google Maps"
+                            className="group relative block rounded-xl overflow-hidden border border-white/10 shadow-md"
+                        >
+                            <iframe
+                                title="Map to Designs by Nisha — New Delhi studio"
+                                src="https://maps.google.com/maps?q=318%20Block%20A1%20Chattarpur%20Chhatarpur%20New%20Delhi%20110074&z=15&output=embed"
+                                className="w-full h-32 border-0 pointer-events-none grayscale-[0.25] group-hover:grayscale-0 transition-all duration-500"
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                            />
+                            <span className="absolute bottom-2 right-2 bg-boutique-charcoal/85 text-white text-[10px] font-medium px-2 py-1 rounded-full inline-flex items-center gap-1">
+                                <MapPin className="w-3 h-3 text-boutique-gold" />
+                                Open in Maps
+                            </span>
+                        </a>
+
                         <div className="pt-2 flex items-center space-x-3">
                             <a
                                 href={boutiqueConfig.instagram.url}
@@ -129,7 +151,7 @@ export default function Footer() {
                                 className="p-2 bg-emerald-600 hover:bg-emerald-700 rounded-full text-white transition-colors"
                                 aria-label="WhatsApp"
                             >
-                                <MessageCircle className="w-4 h-4" />
+                                <WhatsAppIcon className="w-4 h-4" />
                             </a>
                         </div>
                     </div>
