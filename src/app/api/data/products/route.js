@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { readDb, writeDb, addAuditLog, getDbAsync } from '@/lib/db';
+import { createProductAsync, addAuditLog, getDbAsync } from '@/lib/db';
 
 // GET all products or filter by category/chapter
 export async function GET(request) {
@@ -36,8 +36,6 @@ export async function GET(request) {
 export async function POST(request) {
     try {
         const productData = await request.json();
-        const db = readDb();
-        if (!db.products) db.products = [];
 
         // Generate ID and slug if missing
         const newId = productData.id || `prod-${Date.now()}`;
@@ -65,8 +63,7 @@ export async function POST(request) {
             updatedAt: new Date().toISOString(),
         };
 
-        db.products.unshift(newProduct);
-        const saved = await writeDb(db);
+        const saved = await createProductAsync(newProduct);
         if (saved) {
             addAuditLog('Product Created', `Added product "${newProduct.name}" (ID: ${newProduct.id})`);
             return NextResponse.json({ success: true, data: newProduct }, { status: 201 });
@@ -76,3 +73,4 @@ export async function POST(request) {
         return NextResponse.json({ success: false, error: error.message }, { status: 500 });
     }
 }
+

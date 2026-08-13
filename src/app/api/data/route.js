@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
-import { readDb, writeDb, addAuditLog } from '@/lib/db';
+import { getDbAsync, writeDb, addAuditLog } from '@/lib/db';
 
 export async function GET() {
     try {
-        const db = readDb();
+        const db = await getDbAsync();
         return NextResponse.json({ success: true, data: db });
     } catch (error) {
         return NextResponse.json({ success: false, error: error.message }, { status: 500 });
@@ -13,7 +13,7 @@ export async function GET() {
 export async function POST(request) {
     try {
         const body = await request.json();
-        const db = readDb();
+        const db = await getDbAsync();
         const updatedDb = { ...db, ...body };
         const saved = await writeDb(updatedDb);
         if (saved) {
@@ -25,3 +25,4 @@ export async function POST(request) {
         return NextResponse.json({ success: false, error: error.message }, { status: 500 });
     }
 }
+
