@@ -18,7 +18,7 @@ export default async function CollectionsPage() {
     const chapters = db.chapters || boutiqueConfig.chapters;
 
     return (
-        <div className="pt-28 pb-24 bg-boutique-bg min-h-screen space-y-20">
+        <div className="pt-14 md:pt-16 pb-24 bg-boutique-bg min-h-screen space-y-20">
             {/* Header Banner */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <SectionHeading
