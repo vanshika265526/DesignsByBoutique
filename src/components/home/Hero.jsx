@@ -13,51 +13,73 @@ const trustBadges = [
     { icon: WhatsAppIcon, title: "Ask on WhatsApp", subtitle: "Message us anytime — it's quick and easy" },
 ];
 
-// Auto-rotating hero slides. First entry is the existing/admin hero image;
-// the rest are the studio editorial shots in /public/images/hero/.
+// Auto-rotating hero slides — each editorial image in /public/images/hero/ has
+// its own caption. They advance every SLIDE_INTERVAL_MS.
 const SLIDE_INTERVAL_MS = 5000;
 
-export default function Hero() {
-    const allImages = [
-        "/images/hero.png",
-        "/images/hero/slide-1.png",
-        "/images/hero/slide-2.png",
-        "/images/hero/slide-3.png",
-    ];
+const HERO_SLIDES = [
+    {
+        src: "/images/hero/slide-1.png",
+        text: "Handcrafted Suits, Anarkalis, Bridal Lehengas, Haldi & Mehendi outfits, Maternity Gowns and Baby wear — designed to be treasured.",
+    },
+    {
+        src: "/images/hero/slide-2.png",
+        text: "From her very first twirl to the little celebrations that make childhood magical — playful dresses, festive ensembles and beautifully crafted little pieces made to become the first memories of her style.",
+    },
+    {
+        src: "/images/hero/slide-3.png",
+        text: "Effortless Suits, Contemporary Anarkalis, Occasion Wear and Everyday Elegance — designed for every new beginning.",
+    },
+    {
+        src: "/images/hero/slide-4.png",
+        text: "Bridal Lehengas, Bespoke Anarkalis, Haldi & Mehendi Ensembles and Heirloom Pieces — made for moments that become memories.",
+    },
+    {
+        src: "/images/hero/slide-5.png",
+        text: "Maternity Gowns, Elegant Nursing Wear, Mother-Daughter Ensembles and Little Ones’ Wear — designed for love in every chapter.",
+    },
+    {
+        src: "/images/hero/slide-6.png",
+        text: "Beautiful mother-and-child ensembles and delicate baby wear — designed to celebrate their first moments together and be treasured for years to come.",
+    },
+];
 
+export default function Hero() {
     // Drop any slide whose file fails to load, so a not-yet-added image never
     // shows as a blank/broken frame in the rotation.
     const [broken, setBroken] = useState({});
-    const heroImages = allImages.filter((src) => !broken[src]);
+    const slides = HERO_SLIDES.filter((s) => !broken[s.src]);
 
     const [active, setActive] = useState(0);
 
     useEffect(() => {
-        if (heroImages.length <= 1) return;
+        if (slides.length <= 1) return;
         const id = setInterval(() => {
-            setActive((i) => (i + 1) % heroImages.length);
+            setActive((i) => (i + 1) % slides.length);
         }, SLIDE_INTERVAL_MS);
         return () => clearInterval(id);
-    }, [heroImages.length]);
+    }, [slides.length]);
 
     // Keep the active index valid if the list shrinks (a slide failed to load).
     useEffect(() => {
-        if (active >= heroImages.length) setActive(0);
-    }, [heroImages.length, active]);
+        if (active >= slides.length) setActive(0);
+    }, [slides.length, active]);
+
+    const activeText = slides[active]?.text || HERO_SLIDES[0].text;
 
     return (
         <section className="w-full bg-boutique-bg">
             {/* Full-bleed editorial hero */}
             <div className="relative w-full h-[78vh] min-h-[520px] md:h-[86vh] overflow-hidden bg-boutique-charcoal">
-                {heroImages.map((src, i) => (
+                {slides.map((slide, i) => (
                     <Image
-                        key={src}
-                        src={src}
+                        key={slide.src}
+                        src={slide.src}
                         alt="Designs by Nisha — Luxury Indian bridal & women's couture, New Delhi"
                         fill
                         priority={i === 0}
                         sizes="100vw"
-                        onError={() => setBroken((b) => ({ ...b, [src]: true }))}
+                        onError={() => setBroken((b) => ({ ...b, [slide.src]: true }))}
                         className={`object-cover object-center transition-opacity duration-1000 ease-in-out ${i === active ? "opacity-100" : "opacity-0"
                             }`}
                     />
@@ -79,9 +101,11 @@ export default function Hero() {
                         हर सफ़र खूबसूरती के साथ
                     </h1>
 
-                    <p className="mt-6 max-w-xl text-sm sm:text-base text-white/85 font-light leading-relaxed">
-                        Handcrafted Suits, Anarkalis, Bridal Lehengas, Haldi &amp; Mehendi
-                        outfits, Maternity Gowns and Baby wear — designed to be treasured.
+                    <p
+                        key={active}
+                        className="mt-6 max-w-2xl text-sm sm:text-base md:text-lg text-white font-medium leading-relaxed drop-shadow-[0_1px_10px_rgba(0,0,0,0.55)] animate-in fade-in duration-700"
+                    >
+                        {activeText}
                     </p>
 
                     <div className="mt-9 flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
@@ -104,9 +128,9 @@ export default function Hero() {
                 </div>
 
                 {/* Slide indicators */}
-                {heroImages.length > 1 && (
+                {slides.length > 1 && (
                     <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
-                        {heroImages.map((_, i) => (
+                        {slides.map((_, i) => (
                             <button
                                 key={i}
                                 onClick={() => setActive(i)}

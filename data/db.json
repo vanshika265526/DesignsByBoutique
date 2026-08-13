@@ -13,9 +13,9 @@
       "discount": "20% OFF",
       "featured": true,
       "status": "published",
-      "image": "/api/uploads/image-png-2k-202608051047-1-1786604878349.jpeg",
+      "image": "/api/uploads/chatgpt-image-aug-13-2026-08-22-07-pm-1786633061170.png",
       "images": [
-        "/api/uploads/image-png-2k-202608051047-1-1786604878349.jpeg"
+        "/api/uploads/chatgpt-image-aug-13-2026-08-22-07-pm-1786633061170.png"
       ],
       "description": "A breathtaking floor-length Chanderi silk Anarkali in soft blush rose, featuring delicate hand-worked Gota Patti borders, organza dupatta with scalloped edges, and tailored fitted churidar.",
       "shortDescription": "Soft blush rose Chanderi silk Anarkali with Gota Patti embroidery.",
@@ -26,7 +26,7 @@
       ],
       "instagramReel": "",
       "newArrival": false,
-      "updatedAt": "2026-08-13T07:08:03.123Z"
+      "updatedAt": "2026-08-13T15:08:12.229Z"
     },
     {
       "id": "prod-02",
@@ -38,7 +38,7 @@
       "chapterName": "Her Beginnings",
       "price": 6499,
       "originalPrice": 7999,
-      "discount": "20% OFF",
+      "discount": "19% OFF",
       "featured": false,
       "status": "published",
       "image": "https://images.pexels.com/photos/33180676/pexels-photo-33180676.jpeg?auto=compress&cs=tinysrgb&w=1200",
@@ -51,7 +51,8 @@
         "Handloom Tussar Silk with Net Dupatta",
         "Pants can be customized to straight or palazzo",
         "Dry Clean Only"
-      ]
+      ],
+      "updatedAt": "2026-08-13T15:08:12.327Z"
     },
     {
       "id": "prod-03",
@@ -76,7 +77,8 @@
         "Pure Mulberry Velvet Silk",
         "Bespoke Made-to-Measure fitting",
         "Custom latkans with wedding date embroidery"
-      ]
+      ],
+      "updatedAt": "2026-08-13T15:08:12.496Z"
     },
     {
       "id": "prod-04",
@@ -88,12 +90,12 @@
       "chapterName": "Her Forever",
       "price": 8499,
       "originalPrice": 10499,
-      "discount": "20% OFF",
+      "discount": "19% OFF",
       "featured": true,
       "status": "published",
-      "image": "https://images.pexels.com/photos/9418537/pexels-photo-9418537.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "image": "/api/uploads/chatgpt-image-aug-13-2026-08-25-42-pm-1786633807457.png",
       "images": [
-        "https://images.pexels.com/photos/9418537/pexels-photo-9418537.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        "/api/uploads/chatgpt-image-aug-13-2026-08-25-42-pm-1786633807457.png"
       ],
       "description": "Vibrant mustard yellow raw silk lehenga designed for Haldi and Sangeet festivities. Features mirrored sequin work, gold zari borders, and a featherlight embroidered bandhani dupatta.",
       "shortDescription": "Mustard raw silk Haldi lehenga with mirror sequin work.",
@@ -101,7 +103,10 @@
         "Raw Silk & Handloom Bandhani Dupatta",
         "Custom blouse cut and waist fitting",
         "Dry Clean Only"
-      ]
+      ],
+      "instagramReel": "",
+      "newArrival": false,
+      "updatedAt": "2026-08-13T15:10:11.287Z"
     },
     {
       "id": "prod-05",
@@ -1227,7 +1232,7 @@
       "slug": "suits-anarkalis",
       "chapter": "her-beginnings",
       "description": "Graceful daily luxury & celebratory silk Anarkali suits.",
-      "image": "/api/uploads/image-png-2k-202608051047-1-1786604980291.jpeg",
+      "image": "/api/uploads/a91915c5-37e9-4e17-9ed2-98fcf25afb8b-1786627524126.png",
       "count": 24,
       "published": true,
       "order": 1

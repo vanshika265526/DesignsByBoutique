@@ -384,3 +384,120 @@ export async function addAuditLog(action, details, user = 'Admin') {
     }
 }
 
+// ==========================================
+// TARGETED ISOLATED PRODUCT CRUD OPERATIONS
+// ==========================================
+
+// Get a single product by ID or Slug from live database
+export async function getProductByIdAsync(idOrSlug) {
+    const dbData = await getDbAsync();
+    const products = dbData.products || [];
+    return products.find((p) => p.id === idOrSlug || p.slug === idOrSlug) || null;
+}
+
+// Update a single product independently by ID without touching or overwriting other products
+export async function updateProductAsync(productId, updates) {
+    invalidateDbCache();
+
+    const { _id, ...safeUpdates } = updates;
+    safeUpdates.updatedAt = new Date().toISOString();
+
+    try {
+        const db = await getDatabase();
+        await db.collection('products').updateOne(
+            { id: productId },
+            { $set: safeUpdates },
+            { upsert: true }
+        );
+    } catch (err) {
+        console.error('[updateProductAsync] Mongo update error:', err.message);
+    }
+
+    try {
+        const localDb = readDb();
+        if (localDb.products && Array.isArray(localDb.products)) {
+            const idx = localDb.products.findIndex((p) => p.id === productId || p.slug === productId);
+            if (idx !== -1) {
+                localDb.products[idx] = { ...localDb.products[idx], ...safeUpdates };
+            } else {
+                localDb.products.push({ id: productId, ...safeUpdates });
+            }
+            if (!fs.existsSync(DB_DIR)) fs.mkdirSync(DB_DIR, { recursive: true });
+            const tempPath = `${DB_PATH}.tmp`;
+            fs.writeFileSync(tempPath, JSON.stringify(localDb, null, 2), 'utf-8');
+            fs.renameSync(tempPath, DB_PATH);
+        }
+    } catch (fileErr) {
+        console.warn('[updateProductAsync] Local file update skipped:', fileErr.message);
+    }
+
+    invalidateDbCache();
+    return true;
+}
+
+// Create a single product independently
+export async function createProductAsync(newProduct) {
+    invalidateDbCache();
+    const { _id, ...safeProduct } = newProduct;
+
+    try {
+        const db = await getDatabase();
+        await db.collection('products').updateOne(
+            { id: safeProduct.id },
+            { $set: safeProduct },
+            { upsert: true }
+        );
+    } catch (err) {
+        console.error('[createProductAsync] Mongo insert error:', err.message);
+    }
+
+    try {
+        const localDb = readDb();
+        if (!localDb.products) localDb.products = [];
+        const existingIdx = localDb.products.findIndex(p => p.id === safeProduct.id);
+        if (existingIdx !== -1) {
+            localDb.products[existingIdx] = safeProduct;
+        } else {
+            localDb.products.unshift(safeProduct);
+        }
+        if (!fs.existsSync(DB_DIR)) fs.mkdirSync(DB_DIR, { recursive: true });
+        const tempPath = `${DB_PATH}.tmp`;
+        fs.writeFileSync(tempPath, JSON.stringify(localDb, null, 2), 'utf-8');
+        fs.renameSync(tempPath, DB_PATH);
+    } catch (fileErr) {
+        console.warn('[createProductAsync] Local file create skipped:', fileErr.message);
+    }
+
+    invalidateDbCache();
+    return true;
+}
+
+// Delete a single product independently by ID
+export async function deleteProductAsync(productId) {
+    invalidateDbCache();
+
+    try {
+        const db = await getDatabase();
+        await db.collection('products').deleteOne({ id: productId });
+    } catch (err) {
+        console.error('[deleteProductAsync] Mongo delete error:', err.message);
+    }
+
+    try {
+        const localDb = readDb();
+        if (localDb.products && Array.isArray(localDb.products)) {
+            localDb.products = localDb.products.filter((p) => !(p.id === productId || p.slug === productId));
+            if (!fs.existsSync(DB_DIR)) fs.mkdirSync(DB_DIR, { recursive: true });
+            const tempPath = `${DB_PATH}.tmp`;
+            fs.writeFileSync(tempPath, JSON.stringify(localDb, null, 2), 'utf-8');
+            fs.renameSync(tempPath, DB_PATH);
+        }
+    } catch (fileErr) {
+        console.warn('[deleteProductAsync] Local file delete skipped:', fileErr.message);
+    }
+
+    invalidateDbCache();
+    return true;
+}
+
+
