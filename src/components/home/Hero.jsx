@@ -20,6 +20,7 @@ const SLIDE_INTERVAL_MS = 5000;
 const HERO_SLIDES = [
     {
         src: "/images/hero/slide-1.png",
+        mobileSrc: "/images/hero/mobile-slide-1.png",
         text: "Handcrafted Suits, Anarkalis, Bridal Lehengas, Haldi & Mehendi outfits, Maternity Gowns and Baby wear — designed to be treasured.",
     },
     {
@@ -48,7 +49,7 @@ export default function Hero() {
     // Drop any slide whose file fails to load, so a not-yet-added image never
     // shows as a blank/broken frame in the rotation.
     const [broken, setBroken] = useState({});
-    const slides = HERO_SLIDES.filter((s) => !broken[s.src]);
+    const slides = HERO_SLIDES.filter((s) => !broken[s.src] && (!s.mobileSrc || !broken[s.mobileSrc]));
 
     const [active, setActive] = useState(0);
 
@@ -72,18 +73,48 @@ export default function Hero() {
             {/* Full-bleed editorial hero */}
             <div className="relative w-full h-[78vh] min-h-[520px] md:h-[86vh] overflow-hidden bg-boutique-charcoal">
                 {slides.map((slide, i) => (
-                    <Image
+                    <div
                         key={slide.src}
-                        src={slide.src}
-                        alt="Designs by Nisha — Luxury Indian bridal & women's couture, New Delhi"
-                        fill
-                        priority={i === 0}
-                        sizes="100vw"
-                        onError={() => setBroken((b) => ({ ...b, [slide.src]: true }))}
-                        className={`object-cover object-center transition-opacity duration-1000 ease-in-out ${i === active ? "opacity-100" : "opacity-0"
+                        className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${i === active ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
                             }`}
-                    />
+                    >
+                        {slide.mobileSrc ? (
+                            <>
+                                {/* Desktop image */}
+                                <Image
+                                    src={slide.src}
+                                    alt="Designs by Nisha — Luxury Indian bridal & women's couture, New Delhi"
+                                    fill
+                                    priority={i === 0}
+                                    sizes="100vw"
+                                    onError={() => setBroken((b) => ({ ...b, [slide.src]: true }))}
+                                    className="hidden md:block object-cover object-center"
+                                />
+                                {/* Mobile image */}
+                                <Image
+                                    src={slide.mobileSrc}
+                                    alt="Designs by Nisha — Luxury Indian bridal & women's couture, New Delhi"
+                                    fill
+                                    priority={i === 0}
+                                    sizes="100vw"
+                                    onError={() => setBroken((b) => ({ ...b, [slide.mobileSrc]: true }))}
+                                    className="block md:hidden object-cover object-center"
+                                />
+                            </>
+                        ) : (
+                            <Image
+                                src={slide.src}
+                                alt="Designs by Nisha — Luxury Indian bridal & women's couture, New Delhi"
+                                fill
+                                priority={i === 0}
+                                sizes="100vw"
+                                onError={() => setBroken((b) => ({ ...b, [slide.src]: true }))}
+                                className="object-cover object-center"
+                            />
+                        )}
+                    </div>
                 ))}
+
                 {/* Legibility overlay */}
                 <div className="absolute inset-0 bg-gradient-to-b from-boutique-charcoal/40 via-boutique-charcoal/25 to-boutique-charcoal/60" />
 

@@ -134,30 +134,6 @@
       ]
     },
     {
-      "id": "prod-06",
-      "slug": "rooh-blush-draped-saree-gown",
-      "name": "Rooh Blush Pre-Stitched Draped Saree",
-      "category": "haldi-mehendi",
-      "categoryName": "Haldi & Mehendi",
-      "chapter": "her-new-chapter",
-      "chapterName": "Her New Chapter",
-      "price": 8499,
-      "originalPrice": 10599,
-      "discount": "20% OFF",
-      "featured": false,
-      "status": "published",
-      "image": "https://images.pexels.com/photos/31750729/pexels-photo-31750729.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      "images": [
-        "https://images.pexels.com/photos/31750729/pexels-photo-31750729.jpeg?auto=compress&cs=tinysrgb&w=1200"
-      ],
-      "description": "Modern cocktail and post-wedding occasion wear. A pre-stitched draped satin saree gown in rose taupe paired with a heavily hand-beaded crystal blouse.",
-      "shortDescription": "Pre-stitched rose taupe draped saree gown with beaded blouse.",
-      "details": [
-        "Fluid Micro-Satin & Hand-beaded Net Blouse",
-        "Pre-stitched pleats tailored to exact height"
-      ]
-    },
-    {
       "id": "prod-07",
       "slug": "grace-silk-maternity-photoshoot-gown",
       "name": "Grace Powder Pink Silk Maternity Gown",
@@ -170,16 +146,19 @@
       "discount": "20% OFF",
       "featured": true,
       "status": "published",
-      "image": "/images/maternity/gown-1.png",
+      "image": "/api/uploads/chatgpt-image-aug-13-2026-08-41-08-pm-1786633912493.png",
       "images": [
-        "/images/maternity/gown-1.png"
+        "/api/uploads/chatgpt-image-aug-13-2026-08-41-08-pm-1786633912493.png"
       ],
       "description": "Designed specifically for expecting mothers celebrating maternity photoshoots, baby showers, or grand family functions. Soft empire-waist flowy silhouette with stretchable inner lining and trailing chiffon cape.",
       "shortDescription": "Powder pink empire-waist silk maternity gown with trailing cape.",
       "details": [
         "Hypoallergenic Pure Satin Silk & Sheer Chiffon",
         "Hidden nursing zip & trimester adjustability"
-      ]
+      ],
+      "instagramReel": "",
+      "newArrival": false,
+      "updatedAt": "2026-08-13T15:11:56.525Z"
     },
     {
       "id": "prod-08",
@@ -458,16 +437,19 @@
       "discount": "20% OFF",
       "featured": true,
       "status": "published",
-      "image": "https://images.pexels.com/photos/37182288/pexels-photo-37182288.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "image": "/api/uploads/chatgpt-image-aug-13-2026-08-46-33-pm-1786634198299.png",
       "images": [
-        "https://images.pexels.com/photos/37182288/pexels-photo-37182288.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        "/api/uploads/chatgpt-image-aug-13-2026-08-46-33-pm-1786634198299.png"
       ],
       "description": "A dream in miniature! Soft organza and Malmal cotton lined baby lehenga choli set in muted rose pink. Zero-scratch seams and ultra-soft elastic band designed specifically for delicate infant skin.",
       "shortDescription": "Zero-scratch skin-friendly miniature baby lehenga in rose pink.",
       "details": [
         "100% Cotton Lined Silk & Organza",
         "Mommy & Me matching option available"
-      ]
+      ],
+      "instagramReel": "",
+      "newArrival": false,
+      "updatedAt": "2026-08-13T15:16:41.264Z"
     },
     {
       "id": "prod-10",
@@ -479,19 +461,22 @@
       "chapterName": "Her Little One",
       "price": 4999,
       "originalPrice": 6299,
-      "discount": "20% OFF",
+      "discount": "21% OFF",
       "featured": false,
       "status": "published",
-      "image": "https://images.pexels.com/photos/37213268/pexels-photo-37213268.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "image": "/api/uploads/chatgpt-image-aug-13-2026-08-48-08-pm-1786634300824.png",
       "images": [
-        "https://images.pexels.com/photos/37213268/pexels-photo-37213268.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        "/api/uploads/chatgpt-image-aug-13-2026-08-48-08-pm-1786634300824.png"
       ],
       "description": "Festive ivory and gold zari baby kurti paired with twirl-worthy flared skirt. Lightweight, lined with soft muslin, perfect for first Diwali, Annaprashan, or family weddings.",
       "shortDescription": "Ivory & gold zari baby kurti set lined with soft muslin.",
       "details": [
         "Soft Muslin Cotton & Jacquard Silk",
         "Matching headband included"
-      ]
+      ],
+      "instagramReel": "",
+      "newArrival": false,
+      "updatedAt": "2026-08-13T15:18:25.079Z"
     },
     {
       "id": "prod-11",
@@ -507,16 +492,18 @@
       "newArrival": true,
       "featured": false,
       "status": "published",
-      "image": "https://images.pexels.com/photos/5922737/pexels-photo-5922737.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "image": "/api/uploads/chatgpt-image-aug-13-2026-08-48-43-pm-1786634372511.png",
       "images": [
-        "https://images.pexels.com/photos/5922737/pexels-photo-5922737.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        "/api/uploads/chatgpt-image-aug-13-2026-08-48-43-pm-1786634372511.png"
       ],
       "description": "Flowy peach georgette flared Anarkali with gold thread jaal embroidery all over. Comes with a matching georgette dupatta with hand-stitched tassel ends.",
       "shortDescription": "Peach georgette Anarkali with gold jaal embroidery & tassel dupatta.",
       "details": [
         "Pure Georgette & Dupatta Included",
         "Full customization on fit & sleeve style"
-      ]
+      ],
+      "instagramReel": "",
+      "updatedAt": "2026-08-13T15:19:35.100Z"
     },
     {
       "id": "prod-12",
@@ -729,13 +716,13 @@
       "chapterName": "Her Forever",
       "price": 9999,
       "originalPrice": 12499,
-      "discount": "22% OFF",
+      "discount": "20% OFF",
       "newArrival": true,
       "featured": true,
       "status": "published",
-      "image": "https://images.pexels.com/photos/20790061/pexels-photo-20790061.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "image": "/api/uploads/chatgpt-image-aug-13-2026-08-50-45-pm-1786634459647.png",
       "images": [
-        "https://images.pexels.com/photos/20790061/pexels-photo-20790061.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        "/api/uploads/chatgpt-image-aug-13-2026-08-50-45-pm-1786634459647.png"
       ],
       "description": "Dreamy blush pink lehenga with all-over sequin work and subtle floral cutwork on skirt. Light as a feather for the modern bride who wants to dance the night.",
       "shortDescription": "All-over sequin blush pink bridal lehenga for the modern bride.",
@@ -743,7 +730,9 @@
         "Lightweight Sequin Net",
         "Blouse back customizable",
         "Custom waist fitting"
-      ]
+      ],
+      "instagramReel": "",
+      "updatedAt": "2026-08-13T15:21:02.066Z"
     },
     {
       "id": "prod-21",
@@ -1136,9 +1125,9 @@
       "newArrival": false,
       "featured": true,
       "status": "published",
-      "image": "https://images.pexels.com/photos/18983042/pexels-photo-18983042.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "image": "/api/uploads/chatgpt-image-aug-13-2026-08-43-56-pm-1786634084596.png",
       "images": [
-        "https://images.pexels.com/photos/18983042/pexels-photo-18983042.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        "/api/uploads/chatgpt-image-aug-13-2026-08-43-56-pm-1786634084596.png"
       ],
       "description": "Coordinating Mommy & Me set — mother lehenga and baby lehenga in matching sunshine yellow cotton with identical embroidery and gota patti borders.",
       "shortDescription": "Matching Mommy & Baby Haldi yellow lehenga set.",
@@ -1146,7 +1135,9 @@
         "Cotton Silk",
         "Available in 0–12 months baby sizes",
         "Can extend to 3 years"
-      ]
+      ],
+      "instagramReel": "",
+      "updatedAt": "2026-08-13T15:14:47.764Z"
     },
     {
       "id": "prod-38",
@@ -1232,7 +1223,7 @@
       "slug": "suits-anarkalis",
       "chapter": "her-beginnings",
       "description": "Graceful daily luxury & celebratory silk Anarkali suits.",
-      "image": "/api/uploads/a91915c5-37e9-4e17-9ed2-98fcf25afb8b-1786627524126.png",
+      "image": "/api/uploads/a91915c5-37e9-4e17-9ed2-98fcf25afb8b-1786634006581.png",
       "count": 24,
       "published": true,
       "order": 1
