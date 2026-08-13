@@ -25,7 +25,7 @@ const HERO_SLIDES = [
     },
     {
         src: "/images/hero/slide-2.png",
-        text: "From her very first twirl to the little celebrations that make childhood magical — playful dresses, festive ensembles and beautifully crafted little pieces made to become the first memories of her style.",
+        text: "From her first twirl to little celebrations — playful dresses, festive ensembles and beautifully crafted pieces made for her first style memories.",
     },
     {
         src: "/images/hero/slide-3.png",
