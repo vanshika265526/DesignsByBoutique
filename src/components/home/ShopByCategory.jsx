@@ -5,7 +5,13 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { initialCategories } from "@/data/products";
 
-export default function ShopByCategory() {
+export default function ShopByCategory({ categories }) {
+    // Use live category data from the database (so admin cover-image edits show
+    // here); fall back to the bundled defaults only if none were passed.
+    const items = (Array.isArray(categories) && categories.length > 0 ? categories : initialCategories)
+        .filter((cat) => cat.published !== false)
+        .sort((a, b) => (a.order || 0) - (b.order || 0));
+
     return (
         <section className="py-16 md:py-24 bg-boutique-bg">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -24,7 +30,7 @@ export default function ShopByCategory() {
 
                 {/* Category Grid */}
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
-                    {initialCategories.map((cat) => (
+                    {items.map((cat) => (
                         <Link
                             key={cat.id || cat.slug}
                             href={`/collections/${cat.slug}`}

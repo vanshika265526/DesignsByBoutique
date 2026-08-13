@@ -1224,7 +1224,7 @@
       "slug": "suits-anarkalis",
       "chapter": "her-beginnings",
       "description": "Graceful daily luxury & celebratory silk Anarkali suits.",
-      "image": "/api/uploads/whatsapp-image-2026-08-13-at-11-21-35-am-1786600522868.jpeg",
+      "image": "/api/uploads/whatsapp-image-2026-08-13-at-11-21-35-am-1786603304067.jpeg",
       "count": 24,
       "published": true,
       "order": 1
@@ -1643,6 +1643,20 @@
     ]
   },
   "auditLogs": [
+    {
+      "id": "log-1786603307071",
+      "user": "Admin",
+      "action": "Category Updated",
+      "details": "Updated category \"Suits & Anarkalis\"",
+      "timestamp": "2026-08-13T06:41:47.071Z"
+    },
+    {
+      "id": "log-1786603271917",
+      "user": "Admin",
+      "action": "Category Updated",
+      "details": "Updated category \"Suits & Anarkalis\"",
+      "timestamp": "2026-08-13T06:41:11.917Z"
+    },
     {
       "id": "log-1786601029781",
       "user": "Admin",

@@ -26,7 +26,7 @@ export default async function HomePage() {
             <Hero settings={settings} />
 
             {/* 2 — Shop by Category (women's boutique categories) */}
-            <ShopByCategory />
+            <ShopByCategory categories={db.categories} />
 
             {/* 2.5 — "For Every Chapter of Her Story" animated life-journey timeline */}
             <ChapterTimeline />
