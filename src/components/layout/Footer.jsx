@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Instagram, MapPin, Phone, Mail, Heart } from "lucide-react";
+import { MapPin, Phone, Mail, Heart } from "lucide-react";
 import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
+import InstagramIcon from "@/components/ui/InstagramIcon";
 import { boutiqueConfig, buildWhatsAppLink } from "@/config/boutique";
 
 export default function Footer() {
@@ -99,10 +100,15 @@ export default function Footer() {
                             New Delhi Studio
                         </h4>
                         <div className="space-y-3 text-xs text-neutral-300">
-                            <p className="flex items-start space-x-2">
+                            <a
+                                href={boutiqueConfig.googleMapsUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-start space-x-2 group hover:text-boutique-blush transition-colors"
+                            >
                                 <MapPin className="w-4 h-4 text-boutique-gold flex-shrink-0 mt-0.5" />
-                                <span>{boutiqueConfig.fullAddress}</span>
-                            </p>
+                                <span className="group-hover:underline">{boutiqueConfig.fullAddress}</span>
+                            </a>
                             <p className="flex items-center space-x-2">
                                 <Phone className="w-4 h-4 text-boutique-gold flex-shrink-0" />
                                 <span>{boutiqueConfig.contact.phoneDisplay}</span>
@@ -139,10 +145,10 @@ export default function Footer() {
                                 href={boutiqueConfig.instagram.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="p-2 bg-neutral-800 hover:bg-boutique-rose rounded-full text-white transition-colors"
+                                className="p-2 bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] hover:opacity-90 rounded-full text-white transition-opacity shadow-sm"
                                 aria-label="Instagram"
                             >
-                                <Instagram className="w-4 h-4" />
+                                <InstagramIcon className="w-4 h-4" />
                             </a>
                             <a
                                 href={buildWhatsAppLink()}

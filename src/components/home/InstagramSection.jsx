@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { Instagram, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import InstagramIcon from "@/components/ui/InstagramIcon";
 import { boutiqueConfig } from "@/config/boutique";
 import { lookbookItems } from "@/data/products";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -26,9 +27,9 @@ export default function InstagramSection({ settings = {} }) {
                         href={instagramUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center space-x-2 bg-boutique-rose hover:bg-boutique-rose-dark text-white px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wider transition-colors shadow-sm self-start md:self-auto"
+                        className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FCB045] hover:opacity-95 text-white px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wider transition-all shadow-md self-start md:self-auto"
                     >
-                        <Instagram className="w-4 h-4" />
+                        <InstagramIcon className="w-4 h-4" />
                         <span>{instagramHandle}</span>
                         <ArrowUpRight className="w-4 h-4" />
                     </a>
@@ -51,8 +52,8 @@ export default function InstagramSection({ settings = {} }) {
                                 sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
                                 className="object-cover object-center group-hover:scale-110 transition-transform duration-700"
                             />
-                            <div className="absolute inset-0 bg-boutique-rose/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
-                                <Instagram className="w-6 h-6 transform group-hover:scale-110 transition-transform" />
+                            <div className="absolute inset-0 bg-gradient-to-tr from-[#833AB4]/80 via-[#FD1D1D]/80 to-[#FCB045]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
+                                <InstagramIcon className="w-7 h-7 transform group-hover:scale-110 transition-transform" />
                             </div>
                         </a>
                     ))}

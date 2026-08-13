@@ -4,8 +4,9 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Instagram, Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
+import InstagramIcon from "@/components/ui/InstagramIcon";
 import { boutiqueConfig, buildWhatsAppLink } from "@/config/boutique";
 import { initialCategories } from "@/data/products";
 
@@ -32,18 +33,16 @@ export default function Navbar() {
     }, [pathname]);
 
     const linkClass = (active) =>
-        `text-[11px] uppercase tracking-[0.18em] transition-colors ${
-            active ? "text-boutique-rose font-bold" : "text-boutique-charcoal font-medium hover:text-boutique-rose"
+        `text-[11px] uppercase tracking-[0.18em] transition-colors ${active ? "text-boutique-rose font-bold" : "text-boutique-charcoal font-medium hover:text-boutique-rose"
         }`;
 
     // Mobile drawer links — make the active page unmistakable: bold rose text,
     // a rose left-accent bar and a soft blush background (transparent bar on
     // inactive keeps everything aligned).
     const mobileLinkClass = (active) =>
-        `flex items-center font-serif-editorial text-lg py-2.5 pl-3 border-b border-boutique-muted-border/50 border-l-4 rounded-r transition-colors ${
-            active
-                ? "text-boutique-rose font-bold bg-boutique-blush/40 border-l-boutique-rose"
-                : "text-boutique-charcoal font-normal border-l-transparent hover:text-boutique-rose"
+        `flex items-center font-serif-editorial text-lg py-2.5 pl-3 border-b border-boutique-muted-border/50 border-l-4 rounded-r transition-colors ${active
+            ? "text-boutique-rose font-bold bg-boutique-blush/40 border-l-boutique-rose"
+            : "text-boutique-charcoal font-normal border-l-transparent hover:text-boutique-rose"
         }`;
 
     const isCollections = pathname.startsWith("/collections");
@@ -124,10 +123,10 @@ export default function Navbar() {
                             href={boutiqueConfig.instagram.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hidden md:inline text-boutique-charcoal hover:text-boutique-rose transition-colors"
+                            className="hidden md:inline-flex items-center justify-center p-1.5 rounded-full hover:bg-boutique-blush/60 transition-colors"
                             aria-label="Instagram"
                         >
-                            <Instagram className="w-[18px] h-[18px]" />
+                            <InstagramIcon className="w-[18px] h-[18px]" colored />
                         </a>
 
                         <a
@@ -169,11 +168,10 @@ export default function Navbar() {
                     <div className="border-b border-boutique-muted-border/50">
                         <button
                             onClick={() => setMobileCollectionsOpen((v) => !v)}
-                            className={`w-full flex items-center justify-between font-serif-editorial text-lg py-2.5 pl-3 pr-1 border-l-4 rounded-r transition-colors ${
-                                isCollections
-                                    ? "text-boutique-rose font-bold bg-boutique-blush/40 border-l-boutique-rose"
-                                    : "text-boutique-charcoal font-normal border-l-transparent"
-                            }`}
+                            className={`w-full flex items-center justify-between font-serif-editorial text-lg py-2.5 pl-3 pr-1 border-l-4 rounded-r transition-colors ${isCollections
+                                ? "text-boutique-rose font-bold bg-boutique-blush/40 border-l-boutique-rose"
+                                : "text-boutique-charcoal font-normal border-l-transparent"
+                                }`}
                         >
                             <span>Collections</span>
                             <ChevronDown className={`w-4 h-4 transition-transform ${mobileCollectionsOpen ? "rotate-180" : ""}`} />
@@ -214,8 +212,8 @@ export default function Navbar() {
                     ))}
 
                     <div className="pt-4 flex items-center justify-between">
-                        <a href={boutiqueConfig.instagram.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-boutique-charcoal font-medium">
-                            <Instagram className="w-4 h-4 text-boutique-rose" />
+                        <a href={boutiqueConfig.instagram.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-boutique-charcoal font-medium hover:text-[#E1306C] transition-colors">
+                            <InstagramIcon className="w-4 h-4" colored />
                             <span>{boutiqueConfig.instagram.handle}</span>
                         </a>
                         <a href={buildWhatsAppLink()} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-boutique-rose text-white px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em]">

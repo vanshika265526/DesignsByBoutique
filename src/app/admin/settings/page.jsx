@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
-import { Settings, Save, Phone, MapPin, Instagram, Mail, Clock, Sparkles, Megaphone, CheckCircle, ExternalLink, Image as ImageIcon, Upload } from "lucide-react";
+import { Settings, Save, Phone, MapPin, Instagram, Mail, Clock, Sparkles, Megaphone, CheckCircle, ExternalLink } from "lucide-react";
 
 export default function AdminSettingsPage() {
     const [settings, setSettings] = useState({
@@ -26,26 +25,6 @@ export default function AdminSettingsPage() {
     const [loading, setLoading] = useState(true);
     const [saving, setSaving] = useState(false);
     const [savedMsg, setSavedMsg] = useState(false);
-    const [uploadingHero, setUploadingHero] = useState(false);
-
-    const handleHeroUpload = async (e) => {
-        const file = e.target.files?.[0];
-        if (!file) return;
-        setUploadingHero(true);
-        const data = new FormData();
-        data.append("file", file);
-        try {
-            const res = await fetch("/api/data/upload", { method: "POST", body: data });
-            const json = await res.json();
-            if (json.success && json.url) {
-                setSettings((prev) => ({ ...prev, heroImage: json.url }));
-            }
-        } catch (err) {
-            console.error("Hero upload error:", err);
-        } finally {
-            setUploadingHero(false);
-        }
-    };
 
     useEffect(() => {
         fetch("/api/data/settings")
@@ -223,68 +202,6 @@ export default function AdminSettingsPage() {
                     ) : (
                         <p className="text-xs text-neutral-500 italic">Banner is currently disabled and hidden from the website.</p>
                     )}
-                </div>
-            </div>
-
-            {/* Homepage Main Banner Section */}
-            <div className="bg-white p-6 rounded-2xl border border-neutral-200/80 space-y-5 shadow-2xs">
-                <div className="flex items-center space-x-2 border-b border-neutral-100 pb-3">
-                    <ImageIcon className="w-5 h-5 text-boutique-rose" />
-                    <div>
-                        <h3 className="font-serif-editorial text-lg font-bold text-boutique-charcoal">
-                            Homepage Main Banner
-                        </h3>
-                        <p className="text-xs text-neutral-500">
-                            The large hero image at the very top of the landing page. Upload from your device or paste an image link.
-                        </p>
-                    </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-[220px_1fr] gap-5 items-start">
-                    {/* Preview */}
-                    <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden border border-neutral-200 bg-neutral-100">
-                        <Image
-                            src={settings.heroImage || "/images/hero.png"}
-                            alt="Homepage banner preview"
-                            fill
-                            className="object-cover"
-                            sizes="220px"
-                        />
-                    </div>
-
-                    <div className="space-y-3 text-xs">
-                        <div>
-                            <label className="block text-neutral-700 font-semibold mb-1">Image link (URL)</label>
-                            <input
-                                type="text"
-                                value={settings.heroImage || ""}
-                                onChange={(e) => setSettings({ ...settings, heroImage: e.target.value })}
-                                placeholder="/images/hero.png or https://…"
-                                className="w-full px-3 py-2 bg-neutral-50 border border-neutral-200 rounded-xl font-mono text-[11px]"
-                            />
-                        </div>
-
-                        <div className="flex flex-wrap items-center gap-2">
-                            <label className="inline-flex items-center gap-2 px-4 py-2 bg-boutique-charcoal text-white rounded-xl cursor-pointer hover:bg-neutral-800 font-semibold transition-colors">
-                                <Upload className="w-3.5 h-3.5" />
-                                <span>{uploadingHero ? "Uploading…" : "Upload from device"}</span>
-                                <input type="file" accept="image/*" onChange={handleHeroUpload} className="hidden" disabled={uploadingHero} />
-                            </label>
-                            {settings.heroImage && (
-                                <button
-                                    type="button"
-                                    onClick={() => setSettings({ ...settings, heroImage: "" })}
-                                    className="px-3 py-2 text-neutral-500 hover:text-rose-600 rounded-xl border border-neutral-200 hover:border-rose-300 transition-colors"
-                                >
-                                    Reset to default
-                                </button>
-                            )}
-                        </div>
-                        <p className="text-[11px] text-neutral-400">
-                            Recommended: a wide, high-resolution photo (landscape, at least 1600px wide). Click
-                            <span className="font-semibold text-neutral-600"> Save Settings</span> above to publish.
-                        </p>
-                    </div>
                 </div>
             </div>
 

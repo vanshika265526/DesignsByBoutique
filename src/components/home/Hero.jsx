@@ -17,9 +17,9 @@ const trustBadges = [
 // the rest are the studio editorial shots in /public/images/hero/.
 const SLIDE_INTERVAL_MS = 5000;
 
-export default function Hero({ settings = {} }) {
+export default function Hero() {
     const allImages = [
-        settings.heroImage || "/images/hero.png",
+        "/images/hero.png",
         "/images/hero/slide-1.png",
         "/images/hero/slide-2.png",
         "/images/hero/slide-3.png",
@@ -58,9 +58,8 @@ export default function Hero({ settings = {} }) {
                         priority={i === 0}
                         sizes="100vw"
                         onError={() => setBroken((b) => ({ ...b, [src]: true }))}
-                        className={`object-cover object-center transition-opacity duration-1000 ease-in-out ${
-                            i === active ? "opacity-100" : "opacity-0"
-                        }`}
+                        className={`object-cover object-center transition-opacity duration-1000 ease-in-out ${i === active ? "opacity-100" : "opacity-0"
+                            }`}
                     />
                 ))}
                 {/* Legibility overlay */}
@@ -112,9 +111,8 @@ export default function Hero({ settings = {} }) {
                                 key={i}
                                 onClick={() => setActive(i)}
                                 aria-label={`Show slide ${i + 1}`}
-                                className={`h-1.5 rounded-full transition-all duration-300 ${
-                                    i === active ? "w-6 bg-white" : "w-1.5 bg-white/50 hover:bg-white/80"
-                                }`}
+                                className={`h-1.5 rounded-full transition-all duration-300 ${i === active ? "w-6 bg-white" : "w-1.5 bg-white/50 hover:bg-white/80"
+                                    }`}
                             />
                         ))}
                     </div>

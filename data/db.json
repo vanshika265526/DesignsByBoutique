@@ -1470,7 +1470,7 @@
     "whatsappNumber": "918218752043",
     "defaultWhatsAppMessage": "Hi Designs by Nisha! I'm exploring your boutique collection and would love to enquire about bespoke outfits.",
     "email": "enquire@designsbynisha.com",
-    "address": null,
+    "address": "Design Studio & Boutique, Defence Colony / South Extension, New Delhi - 110024, India",
     "city": null,
     "state": null,
     "zip": null,
@@ -1489,8 +1489,11 @@
     },
     "seoTitle": "Designs by Nisha — Luxury Women's & Bridal Boutique | New Delhi",
     "seoDescription": null,
-    "updatedAt": "2026-08-12T03:38:07.798Z",
-    "googleMapsUrl": "https://share.google/oMRWNqTN0EFZn8Ac9"
+    "updatedAt": "2026-08-13T12:27:09.224Z",
+    "googleMapsUrl": "https://share.google/oMRWNqTN0EFZn8Ac9",
+    "whatsapp": "+91 82187 52043",
+    "instagram": "https://www.instagram.com/designsbynisha00?igsh=Ym92OXh5emZsdm9t",
+    "businessHours": "Monday – Sunday: 10 AM – 9 PM (By Appointment & Walk-ins)"
   },
   "analytics": {
     "_id": "boutique_analytics",

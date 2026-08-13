@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { MapPin, Phone, Clock, Instagram, Send, Sparkles, CheckCircle } from "lucide-react";
+import { MapPin, Phone, Clock, Send, Sparkles, CheckCircle } from "lucide-react";
 import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
+import InstagramIcon from "@/components/ui/InstagramIcon";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { boutiqueConfig, buildWhatsAppLink } from "@/config/boutique";
 
@@ -37,7 +38,7 @@ export default function ContactPage() {
                 productCategory: "Contact Form",
                 message: formData.message,
             }),
-        }).catch(() => {});
+        }).catch(() => { });
 
         setSent(true);
         setFormData({
@@ -73,13 +74,18 @@ export default function ContactPage() {
                         </div>
 
                         <div className="space-y-5 text-sm text-boutique-taupe font-light">
-                            <div className="flex items-start space-x-3">
+                            <a
+                                href={boutiqueConfig.googleMapsUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-start space-x-3 group hover:text-boutique-rose transition-colors"
+                            >
                                 <MapPin className="w-5 h-5 text-boutique-rose flex-shrink-0 mt-0.5" />
                                 <div>
-                                    <span className="font-semibold text-boutique-charcoal block">Location Address</span>
-                                    <span>{boutiqueConfig.fullAddress}</span>
+                                    <span className="font-semibold text-boutique-charcoal group-hover:text-boutique-rose transition-colors block">Location Address</span>
+                                    <span className="group-hover:underline text-boutique-taupe">{boutiqueConfig.fullAddress}</span>
                                 </div>
-                            </div>
+                            </a>
 
                             <div className="flex items-start space-x-3">
                                 <Clock className="w-5 h-5 text-boutique-gold flex-shrink-0 mt-0.5" />
@@ -103,10 +109,10 @@ export default function ContactPage() {
                                 rel="noopener noreferrer"
                                 className="flex items-start space-x-3 group"
                             >
-                                <Instagram className="w-5 h-5 text-boutique-rose flex-shrink-0 mt-0.5" />
+                                <InstagramIcon className="w-5 h-5 flex-shrink-0 mt-0.5" colored />
                                 <div>
                                     <span className="font-semibold text-boutique-charcoal block">Instagram</span>
-                                    <span className="group-hover:text-boutique-rose transition-colors">@{boutiqueConfig.instagram.handle}</span>
+                                    <span className="group-hover:text-[#E1306C] transition-colors">@{boutiqueConfig.instagram.handle}</span>
                                 </div>
                             </a>
                         </div>
@@ -127,9 +133,9 @@ export default function ContactPage() {
                                 href={boutiqueConfig.instagram.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-full bg-white hover:bg-boutique-blush/30 text-boutique-charcoal border border-boutique-muted-border py-3.5 px-4 rounded-xl text-xs font-semibold uppercase tracking-wider flex items-center justify-center space-x-2 transition-colors"
+                                className="w-full bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FCB045] hover:opacity-95 text-white py-3.5 px-4 rounded-xl text-xs font-semibold uppercase tracking-wider flex items-center justify-center space-x-2 transition-all shadow-sm"
                             >
-                                <Instagram className="w-4 h-4 text-boutique-rose" />
+                                <InstagramIcon className="w-4 h-4" />
                                 <span>Follow {boutiqueConfig.instagram.handle}</span>
                             </a>
                         </div>
