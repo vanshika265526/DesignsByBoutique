@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Sparkles, MessageCircle, Heart, Award, MapPin } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { boutiqueConfig, buildWhatsAppLink } from "@/config/boutique";
@@ -12,7 +11,7 @@ export const metadata = {
 
 export default function OurStoryPage() {
     return (
-        <div className="pt-28 pb-24 bg-boutique-bg min-h-screen space-y-20">
+        <div className="pt-8 pb-24 bg-boutique-bg min-h-screen space-y-20">
             {/* Header Banner */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <SectionHeading
@@ -29,7 +28,7 @@ export default function OurStoryPage() {
                     <div className="lg:col-span-6 relative grid grid-cols-2 gap-4">
                         <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg border border-boutique-muted-border">
                             <Image
-                                src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.pexels.com/photos/32081698/pexels-photo-32081698.jpeg?auto=compress&cs=tinysrgb&w=800"
                                 alt="Designs by Nisha Atelier Crafting New Delhi"
                                 fill
                                 sizes="(max-width: 1024px) 50vw, 30vw"
@@ -38,7 +37,7 @@ export default function OurStoryPage() {
                         </div>
                         <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg border border-boutique-muted-border mt-8">
                             <Image
-                                src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=800&auto=format&fit=crop"
+                                src="https://images.pexels.com/photos/31750737/pexels-photo-31750737.jpeg?auto=compress&cs=tinysrgb&w=800"
                                 alt="Bespoke Zardozi Embroidery Details"
                                 fill
                                 sizes="(max-width: 1024px) 50vw, 30vw"
@@ -108,13 +107,15 @@ export default function OurStoryPage() {
                                 <span>Speak With Our Designer</span>
                             </a>
 
-                            <Link
-                                href="/contact"
+                            <a
+                                href="https://share.google/oMRWNqTN0EFZn8Ac9"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center space-x-2 border border-boutique-rose text-boutique-rose hover:bg-boutique-blush/30 px-6 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-colors"
                             >
                                 <MapPin className="w-4 h-4 text-boutique-rose" />
                                 <span>Visit New Delhi Studio</span>
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 </div>

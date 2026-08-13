@@ -3,7 +3,6 @@ import Hero from "@/components/home/Hero";
 import ShopByCategory from "@/components/home/ShopByCategory";
 import ChapterTimeline from "@/components/home/ChapterTimeline";
 import TrendingNow from "@/components/home/TrendingNow";
-import BridalFeature from "@/components/home/BridalFeature";
 import GalleryPreviewSection from "@/components/home/GalleryPreviewSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import InstagramSection from "@/components/home/InstagramSection";
@@ -35,10 +34,7 @@ export default async function HomePage() {
             {/* 3 — Featured / New Arrival products */}
             <TrendingNow products={featuredProducts} />
 
-            {/* 4 — Bridal Collection showcase */}
-            <BridalFeature />
-
-            {/* 5 — Gallery preview */}
+            {/* 4 — Gallery preview */}
             <GalleryPreviewSection />
 
             {/* 6 — Testimonials */}

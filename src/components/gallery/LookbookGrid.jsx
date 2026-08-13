@@ -10,7 +10,7 @@ export default function LookbookGrid() {
     const [selectedCategory, setSelectedCategory] = useState("All");
     const [activeItem, setActiveItem] = useState(null);
 
-    const categories = ["All", "Bridal", "Fashion", "Maternity", "Baby", "Boutique"];
+    const categories = ["All", "Bridal", "Suits", "Festive", "Maternity", "Baby"];
 
     const filteredItems =
         selectedCategory === "All"

@@ -128,9 +128,9 @@ export const initialProducts = [
         "discount": "20% OFF",
         "featured": true,
         "status": "published",
-        "image": "https://images.pexels.com/photos/20520368/pexels-photo-20520368.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "image": "https://images.pexels.com/photos/26973350/pexels-photo-26973350.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "images": [
-            "https://images.pexels.com/photos/20520368/pexels-photo-20520368.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            "https://images.pexels.com/photos/26973350/pexels-photo-26973350.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ],
         "description": "A breathtaking floor-length Chanderi silk Anarkali in soft blush rose, featuring delicate hand-worked Gota Patti borders, organza dupatta with scalloped edges, and tailored fitted churidar.",
         "shortDescription": "Soft blush rose Chanderi silk Anarkali with Gota Patti embroidery.",
@@ -153,9 +153,9 @@ export const initialProducts = [
         "discount": "20% OFF",
         "featured": false,
         "status": "published",
-        "image": "https://images.pexels.com/photos/16612752/pexels-photo-16612752.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "image": "https://images.pexels.com/photos/33180676/pexels-photo-33180676.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "images": [
-            "https://images.pexels.com/photos/16612752/pexels-photo-16612752.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            "https://images.pexels.com/photos/33180676/pexels-photo-33180676.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ],
         "description": "Elegant pastel mint straight kurta ensemble rendered in handloom Tussar silk, detailed with fine antique gold Zardozi thread work along the neckline and sleeves.",
         "shortDescription": "Pastel mint straight Tussar silk kurta set with Zardozi detailing.",
@@ -614,9 +614,9 @@ export const initialProducts = [
         "newArrival": true,
         "featured": false,
         "status": "published",
-        "image": "https://images.pexels.com/photos/4048041/pexels-photo-4048041.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "image": "https://images.pexels.com/photos/5922737/pexels-photo-5922737.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "images": [
-            "https://images.pexels.com/photos/4048041/pexels-photo-4048041.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            "https://images.pexels.com/photos/5922737/pexels-photo-5922737.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ],
         "description": "Flowy peach georgette flared Anarkali with gold thread jaal embroidery all over. Comes with a matching georgette dupatta with hand-stitched tassel ends.",
         "shortDescription": "Peach georgette Anarkali with gold jaal embroidery & tassel dupatta.",
@@ -639,9 +639,9 @@ export const initialProducts = [
         "newArrival": false,
         "featured": false,
         "status": "published",
-        "image": "https://images.pexels.com/photos/4048042/pexels-photo-4048042.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "image": "https://images.pexels.com/photos/36634909/pexels-photo-36634909.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "images": [
-            "https://images.pexels.com/photos/4048042/pexels-photo-4048042.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            "https://images.pexels.com/photos/36634909/pexels-photo-36634909.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ],
         "description": "Soft lilac Chanderi cotton kurta with minimal Lucknowi chikankari patterns, paired with wide palazzo pants and a sheer organza dupatta.",
         "shortDescription": "Lilac Chanderi chikankari kurta with wide palazzo & organza dupatta.",
@@ -664,9 +664,9 @@ export const initialProducts = [
         "newArrival": false,
         "featured": true,
         "status": "published",
-        "image": "https://images.pexels.com/photos/20690519/pexels-photo-20690519.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "image": "https://images.pexels.com/photos/13584944/pexels-photo-13584944.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "images": [
-            "https://images.pexels.com/photos/20690519/pexels-photo-20690519.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            "https://images.pexels.com/photos/13584944/pexels-photo-13584944.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ],
         "description": "Rich deep maroon raw silk straight-cut kurta set with heavy neck embroidery, gold kaam highlights, and a banarasi brocade dupatta with gold border.",
         "shortDescription": "Maroon raw silk kurta with gold kaam & banarasi dupatta.",
@@ -689,9 +689,9 @@ export const initialProducts = [
         "newArrival": true,
         "featured": false,
         "status": "published",
-        "image": "https://images.pexels.com/photos/20407233/pexels-photo-20407233.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "image": "https://images.pexels.com/photos/20690516/pexels-photo-20690516.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "images": [
-            "https://images.pexels.com/photos/20407233/pexels-photo-20407233.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            "https://images.pexels.com/photos/20690516/pexels-photo-20690516.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ],
         "description": "Festive powder blue cotton kurta adorned with intricate handmade mirror work on yoke and sleeves, paired with palazzo pants.",
         "shortDescription": "Powder blue mirror-work cotton kurta with palazzo pants.",
@@ -714,9 +714,9 @@ export const initialProducts = [
         "newArrival": false,
         "featured": false,
         "status": "published",
-        "image": "https://images.pexels.com/photos/20407198/pexels-photo-20407198.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "image": "https://images.pexels.com/photos/33824984/pexels-photo-33824984.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "images": [
-            "https://images.pexels.com/photos/20407198/pexels-photo-20407198.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            "https://images.pexels.com/photos/33824984/pexels-photo-33824984.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ],
         "description": "Vivid saffron floral printed Anarkali in breathable mul-mul cotton, ideal for festive events. Embellished with handcrafted pom-pom dupatta.",
         "shortDescription": "Saffron floral mul-mul Anarkali with pom-pom dupatta.",
@@ -739,9 +739,9 @@ export const initialProducts = [
         "newArrival": false,
         "featured": false,
         "status": "published",
-        "image": "https://images.pexels.com/photos/33363057/pexels-photo-33363057.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "image": "https://images.pexels.com/photos/25184994/pexels-photo-25184994.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "images": [
-            "https://images.pexels.com/photos/33363057/pexels-photo-33363057.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            "https://images.pexels.com/photos/25184994/pexels-photo-25184994.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ],
         "description": "Bridal reception-worthy ivory silk straight kurta featuring heavy Zardozi goldwork bodice, paired with wide-leg silk pants and a sheer embroidered dupatta.",
         "shortDescription": "Ivory silk Zardozi kurta with silk pants & embroidered dupatta.",
@@ -764,9 +764,9 @@ export const initialProducts = [
         "newArrival": true,
         "featured": false,
         "status": "published",
-        "image": "https://images.pexels.com/photos/20690539/pexels-photo-20690539.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "image": "https://images.pexels.com/photos/19956021/pexels-photo-19956021.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "images": [
-            "https://images.pexels.com/photos/20690539/pexels-photo-20690539.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            "https://images.pexels.com/photos/19956021/pexels-photo-19956021.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ],
         "description": "Dramatic forest green organza Anarkali gown with hand-embroidered floral sprigs and a trail. Perfect for evening functions and sangeet nights.",
         "shortDescription": "Forest green organza Anarkali gown with trail & floral embroidery.",
@@ -789,9 +789,9 @@ export const initialProducts = [
         "newArrival": false,
         "featured": false,
         "status": "published",
-        "image": "https://images.pexels.com/photos/34933700/pexels-photo-34933700.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "image": "https://images.pexels.com/photos/30876168/pexels-photo-30876168.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "images": [
-            "https://images.pexels.com/photos/34933700/pexels-photo-34933700.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            "https://images.pexels.com/photos/30876168/pexels-photo-30876168.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ],
         "description": "Classic dusty rose Lucknowi chikan embroidered Anarkali kurta with delicate white threadwork. Timeless everyday elegance for family functions.",
         "shortDescription": "Dusty rose Lucknowi chikankari Anarkali for everyday elegance.",
@@ -1002,32 +1002,6 @@ export const initialProducts = [
         "details": [
             "Tissue Silk with Full Lining",
             "Velvet blouse included"
-        ]
-    },
-    {
-        "id": "prod-27",
-        "slug": "sunshine-yellow-peplum-lehenga",
-        "name": "Basant Sunshine Yellow Peplum Lehenga",
-        "category": "haldi-mehendi",
-        "categoryName": "Haldi & Mehendi",
-        "chapter": "her-new-chapter",
-        "chapterName": "Her New Chapter",
-        "price": 6999,
-        "originalPrice": 8699,
-        "discount": "20% OFF",
-        "newArrival": true,
-        "featured": true,
-        "status": "published",
-        "image": "https://images.pexels.com/photos/38563263/pexels-photo-38563263.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "images": [
-            "https://images.pexels.com/photos/38563263/pexels-photo-38563263.jpeg?auto=compress&cs=tinysrgb&w=1200"
-        ],
-        "description": "Vibrant sunshine yellow peplum kurta with mirror-sequin work, paired with a voluminous flared lehenga skirt in matching cotton silk. Designed for Haldi rituals.",
-        "shortDescription": "Sunshine yellow peplum kurta with mirror lehenga skirt for Haldi.",
-        "details": [
-            "Cotton Silk",
-            "Mirror work & sequin embellishment",
-            "Matching jutis available"
         ]
     },
     {
@@ -1406,6 +1380,118 @@ export const initialGallery = [
         "category": "Festive",
         "image": "https://images.pexels.com/photos/31750737/pexels-photo-31750737.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "aspectRatio": "aspect-[4/5]",
+        "location": "New Delhi Studio"
+    },
+    {
+        "id": "lb-07",
+        "title": "Rose Royal Heirloom Bridal Lehenga",
+        "category": "Bridal",
+        "image": "https://images.pexels.com/photos/9419108/pexels-photo-9419108.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "aspectRatio": "aspect-[3/4]",
+        "location": "Bridal Atelier"
+    },
+    {
+        "id": "lb-08",
+        "title": "Maharani Crimson Velvet Bridal Lehenga",
+        "category": "Bridal",
+        "image": "https://images.pexels.com/photos/20790059/pexels-photo-20790059.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "aspectRatio": "aspect-[3/4]",
+        "location": "Studio New Delhi"
+    },
+    {
+        "id": "lb-09",
+        "title": "Rukmini Blush Pink Sequin Bridal Lehenga",
+        "category": "Bridal",
+        "image": "https://images.pexels.com/photos/20790061/pexels-photo-20790061.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "aspectRatio": "aspect-[3/4]",
+        "location": "Bridal Suite"
+    },
+    {
+        "id": "lb-10",
+        "title": "Gulzar Chanderi Silk Anarkali Set",
+        "category": "Suits",
+        "image": "https://images.pexels.com/photos/26973350/pexels-photo-26973350.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "aspectRatio": "aspect-[3/4]",
+        "location": "Heritage Suite"
+    },
+    {
+        "id": "lb-11",
+        "title": "Aarohi Peach Georgette Anarkali",
+        "category": "Suits",
+        "image": "https://images.pexels.com/photos/5922737/pexels-photo-5922737.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "aspectRatio": "aspect-[3/4]",
+        "location": "New Delhi Atelier"
+    },
+    {
+        "id": "lb-12",
+        "title": "Lavanya Lilac Chanderi Palazzo Suit",
+        "category": "Suits",
+        "image": "https://images.pexels.com/photos/36634909/pexels-photo-36634909.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "aspectRatio": "aspect-[3/4]",
+        "location": "Boutique Lounge"
+    },
+    {
+        "id": "lb-13",
+        "title": "Emerald Mehendi Embroidered Sharara",
+        "category": "Festive",
+        "image": "https://images.pexels.com/photos/31750738/pexels-photo-31750738.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "aspectRatio": "aspect-[3/4]",
+        "location": "Garden Courtyard"
+    },
+    {
+        "id": "lb-15",
+        "title": "Vriksha Olive Green Mehendi Anarkali",
+        "category": "Festive",
+        "image": "https://images.pexels.com/photos/17635596/pexels-photo-17635596.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "aspectRatio": "aspect-[3/4]",
+        "location": "New Delhi Studio"
+    },
+    {
+        "id": "lb-16",
+        "title": "Grace Powder Pink Silk Maternity Gown",
+        "category": "Maternity",
+        "image": "/images/maternity/gown-1.png",
+        "aspectRatio": "aspect-[3/4]",
+        "location": "New Delhi Atelier"
+    },
+    {
+        "id": "lb-17",
+        "title": "Roop Blush Satin Slit Maternity Gown",
+        "category": "Maternity",
+        "image": "/images/maternity/gown-2.png",
+        "aspectRatio": "aspect-[3/4]",
+        "location": "Studio New Delhi"
+    },
+    {
+        "id": "lb-18",
+        "title": "Kavya Royal Silk Draped Maternity Gown",
+        "category": "Maternity",
+        "image": "/images/maternity/gown-4.png",
+        "aspectRatio": "aspect-[3/4]",
+        "location": "Boutique Lounge"
+    },
+    {
+        "id": "lb-19",
+        "title": "Choti Princess Gold Zari Baby Kurti Set",
+        "category": "Baby",
+        "image": "https://images.pexels.com/photos/37213268/pexels-photo-37213268.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "aspectRatio": "aspect-[1/1]",
+        "location": "Boutique Lounge"
+    },
+    {
+        "id": "lb-20",
+        "title": "Choti Rani Red Banarasi Baby Lehenga",
+        "category": "Baby",
+        "image": "https://images.pexels.com/photos/8818761/pexels-photo-8818761.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "aspectRatio": "aspect-[3/4]",
+        "location": "First Celebrations"
+    },
+    {
+        "id": "lb-21",
+        "title": "Shehzada Royal Blue Baby Sherwani Set",
+        "category": "Baby",
+        "image": "https://images.pexels.com/photos/12100636/pexels-photo-12100636.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "aspectRatio": "aspect-[3/4]",
         "location": "New Delhi Studio"
     }
 ];

@@ -19,7 +19,8 @@ export const SESSION_TTL_MS = 8 * 60 * 60 * 1000; // 8 hours
 
 // Rate-limit config
 export const MAX_ATTEMPTS = 5;
-export const LOCK_MS = 15 * 60 * 1000; // 15 minutes lockout after 5 failures
+export const LOCK_MS = 5 * 60 * 1000; // 5 minutes lockout after 5 failed attempts
+export const LOCK_MINUTES = Math.round(LOCK_MS / 60000);
 
 export function verifyPassword(password, stored = ADMIN_PASSWORD_HASH) {
     try {
@@ -60,10 +61,55 @@ export function verifySession(token) {
     }
 }
 
-// Shared in-memory attempt store (survives HMR in dev via globalThis)
+// Shared in-memory attempt store (fallback for dev / DB outages; survives HMR via globalThis).
 export function getAttemptStore() {
     if (!globalThis.__adminLoginAttempts) {
         globalThis.__adminLoginAttempts = new Map();
     }
     return globalThis.__adminLoginAttempts;
+}
+
+// Persistent brute-force lockout store, keyed by client IP.
+//
+// On serverless (Vercel) the in-memory Map is per-instance and wiped on cold
+// start, so the lockout is unreliable. These helpers persist attempt counters
+// in MongoDB Atlas so the "5 strikes → 5 minute lock" holds across every
+// instance and restart. If the database is unreachable they transparently fall
+// back to the in-memory store so login still functions.
+const ATTEMPTS_COLLECTION = "adminLoginAttempts";
+
+export async function readAttempt(ip) {
+    try {
+        const { getDatabase } = await import("./mongodb");
+        const db = await getDatabase();
+        const doc = await db.collection(ATTEMPTS_COLLECTION).findOne({ _id: ip });
+        return { fails: doc?.fails || 0, lockedUntil: doc?.lockedUntil || 0 };
+    } catch {
+        return getAttemptStore().get(ip) || { fails: 0, lockedUntil: 0 };
+    }
+}
+
+export async function writeAttempt(ip, rec) {
+    const value = { fails: rec.fails || 0, lockedUntil: rec.lockedUntil || 0 };
+    try {
+        const { getDatabase } = await import("./mongodb");
+        const db = await getDatabase();
+        await db.collection(ATTEMPTS_COLLECTION).updateOne(
+            { _id: ip },
+            { $set: { ...value, updatedAt: new Date() } },
+            { upsert: true }
+        );
+    } catch {
+        getAttemptStore().set(ip, value);
+    }
+}
+
+export async function clearAttempts(ip) {
+    try {
+        const { getDatabase } = await import("./mongodb");
+        const db = await getDatabase();
+        await db.collection(ATTEMPTS_COLLECTION).deleteOne({ _id: ip });
+    } catch {
+        getAttemptStore().delete(ip);
+    }
 }

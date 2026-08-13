@@ -116,7 +116,7 @@ function getSeedData() {
                 rating: 5,
                 text: "Nisha designed my custom bridal lehenga in just 3 weeks! The hand zardozi work and personal fitting sessions made me feel like royalty on my wedding day.",
                 outfit: "Rose Royal Heirloom Bridal Lehenga",
-                avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop",
+                avatar: "https://images.pexels.com/photos/6594747/pexels-photo-6594747.jpeg?auto=compress&cs=tinysrgb&w=300",
                 featured: true,
             },
             {
@@ -126,7 +126,7 @@ function getSeedData() {
                 rating: 5,
                 text: "Her maternity photoshoot gown was beyond magical! Super breathable pure silk and fitted so comfortably during my third trimester.",
                 outfit: "Grace Powder Pink Silk Maternity Gown",
-                avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop",
+                avatar: "https://images.pexels.com/photos/29125196/pexels-photo-29125196.jpeg?auto=compress&cs=tinysrgb&w=300",
                 featured: true,
             },
             {
@@ -136,7 +136,7 @@ function getSeedData() {
                 rating: 5,
                 text: "We ordered matching Mommy & Me Haldi lehengas for our daughter's first Diwali. Zero-scratch inner lining made our baby so comfortable!",
                 outfit: "Nirmal Miniature Rose Baby Lehenga Set",
-                avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200&auto=format&fit=crop",
+                avatar: "https://images.pexels.com/photos/8720868/pexels-photo-8720868.jpeg?auto=compress&cs=tinysrgb&w=300",
                 featured: true,
             },
         ],

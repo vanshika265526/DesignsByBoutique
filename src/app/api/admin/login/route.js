@@ -3,17 +3,19 @@ import {
     ADMIN_EMAIL,
     verifyPassword,
     signSession,
-    getAttemptStore,
+    readAttempt,
+    writeAttempt,
+    clearAttempts,
     SESSION_COOKIE,
     SESSION_TTL_MS,
     MAX_ATTEMPTS,
     LOCK_MS,
+    LOCK_MINUTES,
 } from "@/lib/adminAuth";
 
 export const runtime = "nodejs";
 
 export async function POST(request) {
-    const store = getAttemptStore();
     const ip =
         request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
         request.headers.get("x-real-ip") ||
@@ -31,16 +33,17 @@ export async function POST(request) {
 
     const key = `${ip}`;
     const now = Date.now();
-    const rec = store.get(key) || { fails: 0, lockedUntil: 0 };
+    const rec = await readAttempt(key);
 
     // Locked out?
     if (rec.lockedUntil && rec.lockedUntil > now) {
+        const minsLeft = Math.ceil((rec.lockedUntil - now) / 60000);
         return NextResponse.json(
             {
                 success: false,
                 locked: true,
                 lockedUntil: rec.lockedUntil,
-                error: "Too many failed attempts. Account temporarily locked.",
+                error: `Too many failed attempts. Try again in ${minsLeft} minute${minsLeft === 1 ? "" : "s"}.`,
             },
             { status: 429 }
         );
@@ -56,7 +59,7 @@ export async function POST(request) {
             rec.fails = 0;
             locked = true;
         }
-        store.set(key, rec);
+        await writeAttempt(key, rec);
 
         if (locked) {
             return NextResponse.json(
@@ -64,7 +67,7 @@ export async function POST(request) {
                     success: false,
                     locked: true,
                     lockedUntil: rec.lockedUntil,
-                    error: "Too many failed attempts. Locked for 15 minutes.",
+                    error: `Too many failed attempts. Locked for ${LOCK_MINUTES} minutes.`,
                 },
                 { status: 429 }
             );
@@ -80,7 +83,7 @@ export async function POST(request) {
     }
 
     // Success — clear attempts and set signed session cookie
-    store.delete(key);
+    await clearAttempts(key);
     const token = signSession(email);
     const res = NextResponse.json({ success: true });
     res.cookies.set(SESSION_COOKIE, token, {

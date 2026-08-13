@@ -12,7 +12,7 @@ const defaultReviews = [
         rating: 5,
         text: "Beautiful collection! Found so many outfits for my daughter. The kids section is amazing - great variety and super cute designs.",
         outfit: "Kids Lehenga Set",
-        avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop",
+        avatar: "https://images.pexels.com/photos/37798732/pexels-photo-37798732.jpeg?auto=compress&cs=tinysrgb&w=300",
     },
     {
         id: "t2",
@@ -21,7 +21,7 @@ const defaultReviews = [
         rating: 5,
         text: "The gown fit like a dream. Ordered two in different colors and both are fantastic. Will definitely shop here again!",
         outfit: "Designer Evening Gown",
-        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+        avatar: "https://images.pexels.com/photos/15321852/pexels-photo-15321852.jpeg?auto=compress&cs=tinysrgb&w=300",
     },
     {
         id: "t3",
@@ -30,7 +30,7 @@ const defaultReviews = [
         rating: 5,
         text: "Got so many compliments wearing the Indo Western gown! Easy fitting and great customer support. Love Designs by Nisha!",
         outfit: "Indo Western Gown",
-        avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200&auto=format&fit=crop",
+        avatar: "https://images.pexels.com/photos/18557359/pexels-photo-18557359.jpeg?auto=compress&cs=tinysrgb&w=300",
     },
     {
         id: "t4",
@@ -39,7 +39,7 @@ const defaultReviews = [
         rating: 5,
         text: "Ordered a party wear evening gown and I am amazed by the stitching and silk quality. The drape is elegant and photogenic.",
         outfit: "Silk Party Wear Gown",
-        avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop",
+        avatar: "https://images.pexels.com/photos/20132403/pexels-photo-20132403.jpeg?auto=compress&cs=tinysrgb&w=300",
     },
     {
         id: "t5",
@@ -48,7 +48,7 @@ const defaultReviews = [
         rating: 5,
         text: "Finding graceful maternity gowns felt impossible until I visited Nisha's boutique. Featherlight silk and super comfortable fit!",
         outfit: "Rose Silk Maternity Gown",
-        avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop",
+        avatar: "https://images.pexels.com/photos/29665809/pexels-photo-29665809.jpeg?auto=compress&cs=tinysrgb&w=300",
     },
     {
         id: "t6",
@@ -57,7 +57,7 @@ const defaultReviews = [
         rating: 5,
         text: "Custom bridal reception gown handcrafted in just 3 weeks! The zardozi work and fitting sessions were pure luxury.",
         outfit: "Ivory Bridal Reception Gown",
-        avatar: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=200&auto=format&fit=crop",
+        avatar: "https://images.pexels.com/photos/37627047/pexels-photo-37627047.jpeg?auto=compress&cs=tinysrgb&w=300",
     },
 ];
 

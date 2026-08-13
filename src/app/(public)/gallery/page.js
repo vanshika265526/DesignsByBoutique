@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function GalleryPage() {
     return (
-        <div className="pt-28 pb-24 bg-boutique-bg min-h-screen space-y-16">
+        <div className="pt-8 pb-24 bg-boutique-bg min-h-screen space-y-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <SectionHeading
                     badge="FASHION EDITORIAL"

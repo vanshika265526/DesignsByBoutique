@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MapPin, Phone, Mail, Clock, MessageCircle, Instagram, Send, Sparkles } from "lucide-react";
+import { MapPin, Phone, Clock, MessageCircle, Instagram, Send, Sparkles, CheckCircle } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { boutiqueConfig, buildWhatsAppLink } from "@/config/boutique";
 
@@ -12,16 +12,43 @@ export default function ContactPage() {
         chapterInterest: "Bridal Lehengas (Chapter 02)",
         message: "",
     });
+    const [sent, setSent] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
         const text = `Hi Designs by Nisha! My name is ${formData.name} (${formData.phone}). I am interested in: ${formData.chapterInterest}. Note: ${formData.message}`;
         const url = buildWhatsAppLink({ customMessage: text });
-        window.open(url, "_blank");
+
+        // Open WhatsApp to the boutique number immediately, inside the click
+        // gesture so the browser does not block it as a popup.
+        window.open(url, "_blank", "noopener,noreferrer");
+
+        // Best-effort: also record the lead in the admin dashboard so no
+        // enquiry is lost even if the WhatsApp hand-off is not completed.
+        fetch("/api/data/enquiries", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                name: formData.name,
+                phone: formData.phone,
+                productName: formData.chapterInterest,
+                productCategory: "Contact Form",
+                message: formData.message,
+            }),
+        }).catch(() => {});
+
+        setSent(true);
+        setFormData({
+            name: "",
+            phone: "",
+            chapterInterest: "Bridal Lehengas (Chapter 02)",
+            message: "",
+        });
     };
 
     return (
-        <div className="pt-28 pb-24 bg-boutique-bg min-h-screen space-y-16">
+        <div className="pt-8 pb-24 bg-boutique-bg min-h-screen space-y-16">
             {/* Header */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <SectionHeading
@@ -69,13 +96,18 @@ export default function ContactPage() {
                                 </div>
                             </div>
 
-                            <div className="flex items-start space-x-3">
-                                <Mail className="w-5 h-5 text-boutique-rose flex-shrink-0 mt-0.5" />
+                            <a
+                                href={boutiqueConfig.instagram.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-start space-x-3 group"
+                            >
+                                <Instagram className="w-5 h-5 text-boutique-rose flex-shrink-0 mt-0.5" />
                                 <div>
-                                    <span className="font-semibold text-boutique-charcoal block">Email Inquiries</span>
-                                    <span>{boutiqueConfig.contact.email}</span>
+                                    <span className="font-semibold text-boutique-charcoal block">Instagram</span>
+                                    <span className="group-hover:text-boutique-rose transition-colors">@{boutiqueConfig.instagram.handle}</span>
                                 </div>
-                            </div>
+                            </a>
                         </div>
 
                         {/* Direct Channel Buttons */}
@@ -127,7 +159,7 @@ export default function ContactPage() {
                                     required
                                     placeholder="e.g. Ananya Sharma"
                                     value={formData.name}
-                                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                    onChange={(e) => { setSent(false); setFormData({ ...formData, name: e.target.value }); }}
                                     className="w-full px-4 py-3 rounded-xl border border-boutique-muted-border focus:outline-none focus:ring-2 focus:ring-boutique-rose/40 text-sm"
                                 />
                             </div>
@@ -183,6 +215,15 @@ export default function ContactPage() {
                                 <Send className="w-4 h-4" />
                                 <span>Submit Inquiry via WhatsApp</span>
                             </button>
+
+                            {sent && (
+                                <div className="flex items-center justify-center space-x-2 text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-xl py-3 px-4 text-xs font-medium">
+                                    <CheckCircle className="w-4 h-4 flex-shrink-0" />
+                                    <span>
+                                        Thank you! Your inquiry has been sent. If WhatsApp didn&apos;t open automatically, please check for a blocked popup.
+                                    </span>
+                                </div>
+                            )}
                         </form>
                     </div>
                 </div>
