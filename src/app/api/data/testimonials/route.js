@@ -30,7 +30,7 @@ export async function POST(req) {
         };
 
         db.testimonials.unshift(newTestimonial);
-        writeDb(db);
+        await writeDb(db);
         addAuditLog("Added Testimonial", `Added review by ${newTestimonial.author}`);
         return NextResponse.json({ success: true, data: newTestimonial });
     } catch (err) {
@@ -51,7 +51,7 @@ export async function PATCH(req) {
         }
 
         db.testimonials[idx] = { ...db.testimonials[idx], ...updates };
-        writeDb(db);
+        await writeDb(db);
         addAuditLog("Updated Testimonial", `Updated review ID ${id}`);
         return NextResponse.json({ success: true, data: db.testimonials[idx] });
     } catch (err) {
@@ -71,7 +71,7 @@ export async function DELETE(req) {
         if (!db.testimonials) db.testimonials = [];
 
         db.testimonials = db.testimonials.filter((t) => t.id !== id);
-        writeDb(db);
+        await writeDb(db);
         addAuditLog("Deleted Testimonial", `Removed testimonial ID ${id}`);
         return NextResponse.json({ success: true, message: "Testimonial deleted" });
     } catch (err) {

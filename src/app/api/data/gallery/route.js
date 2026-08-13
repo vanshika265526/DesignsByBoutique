@@ -28,7 +28,7 @@ export async function POST(request) {
         };
 
         db.gallery.unshift(newItem);
-        const saved = writeDb(db);
+        const saved = await writeDb(db);
         if (saved) {
             addAuditLog('Gallery Photo Added', `Added lookbook photo "${newItem.title}"`);
             return NextResponse.json({ success: true, data: newItem }, { status: 201 });
@@ -49,7 +49,7 @@ export async function PATCH(request) {
             return NextResponse.json({ success: false, error: 'Gallery item not found' }, { status: 404 });
         }
         db.gallery[index] = { ...db.gallery[index], ...updates };
-        const saved = writeDb(db);
+        const saved = await writeDb(db);
         if (saved) {
             addAuditLog('Gallery Photo Updated', `Updated lookbook photo "${db.gallery[index].title}"`);
             return NextResponse.json({ success: true, data: db.gallery[index] });
@@ -69,7 +69,7 @@ export async function DELETE(request) {
         }
         const db = readDb();
         db.gallery = (db.gallery || []).filter((g) => g.id !== id);
-        const saved = writeDb(db);
+        const saved = await writeDb(db);
         if (saved) {
             addAuditLog('Gallery Photo Deleted', `Removed lookbook photo ID ${id}`);
             return NextResponse.json({ success: true, message: 'Gallery item deleted' });

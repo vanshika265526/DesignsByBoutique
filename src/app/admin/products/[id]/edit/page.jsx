@@ -147,14 +147,13 @@ export default function EditProductPage() {
             });
             const json = await res.json();
             if (json.success && json.url) {
-                setFormData((prev) => {
-                    const newImages = [...prev.images, json.url];
-                    return {
-                        ...prev,
-                        images: newImages,
-                        image: prev.image ? prev.image : json.url,
-                    };
-                });
+                setFormData((prev) => ({
+                    ...prev,
+                    images: [...prev.images, json.url],
+                    // Make the freshly uploaded photo the cover so it actually
+                    // shows on the site. Admin can still pick a different cover.
+                    image: json.url,
+                }));
             }
         } catch (err) {
             console.error("Image upload failed:", err);
@@ -430,11 +429,14 @@ export default function EditProductPage() {
 
                                     <button
                                         onClick={() =>
-                                            setFormData((prev) => ({
-                                                ...prev,
-                                                images: prev.images.filter((_, i) => i !== idx),
-                                                image: prev.image === imgUrl ? prev.images[0] || "" : prev.image,
-                                            }))
+                                            setFormData((prev) => {
+                                                const remaining = prev.images.filter((_, i) => i !== idx);
+                                                return {
+                                                    ...prev,
+                                                    images: remaining,
+                                                    image: prev.image === imgUrl ? (remaining[0] || "") : prev.image,
+                                                };
+                                            })
                                         }
                                         className="absolute top-1 right-1 p-1 bg-black/60 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
                                     >

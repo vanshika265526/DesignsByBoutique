@@ -29,7 +29,7 @@ export async function POST(request) {
         };
 
         db.enquiries.unshift(newEnquiry);
-        const saved = writeDb(db);
+        const saved = await writeDb(db);
         if (saved) {
             addAuditLog('Enquiry Recorded', `New enquiry from ${newEnquiry.name}`);
             return NextResponse.json({ success: true, data: newEnquiry }, { status: 201 });
@@ -52,7 +52,7 @@ export async function PATCH(request) {
         }
 
         db.enquiries[index].status = status || db.enquiries[index].status;
-        const saved = writeDb(db);
+        const saved = await writeDb(db);
         if (saved) {
             addAuditLog('Enquiry Status Updated', `Set status of enquiry #${id} to "${status}"`);
             return NextResponse.json({ success: true, data: db.enquiries[index] });

@@ -104,13 +104,13 @@ export async function POST(req) {
             if (type === "call") db.analytics.callClicks = (db.analytics.callClicks || 0) + 1;
             if (type === "instagram") db.analytics.instagramClicks = (db.analytics.instagramClicks || 0) + 1;
             if (type === "view") db.analytics.totalPageViews = (db.analytics.totalPageViews || 0) + 1;
-            writeDb(db);
+            await writeDb(db);
             return NextResponse.json({ success: true, data: db.analytics });
         }
 
         if (action === "update") {
             db.analytics = { ...db.analytics, ...payload };
-            writeDb(db);
+            await writeDb(db);
             addAuditLog("Updated Analytics", "Analytics metrics manually recalibrated by admin");
             return NextResponse.json({ success: true, data: db.analytics });
         }

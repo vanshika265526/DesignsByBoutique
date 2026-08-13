@@ -66,7 +66,7 @@ export async function POST(request) {
         };
 
         db.products.unshift(newProduct);
-        const saved = writeDb(db);
+        const saved = await writeDb(db);
         if (saved) {
             addAuditLog('Product Created', `Added product "${newProduct.name}" (ID: ${newProduct.id})`);
             return NextResponse.json({ success: true, data: newProduct }, { status: 201 });

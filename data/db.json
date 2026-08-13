@@ -13,9 +13,9 @@
       "discount": "20% OFF",
       "featured": true,
       "status": "published",
-      "image": "https://images.pexels.com/photos/26973350/pexels-photo-26973350.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "image": "/api/uploads/image-png-2k-202608051047-1-1786604878349.jpeg",
       "images": [
-        "https://images.pexels.com/photos/26973350/pexels-photo-26973350.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        "/api/uploads/image-png-2k-202608051047-1-1786604878349.jpeg"
       ],
       "description": "A breathtaking floor-length Chanderi silk Anarkali in soft blush rose, featuring delicate hand-worked Gota Patti borders, organza dupatta with scalloped edges, and tailored fitted churidar.",
       "shortDescription": "Soft blush rose Chanderi silk Anarkali with Gota Patti embroidery.",
@@ -23,7 +23,10 @@
         "Pure Chanderi Silk & Organza Dupatta",
         "Custom sleeve length customization available",
         "Dry Clean Only"
-      ]
+      ],
+      "instagramReel": "",
+      "newArrival": false,
+      "updatedAt": "2026-08-13T07:08:03.123Z"
     },
     {
       "id": "prod-02",
@@ -1224,7 +1227,7 @@
       "slug": "suits-anarkalis",
       "chapter": "her-beginnings",
       "description": "Graceful daily luxury & celebratory silk Anarkali suits.",
-      "image": "/api/uploads/whatsapp-image-2026-08-13-at-11-21-35-am-1786603304067.jpeg",
+      "image": "/api/uploads/image-png-2k-202608051047-1-1786604980291.jpeg",
       "count": 24,
       "published": true,
       "order": 1

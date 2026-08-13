@@ -288,88 +288,99 @@ export function readDb() {
     }
 }
 
-// Write database to file atomically & sync to MongoDB Atlas
-export function writeDb(data) {
+// Write database to file (best-effort) & sync to MongoDB Atlas.
+//
+// IMPORTANT: this is async and the Atlas write is AWAITED. On Vercel the
+// serverless function is frozen/terminated the moment the response is sent, so
+// a fire-and-forget (`.then()`) DB write gets dropped — which is why admin
+// saves used to "succeed" but never reach production. Callers must `await`.
+export async function writeDb(data) {
+    // Best-effort local file write. On serverless (Vercel) the filesystem is
+    // read-only, so this can throw — that must NOT abort the Atlas sync, which
+    // is the real source of truth in production.
     try {
-        if (!fs.existsSync(DB_DIR)) {
-            fs.mkdirSync(DB_DIR, { recursive: true });
+        if (!fs.existsSync(DB_DIR)) fs.mkdirSync(DB_DIR, { recursive: true });
+        const tempPath = `${DB_PATH}.tmp`;
+        fs.writeFileSync(tempPath, JSON.stringify(data, null, 2), 'utf-8');
+        fs.renameSync(tempPath, DB_PATH);
+    } catch (fileErr) {
+        console.warn('[writeDb] Local file write skipped:', fileErr.message);
+    }
+
+    // Any write makes the read cache stale — drop it so the next read is fresh.
+    invalidateDbCache();
+
+    // Sync to MongoDB Atlas — every id-keyed collection plus the singletons, so
+    // admin edits to ANY content type (categories, gallery, offers, …) reach
+    // production. Awaited so serverless does not kill it mid-write.
+    const ID_COLLECTIONS = [
+        'products', 'categories', 'chapters', 'gallery', 'offers', 'testimonials', 'enquiries',
+    ];
+    try {
+        const db = await getDatabase();
+        for (const col of ID_COLLECTIONS) {
+            if (!Array.isArray(data[col])) continue;
+            // One bulkWrite per collection = one round-trip, so awaiting the whole
+            // sync stays fast even with many items.
+            const ops = [];
+            for (const item of data[col]) {
+                if (!item || !item.id) continue;
+                const { _id, ...rest } = item;
+                ops.push({ updateOne: { filter: { id: item.id }, update: { $set: rest }, upsert: true } });
+            }
+            // Prune docs removed in the admin (delete propagation), but only when
+            // we have a non-empty desired state (guards against wiping on a bad read).
+            const ids = data[col].map((x) => x && x.id).filter(Boolean);
+            if (ids.length > 0) {
+                ops.push({ deleteMany: { filter: { id: { $nin: ids } } } });
+            }
+            if (ops.length) await db.collection(col).bulkWrite(ops, { ordered: false });
         }
-
-        // Best-effort local file write. On serverless (Vercel) the filesystem is
-        // read-only, so this can throw — that must NOT abort the Atlas sync below,
-        // which is the real source of truth in production.
-        try {
-            const tempPath = `${DB_PATH}.tmp`;
-            fs.writeFileSync(tempPath, JSON.stringify(data, null, 2), 'utf-8');
-            fs.renameSync(tempPath, DB_PATH);
-        } catch (fileErr) {
-            console.warn('[writeDb] Local file write skipped:', fileErr.message);
+        if (data.settings) {
+            const { _id, ...sData } = data.settings;
+            await db.collection('settings').updateOne({ _id: 'boutique_settings' }, { $set: sData }, { upsert: true });
         }
-
-        // Any write makes the read cache stale — drop it so the next read is fresh.
-        invalidateDbCache();
-
-        // Sync to MongoDB Atlas — every id-keyed collection plus the singletons,
-        // so admin edits to ANY content type (categories, gallery, offers, …)
-        // actually reach production, not just products/settings/testimonials.
-        const ID_COLLECTIONS = [
-            'products', 'categories', 'chapters', 'gallery', 'offers', 'testimonials', 'enquiries',
-        ];
-        getDatabase()
-            .then(async (db) => {
-                for (const col of ID_COLLECTIONS) {
-                    if (!Array.isArray(data[col])) continue;
-                    for (const item of data[col]) {
-                        if (!item || !item.id) continue;
-                        const { _id, ...rest } = item;
-                        await db.collection(col).updateOne({ id: item.id }, { $set: rest }, { upsert: true });
-                    }
-                    // Prune docs that were removed in the admin (delete propagation),
-                    // but only when we have a non-empty desired state to compare against
-                    // (guards against wiping a collection on a degraded read).
-                    const ids = data[col].map((x) => x && x.id).filter(Boolean);
-                    if (ids.length > 0) {
-                        await db.collection(col).deleteMany({ id: { $nin: ids } });
-                    }
-                }
-                if (data.settings) {
-                    const { _id, ...sData } = data.settings;
-                    await db.collection('settings').updateOne({ _id: 'boutique_settings' }, { $set: sData }, { upsert: true });
-                }
-                if (data.analytics) {
-                    const { _id, ...aData } = data.analytics;
-                    await db.collection('analytics').updateOne({ _id: 'boutique_analytics' }, { $set: aData }, { upsert: true });
-                }
-            })
-            .catch((e) => console.warn('[MongoDB Sync] Warning:', e.message));
-
-        // Return true even if only the file write failed — Atlas is authoritative.
+        if (data.analytics) {
+            const { _id, ...aData } = data.analytics;
+            await db.collection('analytics').updateOne({ _id: 'boutique_analytics' }, { $set: aData }, { upsert: true });
+        }
         return true;
     } catch (err) {
-        console.error('Error writing database:', err);
+        console.error('[MongoDB Sync] Failed:', err.message);
+        // File write may still have succeeded in local dev; report failure so
+        // routes can surface an error on serverless where Atlas is the only store.
         return false;
     }
 }
 
-// Log audit action
-export function addAuditLog(action, details, user = 'Admin') {
+// Log audit action — writes ONLY the audit entry directly to Atlas.
+// (It must NOT go through writeDb: that reads the full db and would re-sync
+// possibly-stale bundled data over every collection.) Best-effort / non-blocking.
+export async function addAuditLog(action, details, user = 'Admin') {
+    const entry = {
+        id: `log-${Date.now()}`,
+        user,
+        action,
+        details,
+        timestamp: new Date().toISOString(),
+    };
     try {
-        const db = readDb();
-        if (!db.auditLogs) db.auditLogs = [];
-        db.auditLogs.unshift({
-            id: `log-${Date.now()}`,
-            user,
-            action,
-            details,
-            timestamp: new Date().toISOString()
-        });
-        // Keep last 100 logs
-        if (db.auditLogs.length > 100) {
-            db.auditLogs = db.auditLogs.slice(0, 100);
+        const db = await getDatabase();
+        await db.collection('auditLogs').insertOne(entry);
+        invalidateDbCache();
+        // Trim to the most recent 100 entries.
+        const extra = await db
+            .collection('auditLogs')
+            .find({})
+            .sort({ timestamp: -1 })
+            .skip(100)
+            .project({ _id: 1 })
+            .toArray();
+        if (extra.length) {
+            await db.collection('auditLogs').deleteMany({ _id: { $in: extra.map((d) => d._id) } });
         }
-        writeDb(db);
     } catch (e) {
-        console.error('Failed to log audit event:', e);
+        console.warn('[auditLog] skipped:', e.message);
     }
 }
 

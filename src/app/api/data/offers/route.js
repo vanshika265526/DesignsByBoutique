@@ -30,7 +30,7 @@ export async function POST(request) {
         };
 
         db.offers.unshift(newOffer);
-        const saved = writeDb(db);
+        const saved = await writeDb(db);
         if (saved) {
             addAuditLog('Offer Created', `Created promotion "${newOffer.title}" (${newOffer.discountPercent}% OFF)`);
             return NextResponse.json({ success: true, data: newOffer }, { status: 201 });
@@ -53,7 +53,7 @@ export async function PATCH(request) {
         }
 
         db.offers[index] = { ...db.offers[index], ...updates };
-        const saved = writeDb(db);
+        const saved = await writeDb(db);
         if (saved) {
             addAuditLog('Offer Updated', `Updated promotion "${db.offers[index].title}"`);
             return NextResponse.json({ success: true, data: db.offers[index] });

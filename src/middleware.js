@@ -31,6 +31,8 @@ async function isValid(token) {
         if (!ok) return false;
         const payload = JSON.parse(new TextDecoder().decode(b64urlToBytes(body)));
         if (!payload.exp || payload.exp < Date.now()) return false;
+        // A pre-auth (password-only) token is not a full session.
+        if (payload.stage === "pre") return false;
         return true;
     } catch {
         return false;

@@ -13,7 +13,7 @@ export async function PATCH(request, { params }) {
         // never allow id/slug collisions to silently break product links
         const { id: _ignore, ...safeUpdates } = updates;
         db.categories[index] = { ...db.categories[index], ...safeUpdates };
-        const saved = writeDb(db);
+        const saved = await writeDb(db);
         if (saved) {
             addAuditLog('Category Updated', `Updated category "${db.categories[index].name}"`);
             return NextResponse.json({ success: true, data: db.categories[index] });
@@ -43,7 +43,7 @@ export async function DELETE(request, { params }) {
             );
         }
         db.categories = db.categories.filter((c) => !(c.id === id || c.slug === id));
-        const saved = writeDb(db);
+        const saved = await writeDb(db);
         if (saved) {
             addAuditLog('Category Deleted', `Removed category "${cat.name}"`);
             return NextResponse.json({ success: true, message: 'Category deleted' });

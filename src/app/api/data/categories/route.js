@@ -30,7 +30,7 @@ export async function POST(request) {
         };
 
         db.categories.push(newCategory);
-        const saved = writeDb(db);
+        const saved = await writeDb(db);
         if (saved) {
             addAuditLog('Category Created', `Created category "${newCategory.name}"`);
             return NextResponse.json({ success: true, data: newCategory }, { status: 201 });
@@ -53,7 +53,7 @@ export async function PATCH(request) {
         }
 
         db.categories[index] = { ...db.categories[index], ...updates };
-        const saved = writeDb(db);
+        const saved = await writeDb(db);
         if (saved) {
             addAuditLog('Category Updated', `Updated category "${db.categories[index].name}"`);
             return NextResponse.json({ success: true, data: db.categories[index] });

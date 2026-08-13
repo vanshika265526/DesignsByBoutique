@@ -15,7 +15,7 @@ export async function POST(request) {
         const body = await request.json();
         const db = readDb();
         const updatedDb = { ...db, ...body };
-        const saved = writeDb(updatedDb);
+        const saved = await writeDb(updatedDb);
         if (saved) {
             addAuditLog('Full database sync', 'Updated whole database configuration');
             return NextResponse.json({ success: true, message: 'Database saved successfully' });

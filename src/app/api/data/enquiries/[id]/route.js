@@ -17,7 +17,7 @@ export async function PATCH(request, { params }) {
         if (status) db.enquiries[index].status = status;
         db.enquiries[index].updatedAt = new Date().toISOString();
 
-        const saved = writeDb(db);
+        const saved = await writeDb(db);
         if (saved) {
             addAuditLog('Enquiry Updated', `Set status of enquiry #${id} to "${status}"`);
             return NextResponse.json({ success: true, data: db.enquiries[index] });
@@ -41,7 +41,7 @@ export async function DELETE(request, { params }) {
 
         const clientName = db.enquiries[index].name;
         db.enquiries.splice(index, 1);
-        const saved = writeDb(db);
+        const saved = await writeDb(db);
         if (saved) {
             addAuditLog('Enquiry Deleted', `Removed CRM enquiry from ${clientName} (ID: ${id})`);
             return NextResponse.json({ success: true, message: `Enquiry ${id} deleted` });

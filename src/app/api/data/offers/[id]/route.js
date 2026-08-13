@@ -11,7 +11,7 @@ export async function PATCH(request, { params }) {
             return NextResponse.json({ success: false, error: 'Offer not found' }, { status: 404 });
         }
         db.offers[index] = { ...db.offers[index], ...updates };
-        const saved = writeDb(db);
+        const saved = await writeDb(db);
         if (saved) {
             addAuditLog('Offer Updated', `Updated promotion "${db.offers[index].title}"`);
             return NextResponse.json({ success: true, data: db.offers[index] });
@@ -31,7 +31,7 @@ export async function DELETE(request, { params }) {
         if (db.offers.length === before) {
             return NextResponse.json({ success: false, error: 'Offer not found' }, { status: 404 });
         }
-        const saved = writeDb(db);
+        const saved = await writeDb(db);
         if (saved) {
             addAuditLog('Offer Deleted', `Removed promotion ID ${id}`);
             return NextResponse.json({ success: true, message: 'Offer deleted' });

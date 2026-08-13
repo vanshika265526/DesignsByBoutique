@@ -45,7 +45,7 @@ export async function PATCH(request, { params }) {
         }
 
         db.products[index] = updatedProduct;
-        const saved = writeDb(db);
+        const saved = await writeDb(db);
         if (saved) {
             addAuditLog('Product Updated', `Updated "${updatedProduct.name}" (ID: ${id})`);
             return NextResponse.json({ success: true, data: updatedProduct });
@@ -69,7 +69,7 @@ export async function DELETE(request, { params }) {
 
         const removedName = db.products[index].name;
         db.products.splice(index, 1);
-        const saved = writeDb(db);
+        const saved = await writeDb(db);
         if (saved) {
             addAuditLog('Product Deleted', `Removed "${removedName}" (ID: ${id})`);
             return NextResponse.json({ success: true, message: `Product ${id} deleted` });

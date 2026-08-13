@@ -22,7 +22,7 @@ export async function PATCH(request) {
         }
 
         db.chapters[index] = { ...db.chapters[index], ...updates };
-        const saved = writeDb(db);
+        const saved = await writeDb(db);
         if (saved) {
             addAuditLog('Chapter Updated', `Updated chapter "${db.chapters[index].title}"`);
             return NextResponse.json({ success: true, data: db.chapters[index] });

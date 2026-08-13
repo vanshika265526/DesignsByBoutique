@@ -16,7 +16,7 @@ export async function POST(request) {
         const updates = await request.json();
         const db = readDb();
         db.settings = { ...db.settings, ...updates, updatedAt: new Date().toISOString() };
-        const saved = writeDb(db);
+        const saved = await writeDb(db);
         if (saved) {
             addAuditLog('Settings Updated', 'Updated boutique settings via Content Management Studio.');
             return NextResponse.json({ success: true, data: db.settings });
@@ -32,7 +32,7 @@ export async function PATCH(request) {
         const updates = await request.json();
         const db = readDb();
         db.settings = { ...db.settings, ...updates, updatedAt: new Date().toISOString() };
-        const saved = writeDb(db);
+        const saved = await writeDb(db);
         if (saved) {
             addAuditLog('Settings Updated', 'Updated boutique settings (WhatsApp, Contact, SEO, etc.)');
             return NextResponse.json({ success: true, data: db.settings });
