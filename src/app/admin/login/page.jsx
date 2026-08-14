@@ -3,7 +3,7 @@
 import { Suspense, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
-import { Lock, Loader2, ShieldAlert, KeyRound } from "lucide-react";
+import { Lock, Loader2, ShieldAlert, KeyRound, Eye, EyeOff } from "lucide-react";
 
 function LoginForm() {
     const router = useRouter();
@@ -13,6 +13,7 @@ function LoginForm() {
     const [stage, setStage] = useState("password"); // "password" | "code"
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
     const [code, setCode] = useState("");
     const [error, setError] = useState("");
     const [attemptsLeft, setAttemptsLeft] = useState(null);
@@ -208,15 +209,28 @@ function LoginForm() {
                             </div>
                             <div>
                                 <label className="block text-xs font-medium text-neutral-600 mb-1">Password</label>
-                                <input
-                                    type="password"
-                                    autoComplete="current-password"
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    placeholder="••••••••"
-                                    className="w-full px-3 py-2.5 bg-boutique-bg border border-boutique-muted-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-boutique-rose/40"
-                                    required
-                                />
+                                <div className="relative">
+                                    <input
+                                        type={showPassword ? "text" : "password"}
+                                        autoComplete="current-password"
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                        placeholder="••••••••"
+                                        className="w-full px-3 py-2.5 pr-10 bg-boutique-bg border border-boutique-muted-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-boutique-rose/40"
+                                        required
+                                    />
+                                    <button
+                                        type="button"
+                                        onClick={() => setShowPassword(!showPassword)}
+                                        className="absolute right-3 top-1/2 -translate-y-1/2 text-boutique-taupe hover:text-boutique-charcoal transition-colors"
+                                    >
+                                        {showPassword ? (
+                                            <EyeOff className="w-4 h-4" />
+                                        ) : (
+                                            <Eye className="w-4 h-4" />
+                                        )}
+                                    </button>
+                                </div>
                             </div>
 
                             {error && (
