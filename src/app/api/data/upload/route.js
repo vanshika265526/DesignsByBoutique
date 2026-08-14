@@ -1,15 +1,14 @@
 import { NextResponse } from 'next/server';
 import path from 'path';
-import { getDatabase } from '@/lib/mongodb';
+import { uploadToCloudinary } from '@/lib/cloudinary';
 
 export const runtime = 'nodejs';
 
-// Max upload size (Atlas BSON document limit is 16MB; keep well under it).
-const MAX_BYTES = 8 * 1024 * 1024;
+// Max upload size — Cloudinary free tier handles up to 10MB per upload.
+const MAX_BYTES = 10 * 1024 * 1024;
 
-// Uploads are stored in MongoDB Atlas (not the local filesystem) because
-// Vercel's serverless filesystem is read-only/ephemeral. They are served back
-// by GET /api/uploads/[id].
+// Uploads are sent directly to Cloudinary. The returned secure_url is stored
+// on product/gallery records in MongoDB and served from Cloudinary's CDN.
 export async function POST(request) {
     try {
         const formData = await request.formData();
@@ -37,28 +36,29 @@ export async function POST(request) {
             );
         }
 
-        const ext = (path.extname(file.name || '') || '.png').toLowerCase();
+        // Build a clean public_id from the original filename
         const base = path
             .basename(file.name || 'image', path.extname(file.name || ''))
             .toLowerCase()
             .replace(/[^a-z0-9]+/g, '-')
             .replace(/^-+|-+$/g, '') || 'image';
-        const id = `${base}-${Date.now()}${ext}`;
+        const publicId = `${base}-${Date.now()}`;
 
-        const db = await getDatabase();
-        await db.collection('uploads').insertOne({
-            _id: id,
-            filename: file.name || id,
-            contentType,
-            size: buffer.length,
-            data: buffer, // stored as BSON binary
-            createdAt: new Date(),
+        const result = await uploadToCloudinary(buffer, {
+            public_id: publicId,
+            overwrite: false,
         });
 
-        // Served by the GET route below.
-        return NextResponse.json({ success: true, url: `/api/uploads/${id}`, fileName: id });
+        // Return the Cloudinary CDN URL directly — no proxy route needed.
+        return NextResponse.json({
+            success: true,
+            url: result.secure_url,
+            fileName: result.public_id,
+            width: result.width,
+            height: result.height,
+        });
     } catch (error) {
-        console.error('Error uploading file:', error);
+        console.error('Error uploading file to Cloudinary:', error);
         return NextResponse.json({ success: false, error: error.message }, { status: 500 });
     }
 }
