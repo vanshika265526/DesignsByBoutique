@@ -2,12 +2,39 @@
 // Values can be overridden with environment variables (recommended for production).
 import crypto from "crypto";
 
-export const ADMIN_EMAIL = process.env.ADMIN_EMAIL || "admin@boutique";
+// Support multiple admin accounts with individual secret codes
+const DEFAULT_ADMINS = [
+    {
+        email: "admin@boutique",
+        passwordHash: "a5eabd41e2dbcde445557e43a58e68f6:9e3b213402d48400a641dfdb2c8c96d6a2123b8c3614a0fe04d59311ab1572308cd2b14b244f99e095b1321324a96252ee5c99f7d9ace2f113bbe6b66dc7c4c3",
+        secretCode: "123456",
+    },
+    {
+        email: "nishaboutique.admin",
+        passwordHash: "7faa14c55b15c29bf08cd3dedbf7a00f:ea612a75dab62e5c891721d7b476232a1fee3f67727f7deeb6d46b9d660579c69a13a591b71f5cce4e0269468a6c75ecd5398d52fd8ea89f9bae606d23268ad7",
+        secretCode: "582937",
+    },
+];
 
-// scrypt hash of the admin password, format "salt:hash".
-// Default corresponds to the password set during setup; override via env in production.
+// Get admin credentials from env or use defaults
+const getAdminCredentials = () => {
+    if (process.env.ADMIN_CREDENTIALS) {
+        try {
+            return JSON.parse(process.env.ADMIN_CREDENTIALS);
+        } catch {
+            return DEFAULT_ADMINS;
+        }
+    }
+    return DEFAULT_ADMINS;
+};
+
+export const ADMIN_CREDENTIALS = getAdminCredentials();
+
+// For backwards compatibility
+export const ADMIN_EMAIL = process.env.ADMIN_EMAIL || ADMIN_CREDENTIALS[0]?.email || "admin@boutique";
 export const ADMIN_PASSWORD_HASH =
     process.env.ADMIN_PASSWORD_HASH ||
+    ADMIN_CREDENTIALS[0]?.passwordHash ||
     "a5eabd41e2dbcde445557e43a58e68f6:9e3b213402d48400a641dfdb2c8c96d6a2123b8c3614a0fe04d59311ab1572308cd2b14b244f99e095b1321324a96252ee5c99f7d9ace2f113bbe6b66dc7c4c3";
 
 // HMAC secret for signing the session cookie. CHANGE THIS via env in production.
@@ -17,8 +44,6 @@ export const AUTH_SECRET =
 export const SESSION_COOKIE = "db_admin_session";
 export const SESSION_TTL_MS = 8 * 60 * 60 * 1000; // 8 hours
 
-// Second-factor secret code (step 2 after the password). Override via env in prod.
-export const SECRET_CODE = process.env.ADMIN_SECRET_CODE || "1234";
 // Short-lived cookie proving the password step passed, while the code is entered.
 export const PREAUTH_COOKIE = "db_admin_pre";
 export const PREAUTH_TTL_MS = 10 * 60 * 1000; // 10 minutes to enter the code
@@ -28,11 +53,17 @@ export const MAX_ATTEMPTS = 5;
 export const LOCK_MS = 5 * 60 * 1000; // 5 minutes lockout after 5 failed attempts
 export const LOCK_MINUTES = Math.round(LOCK_MS / 60000);
 
+// Get the secret code for a specific admin email
+export function getAdminSecretCode(email) {
+    const admin = ADMIN_CREDENTIALS.find((a) => a.email === email);
+    return admin?.secretCode || "000000";
+}
+
 // Constant-time check of the second-factor secret code.
-export function verifyCode(code) {
+export function verifyCode(code, expectedCode) {
     try {
         const a = Buffer.from(String(code));
-        const b = Buffer.from(String(SECRET_CODE));
+        const b = Buffer.from(String(expectedCode));
         if (a.length !== b.length) return false;
         return crypto.timingSafeEqual(a, b);
     } catch {
@@ -51,6 +82,13 @@ export function verifyPassword(password, stored = ADMIN_PASSWORD_HASH) {
     } catch {
         return false;
     }
+}
+
+// Verify credentials against any admin account
+export function verifyAdminCredentials(email, password) {
+    const admin = ADMIN_CREDENTIALS.find((a) => a.email === email);
+    if (!admin) return false;
+    return verifyPassword(password, admin.passwordHash);
 }
 
 // Sign a token: base64url(payload).base64url(hmac)

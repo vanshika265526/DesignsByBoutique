@@ -53,9 +53,9 @@ export const initialCategories = [
         "name": "Baby Clothes",
         "slug": "baby-clothes",
         "chapter": "her-little-one",
-        "description": "Skin-friendly heirloom baby lehengas & festive kurti sets.",
-        "image": "https://images.pexels.com/photos/20263916/pexels-photo-20263916.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "count": 16,
+        "description": "Skin-friendly heirloom baby frocks, gowns, lehenga cholis & party wear.",
+        "image": "https://images.pexels.com/photos/15142195/pexels-photo-15142195.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "count": 13,
         "published": true,
         "order": 5
     }
@@ -550,54 +550,6 @@ export const initialProducts = [
         "details": [
             "Pure Tissue Silk & Muslin Lining",
             "Hand-stitched faux pearls"
-        ]
-    },
-    {
-        "id": "prod-09",
-        "slug": "nirmal-miniature-bridal-lehenga-baby",
-        "name": "Nirmal Miniature Rose Baby Lehenga Set",
-        "category": "baby-clothes",
-        "categoryName": "Baby Clothes",
-        "chapter": "her-little-one",
-        "chapterName": "Her Little One",
-        "price": 5999,
-        "originalPrice": 7499,
-        "discount": "20% OFF",
-        "featured": true,
-        "status": "published",
-        "image": "https://images.pexels.com/photos/37182288/pexels-photo-37182288.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "images": [
-            "https://images.pexels.com/photos/37182288/pexels-photo-37182288.jpeg?auto=compress&cs=tinysrgb&w=1200"
-        ],
-        "description": "A dream in miniature! Soft organza and Malmal cotton lined baby lehenga choli set in muted rose pink. Zero-scratch seams and ultra-soft elastic band designed specifically for delicate infant skin.",
-        "shortDescription": "Zero-scratch skin-friendly miniature baby lehenga in rose pink.",
-        "details": [
-            "100% Cotton Lined Silk & Organza",
-            "Mommy & Me matching option available"
-        ]
-    },
-    {
-        "id": "prod-10",
-        "slug": "choti-princess-zari-kurti-skirt-set",
-        "name": "Choti Princess Gold Zari Baby Kurti Set",
-        "category": "baby-clothes",
-        "categoryName": "Baby Clothes",
-        "chapter": "her-little-one",
-        "chapterName": "Her Little One",
-        "price": 4999,
-        "originalPrice": 6299,
-        "discount": "20% OFF",
-        "featured": false,
-        "status": "published",
-        "image": "https://images.pexels.com/photos/37213268/pexels-photo-37213268.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "images": [
-            "https://images.pexels.com/photos/37213268/pexels-photo-37213268.jpeg?auto=compress&cs=tinysrgb&w=1200"
-        ],
-        "description": "Festive ivory and gold zari baby kurti paired with twirl-worthy flared skirt. Lightweight, lined with soft muslin, perfect for first Diwali, Annaprashan, or family weddings.",
-        "shortDescription": "Ivory & gold zari baby kurti set lined with soft muslin.",
-        "details": [
-            "Soft Muslin Cotton & Jacquard Silk",
-            "Matching headband included"
         ]
     },
     {
@@ -1155,28 +1107,55 @@ export const initialProducts = [
         ]
     },
     {
-        "id": "prod-34",
-        "slug": "choti-rani-red-banarasi-baby",
-        "name": "Choti Rani Red Banarasi Baby Lehenga",
+        "id": "prod-baby-01",
+        "slug": "ruffle-baby-frock-with-tail",
+        "name": "Ruffle Baby Frock with Tail",
         "category": "baby-clothes",
         "categoryName": "Baby Clothes",
         "chapter": "her-little-one",
         "chapterName": "Her Little One",
-        "price": 5499,
-        "originalPrice": 6899,
+        "price": 3200,
+        "originalPrice": 3999,
         "discount": "20% OFF",
-        "newArrival": true,
-        "featured": false,
+        "featured": true,
         "status": "published",
-        "image": "https://images.pexels.com/photos/8818761/pexels-photo-8818761.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "image": "https://images.pexels.com/photos/15142195/pexels-photo-15142195.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "images": [
-            "https://images.pexels.com/photos/8818761/pexels-photo-8818761.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            "https://images.pexels.com/photos/15142195/pexels-photo-15142195.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ],
-        "description": "Miniature red Banarasi brocade baby lehenga with gold zari borders and a soft muslin inner lining. Designed for first Diwali, Namakarana and baby naming ceremonies.",
-        "shortDescription": "Red Banarasi baby lehenga with gold zari & muslin inner lining.",
+        "description": "Stunning ruffle baby frock featuring an elegant trailing tail design, crafted with layered soft net, organza accenting, and zero-scratch cotton inner lining.",
+        "shortDescription": "Layered ruffle baby frock with elegant trailing tail (Age: 1 to 5 Years).",
         "details": [
-            "Banarasi Brocade & Muslin Lining",
-            "Zero-scratch seams, 100% cotton lined"
+            "Age Group: 1 to 5 Years",
+            "Soft Organza & Premium Net with 100% Cotton Lining",
+            "Zero-scratch skin-friendly inner finish",
+            "Contact Nisha: +91 82187 52043"
+        ]
+    },
+    {
+        "id": "prod-baby-02",
+        "slug": "net-embroidery-baby-frock",
+        "name": "Net Embroidery Baby Frock",
+        "category": "baby-clothes",
+        "categoryName": "Baby Clothes",
+        "chapter": "her-little-one",
+        "chapterName": "Her Little One",
+        "price": 2800,
+        "originalPrice": 3499,
+        "discount": "20% OFF",
+        "featured": true,
+        "status": "published",
+        "image": "https://images.pexels.com/photos/16237026/pexels-photo-16237026.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "images": [
+            "https://images.pexels.com/photos/16237026/pexels-photo-16237026.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        ],
+        "description": "Delicate floral net embroidery baby frock with soft flared skirt and comfortable cotton base lining, perfect for first birthday celebrations and weddings.",
+        "shortDescription": "Intricate net embroidered baby frock (Age: 1 to 5 Years).",
+        "details": [
+            "Age Group: 1 to 5 Years",
+            "Fine Embroidered Net & Muslin Cotton Lining",
+            "Skin-friendly breathable fabric",
+            "Contact Nisha: +91 82187 52043"
         ]
     },
     {

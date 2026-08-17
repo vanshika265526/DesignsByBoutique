@@ -2,7 +2,9 @@ import { NextResponse } from "next/server";
 import {
     ADMIN_EMAIL,
     verifyPassword,
+    verifyAdminCredentials,
     verifyCode,
+    getAdminSecretCode,
     signSession,
     signPreAuth,
     verifyPreAuth,
@@ -16,7 +18,7 @@ import {
     MAX_ATTEMPTS,
     LOCK_MS,
     LOCK_MINUTES,
-} from "@/lib/adminAuth";
+} from "@/lib/adminAuth"
 
 export const runtime = "nodejs";
 
@@ -114,7 +116,8 @@ export async function POST(request) {
         const { response: lockedResp, rec } = await checkLock(key);
         if (lockedResp) return lockedResp;
 
-        if (!verifyCode(body.code)) {
+        const expectedCode = getAdminSecretCode(pre.sub);
+        if (!verifyCode(body.code, expectedCode)) {
             return registerFailure(key, rec, "Invalid secret code.");
         }
 
@@ -137,7 +140,7 @@ export async function POST(request) {
     const { response: lockedResp, rec } = await checkLock(key);
     if (lockedResp) return lockedResp;
 
-    const ok = email === ADMIN_EMAIL && verifyPassword(password);
+    const ok = verifyAdminCredentials(email, password);
     if (!ok) {
         return registerFailure(key, rec, "Invalid email or password.");
     }

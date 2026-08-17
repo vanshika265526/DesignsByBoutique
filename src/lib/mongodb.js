@@ -1,7 +1,13 @@
 import { MongoClient } from "mongodb";
 
 const uri = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/designs_by_nisha";
-const options = {};
+const options = {
+    retryWrites: true,
+    w: "majority",
+    authSource: "admin",
+    serverSelectionTimeoutMS: 5000,
+    connectTimeoutMS: 10000,
+};
 
 let client;
 let clientPromise;
@@ -15,13 +21,21 @@ if (process.env.NODE_ENV === "development") {
     // is preserved across module reloads caused by HMR (Hot Module Replacement).
     if (!global._mongoClientPromise) {
         client = new MongoClient(uri, options);
-        global._mongoClientPromise = client.connect();
+        global._mongoClientPromise = client.connect()
+            .catch(err => {
+                console.error('[MongoDB] Connection failed:', err.message);
+                throw err;
+            });
     }
     clientPromise = global._mongoClientPromise;
 } else {
     // In production mode, it's best to not use a global variable.
     client = new MongoClient(uri, options);
-    clientPromise = client.connect();
+    clientPromise = client.connect()
+        .catch(err => {
+            console.error('[MongoDB] Connection failed:', err.message);
+            throw err;
+        });
 }
 
 export async function getDatabase() {
