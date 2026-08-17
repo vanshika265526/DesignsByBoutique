@@ -1159,155 +1159,293 @@ export const initialProducts = [
         ]
     },
     {
-        "id": "prod-35",
-        "slug": "royal-blue-baby-sherwani-set",
-        "name": "Shehzada Royal Blue Baby Sherwani Set",
+        "id": "prod-baby-03",
+        "slug": "net-ball-gown",
+        "name": "Net Ball Gown",
         "category": "baby-clothes",
         "categoryName": "Baby Clothes",
         "chapter": "her-little-one",
         "chapterName": "Her Little One",
-        "price": 4999,
-        "originalPrice": 6199,
+        "price": 3900,
+        "originalPrice": 4899,
         "discount": "20% OFF",
-        "newArrival": false,
-        "featured": false,
-        "status": "published",
-        "image": "https://images.pexels.com/photos/12100636/pexels-photo-12100636.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "images": [
-            "https://images.pexels.com/photos/12100636/pexels-photo-12100636.jpeg?auto=compress&cs=tinysrgb&w=1200"
-        ],
-        "description": "Miniature royal blue jacquard sherwani set with a matching churidar and embroidered dupatta. For baby boys at family weddings and religious ceremonies.",
-        "shortDescription": "Royal blue jacquard baby sherwani set with churidar for boys.",
-        "details": [
-            "Jacquard Silk & Cotton Lining",
-            "Includes sherwani, churidar & stole"
-        ]
-    },
-    {
-        "id": "prod-36",
-        "slug": "mint-green-annaprashan-baby-set",
-        "name": "Prashasan Mint Green Annaprashan Set",
-        "category": "baby-clothes",
-        "categoryName": "Baby Clothes",
-        "chapter": "her-little-one",
-        "chapterName": "Her Little One",
-        "price": 5199,
-        "originalPrice": 6499,
-        "discount": "20% OFF",
-        "newArrival": true,
         "featured": true,
-        "status": "published",
-        "image": "https://images.pexels.com/photos/12100639/pexels-photo-12100639.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "images": [
-            "https://images.pexels.com/photos/12100639/pexels-photo-12100639.jpeg?auto=compress&cs=tinysrgb&w=1200"
-        ],
-        "description": "Tender mint green cotton silk baby dress for Annaprashan ceremony, adorned with gold piping and a hand-smocked bodice. Hypoallergenic, soft, and stretchable.",
-        "shortDescription": "Mint green Annaprashan baby dress with gold piping & smocking.",
-        "details": [
-            "100% Cotton Silk & Hypoallergenic",
-            "Stretchable for easy dressing"
-        ]
-    },
-    {
-        "id": "prod-37",
-        "slug": "mommy-me-haldi-set",
-        "name": "Mommy & Me Haldi Matching Set",
-        "category": "baby-clothes",
-        "categoryName": "Baby Clothes",
-        "chapter": "her-little-one",
-        "chapterName": "Her Little One",
-        "price": 8999,
-        "originalPrice": 11199,
-        "discount": "20% OFF",
-        "newArrival": false,
-        "featured": true,
-        "status": "published",
-        "image": "https://images.pexels.com/photos/18983042/pexels-photo-18983042.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "images": [
-            "https://images.pexels.com/photos/18983042/pexels-photo-18983042.jpeg?auto=compress&cs=tinysrgb&w=1200"
-        ],
-        "description": "Coordinating Mommy & Me set — mother lehenga and baby lehenga in matching sunshine yellow cotton with identical embroidery and gota patti borders.",
-        "shortDescription": "Matching Mommy & Baby Haldi yellow lehenga set.",
-        "details": [
-            "Cotton Silk",
-            "Available in 0–12 months baby sizes",
-            "Can extend to 3 years"
-        ]
-    },
-    {
-        "id": "prod-38",
-        "slug": "peach-organza-baby-frock",
-        "name": "Mithi Peach Organza Baby Frock Set",
-        "category": "baby-clothes",
-        "categoryName": "Baby Clothes",
-        "chapter": "her-little-one",
-        "chapterName": "Her Little One",
-        "price": 4999,
-        "originalPrice": 5999,
-        "discount": "20% OFF",
-        "newArrival": false,
-        "featured": false,
-        "status": "published",
-        "image": "https://images.pexels.com/photos/15142195/pexels-photo-15142195.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "images": [
-            "https://images.pexels.com/photos/15142195/pexels-photo-15142195.jpeg?auto=compress&cs=tinysrgb&w=1200"
-        ],
-        "description": "Peach organza baby dress with tulle layers, satin bow and featherlight skirt for baby girls. Perfect for birthday parties, namkaran and christening ceremonies.",
-        "shortDescription": "Peach organza baby girl party frock with tulle layers & satin bow.",
-        "details": [
-            "Organza & Tulle with Cotton Lining",
-            "Adjustable back button"
-        ]
-    },
-    {
-        "id": "prod-39",
-        "slug": "saffron-baby-jamdani-kurta-set",
-        "name": "Tara Saffron Jamdani Baby Kurta Set",
-        "category": "baby-clothes",
-        "categoryName": "Baby Clothes",
-        "chapter": "her-little-one",
-        "chapterName": "Her Little One",
-        "price": 4999,
-        "originalPrice": 6199,
-        "discount": "20% OFF",
-        "newArrival": true,
-        "featured": false,
         "status": "published",
         "image": "https://images.pexels.com/photos/15213328/pexels-photo-15213328.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "images": [
             "https://images.pexels.com/photos/15213328/pexels-photo-15213328.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ],
-        "description": "Handwoven saffron Jamdani baby kurta set with dhoti pants. Ultra-breathable heritage fabric for India's hot climate. Ideal for religious and festive occasions.",
-        "shortDescription": "Handwoven saffron Jamdani baby kurta set with dhoti pants.",
+        "description": "Royal net ball gown for baby girls with multi-layered fairytale flared skirt, shimmer accenting, and comfortable elastic waist fitting.",
+        "shortDescription": "Fairytale multi-layer net ball gown (Age: 1 to 5 Years).",
         "details": [
-            "Heritage Jamdani Cotton",
-            "Unisex style for boys & girls"
+            "Age Group: 1 to 5 Years",
+            "Multi-layered Shimmer Net & Soft Cotton Base",
+            "Zero-irritation seams",
+            "Contact Nisha: +91 82187 52043"
         ]
     },
     {
-        "id": "prod-40",
-        "slug": "dainty-lavender-baby-anarkali",
-        "name": "Dainty Lavender Baby Anarkali Set",
+        "id": "prod-baby-04",
+        "slug": "floral-handwork-net-frock",
+        "name": "Floral Handwork Net Frock",
         "category": "baby-clothes",
         "categoryName": "Baby Clothes",
         "chapter": "her-little-one",
         "chapterName": "Her Little One",
-        "price": 5299,
-        "originalPrice": 6599,
+        "price": 3500,
+        "originalPrice": 4399,
         "discount": "20% OFF",
-        "newArrival": false,
         "featured": false,
         "status": "published",
-        "image": "https://images.pexels.com/photos/16237026/pexels-photo-16237026.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "image": "https://images.pexels.com/photos/37182288/pexels-photo-37182288.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "images": [
-            "https://images.pexels.com/photos/16237026/pexels-photo-16237026.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            "https://images.pexels.com/photos/37182288/pexels-photo-37182288.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ],
-        "description": "Sweet lavender baby anarkali set for baby girls aged 0–3 years. Features soft flared skirt, elastic waistband, and micro mirror embroidery buttons.",
-        "shortDescription": "Lavender baby anarkali with mirror buttons for 0–3 year olds.",
+        "description": "Artisanal floral handwork net frock featuring hand-stitched floral embellishments on a delicate pastel net silhouette with soft interior lining.",
+        "shortDescription": "Handcrafted floral embroidered net frock (Age: 1 to 5 Years).",
         "details": [
-            "100% Cotton",
-            "Mirror button embroidery",
-            "0–3 years"
+            "Age Group: 1 to 5 Years",
+            "Hand-stitched Floral Work & Breathable Cotton Base",
+            "Comfort elastic back",
+            "Contact Nisha: +91 82187 52043"
+        ]
+    },
+    {
+        "id": "prod-baby-05",
+        "slug": "pearl-frock",
+        "name": "Pearl Frock",
+        "category": "baby-clothes",
+        "categoryName": "Baby Clothes",
+        "chapter": "her-little-one",
+        "chapterName": "Her Little One",
+        "price": 2500,
+        "originalPrice": 3199,
+        "discount": "22% OFF",
+        "featured": false,
+        "status": "published",
+        "image": "https://images.pexels.com/photos/37213268/pexels-photo-37213268.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "images": [
+            "https://images.pexels.com/photos/37213268/pexels-photo-37213268.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        ],
+        "description": "Enchanting pearl-embellished baby frock with delicate bodice pearlwork and soft gathered flared hem. Available in multiple pastel colours.",
+        "shortDescription": "Pearl embellished baby frock available in custom colours (Age: 1 to 5 Years).",
+        "details": [
+            "Age Group: 1 to 5 Years",
+            "Hand-worked Faux Pearls & Soft Organza/Net",
+            "Colours Available on Request",
+            "Contact Nisha: +91 82187 52043"
+        ]
+    },
+    {
+        "id": "prod-baby-06",
+        "slug": "summer-baby-frock",
+        "name": "Summer Baby Frock",
+        "category": "baby-clothes",
+        "categoryName": "Baby Clothes",
+        "chapter": "her-little-one",
+        "chapterName": "Her Little One",
+        "price": 2200,
+        "originalPrice": 2799,
+        "discount": "21% OFF",
+        "featured": false,
+        "status": "published",
+        "image": "https://images.pexels.com/photos/20263916/pexels-photo-20263916.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "images": [
+            "https://images.pexels.com/photos/20263916/pexels-photo-20263916.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        ],
+        "description": "Featherlight summer baby frock in soft breathable fabric, designed for maximum daylong comfort during warm weather festivities.",
+        "shortDescription": "Lightweight breathable summer baby frock (Age: 1 to 5 Years).",
+        "details": [
+            "Age Group: 1 to 5 Years",
+            "100% Breathable Cotton-Blend Fabric",
+            "Easy snap back closure",
+            "Contact Nisha: +91 82187 52043"
+        ]
+    },
+    {
+        "id": "prod-baby-07",
+        "slug": "oversized-bow-baby-frock",
+        "name": "Oversized Bow Baby Frock",
+        "category": "baby-clothes",
+        "categoryName": "Baby Clothes",
+        "chapter": "her-little-one",
+        "chapterName": "Her Little One",
+        "price": 2500,
+        "originalPrice": 3199,
+        "discount": "22% OFF",
+        "featured": false,
+        "status": "published",
+        "image": "https://images.pexels.com/photos/18983042/pexels-photo-18983042.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "images": [
+            "https://images.pexels.com/photos/18983042/pexels-photo-18983042.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        ],
+        "description": "Charming party frock featuring a statement oversized satin bow on the waistline, flared multi-layer skirt, and comfortable lining.",
+        "shortDescription": "Statement oversized bow baby party frock (Age: 1 to 5 Years).",
+        "details": [
+            "Age Group: 1 to 5 Years",
+            "Satin & Soft Net Tulle with Cotton Lining",
+            "Detachable statement bow",
+            "Contact Nisha: +91 82187 52043"
+        ]
+    },
+    {
+        "id": "prod-baby-08",
+        "slug": "hand-crafted-baby-frock",
+        "name": "Hand Crafted Baby Frock",
+        "category": "baby-clothes",
+        "categoryName": "Baby Clothes",
+        "chapter": "her-little-one",
+        "chapterName": "Her Little One",
+        "price": 2800,
+        "originalPrice": 3499,
+        "discount": "20% OFF",
+        "featured": false,
+        "status": "published",
+        "image": "https://images.pexels.com/photos/12100639/pexels-photo-12100639.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "images": [
+            "https://images.pexels.com/photos/12100639/pexels-photo-12100639.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        ],
+        "description": "Exquisite handcrafted baby frock featuring artisan thread detailing, subtle resham touches, and ultra-soft cotton under-layer.",
+        "shortDescription": "Bespoke handcrafted artisan baby frock (Age: 1 to 5 Years).",
+        "details": [
+            "Age Group: 1 to 5 Years",
+            "Artisan Handcrafted Embroidery & Muslin Lining",
+            "Hypoallergenic fabric",
+            "Contact Nisha: +91 82187 52043"
+        ]
+    },
+    {
+        "id": "prod-baby-09",
+        "slug": "red-ball-baby-gown",
+        "name": "Red Ball Baby Gown",
+        "category": "baby-clothes",
+        "categoryName": "Baby Clothes",
+        "chapter": "her-little-one",
+        "chapterName": "Her Little One",
+        "price": 3500,
+        "originalPrice": 4399,
+        "discount": "20% OFF",
+        "featured": true,
+        "status": "published",
+        "image": "https://images.pexels.com/photos/8818761/pexels-photo-8818761.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "images": [
+            "https://images.pexels.com/photos/8818761/pexels-photo-8818761.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        ],
+        "description": "Vibrant royal red ball gown for baby girls with dramatic flared skirt volume, golden accent stitching, and zero-scratch internal finish.",
+        "shortDescription": "Vibrant crimson red ball gown for baby celebrations (Age: 1 to 5 Years).",
+        "details": [
+            "Age Group: 1 to 5 Years",
+            "Crimson Satin & Net Volume Flare",
+            "Cotton inner shell",
+            "Contact Nisha: +91 82187 52043"
+        ]
+    },
+    {
+        "id": "prod-baby-10",
+        "slug": "ball-gown-with-detachable-tail",
+        "name": "Ball Gown with Detachable Tail",
+        "category": "baby-clothes",
+        "categoryName": "Baby Clothes",
+        "chapter": "her-little-one",
+        "chapterName": "Her Little One",
+        "price": 3899,
+        "originalPrice": 4899,
+        "discount": "20% OFF",
+        "featured": true,
+        "status": "published",
+        "image": "https://images.pexels.com/photos/12100636/pexels-photo-12100636.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "images": [
+            "https://images.pexels.com/photos/12100636/pexels-photo-12100636.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        ],
+        "description": "Royal blue ball gown featuring a versatile detachable trailing tail and rich royal blue finish. Designed for special birthday galas and stage appearances. Colours available.",
+        "shortDescription": "Royal blue ball gown with detachable trailing tail (Age: 3 to 6 Years).",
+        "details": [
+            "Age Group: 3 to 6 Years",
+            "Color: Royal Blue (Colours available)",
+            "Detachable trailing tail feature",
+            "Pure Soft Silk & Net with Cotton Lining",
+            "Contact Nisha: +91 82187 52043"
+        ]
+    },
+    {
+        "id": "prod-baby-11",
+        "slug": "wine-embroidered-lehenga-choli",
+        "name": "Wine Embroidered Lehenga Choli",
+        "category": "baby-clothes",
+        "categoryName": "Baby Clothes",
+        "chapter": "her-little-one",
+        "chapterName": "Her Little One",
+        "price": 4200,
+        "originalPrice": 5299,
+        "discount": "20% OFF",
+        "featured": true,
+        "status": "published",
+        "image": "https://wholesalemegamart.com/wp-content/uploads/2026/04/ZSR-3169-KIDS-ETHNIC-WEAR-FOR-GIRLS-WHOLESALE-1.jpeg",
+        "images": [
+            "https://wholesalemegamart.com/wp-content/uploads/2026/04/ZSR-3169-KIDS-ETHNIC-WEAR-FOR-GIRLS-WHOLESALE-1.jpeg"
+        ],
+        "description": "Rich wine-coloured embroidered ethnic lehenga choli set for baby girls. Features heavy fabric embroidery, soft elastic waistband, and zero-scratch muslin lining.",
+        "shortDescription": "Wine embroidered fabric baby lehenga choli set (Age: 2 to 5 Years).",
+        "details": [
+            "Age Group: 2 to 5 Years",
+            "Color: Wine",
+            "Heavy Embroidered Fabric & Muslin Lining",
+            "Soft elastic fit for baby skin",
+            "Contact Nisha: +91 82187 52043"
+        ]
+    },
+    {
+        "id": "prod-baby-12",
+        "slug": "halter-neck-flower-gown",
+        "name": "Halter Neck Flower Gown",
+        "category": "baby-clothes",
+        "categoryName": "Baby Clothes",
+        "chapter": "her-little-one",
+        "chapterName": "Her Little One",
+        "price": 3566,
+        "originalPrice": 4499,
+        "discount": "20% OFF",
+        "featured": false,
+        "status": "published",
+        "image": "https://images.pexels.com/photos/37847010/pexels-photo-37847010.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "images": [
+            "https://images.pexels.com/photos/37847010/pexels-photo-37847010.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        ],
+        "description": "Pastel lavender halter neck baby gown adorned with 3D handcrafted fabric flowers, sheer organza flare, and soft interior layer.",
+        "shortDescription": "Lavender halter neck gown with 3D floral accents (Age: 1 to 5 Years).",
+        "details": [
+            "Age Group: 1 to 5 Years",
+            "Color: Lavender",
+            "3D Fabric Flowers & Soft Organza Flare",
+            "Comfortable halter fit",
+            "Contact Nisha: +91 82187 52043"
+        ]
+    },
+    {
+        "id": "prod-baby-13",
+        "slug": "peach-embroidered-net-lehenga-choli",
+        "name": "Peach Net Embroidered Lehenga Choli",
+        "category": "baby-clothes",
+        "categoryName": "Baby Clothes",
+        "chapter": "her-little-one",
+        "chapterName": "Her Little One",
+        "price": 2999,
+        "originalPrice": 3749,
+        "discount": "20% OFF",
+        "featured": true,
+        "status": "published",
+        "image": "https://images.pexels.com/photos/35591654/pexels-photo-35591654.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "images": [
+            "https://images.pexels.com/photos/35591654/pexels-photo-35591654.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        ],
+        "description": "Elegant peach net lehenga choli embroidered with gold and resham threadwork, paired with a matching net dupatta and soft cotton lining.",
+        "shortDescription": "Peach embroidered net lehenga choli set (Age: 1 to 5 Years).",
+        "details": [
+            "Age Group: 1 to 5 Years",
+            "Color: Peach",
+            "Embroidered Net Fabric & Cotton Lining",
+            "Includes matching dupatta",
+            "Contact Nisha: +91 82187 52043"
         ]
     }
 ];
