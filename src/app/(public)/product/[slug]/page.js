@@ -25,12 +25,8 @@ export async function generateMetadata({ params }) {
     const product = (db.products || []).find((p) => p.slug === params.slug);
     if (!product) return { title: "Outfit | Designs by Nisha New Delhi" };
 
-    const productImages =
-        product.images && product.images.length > 0
-            ? product.images
-            : product.image
-                ? [product.image]
-                : [];
+    // Use the cover image (what's shown everywhere) for the share preview.
+    const ogImage = product.image || (product.images && product.images[0]) || "";
 
     return {
         title: `${product.name} — ${product.categoryName || product.category}`,
@@ -38,7 +34,15 @@ export async function generateMetadata({ params }) {
         openGraph: {
             title: product.name,
             description: product.description,
-            images: productImages.length > 0 ? [{ url: productImages[0] }] : [],
+            images: ogImage ? [{ url: ogImage }] : [],
+        },
+        // Override the site-wide default so WhatsApp/Twitter show THIS product's
+        // image (not the homepage fallback) next to the link.
+        twitter: {
+            card: "summary_large_image",
+            title: product.name,
+            description: product.description,
+            images: ogImage ? [ogImage] : [],
         },
     };
 }
