@@ -4,7 +4,8 @@ import ProductCard from "@/components/ui/ProductCard";
 import { boutiqueConfig } from "@/config/boutique";
 import { getDbAsync } from "@/lib/db";
 
-export const dynamic = "force-dynamic";
+// ISR — cached & regenerated at most once a minute for fast loads.
+export const revalidate = 60;
 
 export const metadata = {
     title: "Collections — Suits, Bridal Lehengas & Maternity Wear | Chattarpur New Delhi",

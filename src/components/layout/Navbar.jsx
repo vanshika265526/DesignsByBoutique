@@ -214,10 +214,15 @@ export default function Navbar() {
                         </Link>
                     ))}
 
-                    <div className="pt-4 flex items-center justify-between">
-                        <a href={boutiqueConfig.instagram.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-boutique-charcoal font-medium hover:text-[#E1306C] transition-colors">
-                            <InstagramIcon className="w-4 h-4" colored />
-                            <span>{boutiqueConfig.instagram.handle}</span>
+                    <div className="pt-5 pl-4 pr-1 flex items-center justify-between">
+                        <a
+                            href={boutiqueConfig.instagram.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:opacity-80 transition-opacity"
+                            aria-label="Instagram"
+                        >
+                            <InstagramIcon className="w-6 h-6" colored />
                         </a>
                         <a href={buildWhatsAppLink()} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-boutique-rose text-white px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em]">
                             <WhatsAppIcon className="w-4 h-4" />

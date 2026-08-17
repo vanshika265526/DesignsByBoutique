@@ -4,7 +4,15 @@ import ProductCard from "@/components/ui/ProductCard";
 import { boutiqueConfig } from "@/config/boutique";
 import { getDbAsync } from "@/lib/db";
 
-export const dynamic = "force-dynamic";
+// ISR — cached & regenerated at most once a minute for fast loads.
+export const revalidate = 60;
+
+export async function generateStaticParams() {
+    const db = await getDbAsync();
+    return (db.categories || [])
+        .filter((c) => c.slug)
+        .map((c) => ({ category: c.slug }));
+}
 
 export async function generateMetadata({ params }) {
     const categoryParam = params.category;

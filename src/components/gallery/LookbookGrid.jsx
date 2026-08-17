@@ -1,77 +1,43 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
-import { Expand, Sparkles } from "lucide-react";
-import { lookbookItems } from "@/data/products";
-import LightboxModal from "./LightboxModal";
 
-export default function LookbookGrid() {
-    const [selectedCategory, setSelectedCategory] = useState("All");
-    const [activeItem, setActiveItem] = useState(null);
+// Varied aspect ratios cycled by index to keep the Pinterest-style masonry
+// rhythm even though the images themselves are admin-managed.
+const RATIOS = [
+    "aspect-[3/4]",
+    "aspect-[4/5]",
+    "aspect-square",
+    "aspect-[3/5]",
+    "aspect-[4/3]",
+    "aspect-[5/6]",
+];
 
-    const categories = ["All", "Bridal", "Suits", "Festive", "Maternity", "Baby"];
-
-    const filteredItems =
-        selectedCategory === "All"
-            ? lookbookItems
-            : lookbookItems.filter((item) => item.category === selectedCategory);
+// A plain, unclickable image wall. Content comes from the DB `gallery`
+// collection, which admins add to / remove from in the admin panel.
+export default function LookbookGrid({ items = [] }) {
+    if (!items.length) {
+        return (
+            <p className="text-center text-sm text-boutique-taupe font-light py-16">
+                Our lookbook is being curated — check back soon.
+            </p>
+        );
+    }
 
     return (
-        <div className="space-y-8">
-            {/* Category Filter Pills */}
-            <div className="flex items-center justify-center flex-wrap gap-2">
-                {categories.map((cat) => (
-                    <button
-                        key={cat}
-                        onClick={() => setSelectedCategory(cat)}
-                        className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wider transition-all border ${selectedCategory === cat
-                                ? "bg-boutique-rose text-white border-boutique-rose shadow-sm"
-                                : "bg-white text-boutique-charcoal border-boutique-muted-border hover:border-boutique-rose/40"
-                            }`}
-                    >
-                        {cat}
-                    </button>
-                ))}
-            </div>
-
-            {/* Editorial Masonry Photo Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredItems.map((item) => (
-                    <div
-                        key={item.id}
-                        onClick={() => setActiveItem(item)}
-                        className="group relative rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 cursor-pointer border border-boutique-muted-border aspect-[3/4]"
-                    >
-                        <Image
-                            src={item.image}
-                            alt={`${item.title} — Designs by Nisha Lookbook`}
-                            fill
-                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                            className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity" />
-
-                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white space-y-1">
-                            <span className="text-[10px] uppercase tracking-[0.2em] text-boutique-gold font-semibold">
-                                {item.category}
-                            </span>
-                            <h3 className="font-serif-editorial text-2xl font-bold text-white">
-                                {item.title}
-                            </h3>
-                            <p className="text-xs text-neutral-300 flex items-center space-x-1 pt-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                                <Expand className="w-3.5 h-3.5 text-boutique-blush" />
-                                <span>Click to expand view</span>
-                            </p>
-                        </div>
-                    </div>
-                ))}
-            </div>
-
-            {/* Lightbox Modal */}
-            {activeItem && (
-                <LightboxModal item={activeItem} onClose={() => setActiveItem(null)} />
-            )}
+        <div className="columns-2 md:columns-3 lg:columns-4 [column-gap:0.6rem]">
+            {items.map((item, idx) => (
+                <div
+                    key={item.id || item._id || idx}
+                    className={`relative mb-2.5 break-inside-avoid overflow-hidden rounded-xl border border-boutique-muted-border/40 shadow-sm ${RATIOS[idx % RATIOS.length]}`}
+                >
+                    <Image
+                        src={item.image || "/images/placeholder.jpg"}
+                        alt={item.title || "Designs by Nisha lookbook"}
+                        fill
+                        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                        className="object-cover object-center"
+                    />
+                </div>
+            ))}
         </div>
     );
 }

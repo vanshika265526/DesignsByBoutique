@@ -71,8 +71,8 @@ export default function ProductCard({ product }) {
                 </div>
 
                 {/* Price & Action Row */}
-                <div className="pt-2 border-t border-boutique-muted-border/40 flex items-center justify-between">
-                    <div className="flex items-baseline space-x-2">
+                <div className="pt-2 border-t border-boutique-muted-border/40 flex items-center justify-between gap-x-3 gap-y-1 flex-wrap">
+                    <div className="flex items-baseline gap-2 min-w-0">
                         <span className="text-lg font-serif-editorial font-bold text-boutique-rose">
                             ₹{currentPrice ? currentPrice.toLocaleString("en-IN") : "Price on Request"}
                         </span>
@@ -85,7 +85,7 @@ export default function ProductCard({ product }) {
 
                     <Link
                         href={`/product/${slug}`}
-                        className="text-xs text-boutique-charcoal hover:text-boutique-rose font-medium inline-flex items-center space-x-1"
+                        className="text-xs text-boutique-charcoal hover:text-boutique-rose font-medium inline-flex items-center gap-1 flex-shrink-0 whitespace-nowrap"
                     >
                         <span>Details</span>
                         <ArrowUpRight className="w-3.5 h-3.5" />

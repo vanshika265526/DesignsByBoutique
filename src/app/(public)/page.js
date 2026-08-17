@@ -9,8 +9,9 @@ import InstagramSection from "@/components/home/InstagramSection";
 import SignatureCTA from "@/components/home/SignatureCTA";
 import HomeContactForm from "@/components/home/HomeContactForm";
 
-// Force dynamic so homepage always reflects latest DB data (products, settings, etc.)
-export const dynamic = "force-dynamic";
+// ISR — cached & regenerated at most once a minute so the homepage loads fast
+// while still reflecting admin edits within ~a minute.
+export const revalidate = 60;
 
 export default async function HomePage() {
     const db = await getDbAsync();

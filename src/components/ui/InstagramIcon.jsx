@@ -1,9 +1,17 @@
+"use client";
+
 // Official Instagram glyph component.
 // Supports `colored` prop to render with the official Instagram gradient fill,
 // or `fill="currentColor"` (default) so Tailwind text color utilities control its color.
+//
+// The gradient id MUST be unique per instance: multiple colored icons on one page
+// (e.g. desktop + mobile navbar) previously shared a hard-coded id, so a hidden
+// (display:none) instance's gradient won "url(#id)" and the visible icon rendered blank.
+import { useId } from "react";
 
 export default function InstagramIcon({ className = "", colored = false, ...props }) {
-    const id = "ig-gradient-def";
+    const rawId = useId();
+    const id = `ig-gradient-${rawId.replace(/[^a-zA-Z0-9]/g, "")}`;
 
     return (
         <svg

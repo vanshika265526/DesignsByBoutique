@@ -7,8 +7,18 @@ import ProductCard from "@/components/ui/ProductCard";
 import { boutiqueConfig, buildWhatsAppLink } from "@/config/boutique";
 import { getDbAsync } from "@/lib/db";
 
-// Force dynamic so every request reads the latest DB data — admin edits appear immediately
-export const dynamic = "force-dynamic";
+// ISR: pages are served instantly from cache and regenerated in the background
+// at most once every 60s, so admin edits appear within ~a minute while every
+// click loads fast (no full server render per request).
+export const revalidate = 60;
+
+// Pre-build a static page for each product at deploy time.
+export async function generateStaticParams() {
+    const db = await getDbAsync();
+    return (db.products || [])
+        .filter((p) => p.slug && (p.status === "published" || !p.status))
+        .map((p) => ({ slug: p.slug }));
+}
 
 export async function generateMetadata({ params }) {
     const db = await getDbAsync();
@@ -190,21 +200,39 @@ export default async function ProductDetailPage({ params }) {
                         </div>
 
                         {/* Price Display */}
-                        <div className="p-4 bg-boutique-bg-card rounded-2xl border border-boutique-muted-border flex items-baseline space-x-4">
-                            <span className="font-serif-editorial text-3xl font-bold text-boutique-rose">
-                                ₹
-                                {currentPrice
-                                    ? Number(currentPrice).toLocaleString("en-IN")
-                                    : "Price on Request"}
-                            </span>
-                            {originalPrice && originalPrice > currentPrice && (
-                                <span className="text-sm text-neutral-400 line-through">
-                                    ₹{Number(originalPrice).toLocaleString("en-IN")}
+                        <div className="p-4 bg-boutique-bg-card rounded-2xl border border-boutique-muted-border">
+                            <div className="flex items-baseline flex-wrap gap-x-3 gap-y-1">
+                                <span className="font-serif-editorial text-3xl font-bold text-boutique-rose">
+                                    ₹
+                                    {currentPrice
+                                        ? Number(currentPrice).toLocaleString("en-IN")
+                                        : "Price on Request"}
                                 </span>
-                            )}
-                            <span className="text-xs text-neutral-500 font-light ml-auto">
+                                {originalPrice && originalPrice > currentPrice && (
+                                    <span className="text-sm text-neutral-400 line-through">
+                                        ₹{Number(originalPrice).toLocaleString("en-IN")}
+                                    </span>
+                                )}
+                            </div>
+                            <p className="text-xs text-neutral-500 font-light mt-2">
                                 Taxes included • Custom Fitting Available
-                            </span>
+                            </p>
+                        </div>
+
+                        {/* WhatsApp Enquiry CTA — right below the price */}
+                        <div className="space-y-2">
+                            <a
+                                href={whatsappUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-full bg-emerald-700 hover:bg-emerald-800 text-white py-4 px-6 rounded-2xl text-xs font-semibold tracking-widest uppercase flex items-center justify-center space-x-3 transition-all shadow-lg hover:shadow-xl"
+                            >
+                                <WhatsAppIcon className="w-5 h-5 text-white" />
+                                <span>Enquire on WhatsApp</span>
+                            </a>
+                            <p className="text-[11px] text-center text-boutique-taupe italic">
+                                Direct consultation with Designs by Nisha atelier in New Delhi. No checkout required.
+                            </p>
                         </div>
 
                         {/* Description */}
@@ -287,23 +315,6 @@ export default async function ProductDetailPage({ params }) {
                             </div>
                         )}
 
-                        {/* WhatsApp Enquiry CTA */}
-                        <div className="pt-6 space-y-3">
-                            <a
-                                href={whatsappUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-full bg-emerald-700 hover:bg-emerald-800 text-white py-4 px-6 rounded-2xl text-xs font-semibold tracking-widest uppercase flex items-center justify-center space-x-3 transition-all shadow-lg hover:shadow-xl"
-                            >
-                                <WhatsAppIcon className="w-5 h-5 text-white" />
-                                <span>Enquire on WhatsApp</span>
-                            </a>
-
-                            <p className="text-[11px] text-center text-boutique-taupe italic">
-                                Direct consultation with Designs by Nisha atelier in New Delhi. No checkout
-                                required.
-                            </p>
-                        </div>
                     </div>
                 </div>
 

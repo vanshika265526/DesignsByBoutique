@@ -1379,6 +1379,126 @@
       "image": "https://images.pexels.com/photos/31750737/pexels-photo-31750737.jpeg?auto=compress&cs=tinysrgb&w=1200",
       "aspectRatio": "aspect-[4/5]",
       "location": "New Delhi Studio"
+    },
+    {
+      "id": "lb-07",
+      "title": "Blush Rose Anarkali",
+      "category": "Suits",
+      "image": "https://images.pexels.com/photos/26973350/pexels-photo-26973350.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "aspectRatio": "aspect-[3/4]",
+      "location": "Studio New Delhi"
+    },
+    {
+      "id": "lb-08",
+      "title": "Sunlit Peach Anarkali",
+      "category": "Suits",
+      "image": "https://images.pexels.com/photos/5922737/pexels-photo-5922737.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "aspectRatio": "aspect-[3/4]",
+      "location": "Studio New Delhi"
+    },
+    {
+      "id": "lb-09",
+      "title": "Lavender Chanderi Grace",
+      "category": "Suits",
+      "image": "https://images.pexels.com/photos/36634909/pexels-photo-36634909.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "aspectRatio": "aspect-[3/4]",
+      "location": "Studio New Delhi"
+    },
+    {
+      "id": "lb-10",
+      "title": "Crimson Silk Suit",
+      "category": "Festive",
+      "image": "https://images.pexels.com/photos/13584944/pexels-photo-13584944.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "aspectRatio": "aspect-[3/4]",
+      "location": "Studio New Delhi"
+    },
+    {
+      "id": "lb-11",
+      "title": "Powder Blue Mirror Kurta",
+      "category": "Suits",
+      "image": "https://images.pexels.com/photos/20690516/pexels-photo-20690516.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "aspectRatio": "aspect-[3/4]",
+      "location": "Studio New Delhi"
+    },
+    {
+      "id": "lb-12",
+      "title": "Saffron Festive Set",
+      "category": "Festive",
+      "image": "https://images.pexels.com/photos/33824984/pexels-photo-33824984.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "aspectRatio": "aspect-[3/4]",
+      "location": "Studio New Delhi"
+    },
+    {
+      "id": "lb-13",
+      "title": "Ivory Zardozi Kurta",
+      "category": "Suits",
+      "image": "https://images.pexels.com/photos/25184994/pexels-photo-25184994.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "aspectRatio": "aspect-[3/4]",
+      "location": "Studio New Delhi"
+    },
+    {
+      "id": "lb-14",
+      "title": "Forest Green Organza",
+      "category": "Suits",
+      "image": "https://images.pexels.com/photos/19956021/pexels-photo-19956021.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "aspectRatio": "aspect-[3/4]",
+      "location": "Studio New Delhi"
+    },
+    {
+      "id": "lb-15",
+      "title": "Dusty Rose Lucknowi",
+      "category": "Festive",
+      "image": "https://images.pexels.com/photos/30876168/pexels-photo-30876168.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "aspectRatio": "aspect-[3/4]",
+      "location": "Studio New Delhi"
+    },
+    {
+      "id": "lb-16",
+      "title": "Rajasthani Festive Glow",
+      "category": "Festive",
+      "image": "https://images.pexels.com/photos/37798732/pexels-photo-37798732.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "aspectRatio": "aspect-[3/4]",
+      "location": "Studio New Delhi"
+    },
+    {
+      "id": "lb-17",
+      "title": "Floral Daydream",
+      "category": "Suits",
+      "image": "https://images.pexels.com/photos/20132403/pexels-photo-20132403.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "aspectRatio": "aspect-[3/4]",
+      "location": "Studio New Delhi"
+    },
+    {
+      "id": "lb-18",
+      "title": "Blue Saree Radiance",
+      "category": "Bridal",
+      "image": "https://images.pexels.com/photos/18557359/pexels-photo-18557359.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "aspectRatio": "aspect-[3/4]",
+      "location": "Studio New Delhi"
+    },
+    {
+      "id": "lb-19",
+      "title": "Royal Purple Anarkali",
+      "category": "Suits",
+      "image": "https://images.pexels.com/photos/34673508/pexels-photo-34673508.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "aspectRatio": "aspect-[3/4]",
+      "location": "Studio New Delhi"
+    },
+    {
+      "id": "lb-20",
+      "title": "Garden Bloom Kurta",
+      "category": "Suits",
+      "image": "https://images.pexels.com/photos/29665809/pexels-photo-29665809.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "aspectRatio": "aspect-[3/4]",
+      "location": "Studio New Delhi"
+    },
+    {
+      "id": "lb-21",
+      "title": "Heirloom Bridal Lehenga",
+      "category": "Bridal",
+      "image": "https://images.pexels.com/photos/9419108/pexels-photo-9419108.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "aspectRatio": "aspect-[3/4]",
+      "location": "Studio New Delhi"
     }
   ],
   "offers": [
