@@ -40,7 +40,7 @@ export const boutiqueConfig = {
 
     // SEO & Verification
     seo: {
-        siteUrl: "https://designsbynisha.com",
+        siteUrl: "https://designs-by-boutique.vercel.app",
         defaultTitle: "Designs by Nisha — Luxury Women's & Bridal Boutique | Chattarpur, New Delhi",
         titleTemplate: "%s | Designs by Nisha Boutique Chattarpur New Delhi",
         description:
