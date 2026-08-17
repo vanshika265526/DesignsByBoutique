@@ -65,7 +65,7 @@ export default function ProductCard({ product }) {
                     <span className="text-[11px] uppercase tracking-widest text-boutique-gold font-medium">
                         {category}
                     </span>
-                    <h3 className="font-serif-editorial text-xl text-boutique-charcoal group-hover:text-boutique-rose transition-colors line-clamp-1 mt-0.5">
+                    <h3 className="font-serif-editorial text-xl text-boutique-charcoal group-hover:text-boutique-rose transition-colors line-clamp-2 min-h-[3.25rem] mt-0.5">
                         <Link href={`/product/${slug}`}>{name}</Link>
                     </h3>
                 </div>
