@@ -15,11 +15,11 @@ export default function Footer() {
                         <Link href="/" aria-label="Designs by Nisha Boutique — Home" className="inline-block group">
                             <div className="bg-white/95 p-3 rounded-2xl border border-white/20 shadow-md inline-block transition-transform duration-300 group-hover:scale-105">
                                 <Image
-                                    src="/images/logo.png?v=20260812"
+                                    src="/images/logo.png?v=logo2"
                                     alt="Designs by Nisha Boutique New Delhi"
-                                    width={200}
-                                    height={100}
-                                    className="h-16 w-auto object-contain mix-blend-multiply"
+                                    width={260}
+                                    height={130}
+                                    className="h-24 w-auto object-contain mix-blend-multiply"
                                 />
                             </div>
                         </Link>

@@ -115,8 +115,8 @@ function LoginForm() {
         <div className="min-h-screen flex items-center justify-center bg-boutique-bg px-4">
             <div className="w-full max-w-sm">
                 <div className="text-center mb-8">
-                    <div className="relative h-16 w-40 mx-auto mb-2">
-                        <Image src="/images/logo.png" alt="Designs by Nisha" fill className="object-contain mix-blend-multiply" />
+                    <div className="relative h-24 w-56 mx-auto mb-2">
+                        <Image src="/images/logo.png?v=logo2" alt="Designs by Nisha" fill className="object-contain mix-blend-multiply" />
                     </div>
                     <p className="text-[11px] uppercase tracking-[0.25em] text-boutique-taupe font-semibold">
                         Admin Portal

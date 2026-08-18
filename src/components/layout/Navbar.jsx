@@ -50,7 +50,7 @@ export default function Navbar() {
     return (
         <header className="sticky top-0 left-0 right-0 z-50 glass-nav">
             <div className="w-full px-4 sm:px-6 lg:px-10">
-                <div className="grid grid-cols-3 items-center h-[72px] md:h-20">
+                <div className="grid grid-cols-3 items-center h-[80px] md:h-24">
                     {/* Left: mobile menu button on mobile, main nav on desktop */}
                     <div className="flex items-center justify-start">
                         <button
@@ -111,13 +111,13 @@ export default function Navbar() {
                     {/* Center: logo centered on both mobile and desktop */}
                     <div className="flex items-center justify-center">
                         <Link href="/" className="group flex-shrink-0" aria-label="Designs by Nisha — Home">
-                            <span className="relative block h-12 w-[130px] sm:h-14 sm:w-[145px] md:h-16 md:w-[170px]">
+                            <span className="relative block h-16 w-[165px] sm:h-[72px] sm:w-[190px] md:h-[92px] md:w-[240px]">
                                 <Image
-                                    src="/images/logo.png?v=redesign"
+                                    src="/images/logo.png?v=logo2"
                                     alt="Designs by Nisha Boutique New Delhi"
                                     fill
                                     priority
-                                    sizes="(min-width: 768px) 170px, 140px"
+                                    sizes="(min-width: 768px) 240px, 190px"
                                     className="object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105"
                                 />
                             </span>

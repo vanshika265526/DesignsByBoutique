@@ -10,8 +10,8 @@ export const metadata = {
     description: boutiqueConfig.seo.description,
     keywords: boutiqueConfig.seo.keywords,
     icons: {
-        icon: "/images/logo.png",
-        apple: "/images/logo.png",
+        icon: "/images/logo-transparent.png",
+        apple: "/images/logo-transparent.png",
     },
     openGraph: {
         title: boutiqueConfig.seo.defaultTitle,

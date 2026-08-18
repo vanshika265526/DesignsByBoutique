@@ -114,11 +114,11 @@ export default function AdminLayout({ children }) {
                 <div className="shrink-0 px-5 py-4 border-b border-neutral-800 bg-neutral-950/40">
                     <Link href="/admin" aria-label="Designs by Nisha Admin Dashboard" className="block">
                         <Image
-                            src="/images/logo.png?v=20260812"
+                            src="/images/logo-transparent.png?v=logo2"
                             alt="Designs by Nisha Boutique Logo"
-                            width={180}
-                            height={90}
-                            className="h-12 w-auto object-contain"
+                            width={200}
+                            height={100}
+                            className="h-16 w-auto object-contain"
                             style={{ filter: "brightness(0) invert(1)", opacity: 0.95 }}
                         />
                     </Link>
