@@ -85,12 +85,10 @@ function SubcategoryEditor({ subcategories = [], onChange }) {
 
 function buildCategoryOptions(categories) {
     const liveCategories = Array.isArray(categories) ? categories : [];
-    const matchedIds = new Set();
     const options = categoriesTaxonomy.map((taxonomyCategory) => {
         const liveCategory = liveCategories.find((category) =>
             (LEGACY_CATEGORY_SLUGS[category.slug] || category.slug) === taxonomyCategory.slug
         );
-        if (liveCategory) matchedIds.add(liveCategory.id);
 
         return {
             ...taxonomyCategory,
@@ -104,10 +102,7 @@ function buildCategoryOptions(categories) {
         };
     });
 
-    return [
-        ...options,
-        ...liveCategories.filter((category) => !matchedIds.has(category.id)),
-    ].sort((a, b) => (a.order || 0) - (b.order || 0));
+    return options.sort((a, b) => (a.order || 0) - (b.order || 0));
 }
 
 export default function AdminCategoriesPage() {

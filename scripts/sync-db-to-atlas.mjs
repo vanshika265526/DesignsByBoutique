@@ -80,6 +80,12 @@ try {
             );
             count++;
         }
+        if (col === "categories") {
+            const ids = items.map((item) => item && item.id).filter(Boolean);
+            if (ids.length > 0) {
+                await db.collection(col).deleteMany({ id: { $nin: ids } });
+            }
+        }
         console.log(`  ✓ ${col.padEnd(13)} ${count} record(s) synced`);
     }
 
