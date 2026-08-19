@@ -70,10 +70,6 @@ export default async function CategoryPage({ params }) {
             {/* Category Editorial Hero Banner */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="bg-boutique-bg-card rounded-3xl p-7 sm:p-10 border border-boutique-muted-border shadow-sm space-y-4 text-center">
-                    <span className="inline-block px-3 py-1 bg-boutique-blush/60 text-boutique-rose text-xs font-semibold uppercase tracking-widest rounded-full">
-                        CHAPTER {chapterNum} • {categoryTitle}
-                    </span>
-
                     <h1 className="font-serif-editorial text-4xl sm:text-5xl md:text-6xl text-boutique-charcoal font-bold">
                         {categoryName}
                     </h1>
