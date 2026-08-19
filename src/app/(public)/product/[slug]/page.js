@@ -10,7 +10,8 @@ import { getDbAsync } from "@/lib/db";
 // ISR: pages are served instantly from cache and regenerated in the background
 // at most once every 60s, so admin edits appear within ~a minute while every
 // click loads fast (no full server render per request).
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 // Pre-build a static page for each product at deploy time.
 export async function generateStaticParams() {

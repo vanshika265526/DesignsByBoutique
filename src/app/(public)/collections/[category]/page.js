@@ -4,7 +4,8 @@ import { getDbAsync } from "@/lib/db";
 import { categoriesTaxonomy } from "@/data/products";
 import SubcategoryProductsLayout from "@/components/collections/SubcategoryProductsLayout";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export async function generateStaticParams() {
     const newSlugs = categoriesTaxonomy.map((c) => ({ category: c.slug }));

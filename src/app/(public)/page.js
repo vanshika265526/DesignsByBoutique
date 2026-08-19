@@ -11,7 +11,8 @@ import HomeContactForm from "@/components/home/HomeContactForm";
 
 // ISR — cached & regenerated at most once a minute so the homepage loads fast
 // while still reflecting admin edits within ~a minute.
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export default async function HomePage() {
     const db = await getDbAsync();

@@ -48,6 +48,8 @@ export async function PATCH(request, { params }) {
         if (saved) {
             addAuditLog('Product Updated', `Updated "${updatedProduct.name}" (ID: ${targetId})`);
             revalidatePath('/', 'layout');
+            if (updatedProduct.slug) revalidatePath(`/product/${updatedProduct.slug}`);
+            if (updatedProduct.category) revalidatePath(`/collections/${updatedProduct.category}`);
             return NextResponse.json({ success: true, data: updatedProduct });
         }
         return NextResponse.json(
@@ -76,6 +78,8 @@ export async function DELETE(request, { params }) {
         if (saved) {
             addAuditLog('Product Deleted', `Removed "${removedName}" (ID: ${targetId})`);
             revalidatePath('/', 'layout');
+            if (existing.slug) revalidatePath(`/product/${existing.slug}`);
+            if (existing.category) revalidatePath(`/collections/${existing.category}`);
             return NextResponse.json({ success: true, message: `Product ${targetId} deleted` });
         }
         return NextResponse.json({ success: false, error: 'Failed to delete DB' }, { status: 500 });

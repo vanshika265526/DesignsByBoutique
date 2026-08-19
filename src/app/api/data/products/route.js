@@ -69,6 +69,8 @@ export async function POST(request) {
         if (saved) {
             addAuditLog('Product Created', `Added product "${newProduct.name}" (ID: ${newProduct.id})`);
             revalidatePath('/', 'layout');
+            if (newProduct.slug) revalidatePath(`/product/${newProduct.slug}`);
+            if (newProduct.category) revalidatePath(`/collections/${newProduct.category}`);
             return NextResponse.json({ success: true, data: newProduct }, { status: 201 });
         }
         return NextResponse.json({ success: false, error: 'Failed to write DB' }, { status: 500 });

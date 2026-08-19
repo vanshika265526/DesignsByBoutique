@@ -5,7 +5,8 @@ import { categoriesTaxonomy } from "@/data/products";
 import { getDbAsync } from "@/lib/db";
 
 // ISR — cached & regenerated at most once a minute for fast loads.
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export const metadata = {
     title: "Collections — Suits, Bridal Lehengas & Maternity Wear | Chattarpur New Delhi",
