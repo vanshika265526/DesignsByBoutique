@@ -108,162 +108,6 @@
       "subcategory": "saree"
     },
     {
-      "id": "prod-07",
-      "slug": "grace-silk-maternity-photoshoot-gown",
-      "name": "Grace Powder Pink Silk Maternity Gown",
-      "category": "maternity",
-      "categoryName": "Maternity",
-      "chapter": "her-motherhood",
-      "chapterName": "Her Motherhood",
-      "price": 7999,
-      "originalPrice": 9999,
-      "discount": "20% OFF",
-      "featured": true,
-      "status": "published",
-      "image": "/images/maternity/gown-1.png",
-      "images": [
-        "/images/maternity/gown-1.png"
-      ],
-      "description": "Designed specifically for expecting mothers celebrating maternity photoshoots, baby showers, or grand family functions. Soft empire-waist flowy silhouette with stretchable inner lining and trailing chiffon cape.",
-      "shortDescription": "Powder pink empire-waist silk maternity gown with trailing cape.",
-      "details": [
-        "Hypoallergenic Pure Satin Silk & Sheer Chiffon",
-        "Hidden nursing zip & trimester adjustability"
-      ],
-      "categorySlug": "maternity",
-      "subcategory": "maternity-gowns"
-    },
-    {
-      "id": "prod-08",
-      "slug": "roop-blush-satin-maternity-gown",
-      "name": "Roop Blush Satin Slit Maternity Gown",
-      "category": "maternity",
-      "categoryName": "Maternity",
-      "chapter": "her-motherhood",
-      "chapterName": "Her Motherhood",
-      "price": 6999,
-      "originalPrice": 8699,
-      "discount": "20% OFF",
-      "featured": false,
-      "status": "published",
-      "image": "/images/maternity/gown-2.png",
-      "images": [
-        "/images/maternity/gown-2.png"
-      ],
-      "description": "Elegant blush satin maternity gown with subtle side slit, empire waistband, and gentle gather pleats for photographic elegance.",
-      "shortDescription": "Blush satin maternity gown with gentle gathers & empire waist.",
-      "details": [
-        "Luminous Satin & Soft Breathable Lining",
-        "Hidden comfort zip"
-      ],
-      "categorySlug": "maternity",
-      "subcategory": "maternity-gowns"
-    },
-    {
-      "id": "prod-maternity-03",
-      "slug": "aarya-floral-anarkali-maternity-gown",
-      "name": "Aarya Floral Hand-Printed Maternity Anarkali",
-      "category": "maternity",
-      "categoryName": "Maternity",
-      "chapter": "her-motherhood",
-      "chapterName": "Her Motherhood",
-      "price": 5999,
-      "originalPrice": 7499,
-      "discount": "20% OFF",
-      "featured": false,
-      "status": "published",
-      "image": "/images/maternity/gown-3.png",
-      "images": [
-        "/images/maternity/gown-3.png"
-      ],
-      "description": "Featherweight Mulmul cotton floral Anarkali maternity gown with delicate Gota work. Ultra-breathable, soothing on sensitive skin, and tailored with extra room for growing bellies.",
-      "shortDescription": "100% Mulmul cotton floral Anarkali maternity gown with Gota detail.",
-      "details": [
-        "100% Organic Hand-printed Mulmul Cotton",
-        "Discreet nursing zippers optional"
-      ],
-      "categorySlug": "maternity",
-      "subcategory": "maternity-gowns"
-    },
-    {
-      "id": "prod-maternity-04",
-      "slug": "kavya-royal-draped-maternity-gown",
-      "name": "Kavya Royal Silk Draped Maternity Gown",
-      "category": "maternity",
-      "categoryName": "Maternity",
-      "chapter": "her-motherhood",
-      "chapterName": "Her Motherhood",
-      "price": 8499,
-      "originalPrice": 10599,
-      "discount": "19% OFF",
-      "featured": true,
-      "status": "published",
-      "image": "/images/maternity/gown-4.png",
-      "images": [
-        "/images/maternity/gown-4.png"
-      ],
-      "description": "A majestic royal silk draped maternity gown featuring cascading pleats and a soft empire line. Perfect for maternity portrait sessions and evening baby shower celebrations.",
-      "shortDescription": "Royal silk draped maternity gown with cascading pleats.",
-      "details": [
-        "Stretchable Silk Georgette & Muslin Lining",
-        "Empire waist line with custom fitting"
-      ],
-      "categorySlug": "maternity",
-      "subcategory": "maternity-gowns"
-    },
-    {
-      "id": "prod-maternity-05",
-      "slug": "mira-satin-flared-maternity-dress",
-      "name": "Mira Satin Flared Maternity Photoshoot Dress",
-      "category": "maternity",
-      "categoryName": "Maternity",
-      "chapter": "her-motherhood",
-      "chapterName": "Her Motherhood",
-      "price": 7499,
-      "originalPrice": 9299,
-      "discount": "20% OFF",
-      "featured": false,
-      "status": "published",
-      "image": "/images/maternity/gown-5.png",
-      "images": [
-        "/images/maternity/gown-5.png"
-      ],
-      "description": "Luminous satin flared maternity dress crafted with smooth breathable inner layers and elegant long sleeves. Designed to highlight the divine mother's silhouette in every photo.",
-      "shortDescription": "Luminous satin flared maternity photoshoot dress with long sleeves.",
-      "details": [
-        "Luminous Satin & Soft Breathable Lining",
-        "Flexible waistband for all trimesters"
-      ],
-      "categorySlug": "maternity",
-      "subcategory": "maternity-gowns"
-    },
-    {
-      "id": "prod-maternity-06",
-      "slug": "anandi-chiffon-trail-maternity-gown",
-      "name": "Anandi Chiffon Trail Maternity Occasion Gown",
-      "category": "maternity",
-      "categoryName": "Maternity",
-      "chapter": "her-motherhood",
-      "chapterName": "Her Motherhood",
-      "price": 8999,
-      "originalPrice": 11199,
-      "discount": "20% OFF",
-      "featured": true,
-      "status": "published",
-      "image": "/images/maternity/gown-6.png",
-      "images": [
-        "/images/maternity/gown-6.png"
-      ],
-      "description": "Ethereal chiffon maternity gown with an extended dramatic trail and hand-embroidered bodice detail. Ideal for outdoor maternity shoots and special ceremonies.",
-      "shortDescription": "Ethereal chiffon maternity gown with dramatic trail.",
-      "details": [
-        "Pure Sheer Chiffon & Cotton Under-lining",
-        "Custom trail length upon request"
-      ],
-      "categorySlug": "maternity",
-      "subcategory": "maternity-gowns"
-    },
-    {
       "id": "prod-maternity-07",
       "slug": "niharika-embellished-baby-shower-gown",
       "name": "Niharika Embellished Velvet Baby Shower Gown",
@@ -288,136 +132,6 @@
       ],
       "categorySlug": "baby-girl-dresses",
       "subcategory": "party-wear"
-    },
-    {
-      "id": "prod-maternity-08",
-      "slug": "sia-ethereal-organza-cape-maternity-gown",
-      "name": "Sia Ethereal Organza Cape Maternity Gown",
-      "category": "maternity",
-      "categoryName": "Maternity",
-      "chapter": "her-motherhood",
-      "chapterName": "Her Motherhood",
-      "price": 7299,
-      "originalPrice": 9099,
-      "discount": "20% OFF",
-      "featured": false,
-      "status": "published",
-      "image": "/images/maternity/gown-8.png",
-      "images": [
-        "/images/maternity/gown-8.png"
-      ],
-      "description": "Organza cape maternity gown with flowy silhouette and sheer embroidered sleeves. Designed for supreme comfort and camera-ready grace.",
-      "shortDescription": "Organza cape maternity gown with sheer embroidered sleeves.",
-      "details": [
-        "Pure Sheer Organza & Soft Cotton Lining",
-        "Trimester expansion panel"
-      ],
-      "categorySlug": "maternity",
-      "subcategory": "maternity-gowns"
-    },
-    {
-      "id": "prod-maternity-09",
-      "slug": "tara-emerald-silk-flared-maternity-gown",
-      "name": "Tara Emerald Silk Flared Maternity Gown",
-      "category": "maternity",
-      "categoryName": "Maternity",
-      "chapter": "her-motherhood",
-      "chapterName": "Her Motherhood",
-      "price": 8299,
-      "originalPrice": 10299,
-      "discount": "20% OFF",
-      "featured": true,
-      "status": "published",
-      "image": "/images/maternity/gown-9.png",
-      "images": [
-        "/images/maternity/gown-9.png"
-      ],
-      "description": "Deep emerald silk maternity gown featuring a sweetheart neck accent and floor-length flared skirt. Perfect for formal maternity dinners.",
-      "shortDescription": "Emerald silk maternity gown with sweetheart neck accent.",
-      "details": [
-        "Viscose Silk & Cotton Under-layer",
-        "Elasticated empire back"
-      ],
-      "categorySlug": "maternity",
-      "subcategory": "maternity-gowns"
-    },
-    {
-      "id": "prod-maternity-10",
-      "slug": "yashvi-rose-gold-sequin-maternity-dress",
-      "name": "Yashvi Rose Gold Sequin Maternity Dress",
-      "category": "maternity",
-      "categoryName": "Maternity",
-      "chapter": "her-motherhood",
-      "chapterName": "Her Motherhood",
-      "price": 9999,
-      "originalPrice": 12499,
-      "discount": "20% OFF",
-      "featured": false,
-      "status": "published",
-      "image": "/images/maternity/gown-10.png",
-      "images": [
-        "/images/maternity/gown-10.png"
-      ],
-      "description": "Rose gold sequined maternity gown with soft inner stretch lining and a delicate V-neckline. Glamorous gown for maternity celebrations.",
-      "shortDescription": "Rose gold sequined maternity gown with soft stretch lining.",
-      "details": [
-        "Micro-sequin Net & Soft Stretch Lining",
-        "Concealed nursing zip"
-      ],
-      "categorySlug": "maternity",
-      "subcategory": "maternity-gowns"
-    },
-    {
-      "id": "prod-maternity-11",
-      "slug": "devi-soft-lavender-lace-maternity-gown",
-      "name": "Devi Soft Lavender Lace Maternity Gown",
-      "category": "maternity",
-      "categoryName": "Maternity",
-      "chapter": "her-motherhood",
-      "chapterName": "Her Motherhood",
-      "price": 6499,
-      "originalPrice": 8099,
-      "discount": "20% OFF",
-      "featured": false,
-      "status": "published",
-      "image": "/images/maternity/gown-11.png",
-      "images": [
-        "/images/maternity/gown-11.png"
-      ],
-      "description": "Soft lavender lace maternity gown with sheer scalloped hem and adjustable empire waist string. Dreamy pastel palette for photoshoots.",
-      "shortDescription": "Soft lavender lace maternity gown with scalloped hem.",
-      "details": [
-        "French Chantilly Lace & Cotton Jersey Lining",
-        "Adjustable waist string"
-      ],
-      "categorySlug": "maternity",
-      "subcategory": "maternity-gowns"
-    },
-    {
-      "id": "prod-maternity-12",
-      "slug": "chhaya-ivory-pearl-maternity-gown",
-      "name": "Chhaya Ivory Pearl Embellished Maternity Gown",
-      "category": "maternity",
-      "categoryName": "Maternity",
-      "chapter": "her-motherhood",
-      "chapterName": "Her Motherhood",
-      "price": 10499,
-      "originalPrice": 12999,
-      "discount": "20% OFF",
-      "featured": true,
-      "status": "published",
-      "image": "/images/maternity/gown-12.png",
-      "images": [
-        "/images/maternity/gown-12.png"
-      ],
-      "description": "Ivory silk maternity gown hand-embroidered with delicate pearl beads and gold sequins. Pure elegance for royal maternity shoots.",
-      "shortDescription": "Ivory silk maternity gown with pearl bead embroidery.",
-      "details": [
-        "Pure Tissue Silk & Muslin Lining",
-        "Hand-stitched faux pearls"
-      ],
-      "categorySlug": "maternity",
-      "subcategory": "maternity-gowns"
     },
     {
       "id": "prod-11",
@@ -1614,6 +1328,481 @@
       ],
       "categorySlug": "her-beginning",
       "subcategory": "suits"
+    },
+    {
+      "id": "prod-mat-01",
+      "slug": "silver-crystal-diamond-maternity-mermaid-gown",
+      "name": "Silver Crystal Diamond Maternity Mermaid Gown",
+      "category": "maternity",
+      "categorySlug": "maternity",
+      "categoryName": "Maternity",
+      "subcategory": "maternity-gowns",
+      "price": 10500,
+      "originalPrice": 13125,
+      "discount": "20% OFF",
+      "featured": true,
+      "status": "published",
+      "image": "https://themomstore.in/cdn/shop/files/elegant-wine-maternity-lace-gown-3656588.jpg?v=1782110590&width=1000",
+      "images": [
+        "https://themomstore.in/cdn/shop/files/elegant-wine-maternity-lace-gown-3656588.jpg?v=1782110590&width=1000"
+      ],
+      "description": "Bespoke handcrafted Silver Crystal Diamond Maternity Mermaid Gown. Designed for maternity photoshoots, baby showers, and grand occasions with breathable stretch lining and custom tailoring.",
+      "shortDescription": "Bespoke handcrafted Silver Crystal Diamond Maternity Mermaid Gown tailored for elegance and comfort.",
+      "details": [
+        "Tailored at Chattarpur Atelier",
+        "Custom belly sizing and length adjustment",
+        "Dry Clean Only"
+      ]
+    },
+    {
+      "id": "prod-mat-02",
+      "slug": "black-crystal-cascade-gown",
+      "name": "Black Crystal Cascade Gown",
+      "category": "maternity",
+      "categorySlug": "maternity",
+      "categoryName": "Maternity",
+      "subcategory": "maternity-gowns",
+      "price": 9500,
+      "originalPrice": 11875,
+      "discount": "20% OFF",
+      "featured": true,
+      "status": "published",
+      "image": "https://images.pexels.com/photos/33180676/pexels-photo-33180676.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "images": [
+        "https://images.pexels.com/photos/33180676/pexels-photo-33180676.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      ],
+      "description": "Bespoke handcrafted Black Crystal Cascade Gown. Designed for maternity photoshoots, baby showers, and grand occasions with breathable stretch lining and custom tailoring.",
+      "shortDescription": "Bespoke handcrafted Black Crystal Cascade Gown tailored for elegance and comfort.",
+      "details": [
+        "Tailored at Chattarpur Atelier",
+        "Custom belly sizing and length adjustment",
+        "Dry Clean Only"
+      ]
+    },
+    {
+      "id": "prod-mat-03",
+      "slug": "black-ruby-cascade-gown",
+      "name": "Black Ruby Cascade Gown",
+      "category": "maternity",
+      "categorySlug": "maternity",
+      "categoryName": "Maternity",
+      "subcategory": "maternity-gowns",
+      "price": 9500,
+      "originalPrice": 11875,
+      "discount": "20% OFF",
+      "featured": true,
+      "status": "published",
+      "image": "https://images.pexels.com/photos/31750738/pexels-photo-31750738.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "images": [
+        "https://images.pexels.com/photos/31750738/pexels-photo-31750738.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      ],
+      "description": "Bespoke handcrafted Black Ruby Cascade Gown. Designed for maternity photoshoots, baby showers, and grand occasions with breathable stretch lining and custom tailoring.",
+      "shortDescription": "Bespoke handcrafted Black Ruby Cascade Gown tailored for elegance and comfort.",
+      "details": [
+        "Tailored at Chattarpur Atelier",
+        "Custom belly sizing and length adjustment",
+        "Dry Clean Only"
+      ]
+    },
+    {
+      "id": "prod-mat-04",
+      "slug": "inspired-by-anne-hathaways-maternity-gown",
+      "name": "Inspired by Anne Hathaway's Maternity Gown",
+      "category": "maternity",
+      "categorySlug": "maternity",
+      "categoryName": "Maternity",
+      "subcategory": "maternity-gowns",
+      "price": 10900,
+      "originalPrice": 13625,
+      "discount": "20% OFF",
+      "featured": true,
+      "status": "published",
+      "image": "https://images.pexels.com/photos/31750729/pexels-photo-31750729.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "images": [
+        "https://images.pexels.com/photos/31750729/pexels-photo-31750729.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      ],
+      "description": "Bespoke handcrafted Inspired by Anne Hathaway's Maternity Gown. Designed for maternity photoshoots, baby showers, and grand occasions with breathable stretch lining and custom tailoring.",
+      "shortDescription": "Bespoke handcrafted Inspired by Anne Hathaway's Maternity Gown tailored for elegance and comfort.",
+      "details": [
+        "Tailored at Chattarpur Atelier",
+        "Custom belly sizing and length adjustment",
+        "Dry Clean Only"
+      ]
+    },
+    {
+      "id": "prod-mat-05",
+      "slug": "maternity-gown-with-one-shoulder-golden-flower-cape",
+      "name": "Maternity Gown with One Shoulder Golden Flower Cape",
+      "category": "maternity",
+      "categorySlug": "maternity",
+      "categoryName": "Maternity",
+      "subcategory": "maternity-gowns",
+      "price": 5400,
+      "originalPrice": 6750,
+      "discount": "20% OFF",
+      "featured": true,
+      "status": "published",
+      "image": "https://images.pexels.com/photos/26973350/pexels-photo-26973350.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "images": [
+        "https://images.pexels.com/photos/26973350/pexels-photo-26973350.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      ],
+      "description": "Bespoke handcrafted Maternity Gown with One Shoulder Golden Flower Cape. Designed for maternity photoshoots, baby showers, and grand occasions with breathable stretch lining and custom tailoring.",
+      "shortDescription": "Bespoke handcrafted Maternity Gown with One Shoulder Golden Flower Cape tailored for elegance and comfort.",
+      "details": [
+        "Tailored at Chattarpur Atelier",
+        "Custom belly sizing and length adjustment",
+        "Dry Clean Only"
+      ]
+    },
+    {
+      "id": "prod-mat-06",
+      "slug": "white-maternity-tail-gown",
+      "name": "White Maternity Tail Gown",
+      "category": "maternity",
+      "categorySlug": "maternity",
+      "categoryName": "Maternity",
+      "subcategory": "maternity-gowns",
+      "price": 5660,
+      "originalPrice": 7075,
+      "discount": "20% OFF",
+      "featured": true,
+      "status": "published",
+      "image": "https://img.perniaspopupshop.com/catalog/product/n/k/NKGC072509_1.jpg?impolicy=detailimageprod",
+      "images": [
+        "https://img.perniaspopupshop.com/catalog/product/n/k/NKGC072509_1.jpg?impolicy=detailimageprod"
+      ],
+      "description": "Bespoke handcrafted White Maternity Tail Gown. Designed for maternity photoshoots, baby showers, and grand occasions with breathable stretch lining and custom tailoring.",
+      "shortDescription": "Bespoke handcrafted White Maternity Tail Gown tailored for elegance and comfort.",
+      "details": [
+        "Tailored at Chattarpur Atelier",
+        "Custom belly sizing and length adjustment",
+        "Dry Clean Only"
+      ]
+    },
+    {
+      "id": "prod-mat-07",
+      "slug": "premium-red-maternity-gown-with-flower-hand-cape",
+      "name": "Premium Red Maternity Gown with Flower Hand Cape",
+      "category": "maternity",
+      "categorySlug": "maternity",
+      "categoryName": "Maternity",
+      "subcategory": "maternity-gowns",
+      "price": 7999,
+      "originalPrice": 9999,
+      "discount": "20% OFF",
+      "featured": false,
+      "status": "published",
+      "image": "https://wholesalemegamart.com/wp-content/uploads/2026/04/ZSR-3169-KIDS-ETHNIC-WEAR-FOR-GIRLS-WHOLESALE-1.jpeg",
+      "images": [
+        "https://wholesalemegamart.com/wp-content/uploads/2026/04/ZSR-3169-KIDS-ETHNIC-WEAR-FOR-GIRLS-WHOLESALE-1.jpeg"
+      ],
+      "description": "Bespoke handcrafted Premium Red Maternity Gown with Flower Hand Cape. Designed for maternity photoshoots, baby showers, and grand occasions with breathable stretch lining and custom tailoring.",
+      "shortDescription": "Bespoke handcrafted Premium Red Maternity Gown with Flower Hand Cape tailored for elegance and comfort.",
+      "details": [
+        "Tailored at Chattarpur Atelier",
+        "Custom belly sizing and length adjustment",
+        "Dry Clean Only"
+      ]
+    },
+    {
+      "id": "prod-mat-08",
+      "slug": "cinnamon-brown-maternity-bodycon",
+      "name": "Cinnamon Brown Maternity Bodycon",
+      "category": "maternity",
+      "categorySlug": "maternity",
+      "categoryName": "Maternity",
+      "subcategory": "maternity-gowns",
+      "price": 4799,
+      "originalPrice": 5999,
+      "discount": "20% OFF",
+      "featured": false,
+      "status": "published",
+      "image": "https://themomstore.in/cdn/shop/files/elegant-wine-maternity-lace-gown-3656588.jpg?v=1782110590&width=1000",
+      "images": [
+        "https://themomstore.in/cdn/shop/files/elegant-wine-maternity-lace-gown-3656588.jpg?v=1782110590&width=1000"
+      ],
+      "description": "Bespoke handcrafted Cinnamon Brown Maternity Bodycon. Designed for maternity photoshoots, baby showers, and grand occasions with breathable stretch lining and custom tailoring.",
+      "shortDescription": "Bespoke handcrafted Cinnamon Brown Maternity Bodycon tailored for elegance and comfort.",
+      "details": [
+        "Tailored at Chattarpur Atelier",
+        "Custom belly sizing and length adjustment",
+        "Dry Clean Only"
+      ]
+    },
+    {
+      "id": "prod-mat-09",
+      "slug": "powder-blue-maternity-bodycon-gown",
+      "name": "Powder Blue Maternity Bodycon Gown",
+      "category": "maternity",
+      "categorySlug": "maternity",
+      "categoryName": "Maternity",
+      "subcategory": "maternity-gowns",
+      "price": 4799,
+      "originalPrice": 5999,
+      "discount": "20% OFF",
+      "featured": false,
+      "status": "published",
+      "image": "https://images.pexels.com/photos/33180676/pexels-photo-33180676.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "images": [
+        "https://images.pexels.com/photos/33180676/pexels-photo-33180676.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      ],
+      "description": "Bespoke handcrafted Powder Blue Maternity Bodycon Gown. Designed for maternity photoshoots, baby showers, and grand occasions with breathable stretch lining and custom tailoring.",
+      "shortDescription": "Bespoke handcrafted Powder Blue Maternity Bodycon Gown tailored for elegance and comfort.",
+      "details": [
+        "Tailored at Chattarpur Atelier",
+        "Custom belly sizing and length adjustment",
+        "Dry Clean Only"
+      ]
+    },
+    {
+      "id": "prod-mat-10",
+      "slug": "black-maternity-gown-with-white-flowers-shoulder-cape",
+      "name": "Black Maternity Gown with White Flowers Shoulder Cape",
+      "category": "maternity",
+      "categorySlug": "maternity",
+      "categoryName": "Maternity",
+      "subcategory": "maternity-gowns",
+      "price": 4999,
+      "originalPrice": 6249,
+      "discount": "20% OFF",
+      "featured": false,
+      "status": "published",
+      "image": "https://images.pexels.com/photos/31750738/pexels-photo-31750738.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "images": [
+        "https://images.pexels.com/photos/31750738/pexels-photo-31750738.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      ],
+      "description": "Bespoke handcrafted Black Maternity Gown with White Flowers Shoulder Cape. Designed for maternity photoshoots, baby showers, and grand occasions with breathable stretch lining and custom tailoring.",
+      "shortDescription": "Bespoke handcrafted Black Maternity Gown with White Flowers Shoulder Cape tailored for elegance and comfort.",
+      "details": [
+        "Tailored at Chattarpur Atelier",
+        "Custom belly sizing and length adjustment",
+        "Dry Clean Only"
+      ]
+    },
+    {
+      "id": "prod-mat-11",
+      "slug": "maternity-bodycon-mermaid-gown",
+      "name": "Maternity Bodycon Mermaid Gown",
+      "category": "maternity",
+      "categorySlug": "maternity",
+      "categoryName": "Maternity",
+      "subcategory": "maternity-gowns",
+      "price": 3500,
+      "originalPrice": 4375,
+      "discount": "20% OFF",
+      "featured": false,
+      "status": "published",
+      "image": "https://images.pexels.com/photos/31750729/pexels-photo-31750729.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "images": [
+        "https://images.pexels.com/photos/31750729/pexels-photo-31750729.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      ],
+      "description": "Bespoke handcrafted Maternity Bodycon Mermaid Gown. Designed for maternity photoshoots, baby showers, and grand occasions with breathable stretch lining and custom tailoring.",
+      "shortDescription": "Bespoke handcrafted Maternity Bodycon Mermaid Gown tailored for elegance and comfort.",
+      "details": [
+        "Tailored at Chattarpur Atelier",
+        "Custom belly sizing and length adjustment",
+        "Dry Clean Only"
+      ]
+    },
+    {
+      "id": "prod-mat-12",
+      "slug": "maternity-gown-flower-hand-cape",
+      "name": "Maternity Gown Flower Hand Cape",
+      "category": "maternity",
+      "categorySlug": "maternity",
+      "categoryName": "Maternity",
+      "subcategory": "maternity-gowns",
+      "price": 6890,
+      "originalPrice": 8613,
+      "discount": "20% OFF",
+      "featured": false,
+      "status": "published",
+      "image": "https://images.pexels.com/photos/26973350/pexels-photo-26973350.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "images": [
+        "https://images.pexels.com/photos/26973350/pexels-photo-26973350.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      ],
+      "description": "Bespoke handcrafted Maternity Gown Flower Hand Cape. Designed for maternity photoshoots, baby showers, and grand occasions with breathable stretch lining and custom tailoring.",
+      "shortDescription": "Bespoke handcrafted Maternity Gown Flower Hand Cape tailored for elegance and comfort.",
+      "details": [
+        "Tailored at Chattarpur Atelier",
+        "Custom belly sizing and length adjustment",
+        "Dry Clean Only"
+      ]
+    },
+    {
+      "id": "prod-mat-13",
+      "slug": "maternity-bow-bodycon-gown",
+      "name": "Maternity Bow Bodycon Gown",
+      "category": "maternity",
+      "categorySlug": "maternity",
+      "categoryName": "Maternity",
+      "subcategory": "maternity-gowns",
+      "price": 4900,
+      "originalPrice": 6125,
+      "discount": "20% OFF",
+      "featured": false,
+      "status": "published",
+      "image": "https://img.perniaspopupshop.com/catalog/product/n/k/NKGC072509_1.jpg?impolicy=detailimageprod",
+      "images": [
+        "https://img.perniaspopupshop.com/catalog/product/n/k/NKGC072509_1.jpg?impolicy=detailimageprod"
+      ],
+      "description": "Bespoke handcrafted Maternity Bow Bodycon Gown. Designed for maternity photoshoots, baby showers, and grand occasions with breathable stretch lining and custom tailoring.",
+      "shortDescription": "Bespoke handcrafted Maternity Bow Bodycon Gown tailored for elegance and comfort.",
+      "details": [
+        "Tailored at Chattarpur Atelier",
+        "Custom belly sizing and length adjustment",
+        "Dry Clean Only"
+      ]
+    },
+    {
+      "id": "prod-mat-14",
+      "slug": "black-maternity-gown-with-pink-flower-hand-cape",
+      "name": "Black Maternity Gown with Pink Flower Hand Cape",
+      "category": "maternity",
+      "categorySlug": "maternity",
+      "categoryName": "Maternity",
+      "subcategory": "maternity-gowns",
+      "price": 6999,
+      "originalPrice": 8749,
+      "discount": "20% OFF",
+      "featured": false,
+      "status": "published",
+      "image": "https://wholesalemegamart.com/wp-content/uploads/2026/04/ZSR-3169-KIDS-ETHNIC-WEAR-FOR-GIRLS-WHOLESALE-1.jpeg",
+      "images": [
+        "https://wholesalemegamart.com/wp-content/uploads/2026/04/ZSR-3169-KIDS-ETHNIC-WEAR-FOR-GIRLS-WHOLESALE-1.jpeg"
+      ],
+      "description": "Bespoke handcrafted Black Maternity Gown with Pink Flower Hand Cape. Designed for maternity photoshoots, baby showers, and grand occasions with breathable stretch lining and custom tailoring.",
+      "shortDescription": "Bespoke handcrafted Black Maternity Gown with Pink Flower Hand Cape tailored for elegance and comfort.",
+      "details": [
+        "Tailored at Chattarpur Atelier",
+        "Custom belly sizing and length adjustment",
+        "Dry Clean Only"
+      ]
+    },
+    {
+      "id": "prod-mat-15",
+      "slug": "maternity-net-gown",
+      "name": "Maternity Net Gown",
+      "category": "maternity",
+      "categorySlug": "maternity",
+      "categoryName": "Maternity",
+      "subcategory": "maternity-gowns",
+      "price": 7850,
+      "originalPrice": 9813,
+      "discount": "20% OFF",
+      "featured": false,
+      "status": "published",
+      "image": "https://themomstore.in/cdn/shop/files/elegant-wine-maternity-lace-gown-3656588.jpg?v=1782110590&width=1000",
+      "images": [
+        "https://themomstore.in/cdn/shop/files/elegant-wine-maternity-lace-gown-3656588.jpg?v=1782110590&width=1000"
+      ],
+      "description": "Bespoke handcrafted Maternity Net Gown. Designed for maternity photoshoots, baby showers, and grand occasions with breathable stretch lining and custom tailoring.",
+      "shortDescription": "Bespoke handcrafted Maternity Net Gown tailored for elegance and comfort.",
+      "details": [
+        "Tailored at Chattarpur Atelier",
+        "Custom belly sizing and length adjustment",
+        "Dry Clean Only"
+      ]
+    },
+    {
+      "id": "prod-mat-16",
+      "slug": "mustard-yellow-maternity-gown-with-white-flower-hand-cape",
+      "name": "Mustard Yellow Maternity Gown with White Flower Hand Cape",
+      "category": "maternity",
+      "categorySlug": "maternity",
+      "categoryName": "Maternity",
+      "subcategory": "maternity-gowns",
+      "price": 6999,
+      "originalPrice": 8749,
+      "discount": "20% OFF",
+      "featured": false,
+      "status": "published",
+      "image": "https://images.pexels.com/photos/33180676/pexels-photo-33180676.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "images": [
+        "https://images.pexels.com/photos/33180676/pexels-photo-33180676.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      ],
+      "description": "Bespoke handcrafted Mustard Yellow Maternity Gown with White Flower Hand Cape. Designed for maternity photoshoots, baby showers, and grand occasions with breathable stretch lining and custom tailoring.",
+      "shortDescription": "Bespoke handcrafted Mustard Yellow Maternity Gown with White Flower Hand Cape tailored for elegance and comfort.",
+      "details": [
+        "Tailored at Chattarpur Atelier",
+        "Custom belly sizing and length adjustment",
+        "Dry Clean Only"
+      ]
+    },
+    {
+      "id": "prod-mat-17",
+      "slug": "bow-maternity-gown",
+      "name": "Bow Maternity Gown",
+      "category": "maternity",
+      "categorySlug": "maternity",
+      "categoryName": "Maternity",
+      "subcategory": "maternity-gowns",
+      "price": 5999,
+      "originalPrice": 7499,
+      "discount": "20% OFF",
+      "featured": false,
+      "status": "published",
+      "image": "https://images.pexels.com/photos/31750738/pexels-photo-31750738.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "images": [
+        "https://images.pexels.com/photos/31750738/pexels-photo-31750738.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      ],
+      "description": "Bespoke handcrafted Bow Maternity Gown. Designed for maternity photoshoots, baby showers, and grand occasions with breathable stretch lining and custom tailoring.",
+      "shortDescription": "Bespoke handcrafted Bow Maternity Gown tailored for elegance and comfort.",
+      "details": [
+        "Tailored at Chattarpur Atelier",
+        "Custom belly sizing and length adjustment",
+        "Dry Clean Only"
+      ]
+    },
+    {
+      "id": "prod-mat-18",
+      "slug": "white-gown-with-black-flower-cape",
+      "name": "White Gown with Black Flower Cape",
+      "category": "maternity",
+      "categorySlug": "maternity",
+      "categoryName": "Maternity",
+      "subcategory": "maternity-gowns",
+      "price": 4999,
+      "originalPrice": 6249,
+      "discount": "20% OFF",
+      "featured": false,
+      "status": "published",
+      "image": "https://images.pexels.com/photos/31750729/pexels-photo-31750729.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "images": [
+        "https://images.pexels.com/photos/31750729/pexels-photo-31750729.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      ],
+      "description": "Bespoke handcrafted White Gown with Black Flower Cape. Designed for maternity photoshoots, baby showers, and grand occasions with breathable stretch lining and custom tailoring.",
+      "shortDescription": "Bespoke handcrafted White Gown with Black Flower Cape tailored for elegance and comfort.",
+      "details": [
+        "Tailored at Chattarpur Atelier",
+        "Custom belly sizing and length adjustment",
+        "Dry Clean Only"
+      ]
+    },
+    {
+      "id": "prod-mat-19",
+      "slug": "black-maternity-gown-with-flower-hand-cape",
+      "name": "Black Maternity Gown with Flower Hand Cape",
+      "category": "maternity",
+      "categorySlug": "maternity",
+      "categoryName": "Maternity",
+      "subcategory": "maternity-gowns",
+      "price": 6999,
+      "originalPrice": 8749,
+      "discount": "20% OFF",
+      "featured": false,
+      "status": "published",
+      "image": "https://images.pexels.com/photos/26973350/pexels-photo-26973350.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "images": [
+        "https://images.pexels.com/photos/26973350/pexels-photo-26973350.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      ],
+      "description": "Bespoke handcrafted Black Maternity Gown with Flower Hand Cape. Designed for maternity photoshoots, baby showers, and grand occasions with breathable stretch lining and custom tailoring.",
+      "shortDescription": "Bespoke handcrafted Black Maternity Gown with Flower Hand Cape tailored for elegance and comfort.",
+      "details": [
+        "Tailored at Chattarpur Atelier",
+        "Custom belly sizing and length adjustment",
+        "Dry Clean Only"
+      ]
     }
   ],
   "categories": [
