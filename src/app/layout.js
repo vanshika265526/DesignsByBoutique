@@ -20,7 +20,7 @@ export const metadata = {
         siteName: boutiqueConfig.name,
         images: [
             {
-                url: "/images/logo.png",
+                url: "https://designs-by-boutique.vercel.app/images/logo.png",
                 width: 1200,
                 height: 630,
                 alt: "Designs by Nisha — Luxury Boutique Chattarpur, New Delhi",
@@ -33,7 +33,7 @@ export const metadata = {
         card: "summary_large_image",
         title: boutiqueConfig.seo.defaultTitle,
         description: boutiqueConfig.seo.description,
-        images: ["/images/logo.png"],
+        images: ["https://designs-by-boutique.vercel.app/images/logo.png"],
     },
     verification: {
         google: boutiqueConfig.seo.googleSiteVerification,
