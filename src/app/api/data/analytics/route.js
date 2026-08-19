@@ -95,7 +95,7 @@ export async function POST(req) {
     try {
         const body = await req.json();
         const { action, payload } = body;
-        const db = readDb();
+        const db = await getDbAsync();
         if (!db.analytics) db.analytics = {};
 
         if (action === "track_click") {

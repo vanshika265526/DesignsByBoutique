@@ -14,7 +14,7 @@ export async function GET() {
 export async function POST(request) {
     try {
         const updates = await request.json();
-        const db = readDb();
+        const db = await getDbAsync();
         db.settings = { ...db.settings, ...updates, updatedAt: new Date().toISOString() };
         const saved = await writeDb(db);
         if (saved) {
@@ -30,7 +30,7 @@ export async function POST(request) {
 export async function PATCH(request) {
     try {
         const updates = await request.json();
-        const db = readDb();
+        const db = await getDbAsync();
         db.settings = { ...db.settings, ...updates, updatedAt: new Date().toISOString() };
         const saved = await writeDb(db);
         if (saved) {

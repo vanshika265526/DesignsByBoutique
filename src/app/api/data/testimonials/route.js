@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
-import { readDb, writeDb, addAuditLog } from "@/lib/db";
+import { readDb, writeDb, addAuditLog, getDbAsync } from "@/lib/db";
 
 export async function GET() {
     try {
-        const db = readDb();
+        const db = await getDbAsync();
         const testimonials = db.testimonials || [];
         return NextResponse.json({ success: true, data: testimonials });
     } catch (err) {
@@ -14,7 +14,7 @@ export async function GET() {
 export async function POST(req) {
     try {
         const body = await req.json();
-        const db = readDb();
+        const db = await getDbAsync();
         if (!db.testimonials) db.testimonials = [];
 
         const newTestimonial = {
@@ -42,7 +42,7 @@ export async function PATCH(req) {
     try {
         const body = await req.json();
         const { id, ...updates } = body;
-        const db = readDb();
+        const db = await getDbAsync();
         if (!db.testimonials) db.testimonials = [];
 
         const idx = db.testimonials.findIndex((t) => t.id === id);
@@ -67,7 +67,7 @@ export async function DELETE(req) {
             return NextResponse.json({ success: false, error: "ID required" }, { status: 400 });
         }
 
-        const db = readDb();
+        const db = await getDbAsync();
         if (!db.testimonials) db.testimonials = [];
 
         db.testimonials = db.testimonials.filter((t) => t.id !== id);

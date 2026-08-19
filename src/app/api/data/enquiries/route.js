@@ -13,7 +13,7 @@ export async function GET() {
 export async function POST(request) {
     try {
         const enqData = await request.json();
-        const db = readDb();
+        const db = await getDbAsync();
         if (!db.enquiries) db.enquiries = [];
 
         const newEnquiry = {
@@ -44,7 +44,7 @@ export async function PATCH(request) {
     try {
         const body = await request.json();
         const { id, status } = body;
-        const db = readDb();
+        const db = await getDbAsync();
         const index = (db.enquiries || []).findIndex(e => e.id === id);
 
         if (index === -1) {

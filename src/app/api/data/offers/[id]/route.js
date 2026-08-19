@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server';
-import { readDb, writeDb, addAuditLog } from '@/lib/db';
+import { readDb, writeDb, addAuditLog, getDbAsync } from '@/lib/db';
 
 export async function PATCH(request, { params }) {
     try {
         const { id } = params;
         const updates = await request.json();
-        const db = readDb();
+        const db = await getDbAsync();
         const index = (db.offers || []).findIndex((o) => o.id === id);
         if (index === -1) {
             return NextResponse.json({ success: false, error: 'Offer not found' }, { status: 404 });
@@ -25,7 +25,7 @@ export async function PATCH(request, { params }) {
 export async function DELETE(request, { params }) {
     try {
         const { id } = params;
-        const db = readDb();
+        const db = await getDbAsync();
         const before = (db.offers || []).length;
         db.offers = (db.offers || []).filter((o) => o.id !== id);
         if (db.offers.length === before) {
