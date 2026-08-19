@@ -75,12 +75,9 @@ export default async function ProductDetailPage({ params }) {
     } = product;
 
     // Normalize images array
-    const images =
-        product.images && product.images.length > 0
-            ? product.images
-            : product.image
-                ? [product.image]
-                : [];
+    const images = product.image
+        ? [product.image, ...(product.images || []).filter((image) => image !== product.image)]
+        : product.images || [];
 
     const currentPrice = price || salePrice;
     const displayCategory = categoryName || category || "";

@@ -19,7 +19,7 @@ export default function ProductCard({ product }) {
     } = product;
 
     const currentPrice = price || salePrice;
-    const mainImage = images && images.length > 0 ? images[0] : (product.image || "/images/placeholder.jpg");
+    const mainImage = product.image || (images && images.length > 0 ? images[0] : "/images/placeholder.jpg");
     const whatsappUrl = buildWhatsAppLink({
         productName: name,
         productCategory: category,
