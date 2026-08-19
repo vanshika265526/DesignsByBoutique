@@ -127,13 +127,13 @@ export default function Hero() {
 
                     <h1
                         lang="hi"
-                        className="font-devanagari text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white max-w-4xl"
+                        className="font-devanagari text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white max-w-4xl"
                     >
                         हर सफ़र खूबसूरती के साथ
                     </h1>
                     <p
                         key={`text-${active}`}
-                        className="mt-5 max-w-2xl text-sm sm:text-base md:text-lg leading-relaxed text-white/90 font-light"
+                        className="mt-3 max-w-xl text-sm sm:text-base md:text-lg leading-relaxed text-white/90 font-light"
                     >
                         {slides[active]?.text}
                     </p>
