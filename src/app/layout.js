@@ -20,10 +20,10 @@ export const metadata = {
         siteName: boutiqueConfig.name,
         images: [
             {
-                url: "https://images.pexels.com/photos/12579916/pexels-photo-12579916.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                url: "/images/logo.png",
                 width: 1200,
                 height: 630,
-                alt: "Designs by Nisha Luxury Boutique Chattarpur New Delhi",
+                alt: "Designs by Nisha — Luxury Boutique Chattarpur, New Delhi",
             },
         ],
         locale: "en_IN",
@@ -33,7 +33,7 @@ export const metadata = {
         card: "summary_large_image",
         title: boutiqueConfig.seo.defaultTitle,
         description: boutiqueConfig.seo.description,
-        images: ["https://images.pexels.com/photos/12579916/pexels-photo-12579916.jpeg?auto=compress&cs=tinysrgb&w=1600"],
+        images: ["/images/logo.png"],
     },
     verification: {
         google: boutiqueConfig.seo.googleSiteVerification,
@@ -48,7 +48,7 @@ export default function RootLayout({ children }) {
         "@context": "https://schema.org",
         "@type": ["ClothingStore", "LocalBusiness"],
         name: boutiqueConfig.name,
-        image: "https://images.pexels.com/photos/12579916/pexels-photo-12579916.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        image: `${boutiqueConfig.seo.siteUrl}/images/logo.png`,
         "@id": boutiqueConfig.seo.siteUrl,
         url: boutiqueConfig.seo.siteUrl,
         telephone: boutiqueConfig.contact.phoneDisplay,
