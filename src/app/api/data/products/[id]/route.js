@@ -50,7 +50,10 @@ export async function PATCH(request, { params }) {
             revalidatePath('/', 'layout');
             return NextResponse.json({ success: true, data: updatedProduct });
         }
-        return NextResponse.json({ success: false, error: 'Failed to update DB' }, { status: 500 });
+        return NextResponse.json(
+            { success: false, error: 'Failed to update product in MongoDB Atlas or the local database.' },
+            { status: 500 }
+        );
     } catch (error) {
         return NextResponse.json({ success: false, error: error.message }, { status: 500 });
     }
