@@ -66,7 +66,7 @@ export default function Hero() {
         if (active >= slides.length) setActive(0);
     }, [slides.length, active]);
 
-    const activeText = slides[active]?.text || HERO_SLIDES[0].text;
+
 
     return (
         <section className="w-full bg-boutique-bg">
@@ -119,8 +119,8 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-b from-boutique-charcoal/40 via-boutique-charcoal/25 to-boutique-charcoal/60" />
 
                 {/* Centered content */}
-                <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 sm:px-6">
-                    <p className="inline-flex items-center gap-2 text-[11px] sm:text-xs uppercase tracking-[0.35em] text-white/90 font-medium mb-5">
+                <div className="relative z-10 h-full flex flex-col items-center justify-end text-center px-4 sm:px-6 pb-20 sm:pb-24">
+                    <p className="inline-flex items-center gap-2 text-[11px] sm:text-xs uppercase tracking-[0.35em] text-white/90 font-medium mb-4">
                         <Sparkles className="w-3.5 h-3.5 text-boutique-gold-light" />
                         Bespoke Couture · New Delhi
                     </p>
@@ -131,13 +131,6 @@ export default function Hero() {
                     >
                         हर सफ़र खूबसूरती के साथ
                     </h1>
-
-                    <p
-                        key={active}
-                        className="mt-6 max-w-2xl text-sm sm:text-base md:text-lg text-white font-medium leading-relaxed drop-shadow-[0_1px_10px_rgba(0,0,0,0.55)] animate-in fade-in duration-700"
-                    >
-                        {activeText}
-                    </p>
 
                     <div className="mt-9 flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
                         <Link
