@@ -17,6 +17,18 @@ import {
     AlertTriangle,
     ArrowUpDown,
 } from "lucide-react";
+import { categoriesTaxonomy } from "@/data/products";
+
+const LEGACY_CATEGORY_SLUGS = {
+    "suits-anarkalis": "her-beginning",
+    "gowns-lehengas": "her-bridal-story",
+    "haldi-mehendi": "her-big-day",
+    "bridal-lehengas": "her-big-day",
+    "maternity-gowns": "maternity",
+    "baby-clothes": "baby-girl-dresses",
+};
+
+const canonicalCategory = (slug) => LEGACY_CATEGORY_SLUGS[slug] || slug;
 
 export default function AdminProductsPage() {
     const [products, setProducts] = useState([]);
@@ -24,6 +36,7 @@ export default function AdminProductsPage() {
     const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState("");
     const [selectedCategory, setSelectedCategory] = useState("all");
+    const [selectedSubcategory, setSelectedSubcategory] = useState("all");
     const [selectedStatus, setSelectedStatus] = useState("all");
     const [deleteModal, setDeleteModal] = useState({ open: false, product: null });
     const [updatingId, setUpdatingId] = useState(null);
@@ -49,6 +62,22 @@ export default function AdminProductsPage() {
     useEffect(() => {
         loadData();
     }, []);
+
+    const categoryOptions = categoriesTaxonomy
+        .map((taxonomyCategory) => {
+            const liveCategory = categories.find((category) =>
+                canonicalCategory(category.slug) === taxonomyCategory.slug
+            );
+            return {
+                ...taxonomyCategory,
+                name: taxonomyCategory.name,
+                subcategories: liveCategory?.subcategories?.length
+                    ? liveCategory.subcategories
+                    : taxonomyCategory.subcategories || [],
+            };
+        })
+        .sort((a, b) => (a.order || 0) - (b.order || 0));
+    const selectedCategoryOption = categoryOptions.find((category) => category.slug === selectedCategory);
 
     // Toggle featured status
     const toggleFeatured = async (product) => {
@@ -117,9 +146,13 @@ export default function AdminProductsPage() {
             p.name.toLowerCase().includes(search.toLowerCase()) ||
             p.slug.toLowerCase().includes(search.toLowerCase());
         const matchesCategory =
-            selectedCategory === "all" || p.category === selectedCategory || p.categorySlug === selectedCategory;
+            selectedCategory === "all" ||
+            canonicalCategory(p.category) === selectedCategory ||
+            canonicalCategory(p.categorySlug) === selectedCategory;
+        const matchesSubcategory =
+            selectedSubcategory === "all" || p.subcategory === selectedSubcategory;
         const matchesStatus = selectedStatus === "all" || p.status === selectedStatus;
-        return matchesSearch && matchesCategory && matchesStatus;
+        return matchesSearch && matchesCategory && matchesSubcategory && matchesStatus;
     });
 
     return (
@@ -166,13 +199,30 @@ export default function AdminProductsPage() {
                     </div>
                     <select
                         value={selectedCategory}
-                        onChange={(e) => setSelectedCategory(e.target.value)}
+                        onChange={(e) => {
+                            setSelectedCategory(e.target.value);
+                            setSelectedSubcategory("all");
+                        }}
                         className="bg-neutral-50 border border-neutral-200 rounded-xl text-xs px-3 py-2 focus:outline-none focus:border-boutique-rose"
                     >
                         <option value="all">All Categories ({products.length})</option>
-                        {categories.map((c) => (
+                        {categoryOptions.map((c) => (
                             <option key={c.id} value={c.slug}>
                                 {c.name}
+                            </option>
+                        ))}
+                    </select>
+
+                    <select
+                        value={selectedSubcategory}
+                        onChange={(e) => setSelectedSubcategory(e.target.value)}
+                        disabled={selectedCategory === "all" || !selectedCategoryOption?.subcategories.length}
+                        className="bg-neutral-50 border border-neutral-200 rounded-xl text-xs px-3 py-2 focus:outline-none focus:border-boutique-rose disabled:opacity-50"
+                    >
+                        <option value="all">All Subcategories</option>
+                        {(selectedCategoryOption?.subcategories || []).map((subcategory) => (
+                            <option key={subcategory.slug} value={subcategory.slug}>
+                                {subcategory.name}
                             </option>
                         ))}
                     </select>

@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { revalidatePath } from 'next/cache';
 import { createProductAsync, addAuditLog, getDbAsync } from '@/lib/db';
 
 // GET all products or filter by category/chapter
@@ -47,6 +48,7 @@ export async function POST(request) {
             slug,
             category: productData.category || 'suits-anarkalis',
             categoryName: productData.categoryName || 'Suits & Anarkalis',
+            subcategory: productData.subcategory || '',
             chapter: productData.chapter || 'her-beginnings',
             chapterName: productData.chapterName || 'Her Beginnings',
             price: Number(productData.price) || 0,
@@ -66,6 +68,7 @@ export async function POST(request) {
         const saved = await createProductAsync(newProduct);
         if (saved) {
             addAuditLog('Product Created', `Added product "${newProduct.name}" (ID: ${newProduct.id})`);
+            revalidatePath('/', 'layout');
             return NextResponse.json({ success: true, data: newProduct }, { status: 201 });
         }
         return NextResponse.json({ success: false, error: 'Failed to write DB' }, { status: 500 });

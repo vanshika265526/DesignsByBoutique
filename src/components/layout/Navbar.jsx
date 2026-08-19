@@ -10,6 +10,15 @@ import InstagramIcon from "@/components/ui/InstagramIcon";
 import { boutiqueConfig, buildWhatsAppLink } from "@/config/boutique";
 import { categoriesTaxonomy } from "@/data/products";
 
+const LEGACY_CATEGORY_SLUGS = {
+    "suits-anarkalis": "her-beginning",
+    "gowns-lehengas": "her-bridal-story",
+    "haldi-mehendi": "her-big-day",
+    "bridal-lehengas": "her-big-day",
+    "maternity-gowns": "maternity",
+    "baby-clothes": "baby-girl-dresses",
+};
+
 export default function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [collectionsOpen, setCollectionsOpen] = useState(false);
@@ -20,6 +29,7 @@ export default function Navbar() {
     const [searchOpen, setSearchOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
     const [products, setProducts] = useState([]);
+    const [liveCategories, setLiveCategories] = useState([]);
 
     const pathname = usePathname();
     const router = useRouter();
@@ -49,6 +59,15 @@ export default function Navbar() {
     }, [pathname]);
 
     useEffect(() => {
+        fetch("/api/data/categories")
+            .then((response) => response.json())
+            .then((result) => {
+                if (result.success) setLiveCategories(result.data || []);
+            })
+            .catch((error) => console.error("Failed to load category navigation:", error));
+    }, []);
+
+    useEffect(() => {
         if (!searchOpen || products.length > 0) return;
 
         fetch("/api/data/products?status=published")
@@ -64,6 +83,19 @@ export default function Navbar() {
             .filter((product) => product.name?.toLowerCase().includes(searchQuery.trim().toLowerCase()))
             .slice(0, 6)
         : [];
+    const navigationCategories = categoriesTaxonomy.map((taxonomyCategory) => {
+        const liveCategory = liveCategories.find((category) =>
+            (LEGACY_CATEGORY_SLUGS[category.slug] || category.slug) === taxonomyCategory.slug
+        );
+        return {
+            ...taxonomyCategory,
+            ...(liveCategory || {}),
+            slug: taxonomyCategory.slug,
+            subcategories: liveCategory?.subcategories?.length
+                ? liveCategory.subcategories
+                : taxonomyCategory.subcategories,
+        };
+    }).sort((a, b) => (a.order || 0) - (b.order || 0));
 
     const handleSearchKeyDown = (event) => {
         if (event.key === "Escape") {
@@ -134,7 +166,7 @@ export default function Navbar() {
                                                 Boutique Categories
                                             </div>
 
-                                            {categoriesTaxonomy.map((cat) => {
+                                            {navigationCategories.map((cat) => {
                                                 const isCatHovered = hoveredCategory === cat.slug;
                                                 const hasSubs = cat.subcategories && cat.subcategories.length > 0;
 
@@ -352,7 +384,7 @@ export default function Navbar() {
                             <div className="pl-3 py-2 space-y-1.5 bg-boutique-blush/20 border-l-2 border-boutique-rose/40 my-1">
                                 <p className="px-2 text-[10px] uppercase tracking-[0.2em] font-semibold text-boutique-gold">Select Category</p>
 
-                                {categoriesTaxonomy.map((cat) => {
+                                {navigationCategories.map((cat) => {
                                     const isExpanded = mobileExpandedCat === cat.slug;
                                     const isCatActive = pathname === `/collections/${cat.slug}` || pathname.startsWith(`/collections/${cat.slug}`);
 

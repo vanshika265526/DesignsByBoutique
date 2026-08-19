@@ -6,6 +6,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Upload, Plus, X, Eye, Check, Sparkles, AlertCircle, ShoppingBag } from "lucide-react";
 import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
+import { categoriesTaxonomy } from "@/data/products";
+
+const LEGACY_CATEGORY_SLUGS = {
+    "suits-anarkalis": "her-beginning",
+    "gowns-lehengas": "her-bridal-story",
+    "haldi-mehendi": "her-big-day",
+    "bridal-lehengas": "her-big-day",
+    "maternity-gowns": "maternity",
+    "baby-clothes": "baby-girl-dresses",
+};
 
 export default function AddProductPage() {
     const router = useRouter();
@@ -19,8 +29,9 @@ export default function AddProductPage() {
     const [formData, setFormData] = useState({
         name: "",
         slug: "",
-        category: "suits-anarkalis",
-        categoryName: "Suits & Anarkalis",
+        category: "her-beginning",
+        categoryName: "Her Beginning",
+        subcategory: "",
         chapter: "her-beginnings",
         chapterName: "Her Beginnings",
         price: "",
@@ -50,6 +61,21 @@ export default function AddProductPage() {
         });
     }, []);
 
+    const categoryOptions = categoriesTaxonomy.map((taxonomyCategory) => {
+        const liveCategory = categories.find((category) =>
+            (LEGACY_CATEGORY_SLUGS[category.slug] || category.slug) === taxonomyCategory.slug
+        );
+        return {
+            ...taxonomyCategory,
+            name: taxonomyCategory.name,
+            subcategories: liveCategory?.subcategories?.length
+                ? liveCategory.subcategories
+                : taxonomyCategory.subcategories || [],
+        };
+    }).sort((a, b) => (a.order || 0) - (b.order || 0));
+
+    const selectedCategory = categoryOptions.find((category) => category.slug === formData.category);
+
     // Handle Name change -> Auto generate Slug
     const handleNameChange = (e) => {
         const name = e.target.value;
@@ -78,13 +104,16 @@ export default function AddProductPage() {
     // Handle Category change -> Auto select corresponding Chapter
     const handleCategoryChange = (e) => {
         const catSlug = e.target.value;
-        const catObj = categories.find((c) => c.slug === catSlug);
-        const matchedChap = chapters.find((ch) => ch.categorySlug === catSlug || ch.id === catObj?.chapter);
+        const catObj = categoryOptions.find((category) => category.slug === catSlug);
+        const matchedChap = chapters.find((ch) =>
+            ch.categorySlug === catSlug || ch.id === catObj?.chapter || ch.id === catObj?.id
+        );
 
         setFormData((prev) => ({
             ...prev,
             category: catSlug,
             categoryName: catObj ? catObj.name : catSlug,
+            subcategory: "",
             chapter: matchedChap ? matchedChap.id : prev.chapter,
             chapterName: matchedChap ? matchedChap.title : prev.chapterName,
         }));
@@ -435,9 +464,28 @@ export default function AddProductPage() {
                                     onChange={handleCategoryChange}
                                     className="w-full px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-xs focus:outline-none focus:border-boutique-rose"
                                 >
-                                    {categories.map((cat) => (
+                                    {categoryOptions.map((cat) => (
                                         <option key={cat.id} value={cat.slug}>
                                             {cat.name}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
+
+                            <div>
+                                <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1 font-mono">
+                                    Subcategory
+                                </label>
+                                <select
+                                    value={formData.subcategory}
+                                    onChange={(e) => setFormData({ ...formData, subcategory: e.target.value })}
+                                    disabled={!selectedCategory?.subcategories?.length}
+                                    className="w-full px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-xs focus:outline-none focus:border-boutique-rose disabled:opacity-50"
+                                >
+                                    <option value="">No subcategory</option>
+                                    {(selectedCategory?.subcategories || []).map((subcategory) => (
+                                        <option key={subcategory.slug} value={subcategory.slug}>
+                                            {subcategory.name}
                                         </option>
                                     ))}
                                 </select>

@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { revalidatePath } from 'next/cache';
 import { getProductByIdAsync, updateProductAsync, deleteProductAsync, addAuditLog } from '@/lib/db';
 
 // GET single product by ID or slug
@@ -46,6 +47,7 @@ export async function PATCH(request, { params }) {
         const saved = await updateProductAsync(targetId, updatedProduct);
         if (saved) {
             addAuditLog('Product Updated', `Updated "${updatedProduct.name}" (ID: ${targetId})`);
+            revalidatePath('/', 'layout');
             return NextResponse.json({ success: true, data: updatedProduct });
         }
         return NextResponse.json({ success: false, error: 'Failed to update DB' }, { status: 500 });
@@ -70,6 +72,7 @@ export async function DELETE(request, { params }) {
         const saved = await deleteProductAsync(targetId);
         if (saved) {
             addAuditLog('Product Deleted', `Removed "${removedName}" (ID: ${targetId})`);
+            revalidatePath('/', 'layout');
             return NextResponse.json({ success: true, message: `Product ${targetId} deleted` });
         }
         return NextResponse.json({ success: false, error: 'Failed to delete DB' }, { status: 500 });

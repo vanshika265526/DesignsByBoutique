@@ -24,6 +24,7 @@ export async function POST(request) {
             chapter: categoryData.chapter || 'her-beginnings',
             description: categoryData.description || '',
             image: categoryData.image || '/images/category-suits.png',
+            subcategories: Array.isArray(categoryData.subcategories) ? categoryData.subcategories : [],
             count: categoryData.count || 0,
             published: categoryData.published !== false,
             order: categoryData.order || db.categories.length + 1

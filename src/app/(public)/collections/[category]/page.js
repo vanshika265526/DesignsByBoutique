@@ -57,9 +57,17 @@ export default async function CategoryPage({ params }) {
     const db = await getDbAsync();
     const categories = db.categories || categoriesTaxonomy;
 
-    const categoryObj = resolveCategory(categorySlug) || categories.find((c) => c.slug === categorySlug || c.id === categorySlug);
+    const taxonomyCategory = resolveCategory(categorySlug);
+    const categoryObj = categories.find((category) =>
+        category.slug === categorySlug ||
+        category.id === categorySlug ||
+        (taxonomyCategory && category.slug === taxonomyCategory.slug)
+    );
+    const resolvedCategory = taxonomyCategory
+        ? { ...taxonomyCategory, ...(categoryObj || {}), slug: taxonomyCategory.slug }
+        : categoryObj;
 
-    if (!categoryObj) {
+    if (!resolvedCategory) {
         notFound();
     }
 
@@ -72,7 +80,7 @@ export default async function CategoryPage({ params }) {
         const pCat = (product.category || "").toLowerCase();
         const pSlug = (product.categorySlug || "").toLowerCase();
         const pChapter = (product.chapter || "").toLowerCase();
-        const targetSlug = categoryObj.slug.toLowerCase();
+        const targetSlug = resolvedCategory.slug.toLowerCase();
 
         // Direct slug match
         if (pCat === targetSlug || pSlug === targetSlug) return true;
@@ -93,7 +101,7 @@ export default async function CategoryPage({ params }) {
 
                 {/* Interactive Subcategory Pills & Products Layout (Matching user design diagram) */}
                 <SubcategoryProductsLayout
-                    category={categoryObj}
+                    category={resolvedCategory}
                     products={categoryProducts}
                 />
             </div>

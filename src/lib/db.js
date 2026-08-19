@@ -407,6 +407,8 @@ export async function updateProductAsync(productId, updates) {
 
     const { _id, ...safeUpdates } = updates;
     safeUpdates.updatedAt = new Date().toISOString();
+    let mongoSaved = false;
+    let localSaved = false;
 
     try {
         const db = await getDatabase();
@@ -415,6 +417,7 @@ export async function updateProductAsync(productId, updates) {
             { $set: safeUpdates },
             { upsert: true }
         );
+        mongoSaved = true;
     } catch (err) {
         console.error('[updateProductAsync] Mongo update error:', err.message);
     }
@@ -432,19 +435,22 @@ export async function updateProductAsync(productId, updates) {
             const tempPath = `${DB_PATH}.tmp`;
             fs.writeFileSync(tempPath, JSON.stringify(localDb, null, 2), 'utf-8');
             fs.renameSync(tempPath, DB_PATH);
+            localSaved = true;
         }
     } catch (fileErr) {
         console.warn('[updateProductAsync] Local file update skipped:', fileErr.message);
     }
 
     invalidateDbCache();
-    return true;
+    return mongoSaved || localSaved;
 }
 
 // Create a single product independently
 export async function createProductAsync(newProduct) {
     invalidateDbCache();
     const { _id, ...safeProduct } = newProduct;
+    let mongoSaved = false;
+    let localSaved = false;
 
     try {
         const db = await getDatabase();
@@ -453,6 +459,7 @@ export async function createProductAsync(newProduct) {
             { $set: safeProduct },
             { upsert: true }
         );
+        mongoSaved = true;
     } catch (err) {
         console.error('[createProductAsync] Mongo insert error:', err.message);
     }
@@ -470,21 +477,25 @@ export async function createProductAsync(newProduct) {
         const tempPath = `${DB_PATH}.tmp`;
         fs.writeFileSync(tempPath, JSON.stringify(localDb, null, 2), 'utf-8');
         fs.renameSync(tempPath, DB_PATH);
+        localSaved = true;
     } catch (fileErr) {
         console.warn('[createProductAsync] Local file create skipped:', fileErr.message);
     }
 
     invalidateDbCache();
-    return true;
+    return mongoSaved || localSaved;
 }
 
 // Delete a single product independently by ID
 export async function deleteProductAsync(productId) {
     invalidateDbCache();
+    let mongoSaved = false;
+    let localSaved = false;
 
     try {
         const db = await getDatabase();
         await db.collection('products').deleteOne({ id: productId });
+        mongoSaved = true;
     } catch (err) {
         console.error('[deleteProductAsync] Mongo delete error:', err.message);
     }
@@ -497,13 +508,14 @@ export async function deleteProductAsync(productId) {
             const tempPath = `${DB_PATH}.tmp`;
             fs.writeFileSync(tempPath, JSON.stringify(localDb, null, 2), 'utf-8');
             fs.renameSync(tempPath, DB_PATH);
+            localSaved = true;
         }
     } catch (fileErr) {
         console.warn('[deleteProductAsync] Local file delete skipped:', fileErr.message);
     }
 
     invalidateDbCache();
-    return true;
+    return mongoSaved || localSaved;
 }
 
 

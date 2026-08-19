@@ -27,10 +27,11 @@ export default function ShopByCategory({ categories }) {
         return {
             ...taxonomyCategory,
             ...(liveCategory || {}),
-            name: taxonomyCategory.name,
+            name: liveCategory?.name || taxonomyCategory.name,
             slug: taxonomyCategory.slug,
+            subcategories: liveCategory?.subcategories?.length ? liveCategory.subcategories : taxonomyCategory.subcategories,
         };
-    });
+    }).sort((a, b) => (a.order || 0) - (b.order || 0));
 
     return (
         <section className="py-16 md:py-24 bg-boutique-bg">

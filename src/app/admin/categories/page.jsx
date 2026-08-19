@@ -3,6 +3,16 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Grid, BookOpen, Edit3, Save, Plus, Trash2, X } from "lucide-react";
+import { categoriesTaxonomy } from "@/data/products";
+
+const LEGACY_CATEGORY_SLUGS = {
+    "suits-anarkalis": "her-beginning",
+    "gowns-lehengas": "her-bridal-story",
+    "haldi-mehendi": "her-big-day",
+    "bridal-lehengas": "her-big-day",
+    "maternity-gowns": "maternity",
+    "baby-clothes": "baby-girl-dresses",
+};
 
 const slugify = (s) =>
     (s || "")
@@ -17,7 +27,88 @@ const emptyCat = {
     description: "",
     image: "https://images.pexels.com/photos/1322993/pexels-photo-1322993.jpeg?auto=compress&cs=tinysrgb&w=1200",
     chapter: "",
+    subcategories: [],
 };
+
+function SubcategoryEditor({ subcategories = [], onChange }) {
+    const updateSubcategory = (index, field, value) => {
+        onChange(subcategories.map((subcategory, itemIndex) =>
+            itemIndex === index ? { ...subcategory, [field]: value } : subcategory
+        ));
+    };
+
+    return (
+        <div className="space-y-2">
+            <div className="flex items-center justify-between">
+                <label className="text-[10px] font-semibold uppercase tracking-wider text-neutral-600">Subcategories</label>
+                <button
+                    type="button"
+                    onClick={() => onChange([...subcategories, { id: `sub-${Date.now()}`, name: "", slug: "", image: "" }])}
+                    className="text-[10px] font-semibold text-boutique-rose"
+                >
+                    + Add subcategory
+                </button>
+            </div>
+            {subcategories.map((subcategory, index) => (
+                <div key={subcategory.id || index} className="grid grid-cols-[1fr_1fr_auto] gap-1.5">
+                    <input
+                        value={subcategory.name || ""}
+                        onChange={(event) => updateSubcategory(index, "name", event.target.value)}
+                        placeholder="Name"
+                        className="text-[10px] px-2 py-1 bg-white border border-neutral-300 rounded"
+                    />
+                    <input
+                        value={subcategory.slug || ""}
+                        onChange={(event) => updateSubcategory(index, "slug", event.target.value.toLowerCase().replace(/[^a-z0-9]+/g, "-"))}
+                        placeholder="slug"
+                        className="text-[10px] font-mono px-2 py-1 bg-white border border-neutral-300 rounded"
+                    />
+                    <button
+                        type="button"
+                        onClick={() => onChange(subcategories.filter((_, itemIndex) => itemIndex !== index))}
+                        className="px-2 text-[10px] text-rose-600"
+                        aria-label={`Remove ${subcategory.name || "subcategory"}`}
+                    >
+                        X
+                    </button>
+                    <input
+                        value={subcategory.image || ""}
+                        onChange={(event) => updateSubcategory(index, "image", event.target.value)}
+                        placeholder="Subcategory image URL (optional)"
+                        className="col-span-2 text-[10px] font-mono px-2 py-1 bg-white border border-neutral-300 rounded"
+                    />
+                </div>
+            ))}
+        </div>
+    );
+}
+
+function buildCategoryOptions(categories) {
+    const liveCategories = Array.isArray(categories) ? categories : [];
+    const matchedIds = new Set();
+    const options = categoriesTaxonomy.map((taxonomyCategory) => {
+        const liveCategory = liveCategories.find((category) =>
+            (LEGACY_CATEGORY_SLUGS[category.slug] || category.slug) === taxonomyCategory.slug
+        );
+        if (liveCategory) matchedIds.add(liveCategory.id);
+
+        return {
+            ...taxonomyCategory,
+            ...(liveCategory || {}),
+            id: liveCategory?.id || taxonomyCategory.id,
+            name: taxonomyCategory.name,
+            slug: taxonomyCategory.slug,
+            subcategories: liveCategory?.subcategories?.length
+                ? liveCategory.subcategories
+                : taxonomyCategory.subcategories || [],
+        };
+    });
+
+    return [
+        ...options,
+        ...liveCategories.filter((category) => !matchedIds.has(category.id)),
+    ].sort((a, b) => (a.order || 0) - (b.order || 0));
+}
 
 export default function AdminCategoriesPage() {
     const [categories, setCategories] = useState([]);
@@ -50,6 +141,8 @@ export default function AdminCategoriesPage() {
     useEffect(() => {
         loadData();
     }, []);
+
+    const categoryOptions = buildCategoryOptions(categories);
 
     // ---- Edit existing ----
     const startEditingCategory = (cat) => {
@@ -216,7 +309,7 @@ export default function AdminCategoriesPage() {
                     <div className="p-8 text-center text-xs text-neutral-400">Loading categories...</div>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {categories.map((cat) => {
+                        {categoryOptions.map((cat) => {
                             const isEditing = editingCatId === cat.id;
                             return (
                                 <div
@@ -248,6 +341,13 @@ export default function AdminCategoriesPage() {
                                                         onChange={(e) => setEditCatForm({ ...editCatForm, description: e.target.value })}
                                                         className="w-full text-[11px] px-2 py-1 bg-white border border-neutral-300 rounded"
                                                     />
+                                                    <input
+                                                        type="number"
+                                                        value={editCatForm.order || ""}
+                                                        onChange={(e) => setEditCatForm({ ...editCatForm, order: Number(e.target.value) || 0 })}
+                                                        placeholder="Display order"
+                                                        className="w-full text-[10px] px-2 py-1 bg-white border border-neutral-300 rounded"
+                                                    />
                                                     <div className="flex items-center gap-1.5">
                                                         <input
                                                             type="text"
@@ -261,6 +361,10 @@ export default function AdminCategoriesPage() {
                                                             <input type="file" accept="image/*" onChange={handleEditUpload} className="hidden" />
                                                         </label>
                                                     </div>
+                                                    <SubcategoryEditor
+                                                        subcategories={editCatForm.subcategories || []}
+                                                        onChange={(subcategories) => setEditCatForm({ ...editCatForm, subcategories })}
+                                                    />
                                                 </div>
                                             ) : (
                                                 <div>
@@ -269,6 +373,11 @@ export default function AdminCategoriesPage() {
                                                     </h3>
                                                     <p className="text-xs text-neutral-600 line-clamp-2 mt-1">
                                                         {cat.description}
+                                                    </p>
+                                                    <p className="text-[10px] text-boutique-rose mt-2">
+                                                        Subcategories: {cat.subcategories?.length
+                                                            ? cat.subcategories.map((subcategory) => subcategory.name).join(", ")
+                                                            : "None added"}
                                                     </p>
                                                     <div className="pt-2 flex items-center space-x-2 text-[10px] font-mono text-neutral-400">
                                                         <span>Slug: /{cat.slug}</span>
@@ -339,7 +448,7 @@ export default function AdminCategoriesPage() {
                             className="flex items-center justify-between p-4 bg-neutral-50 rounded-xl border border-neutral-200"
                         >
                             <div className="flex items-center space-x-4">
-                                <span className="font-serif text-xl font-bold text-boutique-rose font-mono">
+                                <span className="font-serif text-xl font-bold text-boutique-rose">
                                     {ch.number}
                                 </span>
                                 <div>
@@ -450,6 +559,11 @@ export default function AdminCategoriesPage() {
                                     </div>
                                 )}
                             </div>
+
+                            <SubcategoryEditor
+                                subcategories={newCat.subcategories || []}
+                                onChange={(subcategories) => setNewCat({ ...newCat, subcategories })}
+                            />
 
                             {error && <p className="text-rose-600 font-medium">{error}</p>}
                         </div>
