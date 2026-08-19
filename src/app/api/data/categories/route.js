@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
-import { readDb, writeDb, addAuditLog } from '@/lib/db';
+import { readDb, writeDb, addAuditLog, getDbAsync } from '@/lib/db';
 
 export async function GET() {
     try {
-        const db = readDb();
+        const db = await getDbAsync();
         return NextResponse.json({ success: true, data: db.categories || [] });
     } catch (error) {
         return NextResponse.json({ success: false, error: error.message }, { status: 500 });
@@ -13,7 +13,7 @@ export async function GET() {
 export async function POST(request) {
     try {
         const categoryData = await request.json();
-        const db = readDb();
+        const db = await getDbAsync();
         if (!db.categories) db.categories = [];
 
         const newId = categoryData.id || categoryData.slug || `cat-${Date.now()}`;
@@ -45,7 +45,7 @@ export async function PATCH(request) {
     try {
         const body = await request.json();
         const { id, ...updates } = body;
-        const db = readDb();
+        const db = await getDbAsync();
         const index = (db.categories || []).findIndex(c => c.id === id || c.slug === id);
 
         if (index === -1) {

@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { readDb, writeDb, addAuditLog } from '@/lib/db';
+import { readDb, writeDb, addAuditLog, getDbAsync } from '@/lib/db';
 
 // PATCH — update enquiry status
 export async function PATCH(request, { params }) {
@@ -7,7 +7,7 @@ export async function PATCH(request, { params }) {
         const { id } = params;
         const body = await request.json();
         const { status } = body;
-        const db = readDb();
+        const db = await getDbAsync();
         const index = (db.enquiries || []).findIndex(e => e.id === id);
 
         if (index === -1) {
@@ -32,7 +32,7 @@ export async function PATCH(request, { params }) {
 export async function DELETE(request, { params }) {
     try {
         const { id } = params;
-        const db = readDb();
+        const db = await getDbAsync();
         const index = (db.enquiries || []).findIndex(e => e.id === id);
 
         if (index === -1) {
