@@ -58,6 +58,17 @@ export const initialCategories = [
         "count": 13,
         "published": true,
         "order": 5
+    },
+    {
+        "id": "gowns-lehengas",
+        "name": "Gowns & Lehengas",
+        "slug": "gowns-lehengas",
+        "chapter": "her-new-chapter",
+        "description": "Exquisite handcrafted designer gowns, cape silhouettes, draped gowns, and bridal lehengas.",
+        "image": "https://images.pexels.com/photos/31750729/pexels-photo-31750729.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "count": 16,
+        "published": true,
+        "order": 6
     }
 ];
 
@@ -1447,7 +1458,426 @@ export const initialProducts = [
             "Includes matching dupatta",
             "Contact Nisha: +91 82187 52043"
         ]
+    },
+    {
+        "id": "prod-gown-01",
+        "slug": "burgundy-sparkle-mermaid-gown",
+        "name": "Burgundy Sparkle Mermaid Gown",
+        "category": "gowns-lehengas",
+        "categoryName": "Gowns & Lehengas",
+        "chapter": "her-new-chapter",
+        "chapterName": "Her New Chapter",
+        "price": 2666,
+        "originalPrice": 3499,
+        "discount": "24% OFF",
+        "newArrival": true,
+        "featured": true,
+        "status": "published",
+        "image": "https://images.pexels.com/photos/31750729/pexels-photo-31750729.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "images": [
+            "https://images.pexels.com/photos/31750729/pexels-photo-31750729.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        ],
+        "description": "Sculpted burgundy sparkle mermaid gown with a body-con silhouette, shimmer sequin weave, and sweetheart neckline.",
+        "shortDescription": "Burgundy sparkle mermaid gown with shimmer sequin weave.",
+        "details": [
+            "Shimmer Sequin Mesh & Micro-Satin Base",
+            "Hidden Back Concealed Zip & Molded Cups",
+            "Contact Nisha: +91 82187 52043"
+        ]
+    },
+    {
+        "id": "prod-gown-02",
+        "slug": "black-velvet-midnight-bow-mermaid-gown",
+        "name": "Black Velvet Midnight Bow Mermaid Gown",
+        "category": "gowns-lehengas",
+        "categoryName": "Gowns & Lehengas",
+        "chapter": "her-new-chapter",
+        "chapterName": "Her New Chapter",
+        "price": 3990,
+        "originalPrice": 4990,
+        "discount": "20% OFF",
+        "newArrival": true,
+        "featured": true,
+        "status": "published",
+        "image": "https://images.pexels.com/photos/20790059/pexels-photo-20790059.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "images": [
+            "https://images.pexels.com/photos/20790059/pexels-photo-20790059.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        ],
+        "description": "Plush black velvet mermaid gown featuring a dramatic midnight bow accent on the shoulder and a flared fishtail skirt.",
+        "shortDescription": "Black velvet mermaid gown with shoulder bow accent.",
+        "details": [
+            "Premium Plush Velvet Silk",
+            "Statement Oversized Shoulder Bow",
+            "Contact Nisha: +91 82187 52043"
+        ]
+    },
+    {
+        "id": "prod-gown-03",
+        "slug": "black-swan-draped-gown",
+        "name": "Black Swan Draped Gown",
+        "category": "gowns-lehengas",
+        "categoryName": "Gowns & Lehengas",
+        "chapter": "her-new-chapter",
+        "chapterName": "Her New Chapter",
+        "price": 5900,
+        "originalPrice": 7400,
+        "discount": "20% OFF",
+        "newArrival": true,
+        "featured": true,
+        "status": "published",
+        "image": "https://images.pexels.com/photos/28144267/pexels-photo-28144267.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "images": [
+            "https://images.pexels.com/photos/28144267/pexels-photo-28144267.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        ],
+        "description": "Avant-garde black swan draped gown with feather-soft pleated organza layers, high slit, and sculpted corsetry.",
+        "shortDescription": "Avant-garde draped black swan gown with organza layers.",
+        "details": [
+            "Structured Satin Corset & Sheer Organza",
+            "High Slit & Hand-pleated Corset",
+            "Contact Nisha: +91 82187 52043"
+        ]
+    },
+    {
+        "id": "prod-gown-04",
+        "slug": "black-sculpted-off-shoulder-gown",
+        "name": "Black Sculpted Off-Shoulder Gown",
+        "category": "gowns-lehengas",
+        "categoryName": "Gowns & Lehengas",
+        "chapter": "her-new-chapter",
+        "chapterName": "Her New Chapter",
+        "price": 2500,
+        "originalPrice": 3200,
+        "discount": "22% OFF",
+        "newArrival": false,
+        "featured": false,
+        "status": "published",
+        "image": "https://images.pexels.com/photos/33180676/pexels-photo-33180676.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "images": [
+            "https://images.pexels.com/photos/33180676/pexels-photo-33180676.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        ],
+        "description": "Minimalist black sculpted off-shoulder gown crafted in thick satin silk with clean architectural lines.",
+        "shortDescription": "Classic black sculpted off-shoulder satin gown.",
+        "details": [
+            "Heavy Stretch Micro-Satin",
+            "Off-shoulder Foldover Collar",
+            "Contact Nisha: +91 82187 52043"
+        ]
+    },
+    {
+        "id": "prod-gown-05",
+        "slug": "burgundy-draped-scarf-mermaid-gown",
+        "name": "Burgundy Draped Scarf Mermaid Gown",
+        "category": "gowns-lehengas",
+        "categoryName": "Gowns & Lehengas",
+        "chapter": "her-new-chapter",
+        "chapterName": "Her New Chapter",
+        "price": 4899,
+        "originalPrice": 5999,
+        "discount": "18% OFF",
+        "newArrival": false,
+        "featured": false,
+        "status": "published",
+        "image": "https://images.pexels.com/photos/32212943/pexels-photo-32212943.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "images": [
+            "https://images.pexels.com/photos/32212943/pexels-photo-32212943.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        ],
+        "description": "Fluid burgundy mermaid gown accompanied by an attached trailing scarf drape and metallic bugle bead embroidery.",
+        "shortDescription": "Burgundy mermaid gown with trailing scarf drape.",
+        "details": [
+            "Viscose Georgette & Attached Scarf Drape",
+            "Hand-beaded Shoulder Motifs",
+            "Contact Nisha: +91 82187 52043"
+        ]
+    },
+    {
+        "id": "prod-gown-06",
+        "slug": "maroon-cape-overlay-gown",
+        "name": "Maroon Cape Overlay Gown",
+        "category": "gowns-lehengas",
+        "categoryName": "Gowns & Lehengas",
+        "chapter": "her-new-chapter",
+        "chapterName": "Her New Chapter",
+        "price": 5200,
+        "originalPrice": 6500,
+        "discount": "20% OFF",
+        "newArrival": true,
+        "featured": false,
+        "status": "published",
+        "image": "https://images.pexels.com/photos/13584944/pexels-photo-13584944.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "images": [
+            "https://images.pexels.com/photos/13584944/pexels-photo-13584944.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        ],
+        "description": "Regal maroon flared gown with a sheer embroidered cape overlay, embellished neck border, and floor-sweeping length.",
+        "shortDescription": "Maroon gown with sheer embroidered cape overlay.",
+        "details": [
+            "Pure Mulberry Silk & Embroidered Net Cape",
+            "Neckline Zari Embroidery",
+            "Contact Nisha: +91 82187 52043"
+        ]
+    },
+    {
+        "id": "prod-gown-07",
+        "slug": "burgundy-ruched-halter-draped-gown",
+        "name": "Burgundy Ruched Halter Draped Gown",
+        "category": "gowns-lehengas",
+        "categoryName": "Gowns & Lehengas",
+        "chapter": "her-new-chapter",
+        "chapterName": "Her New Chapter",
+        "price": 5400,
+        "originalPrice": 6800,
+        "discount": "20% OFF",
+        "newArrival": false,
+        "featured": true,
+        "status": "published",
+        "image": "https://images.pexels.com/photos/30495732/pexels-photo-30495732.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "images": [
+            "https://images.pexels.com/photos/30495732/pexels-photo-30495732.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        ],
+        "description": "Sultry burgundy halter neck gown featuring hand-ruched satin corsetry, asymmetrical hip drape, and open back design.",
+        "shortDescription": "Ruched burgundy halter gown with asymmetrical hip drape.",
+        "details": [
+            "Fluid Micro-Satin & Stretch Jersey Base",
+            "Halter Neck Neckline with Back Tie",
+            "Contact Nisha: +91 82187 52043"
+        ]
+    },
+    {
+        "id": "prod-gown-08",
+        "slug": "burgundy-draped-elegance-gown",
+        "name": "Burgundy Draped Elegance Gown",
+        "category": "gowns-lehengas",
+        "categoryName": "Gowns & Lehengas",
+        "chapter": "her-new-chapter",
+        "chapterName": "Her New Chapter",
+        "price": 3570,
+        "originalPrice": 4499,
+        "discount": "20% OFF",
+        "newArrival": false,
+        "featured": false,
+        "status": "published",
+        "image": "https://images.pexels.com/photos/19956021/pexels-photo-19956021.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "images": [
+            "https://images.pexels.com/photos/19956021/pexels-photo-19956021.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        ],
+        "description": "Sophisticated burgundy draped gown with gentle cowl neckline, fluid georgette fabric, and cinched waist detailing.",
+        "shortDescription": "Burgundy draped georgette gown with cowl neck.",
+        "details": [
+            "Fluid Silk Georgette",
+            "Cowl Neckline & Cinched Waist",
+            "Contact Nisha: +91 82187 52043"
+        ]
+    },
+    {
+        "id": "prod-gown-09",
+        "slug": "burgundy-royal-draped-cape-gown",
+        "name": "Burgundy Royal Draped Cape Gown",
+        "category": "gowns-lehengas",
+        "categoryName": "Gowns & Lehengas",
+        "chapter": "her-new-chapter",
+        "chapterName": "Her New Chapter",
+        "price": 6500,
+        "originalPrice": 7999,
+        "discount": "19% OFF",
+        "newArrival": true,
+        "featured": true,
+        "status": "published",
+        "image": "https://images.pexels.com/photos/33343613/pexels-photo-33343613.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "images": [
+            "https://images.pexels.com/photos/33343613/pexels-photo-33343613.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        ],
+        "description": "Majestic burgundy royal silk draped gown featuring hand-zardozi cape sleeves and a cascading floor-length flare.",
+        "shortDescription": "Royal burgundy draped cape gown with Zardozi sleeves.",
+        "details": [
+            "Pure Raw Silk & Zardozi Embroidered Cape",
+            "Floor-length Flared Train",
+            "Contact Nisha: +91 82187 52043"
+        ]
+    },
+    {
+        "id": "prod-gown-10",
+        "slug": "black-sculpted-off-shoulder-gown-couture",
+        "name": "Black Sculpted Off-Shoulder Gown (Couture)",
+        "category": "gowns-lehengas",
+        "categoryName": "Gowns & Lehengas",
+        "chapter": "her-new-chapter",
+        "chapterName": "Her New Chapter",
+        "price": 3200,
+        "originalPrice": 3999,
+        "discount": "20% OFF",
+        "newArrival": false,
+        "featured": false,
+        "status": "published",
+        "image": "https://images.pexels.com/photos/25184994/pexels-photo-25184994.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "images": [
+            "https://images.pexels.com/photos/25184994/pexels-photo-25184994.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        ],
+        "description": "Premium couture edition black sculpted off-shoulder evening gown with crystal-encrusted collar and tailored corset support.",
+        "shortDescription": "Couture edition black sculpted off-shoulder gown with crystal collar.",
+        "details": [
+            "Heavy Italian Satin & Crystal Border",
+            "Concealed Corset Boning",
+            "Contact Nisha: +91 82187 52043"
+        ]
+    },
+    {
+        "id": "prod-gown-11",
+        "slug": "pastel-bloom-pakistani-style-bridal-gown",
+        "name": "Pastel Bloom Floral Pakistani Style Bridal Gown 🌸",
+        "category": "gowns-lehengas",
+        "categoryName": "Gowns & Lehengas",
+        "chapter": "her-new-chapter",
+        "chapterName": "Her New Chapter",
+        "price": 16700,
+        "originalPrice": 20900,
+        "discount": "20% OFF",
+        "newArrival": true,
+        "featured": true,
+        "status": "published",
+        "image": "https://images.pexels.com/photos/36951188/pexels-photo-36951188.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "images": [
+            "https://images.pexels.com/photos/36951188/pexels-photo-36951188.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        ],
+        "description": "Opulent Pakistani style floor-length bridal gown in pastel bloom hues, adorned with heavy 3D floral threadwork, pearl embroidery, and scalloped dupatta.",
+        "shortDescription": "Pastel bloom Pakistani style bridal gown with 3D floral & pearl work.",
+        "details": [
+            "Organza Net & Raw Silk Under-Skirt",
+            "Full Hand-Worked 3D Floral & Dabka Resham",
+            "Includes Scalloped Border Dupatta",
+            "Contact Nisha: +91 82187 52043"
+        ]
+    },
+    {
+        "id": "prod-gown-12",
+        "slug": "engagement-bridal-lehenga-tail-sleeves",
+        "name": "Engagement Bridal Lehenga with Tail Sleeves",
+        "category": "gowns-lehengas",
+        "categoryName": "Gowns & Lehengas",
+        "chapter": "her-new-chapter",
+        "chapterName": "Her New Chapter",
+        "price": 19900,
+        "originalPrice": 24900,
+        "discount": "20% OFF",
+        "newArrival": true,
+        "featured": true,
+        "status": "published",
+        "image": "https://images.pexels.com/photos/9419108/pexels-photo-9419108.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "images": [
+            "https://images.pexels.com/photos/9419108/pexels-photo-9419108.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        ],
+        "description": "Bespoke engagement bridal lehenga with statement dramatic trailing sleeves, crystal dabka work, and structured volume flare.",
+        "shortDescription": "Engagement bridal lehenga with dramatic tail sleeves & crystal work.",
+        "details": [
+            "Pure Mulberry Silk & Sheer Cape Sleeves",
+            "Hand Zardozi & Sequin Crystal Detailing",
+            "Custom Made-to-Measure Fitting",
+            "Contact Nisha: +91 82187 52043"
+        ]
+    },
+    {
+        "id": "prod-gown-13",
+        "slug": "royal-ivory-gold-lehenga",
+        "name": "Royal Ivory Gold Lehenga",
+        "category": "gowns-lehengas",
+        "categoryName": "Gowns & Lehengas",
+        "chapter": "her-new-chapter",
+        "chapterName": "Her New Chapter",
+        "price": 16500,
+        "originalPrice": 19900,
+        "discount": "17% OFF",
+        "newArrival": false,
+        "featured": true,
+        "status": "published",
+        "image": "https://images.pexels.com/photos/29336849/pexels-photo-29336849.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "images": [
+            "https://images.pexels.com/photos/29336849/pexels-photo-29336849.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        ],
+        "description": "Majestic ivory and antique gold wedding lehenga crafted in heavy raw silk, woven gold zari borders, and hand-embroidered choli.",
+        "shortDescription": "Royal ivory & gold raw silk wedding lehenga with zari embroidery.",
+        "details": [
+            "Banarasi Raw Silk & Organza Dupatta",
+            "Real Antique Gold Zari Weave",
+            "Contact Nisha: +91 82187 52043"
+        ]
+    },
+    {
+        "id": "prod-gown-14",
+        "slug": "elegant-crop-top-lehenga-set",
+        "name": "Elegant Crop Top Lehenga Set",
+        "category": "gowns-lehengas",
+        "categoryName": "Gowns & Lehengas",
+        "chapter": "her-new-chapter",
+        "chapterName": "Her New Chapter",
+        "price": 12000,
+        "originalPrice": 14990,
+        "discount": "20% OFF",
+        "newArrival": false,
+        "featured": false,
+        "status": "published",
+        "image": "https://images.pexels.com/photos/31750738/pexels-photo-31750738.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "images": [
+            "https://images.pexels.com/photos/31750738/pexels-photo-31750738.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        ],
+        "description": "Contemporary designer crop top lehenga set featuring a hand-beaded blouse, layered georgette skirt, and organza dupatta.",
+        "shortDescription": "Contemporary hand-beaded crop top & flared lehenga skirt set.",
+        "details": [
+            "Viscose Georgette & Hand-beaded Crop Blouse",
+            "Flared Skirt Volume with Can-Can Lining",
+            "Contact Nisha: +91 82187 52043"
+        ]
+    },
+    {
+        "id": "prod-gown-15",
+        "slug": "flared-engagement-outfit",
+        "name": "Flared Engagement Outfit",
+        "category": "gowns-lehengas",
+        "categoryName": "Gowns & Lehengas",
+        "chapter": "her-new-chapter",
+        "chapterName": "Her New Chapter",
+        "price": 9900,
+        "originalPrice": 12400,
+        "discount": "20% OFF",
+        "newArrival": true,
+        "featured": false,
+        "status": "published",
+        "image": "https://images.pexels.com/photos/37847010/pexels-photo-37847010.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "images": [
+            "https://images.pexels.com/photos/37847010/pexels-photo-37847010.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        ],
+        "description": "High-volume flared engagement outfit in sparkling tissue net, featuring mirror-work bodice and matching embroidered dupatta.",
+        "shortDescription": "High-volume flared engagement outfit with mirror-work bodice.",
+        "details": [
+            "Shimmer Tissue Net & Mirror Bodice",
+            "Includes Layered Dupatta",
+            "Contact Nisha: +91 82187 52043"
+        ]
+    },
+    {
+        "id": "prod-gown-16",
+        "slug": "blush-pink-ruffle-lehenga-set",
+        "name": "Blush Pink Ruffle Lehenga Set",
+        "category": "gowns-lehengas",
+        "categoryName": "Gowns & Lehengas",
+        "chapter": "her-new-chapter",
+        "chapterName": "Her New Chapter",
+        "price": 11500,
+        "originalPrice": 14500,
+        "discount": "20% OFF",
+        "newArrival": true,
+        "featured": true,
+        "status": "published",
+        "image": "https://images.pexels.com/photos/20790061/pexels-photo-20790061.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "images": [
+            "https://images.pexels.com/photos/20790061/pexels-photo-20790061.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        ],
+        "description": "Romantic blush pink tiered ruffle lehenga set with a sweetheart sequin blouse and sheer trailing net dupatta.",
+        "shortDescription": "Blush pink tiered ruffle lehenga with sweetheart sequin blouse.",
+        "details": [
+            "Tiered Soft Tulle Net Ruffles & Micro-Satin Lining",
+            "Sweetheart Neck Sequin Blouse",
+            "Contact Nisha: +91 82187 52043"
+        ]
     }
+
 ];
 
 export const initialGallery = [
