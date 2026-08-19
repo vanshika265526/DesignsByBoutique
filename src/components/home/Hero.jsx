@@ -21,27 +21,27 @@ const HERO_SLIDES = [
     {
         src: "/images/hero/slide-1.png",
         mobileSrc: "/images/hero/mobile-slide-1.png",
-        text: "Handcrafted Suits, Anarkalis, Bridal Lehengas, Haldi & Mehendi outfits, Maternity Gowns and Baby wear — designed to be treasured.",
+        text: "Handcrafted Suits, Anarkalis, Bridal Lehengas, Haldi & Mehendi outfits.",
     },
     {
         src: "/images/hero/slide-2.png",
-        text: "From her first twirl to little celebrations — playful dresses, festive ensembles and beautifully crafted pieces made for her first style memories.",
+        text: "From her first twirl to little celebrations.",
     },
     {
         src: "/images/hero/slide-3.png",
-        text: "Effortless Suits, Contemporary Anarkalis, Occasion Wear and Everyday Elegance — designed for every new beginning.",
+        text: "Effortless Suits, Contemporary Anarkalis, Occasion Wear.",
     },
     {
         src: "/images/hero/slide-4.png",
-        text: "Bridal Lehengas, Bespoke Anarkalis, Haldi & Mehendi Ensembles and Heirloom Pieces — made for moments that become memories.",
+        text: "Bridal Lehengas, Bespoke Anarkalis, Haldi & Mehendi",
     },
     {
         src: "/images/hero/slide-5.png",
-        text: "Maternity Gowns, Elegant Nursing Wear, Mother-Daughter Ensembles and Little Ones’ Wear — designed for love in every chapter.",
+        text: "Maternity Gowns, Elegant Nursing Wear, Mother-Daughter.",
     },
     {
         src: "/images/hero/slide-6.png",
-        text: "Beautiful mother-and-child ensembles and delicate baby wear — designed to celebrate their first moments together and be treasured for years to come.",
+        text: "Beautiful mother-and-child ensembles and delicate baby wear.",
     },
 ];
 
@@ -131,7 +131,12 @@ export default function Hero() {
                     >
                         हर सफ़र खूबसूरती के साथ
                     </h1>
-
+                    <p
+                        key={`text-${active}`}
+                        className="mt-5 max-w-2xl text-sm sm:text-base md:text-lg leading-relaxed text-white/90 font-light"
+                    >
+                        {slides[active]?.text}
+                    </p>
                     <div className="mt-9 flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
                         <Link
                             href="/collections"
