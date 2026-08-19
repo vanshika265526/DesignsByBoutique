@@ -17,37 +17,43 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
     const categoryParam = params.category;
     const db = await getDbAsync();
-    const chapters = db.chapters || boutiqueConfig.chapters;
-    const chapter = chapters.find((ch) => ch.slug === categoryParam || ch.categorySlug === categoryParam);
+    const categories = db.categories || [];
+    const chapters = db.chapters || boutiqueConfig.chapters || [];
 
-    if (!chapter) {
+    const cat = categories.find((c) => c.slug === categoryParam || c.id === categoryParam);
+    const chapter = chapters.find((ch) => ch.slug === categoryParam || ch.categorySlug === categoryParam || ch.id === categoryParam);
+
+    if (!cat && !chapter) {
         return { title: "Collection | Designs by Nisha Chattarpur New Delhi" };
     }
 
-    const title = chapter.title || chapter.categoryName || chapter.category;
-    const catName = chapter.category || chapter.categoryName;
+    const title = cat?.name || chapter?.title || chapter?.categoryName || categoryParam;
+    const desc = cat?.description || chapter?.description || "";
 
     return {
-        title: `${catName} — ${title} Collection | Chattarpur New Delhi`,
-        description: `${chapter.description} Available at Designs by Nisha Boutique, 318 near Aayushman Arogya Mandir, Chattarpur, New Delhi.`,
+        title: `${title} Collection | Chattarpur New Delhi`,
+        description: `${desc} Available at Designs by Nisha Boutique, 318 near Aayushman Arogya Mandir, Chattarpur, New Delhi.`,
     };
 }
 
 export default async function CategoryPage({ params }) {
     const categorySlug = params.category;
     const db = await getDbAsync();
-    const chapters = db.chapters || boutiqueConfig.chapters;
-    const chapter = chapters.find((ch) => ch.slug === categorySlug || ch.categorySlug === categorySlug);
+    const categories = db.categories || [];
+    const chapters = db.chapters || boutiqueConfig.chapters || [];
 
-    if (!chapter) {
+    const categoryObj = categories.find((c) => c.slug === categorySlug || c.id === categorySlug);
+    const chapterObj = chapters.find((ch) => ch.slug === categorySlug || ch.categorySlug === categorySlug || ch.id === categorySlug);
+
+    if (!categoryObj && !chapterObj) {
         notFound();
     }
 
-    const categoryTitle = chapter.title || chapter.categoryName || chapter.category;
-    const categoryName = chapter.category || chapter.categoryName;
-    const chapterNum = chapter.number || "01";
-    const tagline = chapter.tagline || chapter.subtitle || "";
-    const description = chapter.description || "";
+    const categoryName = categoryObj?.name || chapterObj?.categoryName || chapterObj?.category || categorySlug;
+    const categoryTitle = chapterObj?.title || categoryName;
+    const chapterNum = chapterObj?.number || (categoryObj?.order ? `0${categoryObj.order}` : "01");
+    const tagline = chapterObj?.tagline || chapterObj?.subtitle || categoryObj?.description || "";
+    const description = categoryObj?.description || chapterObj?.description || "";
 
     const categoryProducts = (db.products || []).filter((product) => {
         const isPublished = product.status === "published" || !product.status;
