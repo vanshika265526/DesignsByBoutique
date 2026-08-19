@@ -51,56 +51,6 @@
       ]
     },
     {
-      "id": "prod-03",
-      "slug": "rose-royal-embroidered-bridal-lehenga",
-      "name": "Rose Royal Heirloom Bridal Lehenga",
-      "category": "bridal-lehengas",
-      "categoryName": "Bridal Lehengas",
-      "chapter": "her-forever",
-      "chapterName": "Her Forever",
-      "price": 10999,
-      "originalPrice": 13999,
-      "discount": "20% OFF",
-      "featured": true,
-      "status": "published",
-      "image": "https://images.pexels.com/photos/9419108/pexels-photo-9419108.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      "images": [
-        "https://images.pexels.com/photos/9419108/pexels-photo-9419108.jpeg?auto=compress&cs=tinysrgb&w=1200"
-      ],
-      "description": "An heirloom masterpiece crafted for the quintessential bride. Deep crimson silk lehenga intricately embroidered with Mughal floral motifs, dabka work, zardozi gold threadwork, and paired with double organza dupattas.",
-      "shortDescription": "Crimson silk heirloom bridal lehenga with Zardozi & double dupattas.",
-      "details": [
-        "Pure Mulberry Velvet Silk",
-        "Bespoke Made-to-Measure fitting",
-        "Custom latkans with wedding date embroidery"
-      ]
-    },
-    {
-      "id": "prod-04",
-      "slug": "kesar-haldi-yellow-silk-lehenga",
-      "name": "Kesar Haldi Sunshine Silk Lehenga",
-      "category": "bridal-lehengas",
-      "categoryName": "Bridal Lehengas",
-      "chapter": "her-forever",
-      "chapterName": "Her Forever",
-      "price": 8499,
-      "originalPrice": 10499,
-      "discount": "20% OFF",
-      "featured": true,
-      "status": "published",
-      "image": "https://images.pexels.com/photos/9418537/pexels-photo-9418537.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      "images": [
-        "https://images.pexels.com/photos/9418537/pexels-photo-9418537.jpeg?auto=compress&cs=tinysrgb&w=1200"
-      ],
-      "description": "Vibrant mustard yellow raw silk lehenga designed for Haldi and Sangeet festivities. Features mirrored sequin work, gold zari borders, and a featherlight embroidered bandhani dupatta.",
-      "shortDescription": "Mustard raw silk Haldi lehenga with mirror sequin work.",
-      "details": [
-        "Raw Silk & Handloom Bandhani Dupatta",
-        "Custom blouse cut and waist fitting",
-        "Dry Clean Only"
-      ]
-    },
-    {
       "id": "prod-05",
       "slug": "mehendi-emerald-sharara-set",
       "name": "Emerald Mehendi Embroidered Sharara",
@@ -635,210 +585,6 @@
       "details": [
         "Mul-mul Georgette & Chikankari Threadwork",
         "Dry clean for longevity"
-      ]
-    },
-    {
-      "id": "prod-19",
-      "slug": "crimson-velvet-bridal-lehenga",
-      "name": "Maharani Crimson Velvet Bridal Lehenga",
-      "category": "bridal-lehengas",
-      "categoryName": "Bridal Lehengas",
-      "chapter": "her-forever",
-      "chapterName": "Her Forever",
-      "price": 10499,
-      "originalPrice": 12999,
-      "discount": "19% OFF",
-      "newArrival": false,
-      "featured": true,
-      "status": "published",
-      "image": "https://images.pexels.com/photos/20790059/pexels-photo-20790059.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      "images": [
-        "https://images.pexels.com/photos/20790059/pexels-photo-20790059.jpeg?auto=compress&cs=tinysrgb&w=1200"
-      ],
-      "description": "Regal crimson velvet bridal lehenga with all-over kundan stonework and antique gold dabka embroidery. Paired with velvet blouse and double net dupattas with intricate borders.",
-      "shortDescription": "Crimson velvet kundan bridal lehenga with double dupattas.",
-      "details": [
-        "Pure Velvet Silk",
-        "Custom kundan placement available",
-        "Personalized date embroidery on dupatta"
-      ]
-    },
-    {
-      "id": "prod-20",
-      "slug": "blush-pink-sequin-bridal",
-      "name": "Rukmini Blush Pink Sequin Bridal Lehenga",
-      "category": "bridal-lehengas",
-      "categoryName": "Bridal Lehengas",
-      "chapter": "her-forever",
-      "chapterName": "Her Forever",
-      "price": 9999,
-      "originalPrice": 12499,
-      "discount": "22% OFF",
-      "newArrival": true,
-      "featured": true,
-      "status": "published",
-      "image": "https://images.pexels.com/photos/20790061/pexels-photo-20790061.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      "images": [
-        "https://images.pexels.com/photos/20790061/pexels-photo-20790061.jpeg?auto=compress&cs=tinysrgb&w=1200"
-      ],
-      "description": "Dreamy blush pink lehenga with all-over sequin work and subtle floral cutwork on skirt. Light as a feather for the modern bride who wants to dance the night.",
-      "shortDescription": "All-over sequin blush pink bridal lehenga for the modern bride.",
-      "details": [
-        "Lightweight Sequin Net",
-        "Blouse back customizable",
-        "Custom waist fitting"
-      ]
-    },
-    {
-      "id": "prod-21",
-      "slug": "ivory-gold-banarasi-bridal",
-      "name": "Swarna Ivory Gold Banarasi Bridal Lehenga",
-      "category": "bridal-lehengas",
-      "categoryName": "Bridal Lehengas",
-      "chapter": "her-forever",
-      "chapterName": "Her Forever",
-      "price": 10799,
-      "originalPrice": 13499,
-      "discount": "20% OFF",
-      "newArrival": false,
-      "featured": false,
-      "status": "published",
-      "image": "https://images.pexels.com/photos/29336849/pexels-photo-29336849.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      "images": [
-        "https://images.pexels.com/photos/29336849/pexels-photo-29336849.jpeg?auto=compress&cs=tinysrgb&w=1200"
-      ],
-      "description": "Timeless ivory and gold Banarasi silk bridal lehenga woven with real gold zari. A generational heirloom piece designed for the bride who chooses heritage over trend.",
-      "shortDescription": "Ivory Banarasi silk bridal lehenga with real gold zari weave.",
-      "details": [
-        "Real Gold Zari Woven Silk",
-        "Heirloom quality weave from Varanasi",
-        "Custom hem & blouse design"
-      ]
-    },
-    {
-      "id": "prod-22",
-      "slug": "midnight-blue-embroidered-bridal",
-      "name": "Neelambar Midnight Blue Embroidered Lehenga",
-      "category": "bridal-lehengas",
-      "categoryName": "Bridal Lehengas",
-      "chapter": "her-forever",
-      "chapterName": "Her Forever",
-      "price": 9499,
-      "originalPrice": 11999,
-      "discount": "20% OFF",
-      "newArrival": true,
-      "featured": false,
-      "status": "published",
-      "image": "https://images.pexels.com/photos/28144267/pexels-photo-28144267.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      "images": [
-        "https://images.pexels.com/photos/28144267/pexels-photo-28144267.jpeg?auto=compress&cs=tinysrgb&w=1200"
-      ],
-      "description": "Striking midnight blue raw silk bridal lehenga with silver aari embroidery, metallic sequins and a contrast gold dupatta. For the bold modern bride.",
-      "shortDescription": "Midnight blue silk lehenga with silver aari & metallic sequins.",
-      "details": [
-        "Raw Silk & Gold Georgette Dupatta",
-        "Aari embroidery by artisans"
-      ]
-    },
-    {
-      "id": "prod-23",
-      "slug": "coral-ombre-bridal-lehenga",
-      "name": "Sandhya Coral Ombré Bridal Lehenga",
-      "category": "bridal-lehengas",
-      "categoryName": "Bridal Lehengas",
-      "chapter": "her-forever",
-      "chapterName": "Her Forever",
-      "price": 8999,
-      "originalPrice": 11299,
-      "discount": "21% OFF",
-      "newArrival": false,
-      "featured": false,
-      "status": "published",
-      "image": "https://images.pexels.com/photos/30495732/pexels-photo-30495732.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      "images": [
-        "https://images.pexels.com/photos/30495732/pexels-photo-30495732.jpeg?auto=compress&cs=tinysrgb&w=1200"
-      ],
-      "description": "Sunset ombré coral-to-peach hand-dyed silk lehenga with resham floral butti all over and a sequin belt waistband. Sangeet & reception perfect.",
-      "shortDescription": "Coral ombré silk bridal lehenga with floral butti & sequin belt.",
-      "details": [
-        "Hand-dyed Pure Silk",
-        "Resham butti embroidered",
-        "Comes with matching choker"
-      ]
-    },
-    {
-      "id": "prod-24",
-      "slug": "pastel-mint-bridal-lehenga",
-      "name": "Sheetla Pastel Mint Bridal Lehenga",
-      "category": "bridal-lehengas",
-      "categoryName": "Bridal Lehengas",
-      "chapter": "her-forever",
-      "chapterName": "Her Forever",
-      "price": 9299,
-      "originalPrice": 11599,
-      "discount": "20% OFF",
-      "newArrival": true,
-      "featured": false,
-      "status": "published",
-      "image": "https://images.pexels.com/photos/36951188/pexels-photo-36951188.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      "images": [
-        "https://images.pexels.com/photos/36951188/pexels-photo-36951188.jpeg?auto=compress&cs=tinysrgb&w=1200"
-      ],
-      "description": "Unconventional pastel mint silk lehenga with dense platinum-tone gota patti borders and fine cutwork skirt panels. Perfect for the fashion-forward bride.",
-      "shortDescription": "Pastel mint silk bridal lehenga with platinum gota patti borders.",
-      "details": [
-        "Pure Silk Mikado & Net Blouse",
-        "Platinum zari gota weave"
-      ]
-    },
-    {
-      "id": "prod-25",
-      "slug": "royal-wine-velvet-bridal",
-      "name": "Aahana Royal Wine Velvet Lehenga",
-      "category": "bridal-lehengas",
-      "categoryName": "Bridal Lehengas",
-      "chapter": "her-forever",
-      "chapterName": "Her Forever",
-      "price": 10899,
-      "originalPrice": 13599,
-      "discount": "18% OFF",
-      "newArrival": false,
-      "featured": true,
-      "status": "published",
-      "image": "https://images.pexels.com/photos/32212943/pexels-photo-32212943.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      "images": [
-        "https://images.pexels.com/photos/32212943/pexels-photo-32212943.jpeg?auto=compress&cs=tinysrgb&w=1200"
-      ],
-      "description": "Rich wine velvet bridal lehenga adorned with silver kundan stonework and maroon resham embroidery. A statement piece for winter weddings.",
-      "shortDescription": "Wine velvet bridal lehenga with silver kundan for winter weddings.",
-      "details": [
-        "Pure Velvet & Brocade Dupatta",
-        "Custom fit in 4 weeks"
-      ]
-    },
-    {
-      "id": "prod-26",
-      "slug": "golden-tissue-silk-bridal-lehenga",
-      "name": "Hiranya Golden Tissue Silk Lehenga",
-      "category": "bridal-lehengas",
-      "categoryName": "Bridal Lehengas",
-      "chapter": "her-forever",
-      "chapterName": "Her Forever",
-      "price": 10599,
-      "originalPrice": 13299,
-      "discount": "20% OFF",
-      "newArrival": false,
-      "featured": false,
-      "status": "published",
-      "image": "https://images.pexels.com/photos/33343613/pexels-photo-33343613.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      "images": [
-        "https://images.pexels.com/photos/33343613/pexels-photo-33343613.jpeg?auto=compress&cs=tinysrgb&w=1200"
-      ],
-      "description": "Shimmering golden tissue silk lehenga with all-over sequin & stone embellishment. Creates a breathtaking luminous effect for high-candlelight receptions.",
-      "shortDescription": "Golden tissue silk lehenga with all-over sequin & stone work.",
-      "details": [
-        "Tissue Silk with Full Lining",
-        "Velvet blouse included"
       ]
     },
     {
@@ -1765,17 +1511,6 @@
       "order": 1
     },
     {
-      "id": "bridal-lehengas",
-      "name": "Bridal Lehengas",
-      "slug": "bridal-lehengas",
-      "chapter": "her-forever",
-      "description": "Hand-embroidered zardozi bridal masterpieces for her big day.",
-      "image": "https://images.pexels.com/photos/12579916/pexels-photo-12579916.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      "count": 18,
-      "published": true,
-      "order": 2
-    },
-    {
       "id": "haldi-mehendi",
       "name": "Haldi & Mehendi",
       "slug": "haldi-mehendi",
@@ -1784,7 +1519,7 @@
       "image": "https://images.pexels.com/photos/23623618/pexels-photo-23623618.jpeg?auto=compress&cs=tinysrgb&w=1200",
       "count": 15,
       "published": true,
-      "order": 3
+      "order": 2
     },
     {
       "id": "maternity-gowns",
@@ -1795,7 +1530,7 @@
       "image": "/images/maternity/gown-3.png",
       "count": 12,
       "published": true,
-      "order": 4
+      "order": 3
     },
     {
       "id": "baby-clothes",
@@ -1806,7 +1541,7 @@
       "image": "https://images.pexels.com/photos/15142195/pexels-photo-15142195.jpeg?auto=compress&cs=tinysrgb&w=1200",
       "count": 13,
       "published": true,
-      "order": 5
+      "order": 4
     },
     {
       "id": "gowns-lehengas",
@@ -1817,7 +1552,7 @@
       "image": "https://images.pexels.com/photos/31750729/pexels-photo-31750729.jpeg?auto=compress&cs=tinysrgb&w=1200",
       "count": 16,
       "published": true,
-      "order": 6
+      "order": 5
     }
   ],
   "chapters": [
