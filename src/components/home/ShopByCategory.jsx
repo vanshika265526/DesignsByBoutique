@@ -9,7 +9,7 @@ export default function ShopByCategory({ categories }) {
     // Use live category data from the database (so admin cover-image edits show
     // here); fall back to the bundled defaults only if none were passed.
     const items = (Array.isArray(categories) && categories.length > 0 ? categories : initialCategories)
-        .filter((cat) => cat.published !== false)
+        .filter((cat) => cat.published !== false && cat.slug !== "bridal-lehengas")
         .sort((a, b) => (a.order || 0) - (b.order || 0));
 
     return (

@@ -81,7 +81,7 @@ export default function Navbar() {
                                 {collectionsOpen && (
                                     <div className="absolute top-full left-0 pt-4 w-64 z-50">
                                         <div className="bg-boutique-bg-card rounded-lg shadow-xl border border-boutique-muted-border overflow-hidden py-2">
-                                            {initialCategories.map((cat) => (
+                                            {initialCategories.filter(cat => cat.slug !== "bridal-lehengas").map((cat) => (
                                                 <Link
                                                     key={cat.slug}
                                                     href={`/collections/${cat.slug}`}
@@ -182,7 +182,7 @@ export default function Navbar() {
                         {mobileCollectionsOpen && (
                             <div className="pb-3 space-y-1">
                                 <Link href="/collections" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2 text-[11px] font-semibold text-boutique-rose uppercase tracking-[0.18em]">All Collections →</Link>
-                                {initialCategories.map((cat) => (
+                                {initialCategories.filter(cat => cat.slug !== "bridal-lehengas").map((cat) => (
                                     <Link
                                         key={cat.slug}
                                         href={`/collections/${cat.slug}`}

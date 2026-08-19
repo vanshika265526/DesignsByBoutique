@@ -16,6 +16,17 @@ export const initialCategories = [
         "order": 1
     },
     {
+        "id": "gowns-lehengas",
+        "name": "Gowns & Lehengas",
+        "slug": "gowns-lehengas",
+        "chapter": "her-new-chapter",
+        "description": "Exquisite handcrafted designer gowns, cape silhouettes, draped gowns, and bridal lehengas.",
+        "image": "https://images.pexels.com/photos/31750729/pexels-photo-31750729.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "count": 16,
+        "published": true,
+        "order": 2
+    },
+    {
         "id": "haldi-mehendi",
         "name": "Haldi & Mehendi",
         "slug": "haldi-mehendi",
@@ -24,7 +35,7 @@ export const initialCategories = [
         "image": "https://images.pexels.com/photos/23623618/pexels-photo-23623618.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "count": 15,
         "published": true,
-        "order": 2
+        "order": 3
     },
     {
         "id": "maternity-gowns",
@@ -35,7 +46,7 @@ export const initialCategories = [
         "image": "/images/maternity/gown-3.png",
         "count": 12,
         "published": true,
-        "order": 3
+        "order": 4
     },
     {
         "id": "baby-clothes",
@@ -45,17 +56,6 @@ export const initialCategories = [
         "description": "Skin-friendly heirloom baby frocks, gowns, lehenga cholis & party wear.",
         "image": "https://images.pexels.com/photos/15142195/pexels-photo-15142195.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "count": 13,
-        "published": true,
-        "order": 4
-    },
-    {
-        "id": "gowns-lehengas",
-        "name": "Gowns & Lehengas",
-        "slug": "gowns-lehengas",
-        "chapter": "her-new-chapter",
-        "description": "Exquisite handcrafted designer gowns, cape silhouettes, draped gowns, and bridal lehengas.",
-        "image": "https://images.pexels.com/photos/31750729/pexels-photo-31750729.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "count": 16,
         "published": true,
         "order": 5
     }

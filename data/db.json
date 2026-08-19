@@ -1519,7 +1519,7 @@
       "image": "https://images.pexels.com/photos/23623618/pexels-photo-23623618.jpeg?auto=compress&cs=tinysrgb&w=1200",
       "count": 15,
       "published": true,
-      "order": 2
+      "order": 3
     },
     {
       "id": "maternity-gowns",
@@ -1530,7 +1530,7 @@
       "image": "/images/maternity/gown-3.png",
       "count": 12,
       "published": true,
-      "order": 3
+      "order": 4
     },
     {
       "id": "baby-clothes",
@@ -1541,7 +1541,7 @@
       "image": "https://images.pexels.com/photos/15142195/pexels-photo-15142195.jpeg?auto=compress&cs=tinysrgb&w=1200",
       "count": 13,
       "published": true,
-      "order": 4
+      "order": 5
     },
     {
       "id": "gowns-lehengas",
@@ -1552,7 +1552,7 @@
       "image": "https://images.pexels.com/photos/31750729/pexels-photo-31750729.jpeg?auto=compress&cs=tinysrgb&w=1200",
       "count": 16,
       "published": true,
-      "order": 5
+      "order": 2
     }
   ],
   "chapters": [
