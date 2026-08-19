@@ -1,117 +1,101 @@
 import { notFound } from "next/navigation";
-import SectionHeading from "@/components/ui/SectionHeading";
-import ProductCard from "@/components/ui/ProductCard";
 import { boutiqueConfig } from "@/config/boutique";
 import { getDbAsync } from "@/lib/db";
+import { categoriesTaxonomy } from "@/data/products";
+import SubcategoryProductsLayout from "@/components/collections/SubcategoryProductsLayout";
 
-// ISR — cached & regenerated at most once a minute for fast loads.
 export const revalidate = 60;
 
 export async function generateStaticParams() {
-    const db = await getDbAsync();
-    return (db.categories || [])
-        .filter((c) => c.slug)
-        .map((c) => ({ category: c.slug }));
+    const newSlugs = categoriesTaxonomy.map((c) => ({ category: c.slug }));
+    const legacySlugs = [
+        { category: "suits-anarkalis" },
+        { category: "gowns-lehengas" },
+        { category: "haldi-mehendi" },
+        { category: "maternity-gowns" },
+        { category: "baby-clothes" },
+        { category: "bridal-lehengas" },
+    ];
+    return [...newSlugs, ...legacySlugs];
+}
+
+// Map legacy category slugs to new category taxonomy
+function resolveCategory(slug) {
+    if (!slug) return null;
+    const lower = slug.toLowerCase();
+
+    // Check direct match in new taxonomy first
+    let found = categoriesTaxonomy.find(c => c.slug === lower || c.id === lower);
+    if (found) return found;
+
+    // Legacy mappings
+    if (lower === "suits-anarkalis" || lower === "her-beginnings") return categoriesTaxonomy.find(c => c.slug === "her-beginning");
+    if (lower === "gowns-lehengas" || lower === "her-forever") return categoriesTaxonomy.find(c => c.slug === "her-bridal-story");
+    if (lower === "haldi-mehendi" || lower === "her-new-chapter" || lower === "bridal-lehengas") return categoriesTaxonomy.find(c => c.slug === "her-big-day");
+    if (lower === "baby-clothes" || lower === "her-little-one") return categoriesTaxonomy.find(c => c.slug === "baby-girl-dresses");
+    if (lower === "maternity-gowns" || lower === "her-motherhood") return categoriesTaxonomy.find(c => c.slug === "maternity");
+
+    return null;
 }
 
 export async function generateMetadata({ params }) {
     const categoryParam = params.category;
-    const db = await getDbAsync();
-    const categories = db.categories || [];
-    const chapters = db.chapters || boutiqueConfig.chapters || [];
+    const cat = resolveCategory(categoryParam);
 
-    const cat = categories.find((c) => c.slug === categoryParam || c.id === categoryParam);
-    const chapter = chapters.find((ch) => ch.slug === categoryParam || ch.categorySlug === categoryParam || ch.id === categoryParam);
-
-    if (!cat && !chapter) {
+    if (!cat) {
         return { title: "Collection | Designs by Nisha Chattarpur New Delhi" };
     }
 
-    const title = cat?.name || chapter?.title || chapter?.categoryName || categoryParam;
-    const desc = cat?.description || chapter?.description || "";
-
     return {
-        title: `${title} Collection | Chattarpur New Delhi`,
-        description: `${desc} Available at Designs by Nisha Boutique, 318 near Aayushman Arogya Mandir, Chattarpur, New Delhi.`,
+        title: `${cat.name} Collection | Chattarpur New Delhi`,
+        description: `${cat.description} Available at Designs by Nisha Boutique, 318 near Aayushman Arogya Mandir, Chattarpur, New Delhi.`,
     };
 }
 
 export default async function CategoryPage({ params }) {
     const categorySlug = params.category;
     const db = await getDbAsync();
-    const categories = db.categories || [];
-    const chapters = db.chapters || boutiqueConfig.chapters || [];
+    const categories = db.categories || categoriesTaxonomy;
 
-    const categoryObj = categories.find((c) => c.slug === categorySlug || c.id === categorySlug);
-    const chapterObj = chapters.find((ch) => ch.slug === categorySlug || ch.categorySlug === categorySlug || ch.id === categorySlug);
+    const categoryObj = resolveCategory(categorySlug) || categories.find((c) => c.slug === categorySlug || c.id === categorySlug);
 
-    if (!categoryObj && !chapterObj) {
+    if (!categoryObj) {
         notFound();
     }
 
-    const categoryName = categoryObj?.name || chapterObj?.categoryName || chapterObj?.category || categorySlug;
-    const categoryTitle = chapterObj?.title || categoryName;
-    const chapterNum = chapterObj?.number || (categoryObj?.order ? `0${categoryObj.order}` : "01");
-    const tagline = chapterObj?.tagline || chapterObj?.subtitle || categoryObj?.description || "";
-    const description = categoryObj?.description || chapterObj?.description || "";
-
-    const categoryProducts = (db.products || []).filter((product) => {
+    // Filter products belonging to this category
+    const allProducts = db.products || [];
+    const categoryProducts = allProducts.filter((product) => {
         const isPublished = product.status === "published" || !product.status;
-        return (
-            isPublished &&
-            (product.category === categorySlug ||
-                product.categorySlug === categorySlug ||
-                product.chapter === categorySlug)
-        );
+        if (!isPublished) return false;
+
+        const pCat = (product.category || "").toLowerCase();
+        const pSlug = (product.categorySlug || "").toLowerCase();
+        const pChapter = (product.chapter || "").toLowerCase();
+        const targetSlug = categoryObj.slug.toLowerCase();
+
+        // Direct slug match
+        if (pCat === targetSlug || pSlug === targetSlug) return true;
+
+        // Category cross-mappings
+        if (targetSlug === "baby-girl-dresses" && (pCat === "baby-clothes" || pChapter === "her-little-one")) return true;
+        if (targetSlug === "her-beginning" && (pCat === "suits-anarkalis" || pCat === "suits" || pChapter === "her-beginnings")) return true;
+        if (targetSlug === "her-bridal-story" && (pCat === "gowns-lehengas" || pCat === "bridal-lehengas" || pChapter === "her-forever")) return true;
+        if (targetSlug === "her-big-day" && (pCat === "haldi-mehendi" || pCat === "bridal-lehengas" || pCat === "gowns-lehengas" || pChapter === "her-new-chapter")) return true;
+        if (targetSlug === "maternity" && (pCat === "maternity-gowns" || pChapter === "her-motherhood")) return true;
+
+        return false;
     });
 
     return (
-        <div className="pt-10 md:pt-12 pb-24 bg-boutique-bg min-h-screen space-y-12">
-            {/* Category Editorial Hero Banner */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="bg-boutique-bg-card rounded-3xl p-7 sm:p-10 border border-boutique-muted-border shadow-sm space-y-4 text-center">
-                    <h1 className="font-serif-editorial text-4xl sm:text-5xl md:text-6xl text-boutique-charcoal font-bold">
-                        {categoryName}
-                    </h1>
+        <div className="pt-3 md:pt-4 pb-16 bg-boutique-bg min-h-screen">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
 
-                    {tagline && (
-                        <p className="font-serif-editorial text-xl text-boutique-rose italic max-w-xl mx-auto">
-                            &ldquo;{tagline}&rdquo;
-                        </p>
-                    )}
-
-                    {description && (
-                        <p className="text-sm text-boutique-taupe max-w-2xl mx-auto font-light leading-relaxed">
-                            {description}
-                        </p>
-                    )}
-                </div>
-            </div>
-
-            {/* Product Items Grid */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-                <div className="flex items-center justify-between">
-                    <h2 className="font-serif-editorial text-2xl text-boutique-charcoal font-bold">
-                        Curated Silhouettes ({categoryProducts.length})
-                    </h2>
-                    <span className="text-xs text-boutique-taupe uppercase tracking-wider">
-                        Designs by Nisha • Chattarpur Atelier
-                    </span>
-                </div>
-
-                {categoryProducts.length > 0 ? (
-                    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6">
-                        {categoryProducts.map((product) => (
-                            <ProductCard key={product.id} product={product} />
-                        ))}
-                    </div>
-                ) : (
-                    <div className="text-center py-16 bg-white rounded-2xl border border-boutique-muted-border">
-                        <p className="font-serif-editorial text-xl text-boutique-taupe italic">
-                            New bespoke additions coming soon to our Chattarpur atelier.
-                        </p>
-                    </div>
-                )}
+                {/* Interactive Subcategory Pills & Products Layout (Matching user design diagram) */}
+                <SubcategoryProductsLayout
+                    category={categoryObj}
+                    products={categoryProducts}
+                />
             </div>
         </div>
     );

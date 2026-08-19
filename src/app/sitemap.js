@@ -1,5 +1,6 @@
 import { boutiqueConfig } from "@/config/boutique";
 import { getDbAsync } from "@/lib/db";
+import { categoriesTaxonomy } from "@/data/products";
 
 export const dynamic = "force-dynamic";
 
@@ -20,9 +21,8 @@ export default async function sitemap() {
         priority: route === "" ? 1.0 : 0.8,
     }));
 
-    const chapters = db.chapters || boutiqueConfig.chapters || [];
-    const categoryRoutes = chapters.map((ch) => ({
-        url: `${baseUrl}/collections/${ch.slug || ch.categorySlug || ch.id}`,
+    const categoryRoutes = categoriesTaxonomy.map((cat) => ({
+        url: `${baseUrl}/collections/${cat.slug}`,
         lastModified: new Date(),
         changeFrequency: "weekly",
         priority: 0.9,

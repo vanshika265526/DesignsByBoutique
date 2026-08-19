@@ -3,14 +3,34 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { initialCategories } from "@/data/products";
+import { categoriesTaxonomy } from "@/data/products";
+
+const LEGACY_CATEGORY_SLUGS = {
+    "suits-anarkalis": "her-beginning",
+    "gowns-lehengas": "her-bridal-story",
+    "haldi-mehendi": "her-big-day",
+    "bridal-lehengas": "her-big-day",
+    "maternity-gowns": "maternity",
+    "baby-clothes": "baby-girl-dresses",
+};
 
 export default function ShopByCategory({ categories }) {
     // Use live category data from the database (so admin cover-image edits show
     // here); fall back to the bundled defaults only if none were passed.
-    const items = (Array.isArray(categories) && categories.length > 0 ? categories : initialCategories)
-        .filter((cat) => cat.published !== false && cat.slug !== "bridal-lehengas")
-        .sort((a, b) => (a.order || 0) - (b.order || 0));
+    const liveCategories = Array.isArray(categories) ? categories : [];
+    const items = categoriesTaxonomy.map((taxonomyCategory) => {
+        const liveCategory = liveCategories.find((category) => {
+            const canonicalSlug = LEGACY_CATEGORY_SLUGS[category.slug] || category.slug;
+            return canonicalSlug === taxonomyCategory.slug;
+        });
+
+        return {
+            ...taxonomyCategory,
+            ...(liveCategory || {}),
+            name: taxonomyCategory.name,
+            slug: taxonomyCategory.slug,
+        };
+    });
 
     return (
         <section className="py-16 md:py-24 bg-boutique-bg">

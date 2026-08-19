@@ -8,15 +8,7 @@ if (fs.existsSync(dbPath)) {
     dbData = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
 }
 
-if (!dbData.categories) dbData.categories = [];
-initialCategories.forEach(cat => {
-    const idx = dbData.categories.findIndex(c => c.id === cat.id);
-    if (idx !== -1) {
-        dbData.categories[idx] = cat;
-    } else {
-        dbData.categories.push(cat);
-    }
-});
+dbData.categories = initialCategories;
 
 if (!dbData.products) dbData.products = [];
 initialProducts.forEach(prod => {

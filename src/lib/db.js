@@ -213,7 +213,7 @@ export async function getDbAsync() {
     }
 
     try {
-        await seedMongoIfEmpty();
+        await seedMongoIfEmpty().catch(err => console.warn('[MongoDB Atlas] Seed bypassed during build:', err.message));
         const db = await getDatabase();
 
         // Read every collection in parallel instead of sequentially — turns

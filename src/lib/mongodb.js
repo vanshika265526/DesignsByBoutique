@@ -17,29 +17,29 @@ if (!process.env.MONGODB_URI) {
 }
 
 if (process.env.NODE_ENV === "development") {
-    // In development mode, use a global variable so that the value
-    // is preserved across module reloads caused by HMR (Hot Module Replacement).
     if (!global._mongoClientPromise) {
         client = new MongoClient(uri, options);
         global._mongoClientPromise = client.connect()
             .catch(err => {
-                console.error('[MongoDB] Connection failed:', err.message);
-                throw err;
+                console.warn('[MongoDB] Connection failed, using fallback:', err.message);
+                return null;
             });
     }
     clientPromise = global._mongoClientPromise;
 } else {
-    // In production mode, it's best to not use a global variable.
     client = new MongoClient(uri, options);
     clientPromise = client.connect()
         .catch(err => {
-            console.error('[MongoDB] Connection failed:', err.message);
-            throw err;
+            console.warn('[MongoDB] Connection failed, using fallback:', err.message);
+            return null;
         });
 }
 
 export async function getDatabase() {
     const connectedClient = await clientPromise;
+    if (!connectedClient) {
+        throw new Error("MongoDB client is not connected");
+    }
     const dbName = process.env.MONGODB_DB || "designs_by_nisha";
     return connectedClient.db(dbName);
 }

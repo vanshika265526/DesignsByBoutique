@@ -3,63 +3,94 @@
  * Connects the public website directly to the DB engine for single-source-of-truth.
  */
 
-export const initialCategories = [
+export const categoriesTaxonomy = [
     {
-        "id": "suits-anarkalis",
-        "name": "Suits & Anarkalis",
-        "slug": "suits-anarkalis",
-        "chapter": "her-beginnings",
-        "description": "Graceful daily luxury & celebratory silk Anarkali suits.",
-        "image": "https://images.pexels.com/photos/4336823/pexels-photo-4336823.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "count": 24,
-        "published": true,
-        "order": 1
-    },
-    {
-        "id": "gowns-lehengas",
-        "name": "Gowns & Lehengas",
-        "slug": "gowns-lehengas",
-        "chapter": "her-new-chapter",
-        "description": "Exquisite handcrafted designer gowns, cape silhouettes, draped gowns, and bridal lehengas.",
-        "image": "https://images.pexels.com/photos/31750729/pexels-photo-31750729.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "count": 16,
-        "published": true,
-        "order": 2
-    },
-    {
-        "id": "haldi-mehendi",
-        "name": "Haldi & Mehendi",
-        "slug": "haldi-mehendi",
-        "chapter": "her-new-chapter",
-        "description": "Vibrant yellow kesar lehengas & emerald green shararas.",
-        "image": "https://images.pexels.com/photos/23623618/pexels-photo-23623618.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "count": 15,
-        "published": true,
-        "order": 3
-    },
-    {
-        "id": "maternity-gowns",
-        "name": "Maternity Gowns",
-        "slug": "maternity-gowns",
-        "chapter": "her-motherhood",
-        "description": "Featherlight silk maternity gowns & baby shower attire.",
-        "image": "/images/maternity/gown-3.png",
-        "count": 12,
-        "published": true,
-        "order": 4
-    },
-    {
-        "id": "baby-clothes",
-        "name": "Baby Clothes",
-        "slug": "baby-clothes",
+        "id": "baby-girl-dresses",
+        "name": "Baby Girl Dresses",
+        "slug": "baby-girl-dresses",
         "chapter": "her-little-one",
         "description": "Skin-friendly heirloom baby frocks, gowns, lehenga cholis & party wear.",
         "image": "https://images.pexels.com/photos/15142195/pexels-photo-15142195.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "count": 13,
         "published": true,
-        "order": 5
+        "order": 1,
+        "subcategories": [
+            { "id": "gowns", "name": "Gowns", "slug": "gowns", "image": "https://images.pexels.com/photos/16237026/pexels-photo-16237026.jpeg?auto=compress&cs=tinysrgb&w=600" },
+            { "id": "frock", "name": "Frock", "slug": "frock", "image": "https://images.pexels.com/photos/15142195/pexels-photo-15142195.jpeg?auto=compress&cs=tinysrgb&w=600" },
+            { "id": "party-wear", "name": "Party Wear", "slug": "party-wear", "image": "https://images.pexels.com/photos/15142195/pexels-photo-15142195.jpeg?auto=compress&cs=tinysrgb&w=600" },
+            { "id": "mini-lehengas", "name": "Mini Lehengas", "slug": "mini-lehengas", "image": "https://wholesalemegamart.com/wp-content/uploads/2026/04/ZSR-3169-KIDS-ETHNIC-WEAR-FOR-GIRLS-WHOLESALE-1.jpeg" }
+        ]
+    },
+    {
+        "id": "her-beginning",
+        "name": "Her Beginning",
+        "slug": "her-beginning",
+        "chapter": "her-beginnings",
+        "description": "Graceful daily luxury, celebratory silk Anarkalis, pant suits, shararas & bodycon dresses.",
+        "image": "https://images.pexels.com/photos/4336823/pexels-photo-4336823.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "count": 24,
+        "published": true,
+        "order": 2,
+        "subcategories": [
+            { "id": "suits", "name": "Suits", "slug": "suits", "image": "https://images.pexels.com/photos/33180676/pexels-photo-33180676.jpeg?auto=compress&cs=tinysrgb&w=600" },
+            { "id": "anarkali", "name": "Anarkali", "slug": "anarkali", "image": "https://images.pexels.com/photos/26973350/pexels-photo-26973350.jpeg?auto=compress&cs=tinysrgb&w=600" },
+            { "id": "pant-suit", "name": "Pant suit", "slug": "pant-suit", "image": "https://images.pexels.com/photos/36634909/pexels-photo-36634909.jpeg?auto=compress&cs=tinysrgb&w=600" },
+            { "id": "sharara", "name": "Sharara", "slug": "sharara", "image": "https://images.pexels.com/photos/31750738/pexels-photo-31750738.jpeg?auto=compress&cs=tinysrgb&w=600" },
+            { "id": "bodycon-dresses", "name": "Bodycon dresses (western wear)", "slug": "bodycon-dresses", "image": "https://images.pexels.com/photos/31750729/pexels-photo-31750729.jpeg?auto=compress&cs=tinysrgb&w=600" }
+        ]
+    },
+    {
+        "id": "her-bridal-story",
+        "name": "Her Bridal Story",
+        "slug": "her-bridal-story",
+        "chapter": "her-forever",
+        "description": "Exquisite handcrafted engagement lehengas, engagement gowns, and pre-wedding gowns.",
+        "image": "https://images.pexels.com/photos/31750729/pexels-photo-31750729.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "count": 16,
+        "published": true,
+        "order": 3,
+        "subcategories": [
+            { "id": "engagement-lehenga", "name": "Engagement lehenga", "slug": "engagement-lehenga", "image": "https://img.perniaspopupshop.com/catalog/product/n/k/NKGC072509_1.jpg?impolicy=detailimageprod" },
+            { "id": "engagement-gown", "name": "Engagement gown", "slug": "engagement-gown", "image": "https://images.pexels.com/photos/31750729/pexels-photo-31750729.jpeg?auto=compress&cs=tinysrgb&w=600" },
+            { "id": "pre-wedding-gown", "name": "Pre-wedding gown", "slug": "pre-wedding-gown", "image": "https://images.pexels.com/photos/31750729/pexels-photo-31750729.jpeg?auto=compress&cs=tinysrgb&w=600" }
+        ]
+    },
+    {
+        "id": "her-big-day",
+        "name": "Her Big Day",
+        "slug": "her-big-day",
+        "chapter": "her-new-chapter",
+        "description": "Grand wedding celebrations: Haldi outfits, Mehandi outfits, Sangeet & Bridal lehengas, reception outfits, and sarees.",
+        "image": "https://images.pexels.com/photos/23623618/pexels-photo-23623618.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "count": 20,
+        "published": true,
+        "order": 4,
+        "subcategories": [
+            { "id": "haldi-outfit", "name": "Haldi outfit", "slug": "haldi-outfit", "image": "https://images.pexels.com/photos/37847010/pexels-photo-37847010.jpeg?auto=compress&cs=tinysrgb&w=600" },
+            { "id": "mehandi-outfit", "name": "Mehandi outfit", "slug": "mehandi-outfit", "image": "https://images.pexels.com/photos/31750738/pexels-photo-31750738.jpeg?auto=compress&cs=tinysrgb&w=600" },
+            { "id": "sangeet-lehenga", "name": "Sangeet lehenga", "slug": "sangeet-lehenga", "image": "https://images.pexels.com/photos/19956021/pexels-photo-19956021.jpeg?auto=compress&cs=tinysrgb&w=600" },
+            { "id": "bridal-lehenga", "name": "Bridal lehenga", "slug": "bridal-lehenga", "image": "https://images.pexels.com/photos/26973350/pexels-photo-26973350.jpeg?auto=compress&cs=tinysrgb&w=600" },
+            { "id": "reception-outfit", "name": "Reception outfit", "slug": "reception-outfit", "image": "https://images.pexels.com/photos/25184994/pexels-photo-25184994.jpeg?auto=compress&cs=tinysrgb&w=600" },
+            { "id": "saree", "name": "Saree", "slug": "saree", "image": "https://images.pexels.com/photos/31750729/pexels-photo-31750729.jpeg?auto=compress&cs=tinysrgb&w=600" }
+        ]
+    },
+    {
+        "id": "maternity",
+        "name": "Maternity",
+        "slug": "maternity",
+        "chapter": "her-motherhood",
+        "description": "Featherlight silk maternity gowns and photoshoot ensembles for expecting mothers.",
+        "image": "/images/maternity/gown-3.png",
+        "count": 12,
+        "published": true,
+        "order": 5,
+        "subcategories": [
+            { "id": "maternity-gowns", "name": "Maternity gowns", "slug": "maternity-gowns", "image": "/images/maternity/gown-1.png" }
+        ]
     }
 ];
+
+export const initialCategories = categoriesTaxonomy;
 
 export const initialChapters = [
     {
@@ -119,8 +150,8 @@ export const initialProducts = [
         "id": "prod-01",
         "slug": "gulzar-chanderi-anarkali-set",
         "name": "Gulzar Chanderi Silk Anarkali Set",
-        "category": "suits-anarkalis",
-        "categoryName": "Suits & Anarkalis",
+        "category": "her-beginning",
+        "categoryName": "Her Beginning",
         "chapter": "her-beginnings",
         "chapterName": "Her Beginnings",
         "price": 7999,
@@ -138,14 +169,16 @@ export const initialProducts = [
             "Pure Chanderi Silk & Organza Dupatta",
             "Custom sleeve length customization available",
             "Dry Clean Only"
-        ]
+        ],
+        "categorySlug": "her-beginning",
+        "subcategory": "anarkali"
     },
     {
         "id": "prod-02",
         "slug": "noor-zardozi-straight-suit",
         "name": "Noor Soft Mint Zardozi Kurta Set",
-        "category": "suits-anarkalis",
-        "categoryName": "Suits & Anarkalis",
+        "category": "her-beginning",
+        "categoryName": "Her Beginning",
         "chapter": "her-beginnings",
         "chapterName": "Her Beginnings",
         "price": 6499,
@@ -163,14 +196,16 @@ export const initialProducts = [
             "Handloom Tussar Silk with Net Dupatta",
             "Pants can be customized to straight or palazzo",
             "Dry Clean Only"
-        ]
+        ],
+        "categorySlug": "her-beginning",
+        "subcategory": "suits"
     },
     {
         "id": "prod-05",
         "slug": "mehendi-emerald-sharara-set",
         "name": "Emerald Mehendi Embroidered Sharara",
-        "category": "haldi-mehendi",
-        "categoryName": "Haldi & Mehendi",
+        "category": "her-big-day",
+        "categoryName": "Her Big Day",
         "chapter": "her-new-chapter",
         "chapterName": "Her New Chapter",
         "price": 7999,
@@ -188,14 +223,16 @@ export const initialProducts = [
             "Viscose Georgette & Soft Net Dupatta",
             "Tiered sharara volume customization",
             "Dry Clean Only"
-        ]
+        ],
+        "categorySlug": "her-big-day",
+        "subcategory": "mehandi-outfit"
     },
     {
         "id": "prod-06",
         "slug": "rooh-blush-draped-saree-gown",
         "name": "Rooh Blush Pre-Stitched Draped Saree",
-        "category": "haldi-mehendi",
-        "categoryName": "Haldi & Mehendi",
+        "category": "her-big-day",
+        "categoryName": "Her Big Day",
         "chapter": "her-new-chapter",
         "chapterName": "Her New Chapter",
         "price": 8499,
@@ -212,14 +249,16 @@ export const initialProducts = [
         "details": [
             "Fluid Micro-Satin & Hand-beaded Net Blouse",
             "Pre-stitched pleats tailored to exact height"
-        ]
+        ],
+        "categorySlug": "her-big-day",
+        "subcategory": "saree"
     },
     {
         "id": "prod-07",
         "slug": "grace-silk-maternity-photoshoot-gown",
         "name": "Grace Powder Pink Silk Maternity Gown",
-        "category": "maternity-gowns",
-        "categoryName": "Maternity Gowns",
+        "category": "maternity",
+        "categoryName": "Maternity",
         "chapter": "her-motherhood",
         "chapterName": "Her Motherhood",
         "price": 7999,
@@ -236,14 +275,16 @@ export const initialProducts = [
         "details": [
             "Hypoallergenic Pure Satin Silk & Sheer Chiffon",
             "Hidden nursing zip & trimester adjustability"
-        ]
+        ],
+        "categorySlug": "maternity",
+        "subcategory": "maternity-gowns"
     },
     {
         "id": "prod-08",
         "slug": "roop-blush-satin-maternity-gown",
         "name": "Roop Blush Satin Slit Maternity Gown",
-        "category": "maternity-gowns",
-        "categoryName": "Maternity Gowns",
+        "category": "maternity",
+        "categoryName": "Maternity",
         "chapter": "her-motherhood",
         "chapterName": "Her Motherhood",
         "price": 6999,
@@ -260,14 +301,16 @@ export const initialProducts = [
         "details": [
             "Luminous Satin & Soft Breathable Lining",
             "Hidden comfort zip"
-        ]
+        ],
+        "categorySlug": "maternity",
+        "subcategory": "maternity-gowns"
     },
     {
         "id": "prod-maternity-03",
         "slug": "aarya-floral-anarkali-maternity-gown",
         "name": "Aarya Floral Hand-Printed Maternity Anarkali",
-        "category": "maternity-gowns",
-        "categoryName": "Maternity Gowns",
+        "category": "maternity",
+        "categoryName": "Maternity",
         "chapter": "her-motherhood",
         "chapterName": "Her Motherhood",
         "price": 5999,
@@ -284,14 +327,16 @@ export const initialProducts = [
         "details": [
             "100% Organic Hand-printed Mulmul Cotton",
             "Discreet nursing zippers optional"
-        ]
+        ],
+        "categorySlug": "maternity",
+        "subcategory": "maternity-gowns"
     },
     {
         "id": "prod-maternity-04",
         "slug": "kavya-royal-draped-maternity-gown",
         "name": "Kavya Royal Silk Draped Maternity Gown",
-        "category": "maternity-gowns",
-        "categoryName": "Maternity Gowns",
+        "category": "maternity",
+        "categoryName": "Maternity",
         "chapter": "her-motherhood",
         "chapterName": "Her Motherhood",
         "price": 8499,
@@ -308,14 +353,16 @@ export const initialProducts = [
         "details": [
             "Stretchable Silk Georgette & Muslin Lining",
             "Empire waist line with custom fitting"
-        ]
+        ],
+        "categorySlug": "maternity",
+        "subcategory": "maternity-gowns"
     },
     {
         "id": "prod-maternity-05",
         "slug": "mira-satin-flared-maternity-dress",
         "name": "Mira Satin Flared Maternity Photoshoot Dress",
-        "category": "maternity-gowns",
-        "categoryName": "Maternity Gowns",
+        "category": "maternity",
+        "categoryName": "Maternity",
         "chapter": "her-motherhood",
         "chapterName": "Her Motherhood",
         "price": 7499,
@@ -332,14 +379,16 @@ export const initialProducts = [
         "details": [
             "Luminous Satin & Soft Breathable Lining",
             "Flexible waistband for all trimesters"
-        ]
+        ],
+        "categorySlug": "maternity",
+        "subcategory": "maternity-gowns"
     },
     {
         "id": "prod-maternity-06",
         "slug": "anandi-chiffon-trail-maternity-gown",
         "name": "Anandi Chiffon Trail Maternity Occasion Gown",
-        "category": "maternity-gowns",
-        "categoryName": "Maternity Gowns",
+        "category": "maternity",
+        "categoryName": "Maternity",
         "chapter": "her-motherhood",
         "chapterName": "Her Motherhood",
         "price": 8999,
@@ -356,14 +405,16 @@ export const initialProducts = [
         "details": [
             "Pure Sheer Chiffon & Cotton Under-lining",
             "Custom trail length upon request"
-        ]
+        ],
+        "categorySlug": "maternity",
+        "subcategory": "maternity-gowns"
     },
     {
         "id": "prod-maternity-07",
         "slug": "niharika-embellished-baby-shower-gown",
         "name": "Niharika Embellished Velvet Baby Shower Gown",
-        "category": "maternity-gowns",
-        "categoryName": "Maternity Gowns",
+        "category": "baby-girl-dresses",
+        "categoryName": "Baby Girl Dresses",
         "chapter": "her-motherhood",
         "chapterName": "Her Motherhood",
         "price": 9499,
@@ -380,14 +431,16 @@ export const initialProducts = [
         "details": [
             "Ultra-soft Velvet & Breathable Cotton Base",
             "Hidden zip for ease & comfort"
-        ]
+        ],
+        "categorySlug": "baby-girl-dresses",
+        "subcategory": "party-wear"
     },
     {
         "id": "prod-maternity-08",
         "slug": "sia-ethereal-organza-cape-maternity-gown",
         "name": "Sia Ethereal Organza Cape Maternity Gown",
-        "category": "maternity-gowns",
-        "categoryName": "Maternity Gowns",
+        "category": "maternity",
+        "categoryName": "Maternity",
         "chapter": "her-motherhood",
         "chapterName": "Her Motherhood",
         "price": 7299,
@@ -404,14 +457,16 @@ export const initialProducts = [
         "details": [
             "Pure Sheer Organza & Soft Cotton Lining",
             "Trimester expansion panel"
-        ]
+        ],
+        "categorySlug": "maternity",
+        "subcategory": "maternity-gowns"
     },
     {
         "id": "prod-maternity-09",
         "slug": "tara-emerald-silk-flared-maternity-gown",
         "name": "Tara Emerald Silk Flared Maternity Gown",
-        "category": "maternity-gowns",
-        "categoryName": "Maternity Gowns",
+        "category": "maternity",
+        "categoryName": "Maternity",
         "chapter": "her-motherhood",
         "chapterName": "Her Motherhood",
         "price": 8299,
@@ -428,14 +483,16 @@ export const initialProducts = [
         "details": [
             "Viscose Silk & Cotton Under-layer",
             "Elasticated empire back"
-        ]
+        ],
+        "categorySlug": "maternity",
+        "subcategory": "maternity-gowns"
     },
     {
         "id": "prod-maternity-10",
         "slug": "yashvi-rose-gold-sequin-maternity-dress",
         "name": "Yashvi Rose Gold Sequin Maternity Dress",
-        "category": "maternity-gowns",
-        "categoryName": "Maternity Gowns",
+        "category": "maternity",
+        "categoryName": "Maternity",
         "chapter": "her-motherhood",
         "chapterName": "Her Motherhood",
         "price": 9999,
@@ -452,14 +509,16 @@ export const initialProducts = [
         "details": [
             "Micro-sequin Net & Soft Stretch Lining",
             "Concealed nursing zip"
-        ]
+        ],
+        "categorySlug": "maternity",
+        "subcategory": "maternity-gowns"
     },
     {
         "id": "prod-maternity-11",
         "slug": "devi-soft-lavender-lace-maternity-gown",
         "name": "Devi Soft Lavender Lace Maternity Gown",
-        "category": "maternity-gowns",
-        "categoryName": "Maternity Gowns",
+        "category": "maternity",
+        "categoryName": "Maternity",
         "chapter": "her-motherhood",
         "chapterName": "Her Motherhood",
         "price": 6499,
@@ -476,14 +535,16 @@ export const initialProducts = [
         "details": [
             "French Chantilly Lace & Cotton Jersey Lining",
             "Adjustable waist string"
-        ]
+        ],
+        "categorySlug": "maternity",
+        "subcategory": "maternity-gowns"
     },
     {
         "id": "prod-maternity-12",
         "slug": "chhaya-ivory-pearl-maternity-gown",
         "name": "Chhaya Ivory Pearl Embellished Maternity Gown",
-        "category": "maternity-gowns",
-        "categoryName": "Maternity Gowns",
+        "category": "maternity",
+        "categoryName": "Maternity",
         "chapter": "her-motherhood",
         "chapterName": "Her Motherhood",
         "price": 10499,
@@ -500,14 +561,16 @@ export const initialProducts = [
         "details": [
             "Pure Tissue Silk & Muslin Lining",
             "Hand-stitched faux pearls"
-        ]
+        ],
+        "categorySlug": "maternity",
+        "subcategory": "maternity-gowns"
     },
     {
         "id": "prod-11",
         "slug": "aarohi-peach-georgette-anarkali",
         "name": "Aarohi Peach Georgette Anarkali",
-        "category": "suits-anarkalis",
-        "categoryName": "Suits & Anarkalis",
+        "category": "her-beginning",
+        "categoryName": "Her Beginning",
         "chapter": "her-beginnings",
         "chapterName": "Her Beginnings",
         "price": 5999,
@@ -525,14 +588,16 @@ export const initialProducts = [
         "details": [
             "Pure Georgette & Dupatta Included",
             "Full customization on fit & sleeve style"
-        ]
+        ],
+        "categorySlug": "her-beginning",
+        "subcategory": "anarkali"
     },
     {
         "id": "prod-12",
         "slug": "lavanya-lilac-chanderi-palazzo-suit",
         "name": "Lavanya Lilac Chanderi Palazzo Suit",
-        "category": "suits-anarkalis",
-        "categoryName": "Suits & Anarkalis",
+        "category": "her-beginning",
+        "categoryName": "Her Beginning",
         "chapter": "her-beginnings",
         "chapterName": "Her Beginnings",
         "price": 5499,
@@ -550,14 +615,16 @@ export const initialProducts = [
         "details": [
             "Chanderi Cotton & Organza Dupatta",
             "Palazzo width & kurta length customizable"
-        ]
+        ],
+        "categorySlug": "her-beginning",
+        "subcategory": "pant-suit"
     },
     {
         "id": "prod-13",
         "slug": "rania-deep-maroon-raw-silk-suit",
         "name": "Rania Deep Maroon Raw Silk Suit",
-        "category": "suits-anarkalis",
-        "categoryName": "Suits & Anarkalis",
+        "category": "her-beginning",
+        "categoryName": "Her Beginning",
         "chapter": "her-beginnings",
         "chapterName": "Her Beginnings",
         "price": 8999,
@@ -575,14 +642,16 @@ export const initialProducts = [
         "details": [
             "Raw Silk & Banarasi Brocade Dupatta",
             "Gold zari neckline embroidery"
-        ]
+        ],
+        "categorySlug": "her-beginning",
+        "subcategory": "suits"
     },
     {
         "id": "prod-14",
         "slug": "arjun-powder-blue-mirror-kurta",
         "name": "Mehal Powder Blue Mirror Kurta Set",
-        "category": "suits-anarkalis",
-        "categoryName": "Suits & Anarkalis",
+        "category": "her-beginning",
+        "categoryName": "Her Beginning",
         "chapter": "her-beginnings",
         "chapterName": "Her Beginnings",
         "price": 4999,
@@ -600,14 +669,16 @@ export const initialProducts = [
         "details": [
             "Handblock Cotton & Kora Dupatta",
             "Mirror work hand-stitched by artisans"
-        ]
+        ],
+        "categorySlug": "her-beginning",
+        "subcategory": "suits"
     },
     {
         "id": "prod-15",
         "slug": "saffron-floral-anarkali-set",
         "name": "Suraj Saffron Floral Anarkali Set",
-        "category": "suits-anarkalis",
-        "categoryName": "Suits & Anarkalis",
+        "category": "her-big-day",
+        "categoryName": "Her Big Day",
         "chapter": "her-beginnings",
         "chapterName": "Her Beginnings",
         "price": 5799,
@@ -625,14 +696,16 @@ export const initialProducts = [
         "details": [
             "Hand-printed Mul-mul Cotton",
             "Festive all-occasion wear"
-        ]
+        ],
+        "categorySlug": "her-big-day",
+        "subcategory": "haldi-outfit"
     },
     {
         "id": "prod-16",
         "slug": "ivory-zardozi-straight-kurta",
         "name": "Shagun Ivory Zardozi Straight Kurta",
-        "category": "suits-anarkalis",
-        "categoryName": "Suits & Anarkalis",
+        "category": "her-big-day",
+        "categoryName": "Her Big Day",
         "chapter": "her-beginnings",
         "chapterName": "Her Beginnings",
         "price": 9499,
@@ -650,14 +723,16 @@ export const initialProducts = [
         "details": [
             "Pure Silk & Sheer Net Dupatta",
             "Heavy Zardozi gold hand embroidery"
-        ]
+        ],
+        "categorySlug": "her-big-day",
+        "subcategory": "reception-outfit"
     },
     {
         "id": "prod-17",
         "slug": "forest-green-organza-anarkali",
         "name": "Vana Forest Green Organza Anarkali",
-        "category": "suits-anarkalis",
-        "categoryName": "Suits & Anarkalis",
+        "category": "her-big-day",
+        "categoryName": "Her Big Day",
         "chapter": "her-beginnings",
         "chapterName": "Her Beginnings",
         "price": 7499,
@@ -675,14 +750,16 @@ export const initialProducts = [
         "details": [
             "Layered Organza & Inner Lining",
             "Trail length customizable"
-        ]
+        ],
+        "categorySlug": "her-big-day",
+        "subcategory": "sangeet-lehenga"
     },
     {
         "id": "prod-18",
         "slug": "dusty-rose-lucknowi-anarkali",
         "name": "Mehram Dusty Rose Lucknowi Anarkali",
-        "category": "suits-anarkalis",
-        "categoryName": "Suits & Anarkalis",
+        "category": "her-beginning",
+        "categoryName": "Her Beginning",
         "chapter": "her-beginnings",
         "chapterName": "Her Beginnings",
         "price": 5299,
@@ -700,14 +777,16 @@ export const initialProducts = [
         "details": [
             "Mul-mul Georgette & Chikankari Threadwork",
             "Dry clean for longevity"
-        ]
+        ],
+        "categorySlug": "her-beginning",
+        "subcategory": "anarkali"
     },
     {
         "id": "prod-28",
         "slug": "olive-green-mehendi-anarkali",
         "name": "Vriksha Olive Green Mehendi Anarkali",
-        "category": "haldi-mehendi",
-        "categoryName": "Haldi & Mehendi",
+        "category": "her-big-day",
+        "categoryName": "Her Big Day",
         "chapter": "her-new-chapter",
         "chapterName": "Her New Chapter",
         "price": 7799,
@@ -725,14 +804,16 @@ export const initialProducts = [
         "details": [
             "Viscose Georgette",
             "Gold zari tasselled dupatta included"
-        ]
+        ],
+        "categorySlug": "her-big-day",
+        "subcategory": "mehandi-outfit"
     },
     {
         "id": "prod-29",
         "slug": "tangerine-mirror-sharara",
         "name": "Narangi Tangerine Mirror Sharara Set",
-        "category": "haldi-mehendi",
-        "categoryName": "Haldi & Mehendi",
+        "category": "her-beginning",
+        "categoryName": "Her Beginning",
         "chapter": "her-new-chapter",
         "chapterName": "Her New Chapter",
         "price": 6499,
@@ -750,14 +831,16 @@ export const initialProducts = [
         "details": [
             "Viscose Silk & Kora Organza",
             "Hand-stitched mirrors by craftswomen"
-        ]
+        ],
+        "categorySlug": "her-beginning",
+        "subcategory": "sharara"
     },
     {
         "id": "prod-30",
         "slug": "floral-pink-mehendi-lehnga",
         "name": "Pushpa Floral Pink Mehendi Lehenga",
-        "category": "haldi-mehendi",
-        "categoryName": "Haldi & Mehendi",
+        "category": "her-big-day",
+        "categoryName": "Her Big Day",
         "chapter": "her-new-chapter",
         "chapterName": "Her New Chapter",
         "price": 7299,
@@ -775,14 +858,16 @@ export const initialProducts = [
         "details": [
             "Handblock Cotton Silk",
             "Scalloped dupatta with mirror tassels"
-        ]
+        ],
+        "categorySlug": "her-big-day",
+        "subcategory": "mehandi-outfit"
     },
     {
         "id": "prod-31",
         "slug": "turquoise-bandhani-sharara",
         "name": "Dhaani Turquoise Bandhani Sharara",
-        "category": "haldi-mehendi",
-        "categoryName": "Haldi & Mehendi",
+        "category": "her-big-day",
+        "categoryName": "Her Big Day",
         "chapter": "her-new-chapter",
         "chapterName": "Her New Chapter",
         "price": 5999,
@@ -800,14 +885,16 @@ export const initialProducts = [
         "details": [
             "Rajasthani Gaji Silk Bandhani",
             "Dupatta with embroidered hem"
-        ]
+        ],
+        "categorySlug": "her-big-day",
+        "subcategory": "haldi-outfit"
     },
     {
         "id": "prod-32",
         "slug": "saffron-green-haldi-lehenga",
         "name": "Tilak Saffron & Green Haldi Lehenga",
-        "category": "haldi-mehendi",
-        "categoryName": "Haldi & Mehendi",
+        "category": "her-big-day",
+        "categoryName": "Her Big Day",
         "chapter": "her-new-chapter",
         "chapterName": "Her New Chapter",
         "price": 7499,
@@ -825,14 +912,16 @@ export const initialProducts = [
         "details": [
             "Raw Silk & Cotton Under-skirt",
             "Elasticated waist for comfort"
-        ]
+        ],
+        "categorySlug": "her-big-day",
+        "subcategory": "haldi-outfit"
     },
     {
         "id": "prod-33",
         "slug": "marigold-embroidered-set",
         "name": "Marigold Embroidered Ethnic Ensemble",
-        "category": "haldi-mehendi",
-        "categoryName": "Haldi & Mehendi",
+        "category": "her-beginning",
+        "categoryName": "Her Beginning",
         "chapter": "her-new-chapter",
         "chapterName": "Her New Chapter",
         "price": 8299,
@@ -850,14 +939,16 @@ export const initialProducts = [
         "details": [
             "Katan Silk & Kota Dupatta",
             "Embroidered by artisan craftswomen"
-        ]
+        ],
+        "categorySlug": "her-beginning",
+        "subcategory": "suits"
     },
     {
         "id": "prod-baby-01",
         "slug": "ruffle-baby-frock-with-tail",
         "name": "Ruffle Baby Frock with Tail",
-        "category": "baby-clothes",
-        "categoryName": "Baby Clothes",
+        "category": "baby-girl-dresses",
+        "categoryName": "Baby Girl Dresses",
         "chapter": "her-little-one",
         "chapterName": "Her Little One",
         "price": 3200,
@@ -876,14 +967,16 @@ export const initialProducts = [
             "Soft Organza & Premium Net with 100% Cotton Lining",
             "Zero-scratch skin-friendly inner finish",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "baby-girl-dresses",
+        "subcategory": "frock"
     },
     {
         "id": "prod-baby-02",
         "slug": "net-embroidery-baby-frock",
         "name": "Net Embroidery Baby Frock",
-        "category": "baby-clothes",
-        "categoryName": "Baby Clothes",
+        "category": "baby-girl-dresses",
+        "categoryName": "Baby Girl Dresses",
         "chapter": "her-little-one",
         "chapterName": "Her Little One",
         "price": 2800,
@@ -902,14 +995,16 @@ export const initialProducts = [
             "Fine Embroidered Net & Muslin Cotton Lining",
             "Skin-friendly breathable fabric",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "baby-girl-dresses",
+        "subcategory": "frock"
     },
     {
         "id": "prod-baby-03",
         "slug": "net-ball-gown",
         "name": "Net Ball Gown",
-        "category": "baby-clothes",
-        "categoryName": "Baby Clothes",
+        "category": "baby-girl-dresses",
+        "categoryName": "Baby Girl Dresses",
         "chapter": "her-little-one",
         "chapterName": "Her Little One",
         "price": 3900,
@@ -928,14 +1023,16 @@ export const initialProducts = [
             "Multi-layered Shimmer Net & Soft Cotton Base",
             "Zero-irritation seams",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "baby-girl-dresses",
+        "subcategory": "gowns"
     },
     {
         "id": "prod-baby-04",
         "slug": "floral-handwork-net-frock",
         "name": "Floral Handwork Net Frock",
-        "category": "baby-clothes",
-        "categoryName": "Baby Clothes",
+        "category": "baby-girl-dresses",
+        "categoryName": "Baby Girl Dresses",
         "chapter": "her-little-one",
         "chapterName": "Her Little One",
         "price": 3500,
@@ -954,14 +1051,16 @@ export const initialProducts = [
             "Hand-stitched Floral Work & Breathable Cotton Base",
             "Comfort elastic back",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "baby-girl-dresses",
+        "subcategory": "frock"
     },
     {
         "id": "prod-baby-05",
         "slug": "pearl-frock",
         "name": "Pearl Frock",
-        "category": "baby-clothes",
-        "categoryName": "Baby Clothes",
+        "category": "baby-girl-dresses",
+        "categoryName": "Baby Girl Dresses",
         "chapter": "her-little-one",
         "chapterName": "Her Little One",
         "price": 2500,
@@ -980,14 +1079,16 @@ export const initialProducts = [
             "Hand-worked Faux Pearls & Soft Organza/Net",
             "Colours Available on Request",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "baby-girl-dresses",
+        "subcategory": "frock"
     },
     {
         "id": "prod-baby-06",
         "slug": "summer-baby-frock",
         "name": "Summer Baby Frock",
-        "category": "baby-clothes",
-        "categoryName": "Baby Clothes",
+        "category": "baby-girl-dresses",
+        "categoryName": "Baby Girl Dresses",
         "chapter": "her-little-one",
         "chapterName": "Her Little One",
         "price": 2200,
@@ -1006,14 +1107,16 @@ export const initialProducts = [
             "100% Breathable Cotton-Blend Fabric",
             "Easy snap back closure",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "baby-girl-dresses",
+        "subcategory": "frock"
     },
     {
         "id": "prod-baby-07",
         "slug": "oversized-bow-baby-frock",
         "name": "Oversized Bow Baby Frock",
-        "category": "baby-clothes",
-        "categoryName": "Baby Clothes",
+        "category": "baby-girl-dresses",
+        "categoryName": "Baby Girl Dresses",
         "chapter": "her-little-one",
         "chapterName": "Her Little One",
         "price": 2500,
@@ -1032,14 +1135,16 @@ export const initialProducts = [
             "Satin & Soft Net Tulle with Cotton Lining",
             "Detachable statement bow",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "baby-girl-dresses",
+        "subcategory": "frock"
     },
     {
         "id": "prod-baby-08",
         "slug": "hand-crafted-baby-frock",
         "name": "Hand Crafted Baby Frock",
-        "category": "baby-clothes",
-        "categoryName": "Baby Clothes",
+        "category": "baby-girl-dresses",
+        "categoryName": "Baby Girl Dresses",
         "chapter": "her-little-one",
         "chapterName": "Her Little One",
         "price": 2800,
@@ -1058,14 +1163,16 @@ export const initialProducts = [
             "Artisan Handcrafted Embroidery & Muslin Lining",
             "Hypoallergenic fabric",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "baby-girl-dresses",
+        "subcategory": "frock"
     },
     {
         "id": "prod-baby-09",
         "slug": "red-ball-baby-gown",
         "name": "Red Ball Baby Gown",
-        "category": "baby-clothes",
-        "categoryName": "Baby Clothes",
+        "category": "baby-girl-dresses",
+        "categoryName": "Baby Girl Dresses",
         "chapter": "her-little-one",
         "chapterName": "Her Little One",
         "price": 3500,
@@ -1084,14 +1191,16 @@ export const initialProducts = [
             "Crimson Satin & Net Volume Flare",
             "Cotton inner shell",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "baby-girl-dresses",
+        "subcategory": "gowns"
     },
     {
         "id": "prod-baby-10",
         "slug": "ball-gown-with-detachable-tail",
         "name": "Ball Gown with Detachable Tail",
-        "category": "baby-clothes",
-        "categoryName": "Baby Clothes",
+        "category": "baby-girl-dresses",
+        "categoryName": "Baby Girl Dresses",
         "chapter": "her-little-one",
         "chapterName": "Her Little One",
         "price": 3899,
@@ -1111,14 +1220,16 @@ export const initialProducts = [
             "Detachable trailing tail feature",
             "Pure Soft Silk & Net with Cotton Lining",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "baby-girl-dresses",
+        "subcategory": "gowns"
     },
     {
         "id": "prod-baby-11",
         "slug": "wine-embroidered-lehenga-choli",
         "name": "Wine Embroidered Lehenga Choli",
-        "category": "baby-clothes",
-        "categoryName": "Baby Clothes",
+        "category": "baby-girl-dresses",
+        "categoryName": "Baby Girl Dresses",
         "chapter": "her-little-one",
         "chapterName": "Her Little One",
         "price": 4200,
@@ -1138,14 +1249,16 @@ export const initialProducts = [
             "Heavy Embroidered Fabric & Muslin Lining",
             "Soft elastic fit for baby skin",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "baby-girl-dresses",
+        "subcategory": "mini-lehengas"
     },
     {
         "id": "prod-baby-12",
         "slug": "halter-neck-flower-gown",
         "name": "Halter Neck Flower Gown",
-        "category": "baby-clothes",
-        "categoryName": "Baby Clothes",
+        "category": "baby-girl-dresses",
+        "categoryName": "Baby Girl Dresses",
         "chapter": "her-little-one",
         "chapterName": "Her Little One",
         "price": 3566,
@@ -1165,14 +1278,16 @@ export const initialProducts = [
             "3D Fabric Flowers & Soft Organza Flare",
             "Comfortable halter fit",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "baby-girl-dresses",
+        "subcategory": "gowns"
     },
     {
         "id": "prod-baby-13",
         "slug": "peach-embroidered-net-lehenga-choli",
         "name": "Peach Net Embroidered Lehenga Choli",
-        "category": "baby-clothes",
-        "categoryName": "Baby Clothes",
+        "category": "baby-girl-dresses",
+        "categoryName": "Baby Girl Dresses",
         "chapter": "her-little-one",
         "chapterName": "Her Little One",
         "price": 2999,
@@ -1192,14 +1307,16 @@ export const initialProducts = [
             "Embroidered Net Fabric & Cotton Lining",
             "Includes matching dupatta",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "baby-girl-dresses",
+        "subcategory": "mini-lehengas"
     },
     {
         "id": "prod-gown-01",
         "slug": "burgundy-sparkle-mermaid-gown",
         "name": "Burgundy Sparkle Mermaid Gown",
-        "category": "gowns-lehengas",
-        "categoryName": "Gowns & Lehengas",
+        "category": "her-beginning",
+        "categoryName": "Her Beginning",
         "chapter": "her-new-chapter",
         "chapterName": "Her New Chapter",
         "price": 2666,
@@ -1218,14 +1335,16 @@ export const initialProducts = [
             "Shimmer Sequin Mesh & Micro-Satin Base",
             "Hidden Back Concealed Zip & Molded Cups",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "her-beginning",
+        "subcategory": "bodycon-dresses"
     },
     {
         "id": "prod-gown-02",
         "slug": "black-velvet-midnight-bow-mermaid-gown",
         "name": "Black Velvet Midnight Bow Mermaid Gown",
-        "category": "gowns-lehengas",
-        "categoryName": "Gowns & Lehengas",
+        "category": "her-beginning",
+        "categoryName": "Her Beginning",
         "chapter": "her-new-chapter",
         "chapterName": "Her New Chapter",
         "price": 3990,
@@ -1244,14 +1363,16 @@ export const initialProducts = [
             "Premium Plush Velvet Silk",
             "Statement Oversized Shoulder Bow",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "her-beginning",
+        "subcategory": "bodycon-dresses"
     },
     {
         "id": "prod-gown-03",
         "slug": "black-swan-draped-gown",
         "name": "Black Swan Draped Gown",
-        "category": "gowns-lehengas",
-        "categoryName": "Gowns & Lehengas",
+        "category": "her-beginning",
+        "categoryName": "Her Beginning",
         "chapter": "her-new-chapter",
         "chapterName": "Her New Chapter",
         "price": 5900,
@@ -1270,14 +1391,16 @@ export const initialProducts = [
             "Structured Satin Corset & Sheer Organza",
             "High Slit & Hand-pleated Corset",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "her-beginning",
+        "subcategory": "bodycon-dresses"
     },
     {
         "id": "prod-gown-04",
         "slug": "black-sculpted-off-shoulder-gown",
         "name": "Black Sculpted Off-Shoulder Gown",
-        "category": "gowns-lehengas",
-        "categoryName": "Gowns & Lehengas",
+        "category": "her-beginning",
+        "categoryName": "Her Beginning",
         "chapter": "her-new-chapter",
         "chapterName": "Her New Chapter",
         "price": 2500,
@@ -1296,14 +1419,16 @@ export const initialProducts = [
             "Heavy Stretch Micro-Satin",
             "Off-shoulder Foldover Collar",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "her-beginning",
+        "subcategory": "suits"
     },
     {
         "id": "prod-gown-05",
         "slug": "burgundy-draped-scarf-mermaid-gown",
         "name": "Burgundy Draped Scarf Mermaid Gown",
-        "category": "gowns-lehengas",
-        "categoryName": "Gowns & Lehengas",
+        "category": "her-beginning",
+        "categoryName": "Her Beginning",
         "chapter": "her-new-chapter",
         "chapterName": "Her New Chapter",
         "price": 4899,
@@ -1322,14 +1447,16 @@ export const initialProducts = [
             "Viscose Georgette & Attached Scarf Drape",
             "Hand-beaded Shoulder Motifs",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "her-beginning",
+        "subcategory": "bodycon-dresses"
     },
     {
         "id": "prod-gown-06",
         "slug": "maroon-cape-overlay-gown",
         "name": "Maroon Cape Overlay Gown",
-        "category": "gowns-lehengas",
-        "categoryName": "Gowns & Lehengas",
+        "category": "her-beginning",
+        "categoryName": "Her Beginning",
         "chapter": "her-new-chapter",
         "chapterName": "Her New Chapter",
         "price": 5200,
@@ -1348,14 +1475,16 @@ export const initialProducts = [
             "Pure Mulberry Silk & Embroidered Net Cape",
             "Neckline Zari Embroidery",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "her-beginning",
+        "subcategory": "suits"
     },
     {
         "id": "prod-gown-07",
         "slug": "burgundy-ruched-halter-draped-gown",
         "name": "Burgundy Ruched Halter Draped Gown",
-        "category": "gowns-lehengas",
-        "categoryName": "Gowns & Lehengas",
+        "category": "her-beginning",
+        "categoryName": "Her Beginning",
         "chapter": "her-new-chapter",
         "chapterName": "Her New Chapter",
         "price": 5400,
@@ -1374,14 +1503,16 @@ export const initialProducts = [
             "Fluid Micro-Satin & Stretch Jersey Base",
             "Halter Neck Neckline with Back Tie",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "her-beginning",
+        "subcategory": "bodycon-dresses"
     },
     {
         "id": "prod-gown-08",
         "slug": "burgundy-draped-elegance-gown",
         "name": "Burgundy Draped Elegance Gown",
-        "category": "gowns-lehengas",
-        "categoryName": "Gowns & Lehengas",
+        "category": "her-beginning",
+        "categoryName": "Her Beginning",
         "chapter": "her-new-chapter",
         "chapterName": "Her New Chapter",
         "price": 3570,
@@ -1400,14 +1531,16 @@ export const initialProducts = [
             "Fluid Silk Georgette",
             "Cowl Neckline & Cinched Waist",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "her-beginning",
+        "subcategory": "bodycon-dresses"
     },
     {
         "id": "prod-gown-09",
         "slug": "burgundy-royal-draped-cape-gown",
         "name": "Burgundy Royal Draped Cape Gown",
-        "category": "gowns-lehengas",
-        "categoryName": "Gowns & Lehengas",
+        "category": "her-beginning",
+        "categoryName": "Her Beginning",
         "chapter": "her-new-chapter",
         "chapterName": "Her New Chapter",
         "price": 6500,
@@ -1426,14 +1559,16 @@ export const initialProducts = [
             "Pure Raw Silk & Zardozi Embroidered Cape",
             "Floor-length Flared Train",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "her-beginning",
+        "subcategory": "bodycon-dresses"
     },
     {
         "id": "prod-gown-10",
         "slug": "black-sculpted-off-shoulder-gown-couture",
         "name": "Black Sculpted Off-Shoulder Gown (Couture)",
-        "category": "gowns-lehengas",
-        "categoryName": "Gowns & Lehengas",
+        "category": "her-beginning",
+        "categoryName": "Her Beginning",
         "chapter": "her-new-chapter",
         "chapterName": "Her New Chapter",
         "price": 3200,
@@ -1452,14 +1587,16 @@ export const initialProducts = [
             "Heavy Italian Satin & Crystal Border",
             "Concealed Corset Boning",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "her-beginning",
+        "subcategory": "suits"
     },
     {
         "id": "prod-gown-11",
         "slug": "pastel-bloom-pakistani-style-bridal-gown",
         "name": "Pastel Bloom Floral Pakistani Style Bridal Gown 🌸",
-        "category": "gowns-lehengas",
-        "categoryName": "Gowns & Lehengas",
+        "category": "her-big-day",
+        "categoryName": "Her Big Day",
         "chapter": "her-new-chapter",
         "chapterName": "Her New Chapter",
         "price": 16700,
@@ -1479,14 +1616,16 @@ export const initialProducts = [
             "Full Hand-Worked 3D Floral & Dabka Resham",
             "Includes Scalloped Border Dupatta",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "her-big-day",
+        "subcategory": "bridal-lehenga"
     },
     {
         "id": "prod-gown-12",
         "slug": "engagement-bridal-lehenga-tail-sleeves",
         "name": "Engagement Bridal Lehenga with Tail Sleeves",
-        "category": "gowns-lehengas",
-        "categoryName": "Gowns & Lehengas",
+        "category": "her-bridal-story",
+        "categoryName": "Her Bridal Story",
         "chapter": "her-new-chapter",
         "chapterName": "Her New Chapter",
         "price": 19900,
@@ -1506,14 +1645,16 @@ export const initialProducts = [
             "Hand Zardozi & Sequin Crystal Detailing",
             "Custom Made-to-Measure Fitting",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "her-bridal-story",
+        "subcategory": "engagement-lehenga"
     },
     {
         "id": "prod-gown-13",
         "slug": "royal-ivory-gold-lehenga",
         "name": "Royal Ivory Gold Lehenga",
-        "category": "gowns-lehengas",
-        "categoryName": "Gowns & Lehengas",
+        "category": "her-beginning",
+        "categoryName": "Her Beginning",
         "chapter": "her-new-chapter",
         "chapterName": "Her New Chapter",
         "price": 16500,
@@ -1532,14 +1673,16 @@ export const initialProducts = [
             "Banarasi Raw Silk & Organza Dupatta",
             "Real Antique Gold Zari Weave",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "her-beginning",
+        "subcategory": "suits"
     },
     {
         "id": "prod-gown-14",
         "slug": "elegant-crop-top-lehenga-set",
         "name": "Elegant Crop Top Lehenga Set",
-        "category": "gowns-lehengas",
-        "categoryName": "Gowns & Lehengas",
+        "category": "her-beginning",
+        "categoryName": "Her Beginning",
         "chapter": "her-new-chapter",
         "chapterName": "Her New Chapter",
         "price": 12000,
@@ -1558,14 +1701,16 @@ export const initialProducts = [
             "Viscose Georgette & Hand-beaded Crop Blouse",
             "Flared Skirt Volume with Can-Can Lining",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "her-beginning",
+        "subcategory": "suits"
     },
     {
         "id": "prod-gown-15",
         "slug": "flared-engagement-outfit",
         "name": "Flared Engagement Outfit",
-        "category": "gowns-lehengas",
-        "categoryName": "Gowns & Lehengas",
+        "category": "her-bridal-story",
+        "categoryName": "Her Bridal Story",
         "chapter": "her-new-chapter",
         "chapterName": "Her New Chapter",
         "price": 9900,
@@ -1584,14 +1729,16 @@ export const initialProducts = [
             "Shimmer Tissue Net & Mirror Bodice",
             "Includes Layered Dupatta",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "her-bridal-story",
+        "subcategory": "engagement-lehenga"
     },
     {
         "id": "prod-gown-16",
         "slug": "blush-pink-ruffle-lehenga-set",
         "name": "Blush Pink Ruffle Lehenga Set",
-        "category": "gowns-lehengas",
-        "categoryName": "Gowns & Lehengas",
+        "category": "her-beginning",
+        "categoryName": "Her Beginning",
         "chapter": "her-new-chapter",
         "chapterName": "Her New Chapter",
         "price": 11500,
@@ -1610,9 +1757,10 @@ export const initialProducts = [
             "Tiered Soft Tulle Net Ruffles & Micro-Satin Lining",
             "Sweetheart Neck Sequin Blouse",
             "Contact Nisha: +91 82187 52043"
-        ]
+        ],
+        "categorySlug": "her-beginning",
+        "subcategory": "suits"
     }
-
 ];
 
 export const initialGallery = [
