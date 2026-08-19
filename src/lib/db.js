@@ -403,6 +403,8 @@ export async function getProductByIdAsync(idOrSlug) {
 
 // Update a single product independently by ID without touching or overwriting other products
 export async function updateProductAsync(productId, updates) {
+    invalidateDbCache();
+
     const { _id, ...safeUpdates } = updates;
     safeUpdates.updatedAt = new Date().toISOString();
     let mongoSaved = false;
@@ -439,23 +441,13 @@ export async function updateProductAsync(productId, updates) {
         console.warn('[updateProductAsync] Local file update skipped:', fileErr.message);
     }
 
-    // Always update or invalidate memory cache
-    if (_dbCache && _dbCache.products) {
-        const idx = _dbCache.products.findIndex((p) => p.id === productId || p.slug === productId);
-        if (idx !== -1) {
-            _dbCache.products[idx] = { ..._dbCache.products[idx], ...safeUpdates };
-        } else {
-            _dbCache.products.push({ id: productId, ...safeUpdates });
-        }
-    } else {
-        invalidateDbCache();
-    }
-
+    invalidateDbCache();
     return mongoSaved || localSaved;
 }
 
 // Create a single product independently
 export async function createProductAsync(newProduct) {
+    invalidateDbCache();
     const { _id, ...safeProduct } = newProduct;
     let mongoSaved = false;
     let localSaved = false;
@@ -490,22 +482,13 @@ export async function createProductAsync(newProduct) {
         console.warn('[createProductAsync] Local file create skipped:', fileErr.message);
     }
 
-    if (_dbCache && _dbCache.products) {
-        const existingIdx = _dbCache.products.findIndex(p => p.id === safeProduct.id);
-        if (existingIdx !== -1) {
-            _dbCache.products[existingIdx] = safeProduct;
-        } else {
-            _dbCache.products.unshift(safeProduct);
-        }
-    } else {
-        invalidateDbCache();
-    }
-
-    return mongoSaved || localSaved || true;
+    invalidateDbCache();
+    return mongoSaved || localSaved;
 }
 
 // Delete a single product independently by ID
 export async function deleteProductAsync(productId) {
+    invalidateDbCache();
     let mongoSaved = false;
     let localSaved = false;
 
@@ -531,13 +514,8 @@ export async function deleteProductAsync(productId) {
         console.warn('[deleteProductAsync] Local file delete skipped:', fileErr.message);
     }
 
-    if (_dbCache && _dbCache.products) {
-        _dbCache.products = _dbCache.products.filter((p) => !(p.id === productId || p.slug === productId));
-    } else {
-        invalidateDbCache();
-    }
-
-    return mongoSaved || localSaved || true;
+    invalidateDbCache();
+    return mongoSaved || localSaved;
 }
 
 
