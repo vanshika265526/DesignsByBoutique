@@ -242,10 +242,16 @@ export async function getDbAsync() {
             db.collection('auditLogs').find({}).sort({ timestamp: -1 }).limit(100).toArray(),
         ]);
 
+        const resolvedChapters = (chapters.length > 0 ? chapters : getSeedData().chapters).map((chapter) =>
+            chapter.categorySlug === 'bridal-lehengas'
+                ? { ...chapter, categorySlug: 'gowns-lehengas', categoryName: 'Gowns & Lehengas' }
+                : chapter
+        );
+
         const result = {
             products: products.length > 0 ? products : getSeedData().products,
             categories: categories.length > 0 ? categories : getSeedData().categories,
-            chapters: chapters.length > 0 ? chapters : getSeedData().chapters,
+            chapters: resolvedChapters,
             gallery: gallery.length > 0 ? gallery : getSeedData().gallery,
             offers: offers.length > 0 ? offers : getSeedData().offers,
             enquiries: enquiries.length > 0 ? enquiries : getSeedData().enquiries,
