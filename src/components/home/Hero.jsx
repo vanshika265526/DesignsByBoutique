@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Scissors, CalendarCheck, Sparkles } from "lucide-react";
+import { Scissors, CalendarCheck } from "lucide-react";
 import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import { boutiqueConfig, buildWhatsAppLink } from "@/config/boutique";
 
@@ -115,45 +115,23 @@ export default function Hero() {
                     </div>
                 ))}
 
-                {/* Legibility overlay */}
-                <div className="absolute inset-0 bg-gradient-to-b from-boutique-charcoal/40 via-boutique-charcoal/25 to-boutique-charcoal/60" />
+                {/* Legibility overlay — stronger at bottom-left for text legibility */}
+                <div className="absolute inset-0 bg-gradient-to-t from-boutique-charcoal/75 via-boutique-charcoal/20 to-transparent" />
 
-                {/* Centered content */}
-                <div className="relative z-10 h-full flex flex-col items-center justify-end text-center px-4 sm:px-6 pb-20 sm:pb-24">
-                    <p className="inline-flex items-center gap-2 text-[11px] sm:text-xs uppercase tracking-[0.35em] text-white/90 font-medium mb-4">
-                        <Sparkles className="w-3.5 h-3.5 text-boutique-gold-light" />
-                        Bespoke Couture · New Delhi
-                    </p>
-
+                {/* Bottom-left content */}
+                <div className="relative z-10 h-full flex flex-col items-start justify-end text-left px-6 sm:px-10 lg:px-16 pb-10 sm:pb-14 max-w-2xl">
                     <h1
                         lang="hi"
-                        className="font-devanagari text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white max-w-4xl"
+                        className="font-devanagari text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white"
                     >
                         हर सफ़र खूबसूरती के साथ
                     </h1>
                     <p
                         key={`text-${active}`}
-                        className="mt-3 max-w-xl text-sm sm:text-base md:text-lg leading-relaxed text-white/90 font-light"
+                        className="mt-3 text-sm sm:text-base md:text-lg leading-relaxed text-white/85 font-light"
                     >
                         {slides[active]?.text}
                     </p>
-                    <div className="mt-9 flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
-                        <Link
-                            href="/collections"
-                            className="w-full sm:w-auto inline-flex items-center justify-center bg-boutique-rose hover:bg-boutique-rose-dark text-white px-9 py-3.5 text-[11px] sm:text-xs font-semibold tracking-[0.2em] uppercase transition-all shadow-lg"
-                        >
-                            Explore Collections
-                        </Link>
-                        <a
-                            href={buildWhatsAppLink()}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/70 hover:bg-white hover:text-boutique-charcoal text-white px-8 py-3.5 text-[11px] sm:text-xs font-semibold tracking-[0.2em] uppercase transition-all"
-                        >
-                            <WhatsAppIcon className="w-4 h-4" />
-                            Enquire on WhatsApp
-                        </a>
-                    </div>
                 </div>
 
                 {/* Slide indicators */}
@@ -170,6 +148,27 @@ export default function Hero() {
                         ))}
                     </div>
                 )}
+            </div>
+
+            {/* CTA bar — sits right below the hero image */}
+            <div className="bg-boutique-bg-card border-b border-boutique-muted-border/60 px-4 sm:px-6 lg:px-8 py-4">
+                <div className="max-w-7xl mx-auto flex flex-row items-center justify-center gap-0 divide-x divide-boutique-muted-border/60">
+                    <Link
+                        href="/collections"
+                        className="inline-flex items-center justify-center gap-2 px-8 py-2.5 text-[11px] sm:text-xs font-semibold tracking-[0.2em] uppercase bg-boutique-rose hover:bg-boutique-rose-dark text-white transition-colors"
+                    >
+                        Explore Collections
+                    </Link>
+                    <a
+                        href={buildWhatsAppLink()}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 px-8 py-2.5 text-[11px] sm:text-xs font-semibold tracking-[0.2em] uppercase bg-green-600 hover:bg-green-700 text-white transition-colors"
+                    >
+                        <WhatsAppIcon className="w-3.5 h-3.5 text-white" />
+                        Enquire on WhatsApp
+                    </a>
+                </div>
             </div>
 
             {/* Trust badge strip.

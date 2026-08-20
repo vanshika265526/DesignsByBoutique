@@ -15,9 +15,9 @@ export const categoriesTaxonomy = [
         "published": true,
         "order": 1,
         "subcategories": [
-            { "id": "gowns", "name": "Gowns", "slug": "gowns", "image": "https://images.pexels.com/photos/16237026/pexels-photo-16237026.jpeg?auto=compress&cs=tinysrgb&w=600" },
+            { "id": "gowns", "name": "Gowns", "slug": "gowns", "image": "https://images.pexels.com/photos/15213328/pexels-photo-15213328.jpeg?auto=compress&cs=tinysrgb&w=600" },
             { "id": "frock", "name": "Frock", "slug": "frock", "image": "https://images.pexels.com/photos/15142195/pexels-photo-15142195.jpeg?auto=compress&cs=tinysrgb&w=600" },
-            { "id": "party-wear", "name": "Party Wear", "slug": "party-wear", "image": "https://images.pexels.com/photos/15142195/pexels-photo-15142195.jpeg?auto=compress&cs=tinysrgb&w=600" },
+            { "id": "party-wear", "name": "Party Wear", "slug": "party-wear", "image": "https://images.pexels.com/photos/37182288/pexels-photo-37182288.jpeg?auto=compress&cs=tinysrgb&w=600" },
             { "id": "mini-lehengas", "name": "Mini Lehengas", "slug": "mini-lehengas", "image": "https://wholesalemegamart.com/wp-content/uploads/2026/04/ZSR-3169-KIDS-ETHNIC-WEAR-FOR-GIRLS-WHOLESALE-1.jpeg" }
         ]
     },
@@ -52,7 +52,7 @@ export const categoriesTaxonomy = [
         "subcategories": [
             { "id": "engagement-lehenga", "name": "Engagement lehenga", "slug": "engagement-lehenga", "image": "https://img.perniaspopupshop.com/catalog/product/n/k/NKGC072509_1.jpg?impolicy=detailimageprod" },
             { "id": "engagement-gown", "name": "Engagement gown", "slug": "engagement-gown", "image": "https://images.pexels.com/photos/31750729/pexels-photo-31750729.jpeg?auto=compress&cs=tinysrgb&w=600" },
-            { "id": "pre-wedding-gown", "name": "Pre-wedding gown", "slug": "pre-wedding-gown", "image": "https://images.pexels.com/photos/31750729/pexels-photo-31750729.jpeg?auto=compress&cs=tinysrgb&w=600" }
+            { "id": "pre-wedding-gown", "name": "Pre-wedding gown", "slug": "pre-wedding-gown", "image": "https://images.pexels.com/photos/25184994/pexels-photo-25184994.jpeg?auto=compress&cs=tinysrgb&w=600" }
         ]
     },
     {
@@ -70,8 +70,8 @@ export const categoriesTaxonomy = [
             { "id": "mehandi-outfit", "name": "Mehandi outfit", "slug": "mehandi-outfit", "image": "https://images.pexels.com/photos/31750738/pexels-photo-31750738.jpeg?auto=compress&cs=tinysrgb&w=600" },
             { "id": "sangeet-lehenga", "name": "Sangeet lehenga", "slug": "sangeet-lehenga", "image": "https://images.pexels.com/photos/19956021/pexels-photo-19956021.jpeg?auto=compress&cs=tinysrgb&w=600" },
             { "id": "bridal-lehenga", "name": "Bridal lehenga", "slug": "bridal-lehenga", "image": "https://images.pexels.com/photos/26973350/pexels-photo-26973350.jpeg?auto=compress&cs=tinysrgb&w=600" },
-            { "id": "reception-outfit", "name": "Reception outfit", "slug": "reception-outfit", "image": "https://images.pexels.com/photos/25184994/pexels-photo-25184994.jpeg?auto=compress&cs=tinysrgb&w=600" },
-            { "id": "saree", "name": "Saree", "slug": "saree", "image": "https://images.pexels.com/photos/31750729/pexels-photo-31750729.jpeg?auto=compress&cs=tinysrgb&w=600" }
+            { "id": "reception-outfit", "name": "Reception outfit", "slug": "reception-outfit", "image": "https://images.pexels.com/photos/23623618/pexels-photo-23623618.jpeg?auto=compress&cs=tinysrgb&w=600" },
+            { "id": "saree", "name": "Saree", "slug": "saree", "image": "https://images.pexels.com/photos/12992093/pexels-photo-12992093.jpeg?auto=compress&cs=tinysrgb&w=600" }
         ]
     },
     {
