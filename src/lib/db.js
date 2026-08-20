@@ -159,6 +159,14 @@ import { getDatabase } from './mongodb';
 // a fresh database, so repeating it on every request just wastes round-trips.
 export async function seedMongoIfEmpty() {
     if (globalThis.__dbSeedChecked) return;
+    // Seeding is an ADMIN/bootstrap concern, not something a visitor's page load
+    // should pay for. It also used to be able to re-insert the bundled demo
+    // products whenever a collection read back empty. Opt in explicitly with
+    // SEED_DB_IF_EMPTY=true (local dev seeds automatically).
+    if (process.env.NODE_ENV === 'production' && process.env.SEED_DB_IF_EMPTY !== 'true') {
+        globalThis.__dbSeedChecked = true;
+        return;
+    }
     try {
         const db = await getDatabase();
         const collections = ['products', 'categories', 'chapters', 'gallery', 'offers', 'enquiries', 'testimonials'];
@@ -199,6 +207,11 @@ export async function seedMongoIfEmpty() {
 let _dbCache = null;
 let _dbCacheAt = 0;
 const DB_CACHE_TTL_MS = 15 * 1000;
+
+// Last successful Atlas read, kept for the lifetime of the instance. If a later
+// read fails we serve this rather than the bundled db.json — stale-but-real data
+// beats the demo catalogue that shipped in the repo.
+let _lastGoodDb = null;
 
 export function invalidateDbCache() {
     _dbCache = null;
@@ -266,9 +279,15 @@ export async function getDbAsync() {
         // the main cause of slowness. Admin actions persist via writeDb directly.
         _dbCache = result;
         _dbCacheAt = now;
+        _lastGoodDb = result;
         return result;
     } catch (err) {
-        console.warn('[MongoDB Atlas] Failed to connect to Atlas, using local database:', err.message);
+        console.error('[MongoDB Atlas] Read failed:', err.message);
+        if (_lastGoodDb) {
+            console.warn('[MongoDB Atlas] Serving last known-good Atlas snapshot.');
+            return _lastGoodDb;
+        }
+        console.warn('[MongoDB Atlas] No live data available — falling back to bundled data/db.json.');
         return readDb();
     }
 }

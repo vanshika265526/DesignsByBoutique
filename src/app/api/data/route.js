@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
 import { getDbAsync, writeDb, addAuditLog } from '@/lib/db';
 
+// Always run on request - never let Next cache this handler's response.
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
     try {
         const db = await getDbAsync();

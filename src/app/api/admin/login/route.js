@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server";
 import {
+
+// Always run on request - never let Next cache this handler's response.
+export const dynamic = 'force-dynamic';
     ADMIN_EMAIL,
     verifyPassword,
     verifyAdminCredentials,

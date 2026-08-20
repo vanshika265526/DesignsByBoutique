@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server';
 import path from 'path';
 import { uploadToCloudinary } from '@/lib/cloudinary';
 
+// Always run on request - never let Next cache this handler's response.
+export const dynamic = 'force-dynamic';
+
 export const runtime = 'nodejs';
 
 // Max upload size — Cloudinary free tier handles up to 10MB per upload.

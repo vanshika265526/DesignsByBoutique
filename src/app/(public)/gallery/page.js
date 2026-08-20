@@ -2,9 +2,10 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import LookbookGrid from "@/components/gallery/LookbookGrid";
 import { getDbAsync } from "@/lib/db";
 
-// ISR — cached & regenerated at most once a minute so admin add/remove shows
-// through within ~a minute while the page stays fast.
-export const revalidate = 60;
+// Always render on request — the gallery must reflect live Cloudinary media the
+// moment an admin publishes it, never a snapshot baked at build time.
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export const metadata = {
     title: "Lookbook Gallery — High Fashion Editorial",

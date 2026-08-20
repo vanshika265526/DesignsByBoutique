@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
 import { readDb, writeDb, addAuditLog, getDbAsync } from '@/lib/db';
 
+// Always run on request - never let Next cache this handler's response.
+export const dynamic = 'force-dynamic';
+
 export async function PATCH(request, { params }) {
     try {
         const { id } = params;

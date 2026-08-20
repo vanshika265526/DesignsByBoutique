@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
 import { getProductByIdAsync, updateProductAsync, deleteProductAsync, addAuditLog } from '@/lib/db';
 
+// Always run on request - never let Next cache this handler's response.
+export const dynamic = 'force-dynamic';
+
 // GET single product by ID or slug
 export async function GET(request, { params }) {
     try {

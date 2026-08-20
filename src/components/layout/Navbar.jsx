@@ -59,7 +59,7 @@ export default function Navbar() {
     }, [pathname]);
 
     useEffect(() => {
-        fetch("/api/data/categories")
+        fetch("/api/data/categories", { cache: "no-store" })
             .then((response) => response.json())
             .then((result) => {
                 if (result.success) setLiveCategories(result.data || []);
@@ -68,7 +68,7 @@ export default function Navbar() {
     }, []);
 
     useEffect(() => {
-        fetch("/api/data/products?status=published")
+        fetch("/api/data/products?status=published", { cache: "no-store" })
             .then((response) => response.json())
             .then((result) => {
                 if (result.success) setProducts(result.data || []);
