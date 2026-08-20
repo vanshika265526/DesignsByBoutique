@@ -121,7 +121,7 @@ export default function Hero() {
                 <div className="relative z-10 h-full flex flex-col items-start justify-end text-left px-6 sm:px-10 lg:px-16 pb-10 sm:pb-14 max-w-2xl">
                     <h1
                         lang="hi"
-                        className="font-devanagari text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white"
+                        className="font-devanagari whitespace-nowrap text-[clamp(1.5rem,5.2vw,3.75rem)] text-white"
                     >
                         हर सफ़र खूबसूरती के साथ
                     </h1>
