@@ -282,12 +282,12 @@ export default function Navbar() {
                         <Link href="/" className="group flex-shrink-0" aria-label="Designs by Nisha — Home">
                             <span className="relative block h-16 w-[165px] sm:h-[72px] sm:w-[190px] md:h-[92px] md:w-[240px]">
                                 <Image
-                                    src="/images/logo.png?v=logo2"
+                                    src="/images/logo-transparent.png"
                                     alt="Designs by Nisha Boutique New Delhi"
                                     fill
                                     priority
                                     sizes="(min-width: 768px) 240px, 190px"
-                                    className="object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105"
+                                    className="object-contain transition-transform duration-300 group-hover:scale-105"
                                 />
                             </span>
                         </Link>
