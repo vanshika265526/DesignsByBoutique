@@ -10,7 +10,6 @@ import { boutiqueConfig, buildWhatsAppLink } from "@/config/boutique";
 const trustBadges = [
     { icon: Scissors, title: "Made Just for You", subtitle: "Stitched to your size and style" },
     { icon: CalendarCheck, title: "Visit or Book a Time", subtitle: "Open Mon–Sun, 10 AM – 9 PM" },
-    { icon: WhatsAppIcon, title: "Ask on WhatsApp", subtitle: "Message us anytime — it's quick and easy" },
 ];
 
 // Auto-rotating hero slides — each editorial image in /public/images/hero/ has
@@ -151,11 +150,11 @@ export default function Hero() {
             </div>
 
             {/* CTA bar — sits right below the hero image */}
-            <div className="bg-boutique-bg-card border-b border-boutique-muted-border/60 px-4 sm:px-6 lg:px-8 py-4">
-                <div className="max-w-7xl mx-auto flex flex-row items-center justify-center gap-0 divide-x divide-boutique-muted-border/60">
+            <div className="bg-boutique-bg-card border-b border-boutique-muted-border/60 px-2 sm:px-6 lg:px-8 py-3">
+                <div className="max-w-7xl mx-auto flex flex-row flex-nowrap items-center justify-center gap-2 sm:gap-4">
                     <Link
                         href="/collections"
-                        className="inline-flex items-center justify-center gap-2 px-8 py-2.5 text-[11px] sm:text-xs font-semibold tracking-[0.2em] uppercase bg-boutique-rose hover:bg-boutique-rose-dark text-white transition-colors"
+                        className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-8 py-2 sm:py-2.5 text-[10px] sm:text-xs font-semibold tracking-[0.1em] sm:tracking-[0.18em] uppercase bg-boutique-rose hover:bg-boutique-rose-dark text-white transition-all rounded-md shadow-xs whitespace-nowrap flex-shrink-0"
                     >
                         Explore Collections
                     </Link>
@@ -163,31 +162,23 @@ export default function Hero() {
                         href={buildWhatsAppLink()}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 px-8 py-2.5 text-[11px] sm:text-xs font-semibold tracking-[0.2em] uppercase bg-green-600 hover:bg-green-700 text-white transition-colors"
+                        className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-8 py-2 sm:py-2.5 text-[10px] sm:text-xs font-semibold tracking-[0.1em] sm:tracking-[0.18em] uppercase bg-boutique-rose hover:bg-boutique-rose-dark text-white transition-all rounded-md shadow-xs whitespace-nowrap flex-shrink-0"
                     >
-                        <WhatsAppIcon className="w-3.5 h-3.5 text-white" />
-                        Enquire on WhatsApp
+                        <WhatsAppIcon className="w-3.5 h-3.5 text-white flex-shrink-0" />
+                        <span>Enquire on WhatsApp</span>
                     </a>
                 </div>
             </div>
 
-            {/* Trust badge strip.
-                Mobile: 2 columns — first two badges share a row, the third spans
-                the full width below. Desktop (sm+): 3 equal columns in one row. */}
+            {/* Trust badge strip — 2 equal columns */}
             <div className="border-b border-boutique-muted-border/70 bg-boutique-bg-card">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-3">
-                    {trustBadges.map((b, i) => (
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 divide-x divide-boutique-muted-border/60">
+                    {trustBadges.map((b) => (
                         <div
                             key={b.title}
-                            className={[
-                                "flex items-start sm:items-center gap-2.5 sm:gap-3 px-3 py-5 sm:py-6 sm:px-6 border-boutique-muted-border/60",
-                                i === 0 ? "border-r sm:border-r-0" : "",       // mobile divider between the first two
-                                i > 0 ? "sm:border-l" : "",                     // desktop vertical dividers
-                                // third badge: full-width row below, centered on mobile
-                                i === 2 ? "col-span-2 border-t justify-center sm:col-span-1 sm:border-t-0 sm:justify-start" : "justify-start",
-                            ].join(" ")}
+                            className="flex items-center justify-center gap-2.5 sm:gap-3 px-3 sm:px-6 py-5 sm:py-6 text-center sm:text-left"
                         >
-                            <b.icon className="w-5 h-5 mt-0.5 sm:mt-0 text-boutique-rose flex-shrink-0" />
+                            <b.icon className="w-5 h-5 text-boutique-rose flex-shrink-0" />
                             <div className="leading-snug">
                                 <p className="text-xs font-semibold uppercase tracking-wider text-boutique-charcoal">{b.title}</p>
                                 <p className="text-[11px] text-boutique-taupe font-light mt-0.5">{b.subtitle}</p>
