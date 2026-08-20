@@ -1,9 +1,10 @@
+// Always run on request - never let Next cache this handler's response.
+export const dynamic = 'force-dynamic';
+
 import { NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
 import { createProductAsync, addAuditLog, getDbAsync } from '@/lib/db';
 
-// Always run on request - never let Next cache this handler's response.
-export const dynamic = 'force-dynamic';
 
 // GET all products or filter by category/chapter
 export async function GET(request) {

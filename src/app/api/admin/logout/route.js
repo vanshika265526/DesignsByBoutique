@@ -1,8 +1,9 @@
+// Always run on request - never let Next cache this handler's response.
+export const dynamic = 'force-dynamic';
+
 import { NextResponse } from "next/server";
 import { SESSION_COOKIE } from "@/lib/adminAuth";
 
-// Always run on request - never let Next cache this handler's response.
-export const dynamic = 'force-dynamic';
 
 export const runtime = "nodejs";
 

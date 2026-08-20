@@ -18,8 +18,8 @@ const options = {
     // Atlas is reachable. The old 5s server-selection budget regularly expired on
     // that very first request, which is what made the site render the stale
     // bundled JSON ("old products") until a warm instance took over.
-    serverSelectionTimeoutMS: 15000,
-    connectTimeoutMS: 15000,
+    serverSelectionTimeoutMS: 10000,
+    connectTimeoutMS: 10000,
     socketTimeoutMS: 20000,
     maxPoolSize: 10,
     minPoolSize: 0,
@@ -50,7 +50,9 @@ function getClientPromise() {
 }
 
 const DB_NAME = process.env.MONGODB_DB || "designs_by_nisha";
-const CONNECT_ATTEMPTS = 3;
+// Two attempts keeps the worst case inside a typical serverless time budget
+// while still surviving a single transient handshake failure.
+const CONNECT_ATTEMPTS = 2;
 
 export async function getDatabase() {
     let lastErr;

@@ -82,6 +82,49 @@ function SubcategoryProductsContent({ category, products = [] }) {
         ? activeSubcategory.name
         : `${category.name}`;
 
+    // Map each subcategory to a unique, non-duplicate thumbnail image
+    const usedImages = new Set();
+    const subcategoryImages = {};
+
+    subcategories.forEach((sub) => {
+        const subSlug = sub.slug.toLowerCase();
+        const subName = sub.name.toLowerCase();
+
+        // 1. Try to find a matching product image for this subcategory that hasn't been used yet
+        const matchingProduct = products.find((p) => {
+            const pSub = (p.subcategory || "").toLowerCase();
+            const pName = (p.name || "").toLowerCase();
+            const pDesc = (p.description || "").toLowerCase();
+
+            const isMatch =
+                pSub === subSlug ||
+                pName.includes(subSlug) ||
+                pName.includes(subName) ||
+                pDesc.includes(subSlug);
+
+            return isMatch && p.image && !usedImages.has(p.image);
+        });
+
+        if (matchingProduct?.image) {
+            subcategoryImages[sub.slug] = matchingProduct.image;
+            usedImages.add(matchingProduct.image);
+        } else if (sub.image && !usedImages.has(sub.image)) {
+            // 2. Fall back to sub.image defined in taxonomy if unused
+            subcategoryImages[sub.slug] = sub.image;
+            usedImages.add(sub.image);
+        } else {
+            // 3. Fall back to any unused product image in the collection
+            const anyUnusedProduct = products.find((p) => p.image && !usedImages.has(p.image));
+            if (anyUnusedProduct?.image) {
+                subcategoryImages[sub.slug] = anyUnusedProduct.image;
+                usedImages.add(anyUnusedProduct.image);
+            } else {
+                // Final fallback if all products share 1 image
+                subcategoryImages[sub.slug] = sub.image || category.image || "/images/placeholder.jpg";
+            }
+        }
+    });
+
     return (
         <div className="space-y-4 sm:space-y-5">
 
@@ -112,6 +155,7 @@ function SubcategoryProductsContent({ category, products = [] }) {
                         {/* Individual Subcategory Capsules */}
                         {subcategories.map((sub) => {
                             const isActive = activeSubSlug === sub.slug;
+                            const subImgSrc = subcategoryImages[sub.slug] || sub.image || category.image || "/images/placeholder.jpg";
                             return (
                                 <button
                                     key={sub.slug}
@@ -124,7 +168,7 @@ function SubcategoryProductsContent({ category, products = [] }) {
                                     <div className={`w-7 h-7 rounded-full overflow-hidden relative border transition-all flex-shrink-0 ${isActive ? "border-boutique-gold ring-1 ring-boutique-gold/40 shadow-xs" : "border-boutique-muted-border group-hover:border-boutique-rose"
                                         }`}>
                                         <Image
-                                            src={sub.image || category.image || "/images/placeholder.jpg"}
+                                            src={subImgSrc}
                                             alt={sub.name}
                                             fill
                                             className="object-cover group-hover:scale-110 transition-transform duration-300"
