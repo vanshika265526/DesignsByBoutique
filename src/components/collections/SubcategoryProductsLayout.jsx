@@ -20,13 +20,17 @@ function SubcategoryProductsContent({ category, products = [] }) {
         const subSlug = (sub?.slug || "").toLowerCase();
         const subName = (sub?.name || subSlug).toLowerCase();
 
-        // An explicit subcategory tag is authoritative: a product that names its
-        // subcategory belongs there and nowhere else. Only untagged products fall
-        // through to the name/description heuristics below, which are loose enough
-        // to put a sharara under "Pant suit" just because its description mentions
-        // sharara pants.
-        if (product.subcategory) {
-            return product.subcategory.toLowerCase() === subSlug;
+        // Explicit tags are authoritative: a product that names its subcategory —
+        // or several of them, via the optional `subcategories` array — belongs to
+        // exactly those and nowhere else. Only untagged products fall through to
+        // the name/description heuristics below, which are loose enough to put a
+        // sharara under "Pant suit" just because its description mentions sharara
+        // pants.
+        const tagged = [product.subcategory, ...(Array.isArray(product.subcategories) ? product.subcategories : [])]
+            .filter(Boolean)
+            .map((tag) => String(tag).toLowerCase());
+        if (tagged.length) {
+            return tagged.includes(subSlug);
         }
 
         const pName = (product.name || "").toLowerCase();
@@ -48,9 +52,12 @@ function SubcategoryProductsContent({ category, products = [] }) {
         if (subSlug === "mehandi-outfit" && (pName.includes("mehendi") || pName.includes("emerald") || pName.includes("green") || pDesc.includes("mehendi"))) return true;
         if (subSlug === "sangeet-lehenga" && (pName.includes("sangeet") || pDesc.includes("sangeet"))) return true;
         if (subSlug === "bridal-lehenga" && (pName.includes("bridal") || pDesc.includes("bridal"))) return true;
-        if (subSlug === "engagement-lehenga" && (pName.includes("engagement") || pDesc.includes("engagement"))) return true;
-        if (subSlug === "engagement-gown" && (pName.includes("engagement") || pDesc.includes("engagement"))) return true;
-        if (subSlug === "pre-wedding-gown" && (pName.includes("pre-wedding") || pDesc.includes("pre-wedding"))) return true;
+        // A gown subcategory needs an actual gown, and a lehenga subcategory an
+        // actual lehenga. Matching on the occasion alone put lehengas under
+        // "Engagement gown" purely because their description mentions an engagement.
+        if (subSlug === "engagement-lehenga" && pName.includes("lehenga") && (pName.includes("engagement") || pDesc.includes("engagement"))) return true;
+        if (subSlug === "engagement-gown" && pName.includes("gown") && (pName.includes("engagement") || pDesc.includes("engagement"))) return true;
+        if (subSlug === "pre-wedding-gown" && pName.includes("gown") && (pName.includes("pre-wedding") || pDesc.includes("pre-wedding"))) return true;
         if (subSlug === "bodycon-dresses" && (pName.includes("bodycon") || pDesc.includes("bodycon"))) return true;
         if (subSlug === "pant-suit" && (pName.includes("pant") || pDesc.includes("pant"))) return true;
         if (subSlug === "maternity-gowns" && (pName.includes("maternity") || pDesc.includes("maternity"))) return true;
@@ -58,23 +65,20 @@ function SubcategoryProductsContent({ category, products = [] }) {
         return false;
     };
 
-    // Hide subcategories this collection has nothing for — an empty pill is a
-    // dead end for the visitor.
-    const visibleSubcategories = subcategories.filter((sub) =>
-        products.some((product) => matchesSubcategory(product, sub))
-    );
-    const isBrowsable = (slug) => visibleSubcategories.some((s) => s.slug === slug);
+    // Every subcategory stays on the page, including ones with nothing in them
+    // yet — the pill row is the boutique's structure, not a product count.
+    const isKnownSub = (slug) => subcategories.some((s) => s.slug === slug);
 
-    const [activeSubSlug, setActiveSubSlug] = useState(() => (subParam && isBrowsable(subParam) ? subParam : "all"));
+    const [activeSubSlug, setActiveSubSlug] = useState(() => (subParam && isKnownSub(subParam) ? subParam : "all"));
 
     useEffect(() => {
-        if (subParam && isBrowsable(subParam)) {
+        if (subParam && isKnownSub(subParam)) {
             setActiveSubSlug(subParam);
         } else {
             setActiveSubSlug("all");
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [subParam, category?.slug, products]);
+    }, [subParam, category?.slug]);
 
     const handleSubClick = (slug) => {
         setActiveSubSlug(slug);
@@ -101,7 +105,7 @@ function SubcategoryProductsContent({ category, products = [] }) {
     const usedImages = new Set();
     const subcategoryImages = {};
 
-    visibleSubcategories.forEach((sub) => {
+    subcategories.forEach((sub) => {
         const subSlug = sub.slug.toLowerCase();
         const subName = sub.name.toLowerCase();
 
@@ -144,7 +148,7 @@ function SubcategoryProductsContent({ category, products = [] }) {
         <div className="space-y-4 sm:space-y-5">
 
             {/* SUBCATEGORY COMPACT LUXURY OVAL CAPSULES */}
-            {visibleSubcategories.length > 0 && (
+            {subcategories.length > 0 && (
                 <div className="bg-white/80 backdrop-blur-xs border border-boutique-muted-border/80 rounded-2xl p-2.5 sm:p-3.5 shadow-xs">
 
                     {/* Compact Horizontal Scrollable Capsules Row */}
@@ -168,7 +172,7 @@ function SubcategoryProductsContent({ category, products = [] }) {
                         </button>
 
                         {/* Individual Subcategory Capsules */}
-                        {visibleSubcategories.map((sub) => {
+                        {subcategories.map((sub) => {
                             const isActive = activeSubSlug === sub.slug;
                             const subImgSrc = subcategoryImages[sub.slug] || sub.image || category.image || "/images/placeholder.jpg";
                             return (
