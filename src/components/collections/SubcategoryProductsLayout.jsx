@@ -13,39 +13,21 @@ function SubcategoryProductsContent({ category, products = [] }) {
 
     const subcategories = category?.subcategories || [];
 
-    const [activeSubSlug, setActiveSubSlug] = useState(() => {
-        if (subParam && subcategories.some((s) => s.slug === subParam)) {
-            return subParam;
+    // Does this product belong under this subcategory? Shared by the product
+    // grid and by the pill row, so a pill is only ever offered when clicking it
+    // actually shows something.
+    const matchesSubcategory = (product, sub) => {
+        const subSlug = (sub?.slug || "").toLowerCase();
+        const subName = (sub?.name || subSlug).toLowerCase();
+
+        // An explicit subcategory tag is authoritative: a product that names its
+        // subcategory belongs there and nowhere else. Only untagged products fall
+        // through to the name/description heuristics below, which are loose enough
+        // to put a sharara under "Pant suit" just because its description mentions
+        // sharara pants.
+        if (product.subcategory) {
+            return product.subcategory.toLowerCase() === subSlug;
         }
-        return "all";
-    });
-
-    useEffect(() => {
-        if (subParam && subcategories.some((s) => s.slug === subParam)) {
-            setActiveSubSlug(subParam);
-        } else if (!subParam) {
-            setActiveSubSlug("all");
-        }
-    }, [subParam, subcategories]);
-
-    const handleSubClick = (slug) => {
-        setActiveSubSlug(slug);
-        if (slug === "all") {
-            router.push(`/collections/${category.slug}`, { scroll: false });
-        } else {
-            router.push(`/collections/${category.slug}?sub=${slug}`, { scroll: false });
-        }
-    };
-
-    const activeSubcategory = subcategories.find((s) => s.slug === activeSubSlug);
-
-    const filteredProducts = products.filter((product) => {
-        if (activeSubSlug === "all") return true;
-
-        const subSlug = activeSubSlug.toLowerCase();
-        const subName = activeSubcategory ? activeSubcategory.name.toLowerCase() : subSlug;
-
-        if (product.subcategory && product.subcategory.toLowerCase() === subSlug) return true;
 
         const pName = (product.name || "").toLowerCase();
         const pDesc = (product.description || "").toLowerCase();
@@ -74,7 +56,42 @@ function SubcategoryProductsContent({ category, products = [] }) {
         if (subSlug === "maternity-gowns" && (pName.includes("maternity") || pDesc.includes("maternity"))) return true;
 
         return false;
-    });
+    };
+
+    // Hide subcategories this collection has nothing for — an empty pill is a
+    // dead end for the visitor.
+    const visibleSubcategories = subcategories.filter((sub) =>
+        products.some((product) => matchesSubcategory(product, sub))
+    );
+    const isBrowsable = (slug) => visibleSubcategories.some((s) => s.slug === slug);
+
+    const [activeSubSlug, setActiveSubSlug] = useState(() => (subParam && isBrowsable(subParam) ? subParam : "all"));
+
+    useEffect(() => {
+        if (subParam && isBrowsable(subParam)) {
+            setActiveSubSlug(subParam);
+        } else {
+            setActiveSubSlug("all");
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [subParam, category?.slug, products]);
+
+    const handleSubClick = (slug) => {
+        setActiveSubSlug(slug);
+        if (slug === "all") {
+            router.push(`/collections/${category.slug}`, { scroll: false });
+        } else {
+            router.push(`/collections/${category.slug}?sub=${slug}`, { scroll: false });
+        }
+    };
+
+    const activeSubcategory = subcategories.find((s) => s.slug === activeSubSlug);
+
+    const filteredProducts = activeSubSlug === "all"
+        ? products
+        : products.filter((product) =>
+            matchesSubcategory(product, activeSubcategory || { slug: activeSubSlug })
+        );
 
     const activeTitle = activeSubcategory
         ? activeSubcategory.name
@@ -84,7 +101,7 @@ function SubcategoryProductsContent({ category, products = [] }) {
     const usedImages = new Set();
     const subcategoryImages = {};
 
-    subcategories.forEach((sub) => {
+    visibleSubcategories.forEach((sub) => {
         const subSlug = sub.slug.toLowerCase();
         const subName = sub.name.toLowerCase();
 
@@ -127,7 +144,7 @@ function SubcategoryProductsContent({ category, products = [] }) {
         <div className="space-y-4 sm:space-y-5">
 
             {/* SUBCATEGORY COMPACT LUXURY OVAL CAPSULES */}
-            {subcategories.length > 0 && (
+            {visibleSubcategories.length > 0 && (
                 <div className="bg-white/80 backdrop-blur-xs border border-boutique-muted-border/80 rounded-2xl p-2.5 sm:p-3.5 shadow-xs">
 
                     {/* Compact Horizontal Scrollable Capsules Row */}
@@ -151,7 +168,7 @@ function SubcategoryProductsContent({ category, products = [] }) {
                         </button>
 
                         {/* Individual Subcategory Capsules */}
-                        {subcategories.map((sub) => {
+                        {visibleSubcategories.map((sub) => {
                             const isActive = activeSubSlug === sub.slug;
                             const subImgSrc = subcategoryImages[sub.slug] || sub.image || category.image || "/images/placeholder.jpg";
                             return (
