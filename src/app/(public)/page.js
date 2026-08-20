@@ -38,13 +38,13 @@ export default async function HomePage() {
             <TrendingNow products={featuredProducts} />
 
             {/* 4 — Gallery preview */}
-            <GalleryPreviewSection />
+            <GalleryPreviewSection items={db.gallery} />
 
             {/* 6 — Testimonials */}
             <TestimonialsSection />
 
             {/* 7 — Instagram section */}
-            <InstagramSection settings={settings} />
+            <InstagramSection settings={settings} items={db.gallery} />
 
             {/* 8 — Call / Instagram / WhatsApp CTA */}
             <SignatureCTA />

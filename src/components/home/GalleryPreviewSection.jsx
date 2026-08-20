@@ -4,11 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Expand } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { lookbookItems } from "@/data/products";
 
-export default function GalleryPreviewSection() {
-    // Show top 4 editorial lookbook items
-    const previewItems = lookbookItems.slice(0, 4);
+export default function GalleryPreviewSection({ items = [] }) {
+    // First four of the live gallery. That collection is interleaved by
+    // collection, so these four span four different parts of the catalogue.
+    const previewItems = items.slice(0, 4);
 
     return (
         <section className="py-24 bg-boutique-bg">
@@ -30,6 +30,7 @@ export default function GalleryPreviewSection() {
                     </Link>
                 </div>
 
+                {previewItems.length > 0 && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {previewItems.map((item) => (
                         <Link
@@ -61,6 +62,7 @@ export default function GalleryPreviewSection() {
                         </Link>
                     ))}
                 </div>
+                )}
             </div>
         </section>
     );

@@ -2,11 +2,15 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import InstagramIcon from "@/components/ui/InstagramIcon";
 import { boutiqueConfig } from "@/config/boutique";
-import { lookbookItems } from "@/data/products";
 import SectionHeading from "@/components/ui/SectionHeading";
 
-// Accepts optional `settings` prop from DB; falls back to boutiqueConfig for Instagram details
-export default function InstagramSection({ settings = {} }) {
+// Accepts optional `settings` and gallery `items` from the DB; falls back to
+// boutiqueConfig for the Instagram details.
+export default function InstagramSection({ settings = {}, items = [] }) {
+    // Skip the first four — "Craftsmanship in Focus" already shows those on this
+    // same page, and repeating them makes the homepage look thin.
+    const feedItems = items.length > 4 ? items.slice(4, 10) : items.slice(0, 6);
+
     const instagramUrl =
         settings.instagramUrl || boutiqueConfig.instagram.url;
     const rawHandle = settings.instagramUsername || boutiqueConfig.instagram.handle || "designsbynisha00";
@@ -36,8 +40,9 @@ export default function InstagramSection({ settings = {} }) {
                 </div>
 
                 {/* Editorial Instagram Grid */}
+                {feedItems.length > 0 && (
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-                    {lookbookItems.map((item) => (
+                    {feedItems.map((item) => (
                         <a
                             key={item.id}
                             href={instagramUrl}
@@ -58,6 +63,7 @@ export default function InstagramSection({ settings = {} }) {
                         </a>
                     ))}
                 </div>
+                )}
             </div>
         </section>
     );
