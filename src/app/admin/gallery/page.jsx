@@ -13,7 +13,7 @@ export default function AdminGalleryPage() {
     const [newItem, setNewItem] = useState({
         title: "",
         category: "Bridal",
-        image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop",
+        image: "",
         aspectRatio: "aspect-[3/4]",
         location: "Studio New Delhi",
     });
@@ -68,7 +68,7 @@ export default function AdminGalleryPage() {
                 setNewItem({
                     title: "",
                     category: "Bridal",
-                    image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1200&auto=format&fit=crop",
+                    image: "",
                     aspectRatio: "aspect-[3/4]",
                     location: "Studio New Delhi",
                 });
