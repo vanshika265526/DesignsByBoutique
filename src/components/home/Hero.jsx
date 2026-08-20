@@ -150,11 +150,11 @@ export default function Hero() {
             </div>
 
             {/* CTA bar — sits right below the hero image */}
-            <div className="bg-boutique-bg-card border-b border-boutique-muted-border/60 px-2 sm:px-6 lg:px-8 py-3">
+            <div className="bg-boutique-bg-card border-b border-boutique-muted-border/60 px-2 sm:px-6 lg:px-8 py-4 sm:py-5">
                 <div className="max-w-7xl mx-auto flex flex-row flex-nowrap items-center justify-center gap-2 sm:gap-4">
                     <Link
                         href="/collections"
-                        className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-8 py-2 sm:py-2.5 text-[10px] sm:text-xs font-semibold tracking-[0.1em] sm:tracking-[0.18em] uppercase bg-boutique-rose hover:bg-boutique-rose-dark text-white transition-all rounded-md shadow-xs whitespace-nowrap flex-shrink-0"
+                        className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-8 py-3.5 sm:py-4 text-[10px] sm:text-xs font-semibold tracking-[0.1em] sm:tracking-[0.18em] uppercase bg-boutique-rose hover:bg-boutique-rose-dark text-white transition-all rounded-md shadow-xs whitespace-nowrap flex-shrink-0"
                     >
                         Explore Collections
                     </Link>
@@ -162,7 +162,7 @@ export default function Hero() {
                         href={buildWhatsAppLink()}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-8 py-2 sm:py-2.5 text-[10px] sm:text-xs font-semibold tracking-[0.1em] sm:tracking-[0.18em] uppercase bg-boutique-rose hover:bg-boutique-rose-dark text-white transition-all rounded-md shadow-xs whitespace-nowrap flex-shrink-0"
+                        className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-8 py-3.5 sm:py-4 text-[10px] sm:text-xs font-semibold tracking-[0.1em] sm:tracking-[0.18em] uppercase bg-boutique-rose hover:bg-boutique-rose-dark text-white transition-all rounded-md shadow-xs whitespace-nowrap flex-shrink-0"
                     >
                         <WhatsAppIcon className="w-3.5 h-3.5 text-white flex-shrink-0" />
                         <span>Enquire on WhatsApp</span>
