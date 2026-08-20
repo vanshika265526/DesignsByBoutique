@@ -307,7 +307,7 @@ export default function Navbar() {
                             </button>
 
                             {searchOpen && (
-                                <div className="absolute right-0 top-full mt-3 w-[min(22rem,calc(100vw-1.5rem))] sm:w-96 rounded-xl border border-boutique-muted-border bg-boutique-bg-card/95 backdrop-blur-md p-3 shadow-2xl z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+                                <div className="fixed inset-x-3 top-20 sm:absolute sm:inset-auto sm:right-0 sm:top-full sm:mt-3 sm:w-96 max-h-[85vh] overflow-y-auto rounded-xl border border-boutique-muted-border bg-boutique-bg-card/95 backdrop-blur-md p-3.5 shadow-2xl z-50 animate-in fade-in slide-in-from-top-2 duration-200">
                                     <div className="relative">
                                         <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-boutique-taupe" />
                                         <input
