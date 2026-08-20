@@ -60,7 +60,7 @@ export const categoriesTaxonomy = [
         "name": "Her Big Day",
         "slug": "her-big-day",
         "chapter": "her-new-chapter",
-        "description": "Grand wedding celebrations: Haldi outfits, Mehandi outfits, Sangeet & Bridal lehengas, reception outfits, and sarees.",
+        "description": "Grand wedding celebrations: Haldi outfits, Mehandi outfits, Sangeet & Bridal lehengas.",
         "image": "https://images.pexels.com/photos/23623618/pexels-photo-23623618.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "count": 20,
         "published": true,
@@ -69,9 +69,7 @@ export const categoriesTaxonomy = [
             { "id": "haldi-outfit", "name": "Haldi outfit", "slug": "haldi-outfit", "image": "https://images.pexels.com/photos/37847010/pexels-photo-37847010.jpeg?auto=compress&cs=tinysrgb&w=600" },
             { "id": "mehandi-outfit", "name": "Mehandi outfit", "slug": "mehandi-outfit", "image": "https://images.pexels.com/photos/31750738/pexels-photo-31750738.jpeg?auto=compress&cs=tinysrgb&w=600" },
             { "id": "sangeet-lehenga", "name": "Sangeet lehenga", "slug": "sangeet-lehenga", "image": "https://images.pexels.com/photos/19956021/pexels-photo-19956021.jpeg?auto=compress&cs=tinysrgb&w=600" },
-            { "id": "bridal-lehenga", "name": "Bridal lehenga", "slug": "bridal-lehenga", "image": "https://images.pexels.com/photos/26973350/pexels-photo-26973350.jpeg?auto=compress&cs=tinysrgb&w=600" },
-            { "id": "reception-outfit", "name": "Reception outfit", "slug": "reception-outfit", "image": "https://images.pexels.com/photos/23623618/pexels-photo-23623618.jpeg?auto=compress&cs=tinysrgb&w=600" },
-            { "id": "saree", "name": "Saree", "slug": "saree", "image": "https://images.pexels.com/photos/12992093/pexels-photo-12992093.jpeg?auto=compress&cs=tinysrgb&w=600" }
+            { "id": "bridal-lehenga", "name": "Bridal lehenga", "slug": "bridal-lehenga", "image": "https://images.pexels.com/photos/26973350/pexels-photo-26973350.jpeg?auto=compress&cs=tinysrgb&w=600" }
         ]
     },
     {

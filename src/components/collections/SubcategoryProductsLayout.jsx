@@ -64,16 +64,14 @@ function SubcategoryProductsContent({ category, products = [] }) {
         if (subSlug === "mini-lehengas" && (pName.includes("lehenga") || pName.includes("choli"))) return true;
         if (subSlug === "haldi-outfit" && (pName.includes("haldi") || pName.includes("saffron") || pDesc.includes("haldi") || pName.includes("yellow"))) return true;
         if (subSlug === "mehandi-outfit" && (pName.includes("mehendi") || pName.includes("emerald") || pName.includes("green") || pDesc.includes("mehendi"))) return true;
-        if (subSlug === "sangeet-lehenga" && (pName.includes("sangeet") || pName.includes("organza") || pName.includes("lehenga"))) return true;
-        if (subSlug === "bridal-lehenga" && (pName.includes("bridal") || pName.includes("royal") || pName.includes("heirloom") || pName.includes("lehenga"))) return true;
-        if (subSlug === "engagement-lehenga" && (pName.includes("lehenga") || pName.includes("royal"))) return true;
-        if (subSlug === "engagement-gown" && (pName.includes("gown") || pName.includes("draped") || pName.includes("saree"))) return true;
-        if (subSlug === "pre-wedding-gown" && (pName.includes("gown") || pName.includes("draped"))) return true;
-        if (subSlug === "bodycon-dresses" && (pName.includes("draped") || pName.includes("gown") || pName.includes("saree") || pName.includes("mermaid"))) return true;
-        if (subSlug === "pant-suit" && (pName.includes("suit") || pName.includes("palazzo") || pName.includes("kurta"))) return true;
-        if (subSlug === "maternity-gowns" && (pName.includes("maternity") || pName.includes("gown"))) return true;
-        if (subSlug === "reception-outfit" && (pName.includes("reception") || pName.includes("straight") || pName.includes("draped"))) return true;
-        if (subSlug === "saree" && (pName.includes("saree") || pDesc.includes("saree"))) return true;
+        if (subSlug === "sangeet-lehenga" && (pName.includes("sangeet") || pDesc.includes("sangeet"))) return true;
+        if (subSlug === "bridal-lehenga" && (pName.includes("bridal") || pDesc.includes("bridal"))) return true;
+        if (subSlug === "engagement-lehenga" && (pName.includes("engagement") || pDesc.includes("engagement"))) return true;
+        if (subSlug === "engagement-gown" && (pName.includes("engagement") || pDesc.includes("engagement"))) return true;
+        if (subSlug === "pre-wedding-gown" && (pName.includes("pre-wedding") || pDesc.includes("pre-wedding"))) return true;
+        if (subSlug === "bodycon-dresses" && (pName.includes("bodycon") || pDesc.includes("bodycon"))) return true;
+        if (subSlug === "pant-suit" && (pName.includes("pant") || pDesc.includes("pant"))) return true;
+        if (subSlug === "maternity-gowns" && (pName.includes("maternity") || pDesc.includes("maternity"))) return true;
 
         return false;
     });

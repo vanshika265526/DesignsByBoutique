@@ -4,21 +4,13 @@ import { getDbAsync } from "@/lib/db";
 import { categoriesTaxonomy } from "@/data/products";
 import SubcategoryProductsLayout from "@/components/collections/SubcategoryProductsLayout";
 
+// Rendered fresh on every request so a visitor always sees the live catalogue.
+//
+// NOTE: do NOT add generateStaticParams() back. Next prerenders the returned
+// slugs at build time and serves that HTML even alongside force-dynamic, which
+// froze category pages to whatever the database held during the deploy.
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
-
-export async function generateStaticParams() {
-    const newSlugs = categoriesTaxonomy.map((c) => ({ category: c.slug }));
-    const legacySlugs = [
-        { category: "suits-anarkalis" },
-        { category: "gowns-lehengas" },
-        { category: "haldi-mehendi" },
-        { category: "maternity-gowns" },
-        { category: "baby-clothes" },
-        { category: "bridal-lehengas" },
-    ];
-    return [...newSlugs, ...legacySlugs];
-}
 
 // Map legacy category slugs to new category taxonomy
 function resolveCategory(slug) {
@@ -72,6 +64,13 @@ export default async function CategoryPage({ params }) {
         notFound();
     }
 
+    // Slugs of the current taxonomy. A product tagged with one of these owns a
+    // definite home, so it must never be pulled into a second collection by the
+    // legacy fallbacks further down.
+    const taxonomySlugs = new Set(
+        categoriesTaxonomy.map((category) => (category.slug || "").toLowerCase()).filter(Boolean)
+    );
+
     // Filter products belonging to this category
     const allProducts = db.products || [];
     const categoryProducts = allProducts.filter((product) => {
@@ -85,6 +84,12 @@ export default async function CategoryPage({ params }) {
 
         // Direct slug match
         if (pCat === targetSlug || pSlug === targetSlug) return true;
+
+        // Already filed under a different current category — stop here. Without
+        // this, maternity gowns (category "maternity") also surfaced under Her
+        // Beginning purely because they still carry the "her-beginnings" chapter
+        // tag that the legacy mapping below matches on.
+        if (taxonomySlugs.has(pCat) || taxonomySlugs.has(pSlug)) return false;
 
         // Category cross-mappings
         if (targetSlug === "baby-girl-dresses" && (pCat === "baby-clothes" || pChapter === "her-little-one")) return true;

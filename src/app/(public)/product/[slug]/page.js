@@ -7,19 +7,13 @@ import ProductCard from "@/components/ui/ProductCard";
 import { boutiqueConfig, buildWhatsAppLink } from "@/config/boutique";
 import { getDbAsync } from "@/lib/db";
 
-// ISR: pages are served instantly from cache and regenerated in the background
-// at most once every 60s, so admin edits appear within ~a minute while every
-// click loads fast (no full server render per request).
+// Rendered fresh on every request so a visitor always sees the live catalogue.
+//
+// NOTE: do NOT add generateStaticParams() back. Next prerenders the returned
+// slugs at build time and serves that HTML even alongside force-dynamic, which
+// froze product pages to whatever the database held during the deploy.
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
-
-// Pre-build a static page for each product at deploy time.
-export async function generateStaticParams() {
-    const db = await getDbAsync();
-    return (db.products || [])
-        .filter((p) => p.slug && (p.status === "published" || !p.status))
-        .map((p) => ({ slug: p.slug }));
-}
 
 export async function generateMetadata({ params }) {
     const db = await getDbAsync();
