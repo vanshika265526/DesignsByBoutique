@@ -68,19 +68,34 @@ export default function Navbar() {
     }, []);
 
     useEffect(() => {
-        if (!searchOpen || products.length > 0) return;
-
         fetch("/api/data/products?status=published")
             .then((response) => response.json())
             .then((result) => {
                 if (result.success) setProducts(result.data || []);
             })
             .catch((error) => console.error("Failed to load product search:", error));
-    }, [searchOpen, products.length]);
+    }, []);
 
-    const searchResults = searchQuery.trim()
+    const searchTerms = searchQuery.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    const searchResults = searchTerms.length > 0
         ? products
-            .filter((product) => product.name?.toLowerCase().includes(searchQuery.trim().toLowerCase()))
+            .filter((product) => {
+                const searchableText = [
+                    product.name,
+                    product.categoryName,
+                    product.category,
+                    product.subcategory,
+                    product.shortDescription,
+                    product.description,
+                    product.chapterName,
+                    ...(product.details || []),
+                ]
+                    .filter(Boolean)
+                    .join(" ")
+                    .toLowerCase();
+
+                return searchTerms.every((term) => searchableText.includes(term));
+            })
             .slice(0, 6)
         : [];
     const navigationCategories = categoriesTaxonomy.map((taxonomyCategory) => {
@@ -292,7 +307,7 @@ export default function Navbar() {
                             </button>
 
                             {searchOpen && (
-                                <div className="absolute right-0 top-full mt-3 w-[min(19rem,calc(100vw-2rem))] rounded-xl border border-boutique-muted-border bg-boutique-bg-card p-3 shadow-xl z-50">
+                                <div className="absolute right-0 top-full mt-3 w-[min(22rem,calc(100vw-1.5rem))] sm:w-96 rounded-xl border border-boutique-muted-border bg-boutique-bg-card/95 backdrop-blur-md p-3 shadow-2xl z-50 animate-in fade-in slide-in-from-top-2 duration-200">
                                     <div className="relative">
                                         <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-boutique-taupe" />
                                         <input
@@ -301,24 +316,88 @@ export default function Navbar() {
                                             value={searchQuery}
                                             onChange={(event) => setSearchQuery(event.target.value)}
                                             onKeyDown={handleSearchKeyDown}
-                                            placeholder="Search product names..."
-                                            className="w-full pl-9 pr-3 py-2.5 bg-white border border-boutique-muted-border rounded-lg text-xs text-boutique-charcoal focus:outline-none focus:border-boutique-rose"
+                                            placeholder="Search outfits, suits, gowns, frocks..."
+                                            className="w-full pl-9 pr-8 py-2.5 bg-white border border-boutique-muted-border rounded-lg text-xs text-boutique-charcoal focus:outline-none focus:border-boutique-rose placeholder:text-boutique-taupe/70 shadow-inner"
                                         />
+                                        {searchQuery && (
+                                            <button
+                                                type="button"
+                                                onClick={() => setSearchQuery("")}
+                                                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-boutique-taupe hover:text-boutique-charcoal p-1 text-xs font-bold"
+                                            >
+                                                ✕
+                                            </button>
+                                        )}
                                     </div>
 
+                                    {/* Popular Search Suggestions when query is empty */}
+                                    {!searchQuery.trim() && (
+                                        <div className="mt-3 pt-2 border-t border-boutique-muted-border/60">
+                                            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-boutique-gold mb-2">
+                                                Popular Searches
+                                            </p>
+                                            <div className="flex flex-wrap gap-1.5">
+                                                {["Anarkali", "Baby Frock", "Sharara", "Haldi", "Maternity Gowns", "Bridal Lehenga"].map((tag) => (
+                                                    <button
+                                                        key={tag}
+                                                        type="button"
+                                                        onClick={() => setSearchQuery(tag)}
+                                                        className="text-[11px] bg-white border border-boutique-muted-border/80 hover:border-boutique-rose hover:bg-boutique-blush/40 px-2.5 py-1 rounded-full text-boutique-charcoal transition-all"
+                                                    >
+                                                        {tag}
+                                                    </button>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {/* Live Search Results Dropdown */}
                                     {searchQuery.trim() && (
-                                        <div className="mt-2 space-y-1">
-                                            {searchResults.length > 0 ? searchResults.map((product) => (
-                                                <Link
-                                                    key={product.id}
-                                                    href={`/product/${product.slug}`}
-                                                    onClick={() => setSearchOpen(false)}
-                                                    className="block rounded-lg px-3 py-2 text-xs text-boutique-charcoal hover:bg-boutique-blush/50 hover:text-boutique-rose transition-colors"
-                                                >
-                                                    {product.name}
-                                                </Link>
-                                            )) : (
-                                                <p className="px-3 py-2 text-xs text-boutique-taupe">No products found.</p>
+                                        <div className="mt-3 pt-2 border-t border-boutique-muted-border/60 space-y-1.5 max-h-80 overflow-y-auto scrollbar-thin">
+                                            <div className="flex items-center justify-between px-1 mb-1">
+                                                <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-boutique-gold">
+                                                    Results ({searchResults.length})
+                                                </span>
+                                            </div>
+                                            {searchResults.length > 0 ? (
+                                                searchResults.map((product) => (
+                                                    <Link
+                                                        key={product.id || product.slug}
+                                                        href={`/product/${product.slug}`}
+                                                        onClick={() => setSearchOpen(false)}
+                                                        className="flex items-center gap-3 p-2 rounded-lg bg-white/80 hover:bg-boutique-blush/50 border border-transparent hover:border-boutique-rose/30 transition-all group"
+                                                    >
+                                                        <div className="w-10 h-10 rounded-md overflow-hidden relative flex-shrink-0 border border-boutique-muted-border group-hover:scale-105 transition-transform">
+                                                            <Image
+                                                                src={product.image || "/images/placeholder.jpg"}
+                                                                alt={product.name}
+                                                                fill
+                                                                className="object-cover"
+                                                                sizes="40px"
+                                                            />
+                                                        </div>
+                                                        <div className="flex-1 min-w-0">
+                                                            <h4 className="text-xs font-semibold text-boutique-charcoal group-hover:text-boutique-rose transition-colors truncate">
+                                                                {product.name}
+                                                            </h4>
+                                                            <div className="flex items-center gap-2 mt-0.5">
+                                                                <span className="text-[10px] text-boutique-taupe capitalize truncate">
+                                                                    {product.subcategory || product.categoryName || "Boutique Outfit"}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        {product.price && (
+                                                            <span className="text-xs font-bold text-boutique-rose flex-shrink-0">
+                                                                ₹{Number(product.price).toLocaleString("en-IN")}
+                                                            </span>
+                                                        )}
+                                                    </Link>
+                                                ))
+                                            ) : (
+                                                <div className="py-4 text-center">
+                                                    <p className="text-xs text-boutique-taupe">No outfits found matching &quot;{searchQuery}&quot;</p>
+                                                    <p className="text-[11px] text-boutique-taupe/70 mt-1">Try searching for &quot;Anarkali&quot;, &quot;Frock&quot;, or &quot;Lehenga&quot;</p>
+                                                </div>
                                             )}
                                         </div>
                                     )}
@@ -371,8 +450,8 @@ export default function Navbar() {
                         <button
                             onClick={() => setMobileCollectionsOpen(!mobileCollectionsOpen)}
                             className={`w-full flex items-center justify-between font-serif-editorial text-lg py-2.5 pl-3 pr-2 border-l-4 rounded-r transition-colors ${isCollections
-                                    ? "text-boutique-rose font-bold bg-boutique-blush/40 border-l-boutique-rose"
-                                    : "text-boutique-charcoal font-normal border-l-transparent hover:text-boutique-rose"
+                                ? "text-boutique-rose font-bold bg-boutique-blush/40 border-l-boutique-rose"
+                                : "text-boutique-charcoal font-normal border-l-transparent hover:text-boutique-rose"
                                 }`}
                         >
                             <span>Collections</span>
