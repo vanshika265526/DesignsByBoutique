@@ -4,7 +4,7 @@ import { useState, useEffect, Suspense } from "react";
 import Image from "next/image";
 import { useSearchParams, useRouter } from "next/navigation";
 import ProductCard from "@/components/ui/ProductCard";
-import { Sparkles, Layers, Grid } from "lucide-react";
+import { Sparkles, Layers } from "lucide-react";
 
 function SubcategoryProductsContent({ category, products = [] }) {
     const searchParams = useSearchParams();
@@ -96,13 +96,13 @@ function SubcategoryProductsContent({ category, products = [] }) {
                         <button
                             onClick={() => handleSubClick("all")}
                             className={`flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full border transition-all duration-300 flex-shrink-0 group ${activeSubSlug === "all"
-                                    ? "bg-boutique-charcoal text-white border-boutique-gold ring-2 ring-boutique-gold/50 shadow-md scale-105"
-                                    : "bg-white text-boutique-charcoal border-boutique-muted-border hover:border-boutique-rose hover:bg-boutique-blush/30"
+                                ? "bg-boutique-charcoal text-white border-boutique-gold ring-2 ring-boutique-gold/50 shadow-md scale-105"
+                                : "bg-white text-boutique-charcoal border-boutique-muted-border hover:border-boutique-rose hover:bg-boutique-blush/30"
                                 }`}
                         >
                             <div className={`w-7 h-7 rounded-full flex items-center justify-center border transition-all flex-shrink-0 ${activeSubSlug === "all" ? "bg-boutique-gold/20 border-boutique-gold text-boutique-gold-light" : "bg-boutique-blush/40 border-boutique-muted-border text-boutique-rose group-hover:border-boutique-rose"
                                 }`}>
-                                <Grid className="w-3.5 h-3.5" />
+                                <Sparkles className="w-3.5 h-3.5" />
                             </div>
                             <span className="text-[11px] sm:text-xs font-semibold tracking-wider uppercase whitespace-nowrap pr-0.5">
                                 All {category.name}
@@ -117,8 +117,8 @@ function SubcategoryProductsContent({ category, products = [] }) {
                                     key={sub.slug}
                                     onClick={() => handleSubClick(sub.slug)}
                                     className={`flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full border transition-all duration-300 flex-shrink-0 group ${isActive
-                                            ? "bg-boutique-charcoal text-white border-boutique-gold ring-2 ring-boutique-gold/50 shadow-md scale-105"
-                                            : "bg-white text-boutique-charcoal border-boutique-muted-border hover:border-boutique-rose hover:bg-boutique-blush/30"
+                                        ? "bg-boutique-charcoal text-white border-boutique-gold ring-2 ring-boutique-gold/50 shadow-md scale-105"
+                                        : "bg-white text-boutique-charcoal border-boutique-muted-border hover:border-boutique-rose hover:bg-boutique-blush/30"
                                         }`}
                                 >
                                     <div className={`w-7 h-7 rounded-full overflow-hidden relative border transition-all flex-shrink-0 ${isActive ? "border-boutique-gold ring-1 ring-boutique-gold/40 shadow-xs" : "border-boutique-muted-border group-hover:border-boutique-rose"
