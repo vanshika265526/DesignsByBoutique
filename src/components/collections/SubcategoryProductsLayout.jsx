@@ -85,8 +85,8 @@ function SubcategoryProductsContent({ category, products = [] }) {
     return (
         <div className="space-y-4 sm:space-y-5">
 
-            {/* SUBCATEGORY COMPACT LUXURY OVAL CAPSULES */}
-            {subcategories.length > 0 && (
+            {/* SUBCATEGORY COMPACT LUXURY OVAL CAPSULES — only show if 2 or more subcategories exist */}
+            {subcategories.length > 1 && (
                 <div className="bg-white/80 backdrop-blur-xs border border-boutique-muted-border/80 rounded-2xl p-2.5 sm:p-3.5 shadow-xs">
 
                     {/* Compact Horizontal Scrollable Capsules Row */}
