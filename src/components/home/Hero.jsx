@@ -34,10 +34,12 @@ const HERO_SLIDES = [
     },
     {
         src: "/images/hero/slide-4.png",
+        mobileSrc: "/images/hero/mobile-slide-4.png",
         text: "Bridal Lehengas, Bespoke Anarkalis, Haldi & Mehendi",
     },
     {
         src: "/images/hero/slide-5.png",
+        mobileSrc: "/images/hero/mobile-slide-5.jpeg",
         text: "Maternity Gowns, Elegant Nursing Wear, Mother-Daughter.",
     },
     {
