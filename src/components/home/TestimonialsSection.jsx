@@ -4,75 +4,18 @@ import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
-const defaultReviews = [
-    {
-        id: "t1",
-        author: "Ananya Iyer",
-        city: "Kanpur",
-        rating: 5,
-        text: "Beautiful collection! Found so many outfits for my daughter. The kids section is amazing - great variety and super cute designs.",
-        outfit: "Kids Lehenga Set",
-        avatar: "https://images.pexels.com/photos/37798732/pexels-photo-37798732.jpeg?auto=compress&cs=tinysrgb&w=300",
-    },
-    {
-        id: "t2",
-        author: "Karan Verma",
-        city: "Varanasi",
-        rating: 5,
-        text: "The gown fit like a dream. Ordered two in different colors and both are fantastic. Will definitely shop here again!",
-        outfit: "Designer Evening Gown",
-        avatar: "https://images.pexels.com/photos/15321852/pexels-photo-15321852.jpeg?auto=compress&cs=tinysrgb&w=300",
-    },
-    {
-        id: "t3",
-        author: "Sneha Kapoor",
-        city: "New Delhi",
-        rating: 5,
-        text: "Got so many compliments wearing the Indo Western gown! Easy fitting and great customer support. Love Designs by Nisha!",
-        outfit: "Indo Western Gown",
-        avatar: "https://images.pexels.com/photos/18557359/pexels-photo-18557359.jpeg?auto=compress&cs=tinysrgb&w=300",
-    },
-    {
-        id: "t4",
-        author: "Meera Mehta",
-        city: "Mumbai",
-        rating: 5,
-        text: "Ordered a party wear evening gown and I am amazed by the stitching and silk quality. The drape is elegant and photogenic.",
-        outfit: "Silk Party Wear Gown",
-        avatar: "https://images.pexels.com/photos/20132403/pexels-photo-20132403.jpeg?auto=compress&cs=tinysrgb&w=300",
-    },
-    {
-        id: "t5",
-        author: "Pooja Sharma",
-        city: "Gurugram",
-        rating: 5,
-        text: "Finding graceful maternity gowns felt impossible until I visited Nisha's boutique. Featherlight silk and super comfortable fit!",
-        outfit: "Rose Silk Maternity Gown",
-        avatar: "https://images.pexels.com/photos/29665809/pexels-photo-29665809.jpeg?auto=compress&cs=tinysrgb&w=300",
-    },
-    {
-        id: "t6",
-        author: "Rhea Singhania",
-        city: "South Extension, Delhi",
-        rating: 5,
-        text: "Custom bridal reception gown handcrafted in just 3 weeks! The zardozi work and fitting sessions were pure luxury.",
-        outfit: "Ivory Bridal Reception Gown",
-        avatar: "https://images.pexels.com/photos/37627047/pexels-photo-37627047.jpeg?auto=compress&cs=tinysrgb&w=300",
-    },
-];
-
 export default function TestimonialsSection() {
-    const [reviews, setReviews] = useState(defaultReviews);
+    // Real Google reviews from the DB and nothing else. This used to fall back to
+    // a hardcoded list of invented customers and append it to the live data, so
+    // made-up reviews showed on the homepage no matter what.
+    const [reviews, setReviews] = useState([]);
     const scrollRef = useRef(null);
 
     useEffect(() => {
-        fetch("/api/data/testimonials")
+        fetch("/api/data/testimonials", { cache: "no-store" })
             .then((res) => res.json())
             .then((json) => {
-                if (json.success && json.data && json.data.length > 0) {
-                    // Combine fetched reviews with defaults for continuous scrolling
-                    setReviews([...json.data, ...defaultReviews]);
-                }
+                if (json.success && Array.isArray(json.data)) setReviews(json.data);
             })
             .catch(() => {});
     }, []);
@@ -146,16 +89,9 @@ export default function TestimonialsSection() {
                                     ))}
                                 </div>
 
-                                <p className="text-xs sm:text-sm text-boutique-charcoal/90 font-light italic leading-relaxed line-clamp-4">
+                                <p className="text-xs sm:text-sm text-boutique-charcoal/90 font-light italic leading-relaxed line-clamp-6">
                                     &ldquo;{rev.text}&rdquo;
                                 </p>
-                            </div>
-
-                            {/* Outfit Tag Pill matching Image 2 */}
-                            <div>
-                                <span className="inline-block px-3 py-1 rounded-full bg-boutique-blush/60 text-boutique-rose text-[11px] font-semibold tracking-wide">
-                                    {rev.outfit || "Custom Couture Gown"}
-                                </span>
                             </div>
 
                             {/* Customer Profile Info at Bottom */}
@@ -180,9 +116,6 @@ export default function TestimonialsSection() {
                                     <h3 className="font-serif-editorial text-sm font-bold text-boutique-charcoal truncate">
                                         {rev.author}
                                     </h3>
-                                    <p className="text-[11px] text-boutique-taupe capitalize truncate">
-                                        {rev.city || "New Delhi"}
-                                    </p>
                                 </div>
                             </div>
                         </div>
