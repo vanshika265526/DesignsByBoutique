@@ -138,7 +138,11 @@ export default function ChapterTimeline() {
                                                     alt={`${ch.title} — ${ch.categoryName}`}
                                                     fill
                                                     sizes="(max-width: 768px) 40vw, 12rem"
-                                                    className="object-cover object-center"
+                                                    // These are tall full-length outfit shots. Cropping them to a
+                                                    // circle from the centre lands on the skirt and cuts the model's
+                                                    // head off above the frame, so anchor the crop near the top where
+                                                    // the face actually is.
+                                                    className="object-cover object-[50%_12%]"
                                                 />
                                             </motion.div>
                                             {/* chapter number chip */}

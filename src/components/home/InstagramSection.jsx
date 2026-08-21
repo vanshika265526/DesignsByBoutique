@@ -55,7 +55,10 @@ export default function InstagramSection({ settings = {}, items = [] }) {
                                 alt={`${item.title} — Designs by Nisha Instagram`}
                                 fill
                                 sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
-                                className="object-cover object-center group-hover:scale-110 transition-transform duration-700"
+                                // Square tile over a full-length outfit photo: a centred crop
+                                // lands on the waist and cuts the model's head off. Anchor near
+                                // the top so the face stays in frame.
+                                className="object-cover object-[50%_12%] group-hover:scale-110 transition-transform duration-700"
                             />
                             <div className="absolute inset-0 bg-gradient-to-tr from-[#833AB4]/80 via-[#FD1D1D]/80 to-[#FCB045]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
                                 <InstagramIcon className="w-7 h-7 transform group-hover:scale-110 transition-transform" />
