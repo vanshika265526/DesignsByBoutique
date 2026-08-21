@@ -19,15 +19,17 @@ const SLIDE_INTERVAL_MS = 5000;
 const HERO_SLIDES = [
     {
         src: "/images/hero/slide-1.png",
-        mobileSrc: "/images/hero/mobile-slide-1.png",
+        mobileSrc: "/images/hero/mobile-slide-1.jpeg",
         text: "Handcrafted Suits, Anarkalis, Bridal Lehengas, Haldi & Mehendi outfits.",
     },
     {
         src: "/images/hero/slide-2.png",
+        mobileSrc: "/images/hero/mobile-slide-2.png",
         text: "From her first twirl to little celebrations.",
     },
     {
         src: "/images/hero/slide-3.png",
+        mobileSrc: "/images/hero/mobile-slide-3.png",
         text: "Effortless Suits, Contemporary Anarkalis, Occasion Wear.",
     },
     {
@@ -40,6 +42,7 @@ const HERO_SLIDES = [
     },
     {
         src: "/images/hero/slide-6.png",
+        mobileSrc: "/images/hero/mobile-slide-6.png",
         text: "Beautiful mother-and-child ensembles and delicate baby wear.",
     },
 ];
@@ -48,7 +51,10 @@ export default function Hero() {
     // Drop any slide whose file fails to load, so a not-yet-added image never
     // shows as a blank/broken frame in the rotation.
     const [broken, setBroken] = useState({});
-    const slides = HERO_SLIDES.filter((s) => !broken[s.src] && (!s.mobileSrc || !broken[s.mobileSrc]));
+    // Only the desktop image decides whether a slide exists. A missing mobile
+    // variant just falls back to the desktop crop rather than dropping the slide
+    // from the rotation entirely.
+    const slides = HERO_SLIDES.filter((s) => !broken[s.src]);
 
     const [active, setActive] = useState(0);
 
@@ -89,9 +95,10 @@ export default function Hero() {
                                     onError={() => setBroken((b) => ({ ...b, [slide.src]: true }))}
                                     className="hidden md:block object-cover object-center"
                                 />
-                                {/* Mobile image */}
+                                {/* Mobile image — falls back to the desktop crop if the
+                                    portrait variant has not been added yet. */}
                                 <Image
-                                    src={slide.mobileSrc}
+                                    src={broken[slide.mobileSrc] ? slide.src : slide.mobileSrc}
                                     alt="Designs by Nisha — Luxury Indian bridal & women's couture, New Delhi"
                                     fill
                                     priority={i === 0}

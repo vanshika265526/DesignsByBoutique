@@ -30,10 +30,15 @@ export default function ProductCard({ product }) {
 
     return (
         <div className="group bg-boutique-bg-card rounded-2xl overflow-hidden border border-boutique-muted-border/60 hover:shadow-xl transition-all duration-500 flex flex-col justify-between">
-            {/* Product Image Container */}
+            {/* Product Image Container.
+                It carries its own top corners and its own clipping layer. Relying on
+                the card's rounded overflow-hidden alone lets the square image corners
+                spill past the card on iOS Safari, which does not apply an ancestor's
+                rounded clip to a transformed child — and the hover scale promotes this
+                image to its own layer. */}
             <Link
                 href={`/product/${slug}`}
-                className="relative block aspect-[3/4] overflow-hidden bg-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-boutique-rose focus-visible:ring-offset-2"
+                className="relative block aspect-[3/4] overflow-hidden rounded-t-2xl bg-neutral-100 [transform:translateZ(0)] focus:outline-none focus-visible:ring-2 focus-visible:ring-boutique-rose focus-visible:ring-offset-2"
                 aria-label={`View details for ${name}`}
             >
                 <Image
