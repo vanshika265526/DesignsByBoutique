@@ -139,13 +139,13 @@ export default function Navbar() {
 
     return (
         <header className="sticky top-0 left-0 right-0 z-50 glass-nav shadow-xs">
-            <div className="w-full px-2 sm:px-6 lg:px-8">
+            <div className="w-full px-1 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-[72px] md:h-20 gap-2 sm:gap-4">
 
                     {/* 1. Left Side: Logo & Desktop Nav Links (Mobile & Desktop) */}
                     <div className="flex items-center gap-4 lg:gap-6 flex-shrink-0">
                         <Link href="/" className="group flex items-center" aria-label="Designs by Nisha — Home">
-                            <span className="relative block h-14 w-[115px] sm:h-12 sm:w-[110px] md:h-14 md:w-[130px] flex-shrink-0">
+                            <span className="relative block h-16 w-[130px] sm:h-12 sm:w-[110px] md:h-14 md:w-[130px] flex-shrink-0">
                                 <Image
                                     src="/images/logo-transparent.png"
                                     alt="Designs by Nisha Boutique New Delhi"

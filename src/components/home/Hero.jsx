@@ -10,7 +10,7 @@ const SLIDE_INTERVAL_MS = 5000;
 const HERO_SLIDES = [
     {
         src: "/images/hero/slide-1.png",
-        mobileSrc: "/images/hero/mobile-slide-1.jpeg",
+        mobileSrc: "/images/hero/mobile-slide-1.png",
         text: "Handcrafted Suits, Anarkalis, Bridal Lehengas, Haldi & Mehendi outfits.",
     },
     {
