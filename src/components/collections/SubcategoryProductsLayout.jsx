@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect, Suspense, useCallback } from "react";
 import Image from "next/image";
 import { useSearchParams, useRouter } from "next/navigation";
 import ProductCard from "@/components/ui/ProductCard";
@@ -80,14 +80,23 @@ function SubcategoryProductsContent({ category, products = [] }) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [subParam, category?.slug]);
 
-    const handleSubClick = (slug) => {
-        setActiveSubSlug(slug);
-        if (slug === "all") {
-            router.push(`/collections/${category.slug}`, { scroll: false });
-        } else {
-            router.push(`/collections/${category.slug}?sub=${slug}`, { scroll: false });
-        }
-    };
+    const [gridVisible, setGridVisible] = useState(true);
+
+    const handleSubClick = useCallback((slug) => {
+        if (slug === activeSubSlug) return;
+        // Fade out grid, switch, fade back in
+        setGridVisible(false);
+        setTimeout(() => {
+            setActiveSubSlug(slug);
+            if (slug === "all") {
+                router.push(`/collections/${category.slug}`, { scroll: false });
+            } else {
+                router.push(`/collections/${category.slug}?sub=${slug}`, { scroll: false });
+            }
+            setGridVisible(true);
+        }, 150);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [activeSubSlug, category?.slug]);
 
     const activeSubcategory = subcategories.find((s) => s.slug === activeSubSlug);
 
@@ -149,24 +158,26 @@ function SubcategoryProductsContent({ category, products = [] }) {
 
             {/* SUBCATEGORY COMPACT LUXURY OVAL CAPSULES */}
             {subcategories.length > 0 && (
-                <div className="bg-white/80 backdrop-blur-xs border border-boutique-muted-border/80 rounded-2xl p-2.5 sm:p-3.5 shadow-xs">
+                <div className="bg-white/90 backdrop-blur-xs border border-boutique-muted-border/80 rounded-2xl p-2 sm:p-3 shadow-2xs overflow-hidden">
 
                     {/* Compact Horizontal Scrollable Capsules Row */}
-                    <div className="flex items-center gap-2 sm:gap-3 overflow-x-auto pb-1.5 pt-0.5 scrollbar-thin scrollbar-thumb-boutique-rose/20">
+                    <div className="flex items-center gap-2 sm:gap-3 overflow-x-auto px-1 py-1 scrollbar-none">
 
                         {/* "ALL" Category Capsule */}
                         <button
                             onClick={() => handleSubClick("all")}
-                            className={`flex items-center gap-1.5 px-2.5 py-1 sm:px-4 sm:py-2 rounded-full border transition-all duration-300 flex-shrink-0 group ${activeSubSlug === "all"
-                                ? "bg-boutique-charcoal text-white border-boutique-gold ring-2 ring-boutique-gold/50 shadow-md scale-105"
-                                : "bg-white text-boutique-charcoal border-boutique-muted-border hover:border-boutique-rose hover:bg-boutique-blush/30"
+                            className={`flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border transition-all duration-200 flex-shrink-0 group ${activeSubSlug === "all"
+                                ? "bg-[#F4EFE6] text-boutique-charcoal border-boutique-charcoal font-bold shadow-2xs"
+                                : "bg-white/80 text-boutique-taupe border-boutique-muted-border/80 hover:border-boutique-taupe hover:text-boutique-charcoal hover:bg-white"
                                 }`}
                         >
-                            <div className={`w-5 h-5 sm:w-7 sm:h-7 rounded-full flex items-center justify-center border transition-all flex-shrink-0 ${activeSubSlug === "all" ? "bg-boutique-gold/20 border-boutique-gold text-boutique-gold-light" : "bg-boutique-blush/40 border-boutique-muted-border text-boutique-rose group-hover:border-boutique-rose"
+                            <div className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center flex-shrink-0 transition-all ${activeSubSlug === "all"
+                                ? "bg-boutique-charcoal text-white"
+                                : "bg-boutique-bg-alt/80 text-boutique-taupe group-hover:text-boutique-charcoal"
                                 }`}>
-                                <Sparkles className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5" />
+                                <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                             </div>
-                            <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase whitespace-nowrap pr-0.5">
+                            <span className="text-[10px] sm:text-xs font-bold tracking-wider uppercase whitespace-nowrap">
                                 All
                             </span>
                         </button>
@@ -179,12 +190,12 @@ function SubcategoryProductsContent({ category, products = [] }) {
                                 <button
                                     key={sub.slug}
                                     onClick={() => handleSubClick(sub.slug)}
-                                    className={`flex items-center gap-1.5 px-2.5 py-1 sm:px-4 sm:py-2 rounded-full border transition-all duration-300 flex-shrink-0 group ${isActive
-                                        ? "bg-boutique-charcoal text-white border-boutique-gold ring-2 ring-boutique-gold/50 shadow-md scale-105"
-                                        : "bg-white text-boutique-charcoal border-boutique-muted-border hover:border-boutique-rose hover:bg-boutique-blush/30"
+                                    className={`flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border transition-all duration-200 flex-shrink-0 group ${isActive
+                                        ? "bg-[#F4EFE6] text-boutique-charcoal border-boutique-charcoal font-bold shadow-2xs"
+                                        : "bg-white/80 text-boutique-taupe border-boutique-muted-border/80 hover:border-boutique-taupe hover:text-boutique-charcoal hover:bg-white"
                                         }`}
                                 >
-                                    <div className={`w-5 h-5 sm:w-7 sm:h-7 rounded-full overflow-hidden relative border transition-all flex-shrink-0 ${isActive ? "border-boutique-gold ring-1 ring-boutique-gold/40 shadow-xs" : "border-boutique-muted-border group-hover:border-boutique-rose"
+                                    <div className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full overflow-hidden relative border flex-shrink-0 transition-all ${isActive ? "border-boutique-charcoal/50" : "border-boutique-muted-border group-hover:border-boutique-taupe"
                                         }`}>
                                         <Image
                                             src={subImgSrc}
@@ -194,7 +205,7 @@ function SubcategoryProductsContent({ category, products = [] }) {
                                             sizes="20px"
                                         />
                                     </div>
-                                    <span className={`text-[10px] sm:text-xs font-semibold tracking-wider uppercase whitespace-nowrap pr-0.5 ${isActive ? "text-boutique-gold-light font-bold" : "text-boutique-charcoal group-hover:text-boutique-rose"
+                                    <span className={`text-[10px] sm:text-xs tracking-wider uppercase whitespace-nowrap ${isActive ? "text-boutique-charcoal font-bold" : "text-boutique-taupe group-hover:text-boutique-charcoal font-medium"
                                         }`}>
                                         {sub.name}
                                     </span>
@@ -218,8 +229,8 @@ function SubcategoryProductsContent({ category, products = [] }) {
                 </span>
             </div>
 
-            {/* PRODUCT CARDS GRID — VISIBLE IMMEDIATELY ABOVE THE FOLD */}
-            <div className="pt-1">
+            {/* PRODUCT CARDS GRID */}
+            <div className={`pt-1 transition-opacity duration-150 ${gridVisible ? "opacity-100" : "opacity-0"}`}>
                 {filteredProducts.length > 0 ? (
                     <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-5">
                         {filteredProducts.map((product) => (
