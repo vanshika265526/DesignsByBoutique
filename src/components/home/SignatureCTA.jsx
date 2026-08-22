@@ -40,9 +40,9 @@ export default function SignatureCTA() {
                         href={buildWhatsAppLink()}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 rounded-full bg-[#128C7E] hover:bg-[#0c6b60] text-white text-xs font-semibold tracking-[0.14em] uppercase whitespace-nowrap transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 text-center"
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 rounded-full bg-white border-2 border-[#1F4A3B] text-[#1F4A3B] hover:bg-[#1F4A3B] hover:text-white text-xs font-semibold tracking-[0.14em] uppercase whitespace-nowrap transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 text-center"
                     >
-                        <WhatsAppIcon className="w-4 h-4 text-white flex-shrink-0" />
+                        <WhatsAppIcon className="w-4 h-4 flex-shrink-0" />
                         <span>ENQUIRE ON WHATSAPP</span>
                     </a>
                 </div>

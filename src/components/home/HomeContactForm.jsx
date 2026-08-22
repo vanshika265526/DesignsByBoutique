@@ -52,21 +52,8 @@ export default function HomeContactForm() {
     return (
         <section className="py-16 md:py-24 bg-boutique-bg-card border-t border-boutique-muted-border/40">
             <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-8">
-                    <div className="inline-flex items-center gap-2 text-boutique-rose text-xs font-semibold uppercase tracking-[0.25em]">
-                        <Sparkles className="w-4 h-4 text-boutique-gold" />
-                        <span>Direct Boutique Inquiry</span>
-                    </div>
-                    <h2 className="font-serif-editorial text-3xl sm:text-4xl md:text-5xl font-bold text-boutique-charcoal mt-2">
-                        Send Us A Message
-                    </h2>
-                    <p className="text-sm text-boutique-taupe font-light mt-2 max-w-lg mx-auto">
-                        Tell us what you&apos;re looking for and we&apos;ll reply on WhatsApp for a fast, personal response.
-                    </p>
-                </div>
-
-                {/* Feature Callouts Box */}
-                <div className="mb-8 bg-white rounded-2xl border border-boutique-muted-border/80 shadow-xs overflow-hidden grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-boutique-muted-border/60">
+                {/* Feature Callouts Box — shown first */}
+                <div className="mb-6 bg-white rounded-2xl border border-boutique-muted-border/80 shadow-xs overflow-hidden grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-boutique-muted-border/60">
                     {/* Made Just For You */}
                     <div className="p-4 sm:p-5 flex items-center gap-3.5">
                         <div className="p-2.5 rounded-xl bg-[#1c4d3d]/10 text-[#1c4d3d] flex-shrink-0">
@@ -96,6 +83,20 @@ export default function HomeContactForm() {
                             </p>
                         </div>
                     </div>
+                </div>
+
+                {/* Section Header — shown below the callouts */}
+                <div className="text-center mb-8">
+                    <div className="inline-flex items-center gap-2 text-boutique-rose text-xs font-semibold uppercase tracking-[0.25em]">
+                        <Sparkles className="w-4 h-4 text-boutique-gold" />
+                        <span>Direct Boutique Inquiry</span>
+                    </div>
+                    <h2 className="font-serif-editorial text-3xl sm:text-4xl md:text-5xl font-bold text-boutique-charcoal mt-2">
+                        Send Us A Message
+                    </h2>
+                    <p className="text-sm text-boutique-taupe font-light mt-2 max-w-lg mx-auto">
+                        Tell us what you&apos;re looking for and we&apos;ll reply on WhatsApp for a fast, personal response.
+                    </p>
                 </div>
 
                 <form
