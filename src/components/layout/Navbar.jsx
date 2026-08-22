@@ -144,21 +144,16 @@ export default function Navbar() {
 
                     {/* 1. Left Side: Logo & Desktop Nav Links (Mobile & Desktop) */}
                     <div className="flex items-center gap-4 lg:gap-6 flex-shrink-0">
-                        <Link href="/" className="group flex items-center gap-1.5" aria-label="Designs by Nisha — Home">
-                            <span className="relative block h-14 w-[110px] sm:h-12 sm:w-[110px] md:h-14 md:w-[130px] flex-shrink-0">
+                        <Link href="/" className="group flex items-center" aria-label="Designs by Nisha — Home">
+                            <span className="relative block h-14 w-[115px] sm:h-12 sm:w-[110px] md:h-14 md:w-[130px] flex-shrink-0">
                                 <Image
                                     src="/images/logo-transparent.png"
                                     alt="Designs by Nisha Boutique New Delhi"
                                     fill
                                     priority
-                                    sizes="(min-width: 768px) 130px, 110px"
+                                    sizes="(min-width: 768px) 130px, 115px"
                                     className="object-contain transition-transform duration-300 group-hover:scale-105"
                                 />
-                            </span>
-                            {/* Brand name — visible only on mobile, hidden on md+ (desktop shows full logo) */}
-                            <span className="flex flex-col leading-[1.1] md:hidden">
-                                <span className="font-serif-editorial text-[10px] font-medium tracking-[0.2em] uppercase text-boutique-taupe">Designs by</span>
-                                <span className="font-serif-editorial text-[17px] font-bold tracking-widest uppercase text-boutique-charcoal">NISHA</span>
                             </span>
                         </Link>
 
