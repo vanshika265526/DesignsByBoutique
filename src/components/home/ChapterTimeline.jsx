@@ -69,7 +69,7 @@ export default function ChapterTimeline() {
 
     return (
         <section
-            className="relative overflow-hidden bg-boutique-bg py-20 md:py-28"
+            className="relative overflow-hidden bg-boutique-bg pt-16 pb-10 md:pt-24 md:pb-14"
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
         >
@@ -105,17 +105,15 @@ export default function ChapterTimeline() {
                                     <Link
                                         href={`/collections/${ch.categorySlug}`}
                                         onMouseEnter={() => setActive(i)}
-                                        className={`group flex items-center gap-5 sm:gap-8 text-left ${
-                                            left ? "" : "flex-row-reverse"
-                                        }`}
+                                        className={`group flex items-center gap-5 sm:gap-8 text-left ${left ? "" : "flex-row-reverse"
+                                            }`}
                                     >
                                         {/* Circle node */}
                                         <div className="relative flex-shrink-0">
                                             {/* soft tint backing */}
                                             <span
-                                                className={`absolute rounded-full transition-all duration-500 ${
-                                                    left ? "-left-3 -top-3" : "-right-3 -top-3"
-                                                }`}
+                                                className={`absolute rounded-full transition-all duration-500 ${left ? "-left-3 -top-3" : "-right-3 -top-3"
+                                                    }`}
                                                 style={{
                                                     backgroundColor: TINTS[i % TINTS.length],
                                                     width: "100%",
@@ -129,9 +127,8 @@ export default function ChapterTimeline() {
                                                         : { scale: isActive ? 1.06 : 1 }
                                                 }
                                                 transition={{ type: "spring", stiffness: 200, damping: 16 }}
-                                                className={`relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full overflow-hidden shadow-lg ring-4 transition-colors duration-500 ${
-                                                    isActive ? "ring-boutique-gold" : "ring-white"
-                                                }`}
+                                                className={`relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full overflow-hidden shadow-lg ring-4 transition-colors duration-500 ${isActive ? "ring-boutique-gold" : "ring-white"
+                                                    }`}
                                             >
                                                 <Image
                                                     src={ch.image}
@@ -147,9 +144,8 @@ export default function ChapterTimeline() {
                                             </motion.div>
                                             {/* chapter number chip */}
                                             <span
-                                                className={`absolute -bottom-1 ${
-                                                    left ? "-right-1" : "-left-1"
-                                                } w-9 h-9 rounded-full bg-boutique-charcoal text-white font-serif-editorial text-sm flex items-center justify-center shadow-md`}
+                                                className={`absolute -bottom-1 ${left ? "-right-1" : "-left-1"
+                                                    } w-9 h-9 rounded-full bg-boutique-charcoal text-white font-serif-editorial text-sm flex items-center justify-center shadow-md`}
                                             >
                                                 {ch.number}
                                             </span>
@@ -167,9 +163,8 @@ export default function ChapterTimeline() {
                                                 {ch.categoryName}
                                             </p>
                                             <span
-                                                className={`mt-3 inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.15em] text-boutique-rose ${
-                                                    left ? "" : "flex-row-reverse"
-                                                }`}
+                                                className={`mt-3 inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.15em] text-boutique-rose ${left ? "" : "flex-row-reverse"
+                                                    }`}
                                             >
                                                 <span>Explore Collection</span>
                                                 <ArrowRight className="w-3.5 h-3.5" />
@@ -182,16 +177,6 @@ export default function ChapterTimeline() {
                             </div>
                         );
                     })}
-                </div>
-
-                {/* Closing CTA */}
-                <div className="text-center mt-16 md:mt-20">
-                    <Link
-                        href="/collections"
-                        className="inline-flex items-center gap-2 bg-boutique-rose hover:bg-boutique-rose-dark text-white px-8 py-3.5 text-xs font-semibold tracking-[0.2em] uppercase transition-colors"
-                    >
-                        Explore Every Collection
-                    </Link>
                 </div>
             </div>
         </section>

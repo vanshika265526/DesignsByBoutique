@@ -34,7 +34,7 @@ export default function ShopByCategory({ categories }) {
     }).sort((a, b) => (a.order || 0) - (b.order || 0));
 
     return (
-        <section className="py-16 md:py-24 bg-boutique-bg">
+        <section className="pt-12 pb-16 md:pt-16 md:pb-24 bg-boutique-bg">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
