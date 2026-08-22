@@ -28,11 +28,11 @@ export default async function HomePage() {
             {/* 1 — Premium boutique hero */}
             <Hero settings={settings} />
 
-            {/* 2 — Shop by Category (women's boutique categories) */}
-            <ShopByCategory categories={db.categories} />
-
-            {/* 2.5 — "For Every Chapter of Her Story" animated life-journey timeline */}
+            {/* 2 — "For Every Chapter of Her Story" animated life-journey timeline */}
             <ChapterTimeline />
+
+            {/* 2.5 — Shop by Category (women's boutique categories) */}
+            <ShopByCategory categories={db.categories} />
 
             {/* 3 — Featured / New Arrival products */}
             <TrendingNow products={featuredProducts} />
