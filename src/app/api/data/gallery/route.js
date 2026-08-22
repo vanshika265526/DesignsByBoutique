@@ -20,11 +20,15 @@ export async function POST(request) {
         const db = await getDbAsync();
         if (!db.gallery) db.gallery = [];
 
+        const imageUrl = body.image || '/images/placeholder.jpg';
+        const isUrlVideo = body.type === 'video' || /\.(mp4|webm|mov|m4v)(\?.*)?$/i.test(imageUrl);
+
         const newItem = {
             id: body.id || `lb-${Date.now()}`,
             title: body.title || 'Untitled',
             category: body.category || 'Boutique',
-            image: body.image || '/images/placeholder.jpg',
+            type: body.type || (isUrlVideo ? 'video' : 'image'),
+            image: imageUrl,
             aspectRatio: body.aspectRatio || 'aspect-[3/4]',
             location: body.location || '',
             published: body.published !== false,

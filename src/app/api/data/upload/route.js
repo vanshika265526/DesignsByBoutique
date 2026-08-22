@@ -8,8 +8,8 @@ import { uploadToCloudinary } from '@/lib/cloudinary';
 
 export const runtime = 'nodejs';
 
-// Max upload size — Cloudinary free tier handles up to 10MB per upload.
-const MAX_BYTES = 10 * 1024 * 1024;
+// Max upload size — 50MB for video and image media.
+const MAX_BYTES = 50 * 1024 * 1024;
 
 // Uploads are sent directly to Cloudinary. The returned secure_url is stored
 // on product/gallery records in MongoDB and served from Cloudinary's CDN.
@@ -23,8 +23,11 @@ export async function POST(request) {
         }
 
         const contentType = file.type || 'application/octet-stream';
-        if (!contentType.startsWith('image/')) {
-            return NextResponse.json({ success: false, error: 'Only image files are allowed.' }, { status: 400 });
+        const isImage = contentType.startsWith('image/');
+        const isVideo = contentType.startsWith('video/');
+
+        if (!isImage && !isVideo) {
+            return NextResponse.json({ success: false, error: 'Only image and video files are allowed.' }, { status: 400 });
         }
 
         const bytes = await file.arrayBuffer();
@@ -42,22 +45,26 @@ export async function POST(request) {
 
         // Build a clean public_id from the original filename
         const base = path
-            .basename(file.name || 'image', path.extname(file.name || ''))
+            .basename(file.name || (isVideo ? 'video' : 'image'), path.extname(file.name || ''))
             .toLowerCase()
             .replace(/[^a-z0-9]+/g, '-')
-            .replace(/^-+|-+$/g, '') || 'image';
+            .replace(/^-+|-+$/g, '') || (isVideo ? 'video' : 'image');
         const publicId = `${base}-${Date.now()}`;
 
         const result = await uploadToCloudinary(buffer, {
             public_id: publicId,
+            resource_type: isVideo ? 'video' : 'auto',
             overwrite: false,
         });
+
+        const detectedMediaType = result.resource_type === 'video' || isVideo ? 'video' : 'image';
 
         // Return the Cloudinary CDN URL directly — no proxy route needed.
         return NextResponse.json({
             success: true,
             url: result.secure_url,
             fileName: result.public_id,
+            mediaType: detectedMediaType,
             width: result.width,
             height: result.height,
         });

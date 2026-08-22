@@ -16,7 +16,7 @@ export async function uploadToCloudinary(buffer, options = {}) {
     return new Promise((resolve, reject) => {
         const uploadOptions = {
             folder: 'designs-by-nisha',
-            resource_type: 'image',
+            resource_type: 'auto',
             ...options,
         };
 

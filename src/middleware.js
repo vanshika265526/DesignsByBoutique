@@ -58,10 +58,12 @@ export async function middleware(request) {
         return NextResponse.next();
     }
 
-    // Data API — protect mutations only (public GETs still work)
+    // Data API — protect mutations only (public GETs still work, plus public review POSTs & image uploads)
     if (pathname.startsWith("/api/data")) {
         const method = request.method.toUpperCase();
-        if (["POST", "PATCH", "PUT", "DELETE"].includes(method) && !authed) {
+        const isPublicReviewPost = pathname === "/api/data/testimonials" && method === "POST";
+        const isPublicUploadPost = pathname === "/api/data/upload" && method === "POST";
+        if (!isPublicReviewPost && !isPublicUploadPost && ["POST", "PATCH", "PUT", "DELETE"].includes(method) && !authed) {
             return NextResponse.json({ success: false, error: "Unauthorized" }, { status: 401 });
         }
     }

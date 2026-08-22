@@ -98,6 +98,7 @@ export default function Navbar() {
             })
             .slice(0, 6)
         : [];
+
     const navigationCategories = categoriesTaxonomy.map((taxonomyCategory) => {
         const liveCategory = liveCategories.find((category) =>
             (LEGACY_CATEGORY_SLUGS[category.slug] || category.slug) === taxonomyCategory.slug
@@ -138,23 +139,29 @@ export default function Navbar() {
 
     return (
         <header className="sticky top-0 left-0 right-0 z-50 glass-nav shadow-xs">
-            <div className="w-full px-4 sm:px-6 lg:px-10">
-                <div className="grid grid-cols-3 items-center h-[80px] md:h-24">
+            <div className="w-full px-4 sm:px-6 lg:px-8">
+                <div className="flex items-center justify-between h-[72px] md:h-20 gap-2 sm:gap-4">
 
-                    {/* Left: Mobile Menu Toggle on Mobile, Main Desktop Nav (Home, Collections, Gallery) */}
-                    <div className="flex items-center justify-start">
-                        <button
-                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                            className="md:hidden p-1.5 text-boutique-charcoal hover:bg-boutique-blush/40 rounded-lg transition-colors"
-                            aria-label="Toggle menu"
-                        >
-                            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                        </button>
+                    {/* 1. Left Side: Logo & Desktop Nav Links (Mobile & Desktop) */}
+                    <div className="flex items-center gap-4 lg:gap-6 flex-shrink-0">
+                        <Link href="/" className="group flex items-center" aria-label="Designs by Nisha — Home">
+                            <span className="relative block h-10 w-[85px] sm:h-12 sm:w-[110px] md:h-14 md:w-[130px]">
+                                <Image
+                                    src="/images/logo-transparent.png"
+                                    alt="Designs by Nisha Boutique New Delhi"
+                                    fill
+                                    priority
+                                    sizes="(min-width: 768px) 130px, 110px"
+                                    className="object-contain transition-transform duration-300 group-hover:scale-105"
+                                />
+                            </span>
+                        </Link>
 
-                        <nav className="hidden md:flex items-center gap-7">
+                        {/* Desktop Nav Links (Left Side) */}
+                        <nav className="hidden lg:flex items-center gap-4 xl:gap-5">
                             <Link href="/" className={linkClass(pathname === "/")}>Home</Link>
 
-                            {/* Collections Dropdown with 2-Level Nested Dropdown */}
+                            {/* Collections Dropdown */}
                             <div
                                 className="relative"
                                 ref={dropdownRef}
@@ -172,11 +179,9 @@ export default function Navbar() {
                                     <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${collectionsOpen ? "rotate-180 text-boutique-rose" : ""}`} />
                                 </Link>
 
-                                {/* 1st Level Dropdown: List of 5 Main Categories */}
                                 {collectionsOpen && (
                                     <div className="absolute top-full left-0 pt-3 w-72 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
                                         <div className="bg-boutique-bg-card/95 backdrop-blur-md rounded-xl shadow-2xl border border-boutique-muted-border overflow-visible py-2 relative">
-
                                             <div className="px-4 py-1.5 mb-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-boutique-gold border-b border-boutique-muted-border/60">
                                                 Boutique Categories
                                             </div>
@@ -217,7 +222,6 @@ export default function Navbar() {
                                                             )}
                                                         </Link>
 
-                                                        {/* 2nd Level Nested Flyout Dropdown: Subcategories of Hovered Category */}
                                                         {isCatHovered && hasSubs && (
                                                             <div className="absolute left-full top-0 -ml-px w-64 z-50 animate-in fade-in slide-in-from-left-2 duration-200">
                                                                 <div className="bg-boutique-bg-card/95 backdrop-blur-md rounded-xl shadow-2xl border border-boutique-muted-border p-2.5">
@@ -248,96 +252,75 @@ export default function Navbar() {
                                                                             </Link>
                                                                         ))}
                                                                     </div>
-
-                                                                    <Link
-                                                                        href={`/collections/${cat.slug}`}
-                                                                        className="block text-center mt-2 pt-2 border-t border-boutique-muted-border/60 text-[10px] uppercase tracking-[0.18em] font-semibold text-boutique-rose hover:text-boutique-rose-dark transition-colors"
-                                                                    >
-                                                                        Explore All {cat.name} →
-                                                                    </Link>
                                                                 </div>
                                                             </div>
                                                         )}
                                                     </div>
                                                 );
                                             })}
-
-                                            <Link
-                                                href="/collections"
-                                                className="block px-4 pt-2.5 mt-1 border-t border-boutique-muted-border text-[11px] uppercase tracking-[0.18em] font-semibold text-boutique-rose hover:text-boutique-rose-dark transition-colors"
-                                            >
-                                                View All Collections →
-                                            </Link>
                                         </div>
                                     </div>
                                 )}
                             </div>
 
-                            <Link href="/gallery" className={linkClass(pathname.startsWith("/gallery"))}>Gallery</Link>
                         </nav>
                     </div>
 
-                    {/* Center: Brand Logo Centered */}
-                    <div className="flex items-center justify-center">
-                        <Link href="/" className="group flex-shrink-0" aria-label="Designs by Nisha — Home">
-                            <span className="relative block h-16 w-[165px] sm:h-[72px] sm:w-[190px] md:h-[92px] md:w-[240px]">
-                                <Image
-                                    src="/images/logo-transparent.png"
-                                    alt="Designs by Nisha Boutique New Delhi"
-                                    fill
-                                    priority
-                                    sizes="(min-width: 768px) 240px, 190px"
-                                    className="object-contain transition-transform duration-300 group-hover:scale-105"
-                                />
-                            </span>
+                    {/* 2. Middle: Company Name in Beautiful Font */}
+                    <div className="flex-1 text-center min-w-0 px-2">
+                        <Link href="/" className="inline-block group text-center">
+                            <h1 className="font-serif-editorial text-base sm:text-2xl md:text-3xl font-bold text-boutique-charcoal group-hover:text-boutique-rose transition-colors tracking-wide sm:tracking-widest uppercase truncate">
+                                DESIGNS BY NISHA
+                            </h1>
+                            <p className="hidden sm:block text-[9px] md:text-[10px] uppercase tracking-[0.28em] text-boutique-gold font-light mt-0.5">
+                                Luxury Indian Couture
+                            </p>
                         </Link>
                     </div>
 
-                    {/* Right: Secondary Links & CTAs */}
-                    <div className="flex items-center justify-end gap-3 sm:gap-5">
-                        <div className="relative" ref={searchRef}>
-                            <button
-                                type="button"
-                                onClick={() => setSearchOpen((open) => !open)}
-                                className="p-2 text-boutique-charcoal hover:bg-boutique-blush/60 rounded-full transition-colors"
-                                aria-label="Search products"
-                                aria-expanded={searchOpen}
-                            >
-                                <Search className="w-4 h-4" />
-                            </button>
+                    {/* 3. Right Side: Nav Links (Gallery, Our Story) + Search Bar + Mobile Menu Icons */}
+                    <div className="flex items-center justify-end gap-3 lg:gap-5 flex-shrink-0">
 
+                        {/* Desktop Nav Links (Right Side: Gallery, Our Story) */}
+                        <nav className="hidden lg:flex items-center gap-4 xl:gap-5">
+                            <Link href="/gallery" className={linkClass(pathname.startsWith("/gallery"))}>Gallery</Link>
+                            <Link href="/our-story" className={linkClass(pathname.startsWith("/our-story"))}>Our Story</Link>
+                        </nav>
+
+                        {/* Inline Search Bar (Desktop) */}
+                        <div className="relative hidden md:block" ref={searchRef}>
+                            <div className="relative">
+                                <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-boutique-taupe" />
+                                <input
+                                    type="search"
+                                    value={searchQuery}
+                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                    onFocus={() => setSearchOpen(true)}
+                                    onKeyDown={handleSearchKeyDown}
+                                    placeholder="Search outfits..."
+                                    className="w-36 lg:w-52 pl-8 pr-7 py-1.5 bg-white/80 border border-boutique-muted-border rounded-full text-xs text-boutique-charcoal focus:outline-none focus:border-boutique-rose placeholder:text-boutique-taupe/70 transition-all shadow-xs"
+                                />
+                                {searchQuery && (
+                                    <button
+                                        type="button"
+                                        onClick={() => setSearchQuery("")}
+                                        className="absolute right-2.5 top-1/2 -translate-y-1/2 text-boutique-taupe hover:text-boutique-charcoal p-0.5 text-xs font-bold"
+                                    >
+                                        ✕
+                                    </button>
+                                )}
+                            </div>
+
+                            {/* Desktop Search Dropdown */}
                             {searchOpen && (
-                                <div className="fixed inset-x-3 top-20 sm:absolute sm:inset-auto sm:right-0 sm:top-full sm:mt-3 sm:w-96 max-h-[85vh] overflow-y-auto rounded-xl border border-boutique-muted-border bg-boutique-bg-card/95 backdrop-blur-md p-3.5 shadow-2xl z-50 animate-in fade-in slide-in-from-top-2 duration-200">
-                                    <div className="relative">
-                                        <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-boutique-taupe" />
-                                        <input
-                                            autoFocus
-                                            type="search"
-                                            value={searchQuery}
-                                            onChange={(event) => setSearchQuery(event.target.value)}
-                                            onKeyDown={handleSearchKeyDown}
-                                            placeholder="Search outfits, suits, gowns, frocks..."
-                                            className="w-full pl-9 pr-8 py-2.5 bg-white border border-boutique-muted-border rounded-lg text-xs text-boutique-charcoal focus:outline-none focus:border-boutique-rose placeholder:text-boutique-taupe/70 shadow-inner"
-                                        />
-                                        {searchQuery && (
-                                            <button
-                                                type="button"
-                                                onClick={() => setSearchQuery("")}
-                                                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-boutique-taupe hover:text-boutique-charcoal p-1 text-xs font-bold"
-                                            >
-                                                ✕
-                                            </button>
-                                        )}
-                                    </div>
-
-                                    {/* Popular Search Suggestions when query is empty */}
+                                <div className="absolute right-0 top-full mt-2 w-80 max-h-96 overflow-y-auto rounded-xl border border-boutique-muted-border bg-boutique-bg-card/95 backdrop-blur-md p-3 shadow-2xl z-50 animate-in fade-in slide-in-from-top-2 duration-200">
                                     {!searchQuery.trim() && (
-                                        <div className="mt-3 pt-2 border-t border-boutique-muted-border/60">
+                                        <div>
                                             <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-boutique-gold mb-2">
                                                 Popular Searches
                                             </p>
                                             <div className="flex flex-wrap gap-1.5">
-                                                {["Anarkali", "Baby Frock", "Sharara", "Haldi", "Maternity Gowns", "Bridal Lehenga"].map((tag) => (
+                                                {["Anarkali", "Baby Frock", "Sharara", "Haldi", "Maternity Gowns", "Lehenga"].map((tag) => (
                                                     <button
                                                         key={tag}
                                                         type="button"
@@ -351,101 +334,134 @@ export default function Navbar() {
                                         </div>
                                     )}
 
-                                    {/* Live Search Results Dropdown */}
                                     {searchQuery.trim() && (
-                                        <div className="mt-3 pt-2 border-t border-boutique-muted-border/60 space-y-1.5 max-h-80 overflow-y-auto scrollbar-thin">
-                                            <div className="flex items-center justify-between px-1 mb-1">
-                                                <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-boutique-gold">
-                                                    Results ({searchResults.length})
-                                                </span>
-                                            </div>
+                                        <div className="space-y-1.5">
+                                            <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-boutique-gold block mb-1">
+                                                Results ({searchResults.length})
+                                            </span>
                                             {searchResults.length > 0 ? (
                                                 searchResults.map((product) => (
                                                     <Link
                                                         key={product.id || product.slug}
                                                         href={`/product/${product.slug}`}
                                                         onClick={() => setSearchOpen(false)}
-                                                        className="flex items-center gap-3 p-2 rounded-lg bg-white/80 hover:bg-boutique-blush/50 border border-transparent hover:border-boutique-rose/30 transition-all group"
+                                                        className="flex items-center gap-2.5 p-1.5 rounded-lg bg-white/80 hover:bg-boutique-blush/50 border border-transparent hover:border-boutique-rose/30 transition-all group"
                                                     >
-                                                        <div className="w-10 h-10 rounded-md overflow-hidden relative flex-shrink-0 border border-boutique-muted-border group-hover:scale-105 transition-transform">
+                                                        <div className="w-9 h-9 rounded-md overflow-hidden relative flex-shrink-0 border border-boutique-muted-border">
                                                             <Image
                                                                 src={product.image || "/images/placeholder.jpg"}
                                                                 alt={product.name}
                                                                 fill
                                                                 className="object-cover"
-                                                                sizes="40px"
+                                                                sizes="36px"
                                                             />
                                                         </div>
                                                         <div className="flex-1 min-w-0">
                                                             <h4 className="text-xs font-semibold text-boutique-charcoal group-hover:text-boutique-rose transition-colors truncate">
                                                                 {product.name}
                                                             </h4>
-                                                            <div className="flex items-center gap-2 mt-0.5">
-                                                                <span className="text-[10px] text-boutique-taupe capitalize truncate">
-                                                                    {product.subcategory || product.categoryName || "Boutique Outfit"}
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                        {product.price && (
-                                                            <span className="text-xs font-bold text-boutique-rose flex-shrink-0">
-                                                                ₹{Number(product.price).toLocaleString("en-IN")}
+                                                            <span className="text-[10px] text-boutique-taupe capitalize truncate block">
+                                                                {product.subcategory || product.categoryName || "Outfit"}
                                                             </span>
-                                                        )}
+                                                        </div>
                                                     </Link>
                                                 ))
                                             ) : (
-                                                <div className="py-4 text-center">
-                                                    <p className="text-xs text-boutique-taupe">No outfits found matching &quot;{searchQuery}&quot;</p>
-                                                    <p className="text-[11px] text-boutique-taupe/70 mt-1">Try searching for &quot;Anarkali&quot;, &quot;Frock&quot;, or &quot;Lehenga&quot;</p>
-                                                </div>
+                                                <p className="text-xs text-boutique-taupe py-2 text-center">No outfits found</p>
                                             )}
                                         </div>
                                     )}
                                 </div>
                             )}
                         </div>
-                        <Link href="/our-story" className={`hidden lg:inline ${linkClass(pathname.startsWith("/our-story"))}`}>Our Story</Link>
-                        <Link href="/contact" className={`hidden lg:inline ${linkClass(pathname.startsWith("/contact"))}`}>Contact</Link>
 
-                        <a
-                            href={boutiqueConfig.instagram.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hidden sm:inline-flex items-center justify-center p-2 rounded-full hover:bg-boutique-blush/60 transition-colors"
-                            aria-label="Instagram"
-                        >
-                            <InstagramIcon className="w-4 h-4" colored />
-                        </a>
 
-                        <a
-                            href={buildWhatsAppLink()}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hidden sm:inline-flex items-center gap-2 bg-boutique-rose hover:bg-boutique-rose-dark text-white px-4 py-2 rounded-full text-[10px] font-semibold tracking-[0.18em] uppercase transition-all shadow-xs hover:shadow-md"
-                        >
-                            <WhatsAppIcon className="w-3.5 h-3.5" />
-                            Enquire
-                        </a>
 
-                        <a
-                            href={buildWhatsAppLink()}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="sm:hidden p-2 bg-boutique-rose text-white rounded-full shadow-xs flex items-center justify-center"
-                            aria-label="WhatsApp"
+                        {/* Search Icon Button (Mobile Only) */}
+                        <button
+                            type="button"
+                            onClick={() => setSearchOpen((open) => !open)}
+                            className="md:hidden p-1.5 text-boutique-charcoal hover:bg-boutique-blush/60 rounded-full transition-colors"
+                            aria-label="Search"
                         >
-                            <WhatsAppIcon className="w-4 h-4" />
-                        </a>
+                            <Search className="w-5 h-5" />
+                        </button>
+
+
+
+                        {/* Mobile Menu Icon Toggle (Right Side for Mobile) */}
+                        <button
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                            className="md:hidden p-1.5 text-boutique-charcoal hover:bg-boutique-blush/40 rounded-lg transition-colors"
+                            aria-label="Toggle menu"
+                        >
+                            {mobileMenuOpen ? <X className="w-6 h-6 text-boutique-rose" /> : <Menu className="w-6 h-6" />}
+                        </button>
                     </div>
+
                 </div>
             </div>
+
+            {/* Mobile Expandable Search Bar Overlay */}
+            {searchOpen && (
+                <div className="md:hidden px-4 py-2.5 bg-boutique-bg-card/98 border-t border-boutique-muted-border animate-in slide-in-from-top-2 duration-200">
+                    <div className="relative">
+                        <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-boutique-taupe" />
+                        <input
+                            autoFocus
+                            type="search"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            onKeyDown={handleSearchKeyDown}
+                            placeholder="Search outfits, suits, gowns..."
+                            className="w-full pl-9 pr-8 py-2 bg-white border border-boutique-muted-border rounded-lg text-xs text-boutique-charcoal focus:outline-none focus:border-boutique-rose placeholder:text-boutique-taupe/70 shadow-inner"
+                        />
+                        {searchQuery && (
+                            <button
+                                type="button"
+                                onClick={() => setSearchQuery("")}
+                                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-boutique-taupe hover:text-boutique-charcoal p-1 text-xs font-bold"
+                            >
+                                ✕
+                            </button>
+                        )}
+                    </div>
+
+                    {/* Mobile Search Results */}
+                    {searchQuery.trim() && searchResults.length > 0 && (
+                        <div className="mt-2 space-y-1 max-h-60 overflow-y-auto pt-1">
+                            {searchResults.map((product) => (
+                                <Link
+                                    key={product.id || product.slug}
+                                    href={`/product/${product.slug}`}
+                                    onClick={() => setSearchOpen(false)}
+                                    className="flex items-center gap-2.5 p-2 rounded-lg bg-white border border-boutique-muted-border/60"
+                                >
+                                    <div className="w-8 h-8 rounded overflow-hidden relative flex-shrink-0">
+                                        <Image
+                                            src={product.image || "/images/placeholder.jpg"}
+                                            alt={product.name}
+                                            fill
+                                            className="object-cover"
+                                            sizes="32px"
+                                        />
+                                    </div>
+                                    <span className="text-xs font-medium text-boutique-charcoal truncate">
+                                        {product.name}
+                                    </span>
+                                </Link>
+                            ))}
+                        </div>
+                    )}
+                </div>
+            )}
 
             {/* Mobile Navigation Drawer */}
             {mobileMenuOpen && (
                 <div className="md:hidden glass-nav border-t border-boutique-muted-border px-5 py-4 space-y-2 animate-in slide-in-from-top duration-300 max-h-[85vh] overflow-y-auto">
                     <Link href="/" onClick={() => setMobileMenuOpen(false)} className={mobileLinkClass(pathname === "/")}>Home</Link>
 
-                    {/* Collections Accordion with Nested Category & Subcategory Accordions */}
+                    {/* Collections Accordion */}
                     <div className="border-b border-boutique-muted-border/50 rounded-lg overflow-hidden my-1">
                         <button
                             onClick={() => setMobileCollectionsOpen(!mobileCollectionsOpen)}
@@ -458,7 +474,6 @@ export default function Navbar() {
                             <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileCollectionsOpen ? "rotate-180 text-boutique-rose" : ""}`} />
                         </button>
 
-                        {/* Level 1: Categories inside Collections */}
                         {mobileCollectionsOpen && (
                             <div className="pl-3 py-2 space-y-1.5 bg-boutique-blush/20 border-l-2 border-boutique-rose/40 my-1">
                                 <p className="px-2 text-[10px] uppercase tracking-[0.2em] font-semibold text-boutique-gold">Select Category</p>
@@ -489,7 +504,6 @@ export default function Navbar() {
                                                 )}
                                             </div>
 
-                                            {/* Level 2: Subcategories inside Category */}
                                             {isExpanded && cat.subcategories && (
                                                 <div className="pl-4 pr-2 pb-2 pt-1 space-y-1 border-t border-boutique-muted-border/40 bg-white">
                                                     {cat.subcategories.map((sub) => (
@@ -516,14 +530,6 @@ export default function Navbar() {
                                         </div>
                                     );
                                 })}
-
-                                <Link
-                                    href="/collections"
-                                    onClick={() => setMobileMenuOpen(false)}
-                                    className="block px-2 pt-2 text-[11px] uppercase tracking-[0.18em] font-semibold text-boutique-rose"
-                                >
-                                    View All Collections →
-                                </Link>
                             </div>
                         )}
                     </div>
@@ -553,10 +559,7 @@ export default function Navbar() {
                             <InstagramIcon className="w-5 h-5" colored />
                             <span>@designsbynisha00</span>
                         </a>
-                        <a href={buildWhatsAppLink()} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 bg-boutique-rose text-white px-4 py-2 rounded-full text-[10px] font-semibold uppercase tracking-[0.18em]">
-                            <WhatsAppIcon className="w-3.5 h-3.5" />
-                            Enquire
-                        </a>
+
                     </div>
                 </div>
             )}

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Phone, Mail, Heart } from "lucide-react";
+import { MapPin, Phone, Mail, Heart, Clock } from "lucide-react";
 import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import InstagramIcon from "@/components/ui/InstagramIcon";
 import { boutiqueConfig, buildWhatsAppLink } from "@/config/boutique";
@@ -117,6 +117,13 @@ export default function Footer() {
                                 <Mail className="w-4 h-4 text-boutique-gold flex-shrink-0" />
                                 <span>{boutiqueConfig.contact.email}</span>
                             </p>
+                            <div className="flex items-start space-x-2 pt-0.5">
+                                <Clock className="w-4 h-4 text-boutique-gold flex-shrink-0 mt-0.5" />
+                                <div>
+                                    <span className="font-semibold text-neutral-200 block">Store Hours:</span>
+                                    <span className="text-neutral-300 leading-tight block">{boutiqueConfig.contact.hours}</span>
+                                </div>
+                            </div>
                         </div>
 
                         {/* Mini map — opens full Google Maps on click */}

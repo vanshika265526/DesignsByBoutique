@@ -31,37 +31,52 @@ export default function GalleryPreviewSection({ items = [] }) {
                 </div>
 
                 {previewItems.length > 0 && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {previewItems.map((item) => (
-                        <Link
-                            key={item.id}
-                            href="/gallery"
-                            className="group relative rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 cursor-pointer border border-boutique-muted-border aspect-[3/4] block"
-                        >
-                            <Image
-                                src={item.image}
-                                alt={`${item.title} — Designs by Nisha Lookbook`}
-                                fill
-                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                                className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-85 group-hover:opacity-100 transition-opacity" />
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {previewItems.map((item) => {
+                            const isVideo = item.type === "video" || /\.(mp4|webm|mov|m4v)(\?.*)?$/i.test(item.image);
 
-                            <div className="absolute bottom-0 left-0 right-0 p-6 text-white space-y-1">
-                                <span className="text-[10px] uppercase tracking-[0.2em] text-boutique-gold font-semibold">
-                                    {item.category}
-                                </span>
-                                <h3 className="font-serif-editorial text-xl font-bold text-white leading-tight">
-                                    {item.title}
-                                </h3>
-                                <p className="text-xs text-neutral-300 flex items-center space-x-1 pt-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                                    <Expand className="w-3.5 h-3.5 text-boutique-blush" />
-                                    <span>Explore Gallery</span>
-                                </p>
-                            </div>
-                        </Link>
-                    ))}
-                </div>
+                            return (
+                                <Link
+                                    key={item.id}
+                                    href="/gallery"
+                                    className="group relative rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 cursor-pointer border border-boutique-muted-border aspect-[3/4] block"
+                                >
+                                    {isVideo ? (
+                                        <video
+                                            src={item.image}
+                                            autoPlay
+                                            loop
+                                            muted
+                                            playsInline
+                                            className="object-cover object-center w-full h-full group-hover:scale-105 transition-transform duration-700"
+                                        />
+                                    ) : (
+                                        <Image
+                                            src={item.image}
+                                            alt={`${item.title} — Designs by Nisha Lookbook`}
+                                            fill
+                                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                                            className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                                        />
+                                    )}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-85 group-hover:opacity-100 transition-opacity" />
+
+                                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white space-y-1">
+                                        <span className="text-[10px] uppercase tracking-[0.2em] text-boutique-gold font-semibold">
+                                            {item.category}
+                                        </span>
+                                        <h3 className="font-serif-editorial text-xl font-bold text-white leading-tight">
+                                            {item.title}
+                                        </h3>
+                                        <p className="text-xs text-neutral-300 flex items-center space-x-1 pt-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <Expand className="w-3.5 h-3.5 text-boutique-blush" />
+                                            <span>Explore Gallery</span>
+                                        </p>
+                                    </div>
+                                </Link>
+                            );
+                        })}
+                    </div>
                 )}
             </div>
         </section>
