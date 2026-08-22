@@ -145,13 +145,13 @@ export default function Navbar() {
                     {/* 1. Left Side: Logo & Desktop Nav Links (Mobile & Desktop) */}
                     <div className="flex items-center gap-4 lg:gap-6 flex-shrink-0">
                         <Link href="/" className="group flex items-center" aria-label="Designs by Nisha — Home">
-                            <span className="relative block h-10 w-[85px] sm:h-12 sm:w-[110px] md:h-14 md:w-[130px]">
+                            <span className="relative block h-11 w-[95px] sm:h-12 sm:w-[110px] md:h-14 md:w-[130px] flex-shrink-0">
                                 <Image
                                     src="/images/logo-transparent.png"
                                     alt="Designs by Nisha Boutique New Delhi"
                                     fill
                                     priority
-                                    sizes="(min-width: 768px) 130px, 110px"
+                                    sizes="(min-width: 768px) 130px, 95px"
                                     className="object-contain transition-transform duration-300 group-hover:scale-105"
                                 />
                             </span>
