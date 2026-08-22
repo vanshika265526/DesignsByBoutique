@@ -5,7 +5,6 @@ import ChapterTimeline from "@/components/home/ChapterTimeline";
 import TrendingNow from "@/components/home/TrendingNow";
 import GalleryPreviewSection from "@/components/home/GalleryPreviewSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
-import InstagramSection from "@/components/home/InstagramSection";
 import SignatureCTA from "@/components/home/SignatureCTA";
 import HomeContactForm from "@/components/home/HomeContactForm";
 
@@ -42,9 +41,6 @@ export default async function HomePage() {
 
             {/* 6 — Testimonials */}
             <TestimonialsSection />
-
-            {/* 7 — Instagram section */}
-            <InstagramSection settings={settings} items={db.gallery} />
 
             {/* 8 — Call / Instagram / WhatsApp CTA */}
             <SignatureCTA />

@@ -535,7 +535,7 @@ export default function Navbar() {
                     </div>
 
                     {[
-                        { name: "Gallery", href: "/gallery" },
+                        { name: "Instagram Lookbook", href: "/gallery" },
                         { name: "Our Story", href: "/our-story" },
                         { name: "Contact", href: "/contact" },
                     ].map((link) => (

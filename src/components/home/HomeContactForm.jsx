@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Sparkles, Send, CheckCircle } from "lucide-react";
+import { Sparkles, Send, CheckCircle, Scissors, CalendarCheck } from "lucide-react";
 import { buildWhatsAppLink } from "@/config/boutique";
 
 const COLLECTIONS = [
@@ -40,7 +40,7 @@ export default function HomeContactForm() {
                 productCategory: "Home Contact Form",
                 message: formData.message,
             }),
-        }).catch(() => {});
+        }).catch(() => { });
 
         setSent(true);
         setFormData({ name: "", phone: "", chapterInterest: COLLECTIONS[1], message: "" });
@@ -63,6 +63,39 @@ export default function HomeContactForm() {
                     <p className="text-sm text-boutique-taupe font-light mt-2 max-w-lg mx-auto">
                         Tell us what you&apos;re looking for and we&apos;ll reply on WhatsApp for a fast, personal response.
                     </p>
+                </div>
+
+                {/* Feature Callouts Box */}
+                <div className="mb-8 bg-white rounded-2xl border border-boutique-muted-border/80 shadow-xs overflow-hidden grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-boutique-muted-border/60">
+                    {/* Made Just For You */}
+                    <div className="p-4 sm:p-5 flex items-center gap-3.5">
+                        <div className="p-2.5 rounded-xl bg-[#1c4d3d]/10 text-[#1c4d3d] flex-shrink-0">
+                            <Scissors className="w-5 h-5 stroke-[1.75]" />
+                        </div>
+                        <div>
+                            <h4 className="font-bold text-xs tracking-wider uppercase text-[#1c4d3d]">
+                                MADE JUST FOR YOU
+                            </h4>
+                            <p className="text-xs text-boutique-taupe font-light mt-0.5">
+                                Stitched to your size and style
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Visit Or Book A Time */}
+                    <div className="p-4 sm:p-5 flex items-center gap-3.5">
+                        <div className="p-2.5 rounded-xl bg-[#1c4d3d]/10 text-[#1c4d3d] flex-shrink-0">
+                            <CalendarCheck className="w-5 h-5 stroke-[1.75]" />
+                        </div>
+                        <div>
+                            <h4 className="font-bold text-xs tracking-wider uppercase text-[#1c4d3d]">
+                                VISIT OR BOOK A TIME
+                            </h4>
+                            <p className="text-xs text-boutique-taupe font-light mt-0.5">
+                                Open Mon-Sun, 10 AM - 9 PM
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
                 <form
