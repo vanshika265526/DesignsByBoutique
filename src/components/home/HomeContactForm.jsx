@@ -219,7 +219,7 @@ export default function HomeContactForm() {
                                 <div>
                                     <h4 className="font-bold text-xs tracking-wider uppercase text-[#1c4d3d] mb-1">Opening Hours</h4>
                                     <div className="space-y-1">
-                                        <div className="flex justify-between text-sm gap-8">
+                                        <div className="flex justify-between text-xs gap-8">
                                             <span className="text-boutique-charcoal font-medium">Monday – Sunday</span>
                                             <span className="text-boutique-taupe font-light">10:00 AM – 9:00 PM</span>
                                         </div>
