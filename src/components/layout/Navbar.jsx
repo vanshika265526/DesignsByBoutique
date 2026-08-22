@@ -139,7 +139,7 @@ export default function Navbar() {
 
     return (
         <header className="sticky top-0 left-0 right-0 z-50 glass-nav shadow-xs">
-            <div className="w-full px-4 sm:px-6 lg:px-8">
+            <div className="w-full px-2 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-[72px] md:h-20 gap-2 sm:gap-4">
 
                     {/* 1. Left Side: Logo & Desktop Nav Links (Mobile & Desktop) */}

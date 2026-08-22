@@ -95,7 +95,7 @@ export default function Hero() {
                                     priority={i === 0}
                                     sizes="100vw"
                                     onError={() => setBroken((b) => ({ ...b, [slide.mobileSrc]: true }))}
-                                    className="block md:hidden object-cover object-center"
+                                    className="block md:hidden object-cover object-top"
                                 />
                             </>
                         ) : (
