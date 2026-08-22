@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Sparkles, Send, CheckCircle, MapPin, Clock, MessageCircle } from "lucide-react";
+import { Sparkles, Send, CheckCircle, MapPin, Clock, MessageCircle, CalendarCheck } from "lucide-react";
 import { buildWhatsAppLink } from "@/config/boutique";
 import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 
