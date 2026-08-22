@@ -144,16 +144,21 @@ export default function Navbar() {
 
                     {/* 1. Left Side: Logo & Desktop Nav Links (Mobile & Desktop) */}
                     <div className="flex items-center gap-4 lg:gap-6 flex-shrink-0">
-                        <Link href="/" className="group flex items-center" aria-label="Designs by Nisha — Home">
-                            <span className="relative block h-11 w-[95px] sm:h-12 sm:w-[110px] md:h-14 md:w-[130px] flex-shrink-0">
+                        <Link href="/" className="group flex items-center gap-1.5" aria-label="Designs by Nisha — Home">
+                            <span className="relative block h-14 w-[110px] sm:h-12 sm:w-[110px] md:h-14 md:w-[130px] flex-shrink-0">
                                 <Image
                                     src="/images/logo-transparent.png"
                                     alt="Designs by Nisha Boutique New Delhi"
                                     fill
                                     priority
-                                    sizes="(min-width: 768px) 130px, 95px"
+                                    sizes="(min-width: 768px) 130px, 110px"
                                     className="object-contain transition-transform duration-300 group-hover:scale-105"
                                 />
+                            </span>
+                            {/* Brand name — visible only on mobile, hidden on md+ (desktop shows full logo) */}
+                            <span className="flex flex-col leading-[1.1] md:hidden">
+                                <span className="font-serif-editorial text-[10px] font-medium tracking-[0.2em] uppercase text-boutique-taupe">Designs by</span>
+                                <span className="font-serif-editorial text-[17px] font-bold tracking-widest uppercase text-boutique-charcoal">NISHA</span>
                             </span>
                         </Link>
 
@@ -266,8 +271,8 @@ export default function Navbar() {
                         </nav>
                     </div>
 
-                    {/* 2. Middle: Company Name in Beautiful Font */}
-                    <div className="flex-1 text-center min-w-0 px-2">
+                    {/* 2. Middle: Company Name in Beautiful Font (hidden on mobile — logo area shows brand name) */}
+                    <div className="flex-1 text-center min-w-0 px-2 hidden sm:block">
                         <Link href="/" className="inline-block group text-center">
                             <h1 className="font-serif-editorial text-base sm:text-2xl md:text-3xl font-bold text-boutique-charcoal group-hover:text-boutique-rose transition-colors tracking-wide sm:tracking-widest uppercase truncate">
                                 DESIGNS BY NISHA
