@@ -33,6 +33,7 @@ module.exports = {
             fontFamily: {
                 serif: ["var(--font-serif)", "Cormorant Garamond", "Playfair Display", "serif"],
                 sans: ["var(--font-sans)", "Plus Jakarta Sans", "Inter", "sans-serif"],
+                script: ["var(--font-script)", "Alex Brush", "cursive"],
             },
             animation: {
                 "float-slow": "float 6s ease-in-out infinite",

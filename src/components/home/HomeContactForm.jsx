@@ -240,15 +240,17 @@ export default function HomeContactForm() {
                                     <p className="text-sm text-boutique-taupe font-light mb-3">
                                         Message us on WhatsApp to confirm your appointment and get directions.
                                     </p>
-                                    <a
-                                        href={buildWhatsAppLink({ customMessage: "Hi! I'd like to book a visit to your boutique." })}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#1F4A3B] hover:bg-[#153e31] text-white text-xs font-semibold tracking-wider uppercase transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5"
-                                    >
-                                        <WhatsAppIcon className="w-4 h-4 text-white" />
-                                        <span>Book Via WhatsApp</span>
-                                    </a>
+                                    <div className="flex justify-center">
+                                        <a
+                                            href={buildWhatsAppLink({ customMessage: "Hi! I'd like to book a visit to your boutique." })}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#1F4A3B] hover:bg-[#153e31] text-white text-xs font-semibold tracking-wider uppercase transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5"
+                                        >
+                                            <WhatsAppIcon className="w-4 h-4 text-white" />
+                                            <span>Book Via WhatsApp</span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
