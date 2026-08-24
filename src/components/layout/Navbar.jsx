@@ -145,7 +145,7 @@ export default function Navbar() {
                     {/* 1. Left Side: Logo & Desktop Nav Links (Mobile & Desktop) */}
                     <div className="flex items-center gap-2 lg:gap-4 flex-shrink-0">
                         <Link href="/" className="group flex items-center" aria-label="Designs by Nisha — Home">
-                            <span className="relative block h-11 w-11 sm:h-12 sm:w-[110px] md:h-14 md:w-[130px] flex-shrink-0">
+                            <span className="relative block h-11 w-11 sm:h-16 sm:w-[110px] md:h-[72px] md:w-[130px] flex-shrink-0">
                                 <Image
                                     src="/images/logo-transparent.png"
                                     alt="Designs by Nisha Boutique New Delhi"
@@ -276,7 +276,7 @@ export default function Navbar() {
                             <div className="flex items-center gap-1.5 sm:gap-2 mt-1 sm:mt-1">
                                 <span className="h-px w-3 sm:w-4 md:w-5 bg-gradient-to-r from-transparent to-[#4A3818]" />
                                 <p className="text-[6.5px] sm:text-[7.5px] md:text-[8px] lg:text-[8.5px] uppercase tracking-[0.24em] sm:tracking-[0.3em] text-[#4A3818] font-bold whitespace-nowrap">
-                                    Luxury Indian Couture
+                                    Celebrating Every Chapter of Her
                                 </p>
                                 <span className="h-px w-3 sm:w-4 md:w-5 bg-gradient-to-l from-transparent to-[#4A3818]" />
                             </div>
