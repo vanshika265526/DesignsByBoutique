@@ -66,11 +66,32 @@ for (let i = 0; lists.some((l) => i < l.length); i += 1) {
     for (const list of lists) if (i < list.length) interleaved.push(list[i]);
 }
 
+// The lookbook renders each photo at its own aspect ratio so nothing is cropped
+// — a fixed ratio over a full-length portrait cut the model's head off. Cloudinary
+// reports dimensions via fl_getinfo without downloading the image itself.
+async function naturalSize(url) {
+    if (!url.includes('/upload/')) return null;
+    try {
+        const res = await fetch(url.replace('/upload/', '/upload/fl_getinfo/'));
+        if (!res.ok) return null;
+        const info = (await res.json()).input;
+        return info?.width && info?.height ? { width: info.width, height: info.height } : null;
+    } catch {
+        return null;
+    }
+}
+
+const sizes = await Promise.all(interleaved.map((p) => naturalSize(p.image)));
+const missing = sizes.filter((s) => !s).length;
+if (missing) console.log(`Could not read dimensions for ${missing} image(s); those fall back to 3:4.`);
+
 const items = interleaved.map((p, idx) => ({
     id: `lb-${p.id}`,
     title: (p.name || '').trim(),
     category: resolveCategoryName(p),
     image: p.image,
+    width: sizes[idx]?.width ?? null,
+    height: sizes[idx]?.height ?? null,
     aspectRatio: RATIOS[idx % RATIOS.length],
     location: 'New Delhi Atelier',
 }));

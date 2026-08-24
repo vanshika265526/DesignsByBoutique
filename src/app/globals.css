@@ -60,7 +60,6 @@ body {
 /* Luxury Editorial Styling Utilities */
 .font-serif-editorial {
   font-family: var(--font-serif);
-  font-weight: 500;
   letter-spacing: -0.01em;
 }
 
@@ -75,8 +74,10 @@ body {
 }
 
 .text-gold-gradient {
-  background: linear-gradient(135deg, #D4AF37 0%, #B08C4F 50%, #8A6D31 100%);
+  color: #6B5223;
+  background: linear-gradient(135deg, #8C6C34 0%, #6B5223 55%, #4A3818 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
