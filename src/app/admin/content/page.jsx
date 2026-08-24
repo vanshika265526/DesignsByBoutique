@@ -528,7 +528,7 @@ export default function AdminContentPage() {
                                 type="email"
                                 value={settings.email || ""}
                                 onChange={(e) => setSettings({ ...settings, email: e.target.value })}
-                                placeholder="enquire@designsbynisha.com"
+                                placeholder="info.nishaboutique@gmail.com"
                                 className="w-full px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-xs focus:outline-none focus:border-boutique-rose"
                             />
                         </div>

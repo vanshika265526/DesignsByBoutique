@@ -33,7 +33,7 @@ function getSeedData() {
             phoneDisplay: boutiqueConfig.contact?.phoneDisplay || "+91 82187 52043",
             whatsappNumber: boutiqueConfig.whatsapp?.number || "918218752043",
             defaultWhatsAppMessage: boutiqueConfig.whatsapp?.defaultMessage || "",
-            email: boutiqueConfig.contact?.email || "enquire@designsbynisha.com",
+            email: boutiqueConfig.contact?.email || "info.nishaboutique@gmail.com",
             address: boutiqueConfig.location || boutiqueConfig.fullAddress,
             city: "New Delhi",
             state: "Delhi",

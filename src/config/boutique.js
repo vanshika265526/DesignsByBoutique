@@ -24,7 +24,7 @@ export const boutiqueConfig = {
     },
 
     contact: {
-        email: "enquire@designsbynisha.com",
+        email: "info.nishaboutique@gmail.com",
         phoneDisplay: "+91 82187 52043",
         hours: "Monday – Sunday: 10 AM – 9 PM (By Appointment & Walk-ins)",
     },

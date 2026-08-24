@@ -9,7 +9,7 @@ export default function AdminSettingsPage() {
         tagline: "For Every Chapter of Her Story",
         whatsapp: "+91 82187 52043",
         phone: "+91 82187 52043",
-        email: "enquire@designsbynisha.com",
+        email: "info.nishaboutique@gmail.com",
         address: "318, near Aayushman Arogya Mandir (Dispensary, Block A1, Chattarpur, Chhatarpur, New Delhi, Delhi 110074",
         instagram: "https://www.instagram.com/designsbynisha00?igsh=Ym92OXh5emZsdm9t",
         businessHours: "Monday – Sunday: 10 AM – 9 PM (By Appointment & Walk-ins)",
