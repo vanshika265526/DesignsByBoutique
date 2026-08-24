@@ -140,7 +140,7 @@ export default function Navbar() {
     return (
         <header className="sticky top-0 left-0 right-0 z-50 glass-nav shadow-xs">
             <div className="w-full pl-3 pr-2 sm:px-4 lg:px-5">
-                <div className="flex items-center justify-between h-[72px] md:h-20 gap-2 sm:gap-4">
+                <div className="relative flex items-center justify-between h-[72px] md:h-20 gap-2 sm:gap-4">
 
                     {/* 1. Left Side: Logo & Desktop Nav Links (Mobile & Desktop) */}
                     <div className="flex items-center gap-2 lg:gap-4 flex-shrink-0">
@@ -266,13 +266,20 @@ export default function Navbar() {
                         </nav>
                     </div>
 
-                    {/* 2. Middle: Company Name in Beautiful Font — centered on every breakpoint, including phone */}
-                    <div className="flex-1 text-center min-w-0 px-1">
+                    {/* 2. Middle: Company Name in Beautiful Font — absolutely centered on the true midpoint of the bar, independent of the (unequal) left/right side widths */}
+                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center px-1 max-w-[62%] sm:max-w-none">
                         <Link href="/" className="inline-flex flex-col items-center group text-center">
                             <h1 className="font-serif-editorial text-[15px] sm:text-lg md:text-xl lg:text-2xl font-bold sm:font-normal tracking-[0.015em] sm:tracking-[0.04em] uppercase leading-none whitespace-nowrap">
                                 <span className="text-boutique-charcoal transition-colors duration-300 group-hover:text-boutique-rose">Designs by </span>
                                 <span className="text-[#4A3818] italic">Nisha</span>
                             </h1>
+                            <div className="flex items-center gap-1.5 sm:gap-2 mt-1 sm:mt-1">
+                                <span className="h-px w-3 sm:w-4 md:w-5 bg-gradient-to-r from-transparent to-[#4A3818]" />
+                                <p className="text-[6.5px] sm:text-[7.5px] md:text-[8px] lg:text-[8.5px] uppercase tracking-[0.24em] sm:tracking-[0.3em] text-[#4A3818] font-bold whitespace-nowrap">
+                                    Celebrating Every Chapter of Her
+                                </p>
+                                <span className="h-px w-3 sm:w-4 md:w-5 bg-gradient-to-l from-transparent to-[#4A3818]" />
+                            </div>
                         </Link>
                     </div>
 
