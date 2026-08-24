@@ -237,21 +237,22 @@ export default function HomeContactForm() {
                                 </div>
                                 <div className="flex-1">
                                     <h4 className="font-bold text-xs tracking-wider uppercase text-[#1c4d3d] mb-1">Book A Visit</h4>
-                                    <p className="text-sm text-boutique-taupe font-light mb-3">
+                                    <p className="text-sm text-boutique-taupe font-light">
                                         Message us on WhatsApp to confirm your appointment and get directions.
                                     </p>
-                                    <div className="flex justify-center">
-                                        <a
-                                            href={buildWhatsAppLink({ customMessage: "Hi! I'd like to book a visit to your boutique." })}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#1F4A3B] hover:bg-[#153e31] text-white text-xs font-semibold tracking-wider uppercase transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5"
-                                        >
-                                            <WhatsAppIcon className="w-4 h-4 text-white" />
-                                            <span>Book Via WhatsApp</span>
-                                        </a>
-                                    </div>
                                 </div>
+                            </div>
+
+                            <div className="flex justify-center">
+                                <a
+                                    href={buildWhatsAppLink({ customMessage: "Hi! I'd like to book a visit to your boutique." })}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#1F4A3B] hover:bg-[#153e31] text-white text-xs font-semibold tracking-wider uppercase transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5"
+                                >
+                                    <WhatsAppIcon className="w-4 h-4 text-white" />
+                                    <span>Book Via WhatsApp</span>
+                                </a>
                             </div>
                         </div>
                     )}
