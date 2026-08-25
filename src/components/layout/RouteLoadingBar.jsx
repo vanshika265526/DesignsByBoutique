@@ -18,10 +18,10 @@ import Image from "next/image";
 // the loading state right when it's supposed to show.
 
 // A navigation that resolves in a handful of milliseconds (warm local dev, a
-// cached route) would otherwise make the screen flash for less than a frame —
+// cached route) would otherwise make the icon flash for less than a frame —
 // invisible to a human, which reads as "no loader at all". Enforcing a floor
 // keeps it perceptible on every click regardless of how fast the route is.
-const MIN_VISIBLE_MS = 500;
+const MIN_VISIBLE_MS = 300;
 
 export default function RouteLoadingBar() {
     const [loading, setLoading] = useState(false);
@@ -95,44 +95,22 @@ export default function RouteLoadingBar() {
     if (!loading) return null;
 
     return (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-boutique-charcoal/40 backdrop-blur-[4px] animate-in fade-in duration-200">
-            <div className="flex flex-col items-center gap-5 rounded-[28px] bg-boutique-bg-card px-12 py-10 shadow-2xl border border-boutique-gold/25 animate-in zoom-in-95 fade-in duration-300">
-                {/* Jewel-frame emblem: two counter-rotating gold rings around the boutique mark, with a soft ambient glow */}
-                <div className="relative w-20 h-20">
-                    <div
-                        className="absolute -inset-2 rounded-full opacity-60"
-                        style={{ boxShadow: "0 0 24px 4px rgba(176, 140, 79, 0.35)" }}
+        <div className="fixed top-24 left-1/2 -translate-x-1/2 z-[9999] animate-in fade-in zoom-in-95 duration-150 pointer-events-none">
+            <div className="relative w-10 h-10">
+                <div
+                    className="absolute -inset-1 rounded-full opacity-70"
+                    style={{ boxShadow: "0 0 12px 2px rgba(176, 140, 79, 0.5)" }}
+                />
+                <div className="absolute inset-0 rounded-full border-2 border-boutique-gold/20" />
+                <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-boutique-gold border-r-boutique-gold/70 animate-spin" />
+                <div className="absolute inset-[3px] flex items-center justify-center">
+                    <Image
+                        src="/images/logo-transparent.png"
+                        alt=""
+                        fill
+                        sizes="32px"
+                        className="object-contain p-1"
                     />
-                    <div className="absolute inset-0 rounded-full border border-boutique-gold/20" />
-                    <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-boutique-gold border-r-boutique-gold/70 animate-spin" />
-                    <div
-                        className="absolute inset-1 rounded-full border border-transparent border-b-boutique-rose/50"
-                        style={{ animation: "spin 2.4s linear infinite reverse" }}
-                    />
-                    <div className="absolute inset-[6px] rounded-full overflow-hidden bg-white shadow-inner flex items-center justify-center">
-                        <Image
-                            src="/images/logo-transparent.png"
-                            alt=""
-                            fill
-                            sizes="72px"
-                            className="object-contain p-2 animate-pulse"
-                        />
-                    </div>
-                </div>
-
-                {/* Brand wordmark, matching the navbar treatment */}
-                <div className="flex flex-col items-center gap-1.5">
-                    <h2 className="font-serif-editorial text-base font-bold uppercase tracking-wide leading-none">
-                        <span className="text-boutique-charcoal">Designs by </span>
-                        <span className="text-gold-gradient italic">Nisha</span>
-                    </h2>
-                    <div className="flex items-center gap-2">
-                        <span className="h-px w-4 bg-gradient-to-r from-transparent to-boutique-gold/70" />
-                        <span className="font-serif-editorial italic text-xs text-boutique-rose tracking-wide whitespace-nowrap">
-                            Curating your next chapter…
-                        </span>
-                        <span className="h-px w-4 bg-gradient-to-l from-transparent to-boutique-gold/70" />
-                    </div>
                 </div>
             </div>
         </div>
