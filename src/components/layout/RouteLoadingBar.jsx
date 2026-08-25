@@ -22,6 +22,14 @@ function RouteLoadingBarInner() {
     const safetyTimer = useRef(null);
     const mounted = useRef(false);
 
+    const startLoading = () => {
+        setLoading(true);
+        clearTimeout(safetyTimer.current);
+        safetyTimer.current = setTimeout(() => setLoading(false), 4000);
+    };
+
+    // Fast path: any real <a>/Link click — fires the instant the tap lands,
+    // before Next.js even starts the route transition.
     useEffect(() => {
         const handleClick = (event) => {
             if (event.defaultPrevented || event.button !== 0) return;
@@ -43,13 +51,37 @@ function RouteLoadingBarInner() {
             if (destination.origin !== window.location.origin) return;
             if (destination.pathname === window.location.pathname && destination.search === window.location.search) return;
 
-            setLoading(true);
-            clearTimeout(safetyTimer.current);
-            safetyTimer.current = setTimeout(() => setLoading(false), 4000);
+            startLoading();
         };
 
         document.addEventListener("click", handleClick);
         return () => document.removeEventListener("click", handleClick);
+    }, []);
+
+    // Catch-all: any navigation the click-listener above can't see — a button
+    // or image with an onClick that calls router.push()/replace() instead of
+    // rendering a real <a>. Every App Router navigation ultimately goes
+    // through the History API, so hooking it here catches literally all of
+    // them regardless of what triggered the click.
+    useEffect(() => {
+        const originalPushState = window.history.pushState;
+        const originalReplaceState = window.history.replaceState;
+
+        window.history.pushState = function (...args) {
+            startLoading();
+            return originalPushState.apply(this, args);
+        };
+        window.history.replaceState = function (...args) {
+            startLoading();
+            return originalReplaceState.apply(this, args);
+        };
+        window.addEventListener("popstate", startLoading);
+
+        return () => {
+            window.history.pushState = originalPushState;
+            window.history.replaceState = originalReplaceState;
+            window.removeEventListener("popstate", startLoading);
+        };
     }, []);
 
     useEffect(() => {
