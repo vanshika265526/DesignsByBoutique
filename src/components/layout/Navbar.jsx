@@ -35,6 +35,13 @@ export default function Navbar() {
     const router = useRouter();
     const dropdownRef = useRef(null);
     const searchRef = useRef(null);
+    const mobileSearchRef = useRef(null);
+    const mobileSearchButtonRef = useRef(null);
+
+    const closeSearch = () => {
+        setSearchOpen(false);
+        setSearchQuery("");
+    };
 
     useEffect(() => {
         const handleClickOutside = (e) => {
@@ -42,8 +49,11 @@ export default function Navbar() {
                 setCollectionsOpen(false);
                 setHoveredCategory(null);
             }
-            if (searchRef.current && !searchRef.current.contains(e.target)) {
-                setSearchOpen(false);
+            const insideDesktopSearch = searchRef.current && searchRef.current.contains(e.target);
+            const insideMobileSearch = mobileSearchRef.current && mobileSearchRef.current.contains(e.target);
+            const onMobileSearchButton = mobileSearchButtonRef.current && mobileSearchButtonRef.current.contains(e.target);
+            if (!insideDesktopSearch && !insideMobileSearch && !onMobileSearchButton) {
+                closeSearch();
             }
         };
         document.addEventListener("mousedown", handleClickOutside);
@@ -115,13 +125,11 @@ export default function Navbar() {
 
     const handleSearchKeyDown = (event) => {
         if (event.key === "Escape") {
-            setSearchOpen(false);
-            setSearchQuery("");
+            closeSearch();
         }
         if (event.key === "Enter" && searchResults[0]) {
             router.push(`/product/${searchResults[0].slug}`);
-            setSearchOpen(false);
-            setSearchQuery("");
+            closeSearch();
         }
     };
 
@@ -349,7 +357,7 @@ export default function Navbar() {
                                                     <Link
                                                         key={product.id || product.slug}
                                                         href={`/product/${product.slug}`}
-                                                        onClick={() => setSearchOpen(false)}
+                                                        onClick={closeSearch}
                                                         className="flex items-center gap-2.5 p-1.5 rounded-lg bg-white/80 hover:bg-boutique-blush/50 border border-transparent hover:border-boutique-rose/30 transition-all group"
                                                     >
                                                         <div className="w-9 h-9 rounded-md overflow-hidden relative flex-shrink-0 border border-boutique-muted-border">
@@ -384,8 +392,9 @@ export default function Navbar() {
 
                         {/* Search Icon Button (Mobile Only) */}
                         <button
+                            ref={mobileSearchButtonRef}
                             type="button"
-                            onClick={() => setSearchOpen((open) => !open)}
+                            onClick={() => (searchOpen ? closeSearch() : setSearchOpen(true))}
                             className="md:hidden p-1.5 text-boutique-charcoal hover:bg-boutique-blush/60 rounded-full transition-colors"
                             aria-label="Search"
                         >
@@ -409,7 +418,7 @@ export default function Navbar() {
 
             {/* Mobile Expandable Search Bar Overlay */}
             {searchOpen && (
-                <div className="md:hidden px-4 py-2.5 bg-boutique-bg-card/98 border-t border-boutique-muted-border animate-in slide-in-from-top-2 duration-200">
+                <div ref={mobileSearchRef} className="md:hidden px-4 py-2.5 bg-boutique-bg-card/98 border-t border-boutique-muted-border animate-in slide-in-from-top-2 duration-200">
                     <div className="relative">
                         <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-boutique-taupe" />
                         <input
@@ -439,7 +448,7 @@ export default function Navbar() {
                                 <Link
                                     key={product.id || product.slug}
                                     href={`/product/${product.slug}`}
-                                    onClick={() => setSearchOpen(false)}
+                                    onClick={closeSearch}
                                     className="flex items-center gap-2.5 p-2 rounded-lg bg-white border border-boutique-muted-border/60"
                                 >
                                     <div className="w-8 h-8 rounded overflow-hidden relative flex-shrink-0">
