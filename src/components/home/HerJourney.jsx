@@ -69,7 +69,10 @@ export default function HerJourney({ chapters = [] }) {
                 {/* Selected Chapter Showcase */}
                 <div className="mt-10 bg-boutique-bg-card rounded-3xl p-6 sm:p-10 lg:p-12 border border-boutique-muted-border shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center transition-all duration-500">
                     {/* Chapter Feature Image */}
-                    <div className="lg:col-span-7 relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-boutique-muted-border/60">
+                    <Link
+                        href={`/collections/${chapterSlug}`}
+                        className="lg:col-span-7 relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-boutique-muted-border/60 block group"
+                    >
                         {chapterImage ? (
                             <Image
                                 src={chapterImage}
@@ -77,7 +80,7 @@ export default function HerJourney({ chapters = [] }) {
                                 fill
                                 priority
                                 sizes="(max-width: 1024px) 100vw, 60vw"
-                                className="object-cover object-center transition-all duration-700 hover:scale-105"
+                                className="object-cover object-center transition-all duration-700 group-hover:scale-105"
                             />
                         ) : (
                             <div className="w-full h-full bg-boutique-blush/30 flex items-center justify-center">
@@ -89,7 +92,7 @@ export default function HerJourney({ chapters = [] }) {
                         <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-semibold text-boutique-rose tracking-wider uppercase">
                             CHAPTER {chapterNumber} OF {String(chapters.length).padStart(2, "0")}
                         </div>
-                    </div>
+                    </Link>
 
                     {/* Chapter Narrative & Action */}
                     <div className="lg:col-span-5 space-y-6">

@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import RouteLoadingBar from "@/components/layout/RouteLoadingBar";
 import {
     LogOut,
     LayoutDashboard,
@@ -76,17 +75,11 @@ export default function AdminLayout({ children }) {
 
     // The login page renders without the admin dashboard chrome.
     if (pathname === "/admin/login") {
-        return (
-            <>
-                <RouteLoadingBar />
-                {children}
-            </>
-        );
+        return <>{children}</>;
     }
 
     return (
         <div className="min-h-screen bg-[#FDFBF7] text-neutral-800 flex flex-col md:flex-row font-sans">
-            <RouteLoadingBar />
             {/* Mobile Header Topbar */}
             <div className="md:hidden bg-boutique-charcoal text-white px-4 py-3 flex items-center justify-between sticky top-0 z-50 border-b border-boutique-gold/20">
                 <div className="flex items-center space-x-3">
