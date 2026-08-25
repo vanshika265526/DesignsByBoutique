@@ -725,7 +725,7 @@
       "shortDescription": "Graceful Anarkali suit featuring premium craftsmanship, elegant flare, and timeless ethnic charm.",
       "slug": "anarkali-suit-2",
       "status": "published",
-      "updatedAt": "2026-08-19T09:07:16.863Z",
+      "updatedAt": "2026-08-25T05:05:39.512Z",
       "subcategory": "anarkali"
     },
     {
@@ -1810,7 +1810,7 @@
       "slug": "mehandi-outfit-2",
       "status": "published",
       "subcategory": "mehandi-outfit",
-      "updatedAt": "2026-08-19T12:09:44.098Z"
+      "updatedAt": "2026-08-25T05:05:39.619Z"
     },
     {
       "_id": "6a859ed5c4c17e061913f374",
@@ -2098,7 +2098,7 @@
       "slug": "bridal-lehenga-2",
       "status": "published",
       "subcategory": "bridal-lehenga",
-      "updatedAt": "2026-08-19T12:37:12.891Z"
+      "updatedAt": "2026-08-25T05:05:39.720Z"
     },
     {
       "_id": "6a85a43bc4c17e061913f3a7",
@@ -3140,33 +3140,7 @@
       "endDate": "2026-10-31"
     }
   ],
-  "enquiries": [
-    {
-      "_id": "6a7ed7bc8d072f4cd01985d6",
-      "id": "enq-1",
-      "name": "Priya Sharma",
-      "phone": "+91 98765 43210",
-      "email": "priya@example.com",
-      "productName": "Royal Velvet Zardozi Lehenga",
-      "productCategory": "Bridal Lehengas",
-      "message": "Hi, I would like to book a bridal consultation for next month.",
-      "status": "Contacted",
-      "createdAt": "2026-08-09T06:01:23.718Z",
-      "updatedAt": "2026-08-12T03:51:37.162Z"
-    },
-    {
-      "_id": "6a7ed7bc8d072f4cd01985d7",
-      "id": "enq-2",
-      "name": "Ananya Gupta",
-      "phone": "+91 98111 22334",
-      "email": "ananya@example.com",
-      "productName": "Rose Gold Silk Maternity Gown",
-      "productCategory": "Maternity Gowns",
-      "message": "Is this gown available for custom fitting?",
-      "status": "Contacted",
-      "createdAt": "2026-08-06T06:01:23.718Z"
-    }
-  ],
+  "enquiries": [],
   "testimonials": [
     {
       "_id": "6a884bfc8fdab6eae3cfb4b1",
@@ -3266,18 +3240,6 @@
       "text": "Finally found a boutique with excellent stitching! The fit was perfect on the first try, and they are very professional and punctual with delivery. 😍",
       "featured": true,
       "source": "google"
-    },
-    {
-      "_id": "6a891ef3c4c17e0619141643",
-      "id": "test-1787371252126",
-      "author": "Ananya Sharma",
-      "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200",
-      "city": "New Delhi",
-      "createdAt": "2026-08-22T04:00:52.126Z",
-      "featured": true,
-      "outfit": "Custom Boutique Outfit",
-      "rating": 5,
-      "text": "The bridal lehenga was custom-stitched to perfection! Highly recommended."
     }
   ],
   "settings": {
@@ -3468,6 +3430,14 @@
     ]
   },
   "auditLogs": [
+    {
+      "_id": "6a8d212b9a18ac7d428ec024",
+      "id": "log-1787633963309",
+      "user": "Admin",
+      "action": "Settings Updated",
+      "details": "Updated boutique settings via Content Management Studio.",
+      "timestamp": "2026-08-25T04:59:23.309Z"
+    },
     {
       "_id": "6a891ef4041a43db9f4dc118",
       "id": "log-1787371252822",
@@ -4259,14 +4229,6 @@
       "action": "Product Updated",
       "details": "Updated \"Inspired by Anne Hathaway's Maternity Gown\" (ID: prod-mat-04)",
       "timestamp": "2026-08-19T11:50:36.036Z"
-    },
-    {
-      "_id": "6a859879376e61936d271123",
-      "id": "log-1787140217910",
-      "user": "Admin",
-      "action": "Product Created",
-      "details": "Added product \"Fish Cut Lehenga\" (ID: prod-1787140217709)",
-      "timestamp": "2026-08-19T11:50:17.910Z"
     }
   ]
 }

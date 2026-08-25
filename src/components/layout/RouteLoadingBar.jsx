@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
 // Thin top-of-page progress bar that appears the instant a visitor clicks any
@@ -8,6 +8,14 @@ import { usePathname, useSearchParams } from "next/navigation";
 // there's always visible feedback that "something is happening" during the
 // (sometimes DB-backed, non-instant) navigation.
 export default function RouteLoadingBar() {
+    return (
+        <Suspense fallback={null}>
+            <RouteLoadingBarInner />
+        </Suspense>
+    );
+}
+
+function RouteLoadingBarInner() {
     const [loading, setLoading] = useState(false);
     const pathname = usePathname();
     const searchParams = useSearchParams();
