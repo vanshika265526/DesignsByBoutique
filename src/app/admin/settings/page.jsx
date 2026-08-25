@@ -109,10 +109,10 @@ export default function AdminSettingsPage() {
 
             {/* Announcement Banner Management Section */}
             <div className="bg-white p-6 rounded-2xl border border-neutral-200/80 space-y-6 shadow-2xs">
-                <div className="flex items-center justify-between border-b border-neutral-100 pb-3">
-                    <div className="flex items-center space-x-2">
-                        <Megaphone className="w-5 h-5 text-boutique-rose" />
-                        <div>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-neutral-100 pb-3">
+                    <div className="flex items-start space-x-2 min-w-0">
+                        <Megaphone className="w-5 h-5 text-boutique-rose flex-shrink-0 mt-0.5" />
+                        <div className="min-w-0">
                             <h3 className="font-serif-editorial text-lg font-bold text-boutique-charcoal">
                                 Running Announcement Banner
                             </h3>
@@ -122,7 +122,7 @@ export default function AdminSettingsPage() {
                         </div>
                     </div>
 
-                    <label className="relative inline-flex items-center cursor-pointer">
+                    <label className="relative inline-flex items-center cursor-pointer flex-shrink-0">
                         <input
                             type="checkbox"
                             checked={settings.announcementBanner?.enabled ?? true}

@@ -204,16 +204,16 @@ export default function AddProductPage() {
     return (
         <div className="space-y-6 max-w-5xl">
             {/* Header Top Navigation */}
-            <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-3">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex items-center space-x-3 min-w-0">
                     <Link
                         href="/admin/products"
-                        className="p-2 bg-white rounded-xl border border-neutral-200 text-neutral-600 hover:text-boutique-rose transition-colors"
+                        className="p-2 bg-white rounded-xl border border-neutral-200 text-neutral-600 hover:text-boutique-rose transition-colors flex-shrink-0"
                     >
                         <ArrowLeft className="w-4 h-4" />
                     </Link>
-                    <div>
-                        <h1 className="font-serif-editorial text-2xl font-bold text-boutique-charcoal">
+                    <div className="min-w-0">
+                        <h1 className="font-serif-editorial text-xl sm:text-2xl font-bold text-boutique-charcoal">
                             Add New Boutique Outfit
                         </h1>
                         <p className="text-xs text-neutral-500">
@@ -222,7 +222,7 @@ export default function AddProductPage() {
                     </div>
                 </div>
 
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap">
                     <button
                         onClick={() => setPreviewModal(true)}
                         className="bg-white hover:bg-neutral-50 text-neutral-700 border border-neutral-200 px-4 py-2 rounded-xl text-xs font-semibold flex items-center space-x-2 transition-all"

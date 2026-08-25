@@ -238,8 +238,8 @@ export default function AdminContentPage() {
             {/* Tab 0: Announcement Banner */}
             {activeTab === "banner" && (
                 <div className="bg-white p-6 rounded-2xl border border-neutral-200/80 space-y-6 shadow-2xs">
-                    <div className="flex items-center justify-between border-b border-neutral-100 pb-3">
-                        <div>
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-neutral-100 pb-3">
+                        <div className="min-w-0">
                             <h3 className="font-serif-editorial text-xl font-bold text-boutique-charcoal">
                                 Running Announcement Banner
                             </h3>
@@ -249,7 +249,7 @@ export default function AdminContentPage() {
                         </div>
 
                         {/* Enable Toggle Switch */}
-                        <label className="relative inline-flex items-center cursor-pointer">
+                        <label className="relative inline-flex items-center cursor-pointer flex-shrink-0">
                             <input
                                 type="checkbox"
                                 checked={settings.announcementBanner?.enabled ?? false}

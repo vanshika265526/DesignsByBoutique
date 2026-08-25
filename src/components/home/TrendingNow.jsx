@@ -189,8 +189,9 @@ export default function TrendingNow({ products = [] }) {
             >
                 <div className="animate-marquee-slow flex space-x-6">
                     {marqueeGowns.map((gown, index) => (
-                        <div
+                        <Link
                             key={`${gown.id}-${index}`}
+                            href={`/product/${gown.slug}`}
                             className="w-[240px] sm:w-[270px] lg:w-[290px] flex-shrink-0 group flex flex-col"
                         >
                             {/* Card Image Wrapper */}
@@ -221,18 +222,26 @@ export default function TrendingNow({ products = [] }) {
 
                                 {/* Quick WhatsApp Button Overlay */}
                                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-3">
-                                    <a
-                                        href={buildWhatsAppLink({
-                                            productName: gown.name,
-                                            productCategory: gown.category,
-                                            price: gown.price,
-                                        })}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
+                                    <button
+                                        type="button"
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            e.stopPropagation();
+                                            window.open(
+                                                buildWhatsAppLink({
+                                                    productName: gown.name,
+                                                    productCategory: gown.category,
+                                                    price: gown.price,
+                                                    productSlug: gown.slug,
+                                                }),
+                                                "_blank",
+                                                "noopener,noreferrer"
+                                            );
+                                        }}
                                         className="w-full bg-boutique-rose hover:bg-boutique-rose-dark text-white text-xs font-semibold py-2 rounded-xl text-center shadow-md transition-all"
                                     >
                                         Enquire Gown
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
 
@@ -258,7 +267,7 @@ export default function TrendingNow({ products = [] }) {
                                     Sizes: {gown.sizes}
                                 </p>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>

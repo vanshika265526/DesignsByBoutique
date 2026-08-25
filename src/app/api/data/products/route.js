@@ -44,7 +44,18 @@ export async function POST(request) {
 
         // Generate ID and slug if missing
         const newId = productData.id || `prod-${Date.now()}`;
-        const slug = productData.slug || productData.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+        const baseSlug = productData.slug || productData.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+
+        // Guarantee the slug is unique — two products with the same/similar
+        // name would otherwise collide, and /product/[slug] only ever finds
+        // the first match, silently sending visitors to the wrong outfit.
+        const existingSlugs = new Set((await getDbAsync()).products?.map((p) => p.slug) || []);
+        let slug = baseSlug;
+        let suffix = 2;
+        while (existingSlugs.has(slug)) {
+            slug = `${baseSlug}-${suffix}`;
+            suffix += 1;
+        }
 
         const newProduct = {
             id: newId,

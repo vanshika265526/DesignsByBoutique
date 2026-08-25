@@ -37,6 +37,209 @@
       ]
     },
     {
+      "_id": "6a82e83c032a6e13c7ae3b56",
+      "id": "prod-baby-12",
+      "slug": "halter-neck-flower-gown",
+      "name": "Halter Neck Flower Gown",
+      "category": "baby-girl-dresses",
+      "categoryName": "Baby Girl Dresses",
+      "chapter": "her-little-one",
+      "chapterName": "Her Little One",
+      "price": 3566,
+      "originalPrice": 4499,
+      "discount": "21% OFF",
+      "featured": false,
+      "status": "published",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142624/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-05-pm-1-1787142624459.jpg",
+      "images": [
+        "https://res.cloudinary.com/likdneok/image/upload/v1787142624/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-05-pm-1-1787142624459.jpg"
+      ],
+      "description": "Pastel lavender halter neck baby gown adorned with 3D handcrafted fabric flowers, sheer organza flare, and soft interior layer.",
+      "shortDescription": "Lavender halter neck gown with 3D floral accents (Age: 1 to 5 Years).",
+      "details": [
+        "Age Group: 1 to 5 Years",
+        "Color: Lavender",
+        "3D Fabric Flowers & Soft Organza Flare",
+        "Comfortable halter fit",
+        "Contact Nisha: +91 82187 52043"
+      ],
+      "instagramReel": "",
+      "newArrival": false,
+      "updatedAt": "2026-08-19T12:30:31.007Z",
+      "categorySlug": "baby-girl-dresses",
+      "subcategory": "gowns",
+      "subcategories": [
+        "gowns",
+        "party-wear"
+      ]
+    },
+    {
+      "_id": "6a82e83c032a6e13c7ae3b51",
+      "id": "prod-baby-07",
+      "slug": "oversized-bow-baby-frock",
+      "name": "Oversized Bow Baby Frock",
+      "category": "baby-girl-dresses",
+      "categoryName": "Baby Girl Dresses",
+      "chapter": "her-little-one",
+      "chapterName": "Her Little One",
+      "price": 2500,
+      "originalPrice": 3199,
+      "discount": "22% OFF",
+      "featured": false,
+      "status": "published",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142832/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-04-pm-1787142831900.jpg",
+      "images": [
+        "https://res.cloudinary.com/likdneok/image/upload/v1787142832/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-04-pm-1787142831900.jpg"
+      ],
+      "description": "Charming party frock featuring a statement oversized satin bow on the waistline, flared multi-layer skirt, and comfortable lining.",
+      "shortDescription": "Statement oversized bow baby party frock (Age: 1 to 5 Years).",
+      "details": [
+        "Age Group: 1 to 5 Years",
+        "Satin & Soft Net Tulle with Cotton Lining",
+        "Detachable statement bow",
+        "Contact Nisha: +91 82187 52043"
+      ],
+      "instagramReel": "",
+      "newArrival": false,
+      "updatedAt": "2026-08-19T12:33:55.550Z",
+      "categorySlug": "baby-girl-dresses",
+      "subcategory": "frock"
+    },
+    {
+      "_id": "6a82e83c032a6e13c7ae3b53",
+      "id": "prod-baby-09",
+      "slug": "red-ball-baby-gown",
+      "name": "Red Ball Baby Gown",
+      "category": "baby-girl-dresses",
+      "categoryName": "Baby Girl Dresses",
+      "chapter": "her-little-one",
+      "chapterName": "Her Little One",
+      "price": 3500,
+      "originalPrice": 4399,
+      "discount": "20% OFF",
+      "featured": true,
+      "status": "published",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142873/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-05-pm-1787142873775.jpg",
+      "images": [
+        "https://res.cloudinary.com/likdneok/image/upload/v1787142873/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-05-pm-1787142873775.jpg"
+      ],
+      "description": "Vibrant royal red ball gown for baby girls with dramatic flared skirt volume, golden accent stitching, and zero-scratch internal finish.",
+      "shortDescription": "Vibrant crimson red ball gown for baby celebrations (Age: 1 to 5 Years).",
+      "details": [
+        "Age Group: 1 to 5 Years",
+        "Crimson Satin & Net Volume Flare",
+        "Cotton inner shell",
+        "Contact Nisha: +91 82187 52043"
+      ],
+      "instagramReel": "",
+      "newArrival": false,
+      "updatedAt": "2026-08-19T12:34:39.669Z",
+      "categorySlug": "baby-girl-dresses",
+      "subcategory": "gowns",
+      "subcategories": [
+        "gowns",
+        "party-wear"
+      ]
+    },
+    {
+      "_id": "6a82e83c032a6e13c7ae3b50",
+      "id": "prod-baby-06",
+      "slug": "summer-baby-frock",
+      "name": "Summer Baby Frock",
+      "category": "baby-girl-dresses",
+      "categoryName": "Baby Girl Dresses",
+      "chapter": "her-little-one",
+      "chapterName": "Her Little One",
+      "price": 2200,
+      "originalPrice": 2799,
+      "discount": "21% OFF",
+      "featured": false,
+      "status": "published",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142805/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-03-pm-1787142805133.jpg",
+      "images": [
+        "https://res.cloudinary.com/likdneok/image/upload/v1787142805/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-03-pm-1787142805133.jpg"
+      ],
+      "description": "Featherlight summer baby frock in soft breathable fabric, designed for maximum daylong comfort during warm weather festivities.",
+      "shortDescription": "Lightweight breathable summer baby frock (Age: 1 to 5 Years).",
+      "details": [
+        "Age Group: 1 to 5 Years",
+        "100% Breathable Cotton-Blend Fabric",
+        "Easy snap back closure",
+        "Contact Nisha: +91 82187 52043"
+      ],
+      "instagramReel": "",
+      "newArrival": false,
+      "updatedAt": "2026-08-19T12:33:29.739Z",
+      "categorySlug": "baby-girl-dresses",
+      "subcategory": "frock"
+    },
+    {
+      "_id": "6a82e83c032a6e13c7ae3b55",
+      "id": "prod-baby-11",
+      "slug": "wine-embroidered-lehenga-choli",
+      "name": "Wine Embroidered Lehenga Choli",
+      "category": "baby-girl-dresses",
+      "categoryName": "Baby Girl Dresses",
+      "chapter": "her-little-one",
+      "chapterName": "Her Little One",
+      "price": 4200,
+      "originalPrice": 5299,
+      "discount": "21% OFF",
+      "featured": true,
+      "status": "published",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142594/designs-by-nisha/whatsapp-image-2026-08-17-at-12-44-53-pm-1787142594725.jpg",
+      "images": [
+        "https://res.cloudinary.com/likdneok/image/upload/v1787142594/designs-by-nisha/whatsapp-image-2026-08-17-at-12-44-53-pm-1787142594725.jpg"
+      ],
+      "description": "Rich wine-coloured embroidered ethnic lehenga choli set for baby girls. Features heavy fabric embroidery, soft elastic waistband, and zero-scratch muslin lining.",
+      "shortDescription": "Wine embroidered fabric baby lehenga choli set (Age: 2 to 5 Years).",
+      "details": [
+        "Age Group: 2 to 5 Years",
+        "Color: Wine",
+        "Heavy Embroidered Fabric & Muslin Lining",
+        "Soft elastic fit for baby skin",
+        "Contact Nisha: +91 82187 52043"
+      ],
+      "instagramReel": "",
+      "newArrival": false,
+      "updatedAt": "2026-08-19T12:30:07.546Z",
+      "categorySlug": "baby-girl-dresses",
+      "subcategory": "mini-lehengas"
+    },
+    {
+      "_id": "6a82e83c032a6e13c7ae3b57",
+      "id": "prod-baby-13",
+      "slug": "peach-embroidered-net-lehenga-choli",
+      "name": "Peach Net Embroidered Lehenga Choli",
+      "category": "baby-girl-dresses",
+      "categoryName": "Baby Girl Dresses",
+      "chapter": "her-little-one",
+      "chapterName": "Her Little One",
+      "price": 2999,
+      "originalPrice": 3749,
+      "discount": "20% OFF",
+      "featured": true,
+      "status": "published",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142134/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-01-pm-2-1787142134358.jpg",
+      "images": [
+        "https://res.cloudinary.com/likdneok/image/upload/v1787142134/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-01-pm-2-1787142134358.jpg"
+      ],
+      "description": "Elegant peach net lehenga choli embroidered with gold and resham threadwork, paired with a matching net dupatta and soft cotton lining.",
+      "shortDescription": "Peach embroidered net lehenga choli set (Age: 1 to 5 Years).",
+      "details": [
+        "Age Group: 1 to 5 Years",
+        "Color: Peach",
+        "Embroidered Net Fabric & Cotton Lining",
+        "Includes matching dupatta",
+        "Contact Nisha: +91 82187 52043"
+      ],
+      "instagramReel": "",
+      "newArrival": false,
+      "updatedAt": "2026-08-19T12:22:18.686Z",
+      "categorySlug": "baby-girl-dresses",
+      "subcategory": "mini-lehengas"
+    },
+    {
       "_id": "6a82e83c032a6e13c7ae3b4e",
       "id": "prod-baby-04",
       "slug": "floral-handwork-net-frock",
@@ -101,70 +304,6 @@
       "subcategory": "frock"
     },
     {
-      "_id": "6a82e83c032a6e13c7ae3b50",
-      "id": "prod-baby-06",
-      "slug": "summer-baby-frock",
-      "name": "Summer Baby Frock",
-      "category": "baby-girl-dresses",
-      "categoryName": "Baby Girl Dresses",
-      "chapter": "her-little-one",
-      "chapterName": "Her Little One",
-      "price": 2200,
-      "originalPrice": 2799,
-      "discount": "21% OFF",
-      "featured": false,
-      "status": "published",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142805/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-03-pm-1787142805133.jpg",
-      "images": [
-        "https://res.cloudinary.com/likdneok/image/upload/v1787142805/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-03-pm-1787142805133.jpg"
-      ],
-      "description": "Featherlight summer baby frock in soft breathable fabric, designed for maximum daylong comfort during warm weather festivities.",
-      "shortDescription": "Lightweight breathable summer baby frock (Age: 1 to 5 Years).",
-      "details": [
-        "Age Group: 1 to 5 Years",
-        "100% Breathable Cotton-Blend Fabric",
-        "Easy snap back closure",
-        "Contact Nisha: +91 82187 52043"
-      ],
-      "instagramReel": "",
-      "newArrival": false,
-      "updatedAt": "2026-08-19T12:33:29.739Z",
-      "categorySlug": "baby-girl-dresses",
-      "subcategory": "frock"
-    },
-    {
-      "_id": "6a82e83c032a6e13c7ae3b51",
-      "id": "prod-baby-07",
-      "slug": "oversized-bow-baby-frock",
-      "name": "Oversized Bow Baby Frock",
-      "category": "baby-girl-dresses",
-      "categoryName": "Baby Girl Dresses",
-      "chapter": "her-little-one",
-      "chapterName": "Her Little One",
-      "price": 2500,
-      "originalPrice": 3199,
-      "discount": "22% OFF",
-      "featured": false,
-      "status": "published",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142832/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-04-pm-1787142831900.jpg",
-      "images": [
-        "https://res.cloudinary.com/likdneok/image/upload/v1787142832/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-04-pm-1787142831900.jpg"
-      ],
-      "description": "Charming party frock featuring a statement oversized satin bow on the waistline, flared multi-layer skirt, and comfortable lining.",
-      "shortDescription": "Statement oversized bow baby party frock (Age: 1 to 5 Years).",
-      "details": [
-        "Age Group: 1 to 5 Years",
-        "Satin & Soft Net Tulle with Cotton Lining",
-        "Detachable statement bow",
-        "Contact Nisha: +91 82187 52043"
-      ],
-      "instagramReel": "",
-      "newArrival": false,
-      "updatedAt": "2026-08-19T12:33:55.550Z",
-      "categorySlug": "baby-girl-dresses",
-      "subcategory": "frock"
-    },
-    {
       "_id": "6a82e83c032a6e13c7ae3b52",
       "id": "prod-baby-08",
       "slug": "hand-crafted-baby-frock",
@@ -195,42 +334,6 @@
       "updatedAt": "2026-08-19T12:34:18.097Z",
       "categorySlug": "baby-girl-dresses",
       "subcategory": "frock"
-    },
-    {
-      "_id": "6a82e83c032a6e13c7ae3b53",
-      "id": "prod-baby-09",
-      "slug": "red-ball-baby-gown",
-      "name": "Red Ball Baby Gown",
-      "category": "baby-girl-dresses",
-      "categoryName": "Baby Girl Dresses",
-      "chapter": "her-little-one",
-      "chapterName": "Her Little One",
-      "price": 3500,
-      "originalPrice": 4399,
-      "discount": "20% OFF",
-      "featured": true,
-      "status": "published",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142873/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-05-pm-1787142873775.jpg",
-      "images": [
-        "https://res.cloudinary.com/likdneok/image/upload/v1787142873/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-05-pm-1787142873775.jpg"
-      ],
-      "description": "Vibrant royal red ball gown for baby girls with dramatic flared skirt volume, golden accent stitching, and zero-scratch internal finish.",
-      "shortDescription": "Vibrant crimson red ball gown for baby celebrations (Age: 1 to 5 Years).",
-      "details": [
-        "Age Group: 1 to 5 Years",
-        "Crimson Satin & Net Volume Flare",
-        "Cotton inner shell",
-        "Contact Nisha: +91 82187 52043"
-      ],
-      "instagramReel": "",
-      "newArrival": false,
-      "updatedAt": "2026-08-19T12:34:39.669Z",
-      "categorySlug": "baby-girl-dresses",
-      "subcategory": "gowns",
-      "subcategories": [
-        "gowns",
-        "party-wear"
-      ]
     },
     {
       "_id": "6a82e83c032a6e13c7ae3b54",
@@ -268,109 +371,6 @@
         "gowns",
         "party-wear"
       ]
-    },
-    {
-      "_id": "6a82e83c032a6e13c7ae3b55",
-      "id": "prod-baby-11",
-      "slug": "wine-embroidered-lehenga-choli",
-      "name": "Wine Embroidered Lehenga Choli",
-      "category": "baby-girl-dresses",
-      "categoryName": "Baby Girl Dresses",
-      "chapter": "her-little-one",
-      "chapterName": "Her Little One",
-      "price": 4200,
-      "originalPrice": 5299,
-      "discount": "21% OFF",
-      "featured": true,
-      "status": "published",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142594/designs-by-nisha/whatsapp-image-2026-08-17-at-12-44-53-pm-1787142594725.jpg",
-      "images": [
-        "https://res.cloudinary.com/likdneok/image/upload/v1787142594/designs-by-nisha/whatsapp-image-2026-08-17-at-12-44-53-pm-1787142594725.jpg"
-      ],
-      "description": "Rich wine-coloured embroidered ethnic lehenga choli set for baby girls. Features heavy fabric embroidery, soft elastic waistband, and zero-scratch muslin lining.",
-      "shortDescription": "Wine embroidered fabric baby lehenga choli set (Age: 2 to 5 Years).",
-      "details": [
-        "Age Group: 2 to 5 Years",
-        "Color: Wine",
-        "Heavy Embroidered Fabric & Muslin Lining",
-        "Soft elastic fit for baby skin",
-        "Contact Nisha: +91 82187 52043"
-      ],
-      "instagramReel": "",
-      "newArrival": false,
-      "updatedAt": "2026-08-19T12:30:07.546Z",
-      "categorySlug": "baby-girl-dresses",
-      "subcategory": "mini-lehengas"
-    },
-    {
-      "_id": "6a82e83c032a6e13c7ae3b56",
-      "id": "prod-baby-12",
-      "slug": "halter-neck-flower-gown",
-      "name": "Halter Neck Flower Gown",
-      "category": "baby-girl-dresses",
-      "categoryName": "Baby Girl Dresses",
-      "chapter": "her-little-one",
-      "chapterName": "Her Little One",
-      "price": 3566,
-      "originalPrice": 4499,
-      "discount": "21% OFF",
-      "featured": false,
-      "status": "published",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142624/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-05-pm-1-1787142624459.jpg",
-      "images": [
-        "https://res.cloudinary.com/likdneok/image/upload/v1787142624/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-05-pm-1-1787142624459.jpg"
-      ],
-      "description": "Pastel lavender halter neck baby gown adorned with 3D handcrafted fabric flowers, sheer organza flare, and soft interior layer.",
-      "shortDescription": "Lavender halter neck gown with 3D floral accents (Age: 1 to 5 Years).",
-      "details": [
-        "Age Group: 1 to 5 Years",
-        "Color: Lavender",
-        "3D Fabric Flowers & Soft Organza Flare",
-        "Comfortable halter fit",
-        "Contact Nisha: +91 82187 52043"
-      ],
-      "instagramReel": "",
-      "newArrival": false,
-      "updatedAt": "2026-08-19T12:30:31.007Z",
-      "categorySlug": "baby-girl-dresses",
-      "subcategory": "gowns",
-      "subcategories": [
-        "gowns",
-        "party-wear"
-      ]
-    },
-    {
-      "_id": "6a82e83c032a6e13c7ae3b57",
-      "id": "prod-baby-13",
-      "slug": "peach-embroidered-net-lehenga-choli",
-      "name": "Peach Net Embroidered Lehenga Choli",
-      "category": "baby-girl-dresses",
-      "categoryName": "Baby Girl Dresses",
-      "chapter": "her-little-one",
-      "chapterName": "Her Little One",
-      "price": 2999,
-      "originalPrice": 3749,
-      "discount": "20% OFF",
-      "featured": true,
-      "status": "published",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142134/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-01-pm-2-1787142134358.jpg",
-      "images": [
-        "https://res.cloudinary.com/likdneok/image/upload/v1787142134/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-01-pm-2-1787142134358.jpg"
-      ],
-      "description": "Elegant peach net lehenga choli embroidered with gold and resham threadwork, paired with a matching net dupatta and soft cotton lining.",
-      "shortDescription": "Peach embroidered net lehenga choli set (Age: 1 to 5 Years).",
-      "details": [
-        "Age Group: 1 to 5 Years",
-        "Color: Peach",
-        "Embroidered Net Fabric & Cotton Lining",
-        "Includes matching dupatta",
-        "Contact Nisha: +91 82187 52043"
-      ],
-      "instagramReel": "",
-      "newArrival": false,
-      "updatedAt": "2026-08-19T12:22:18.686Z",
-      "categorySlug": "baby-girl-dresses",
-      "subcategory": "mini-lehengas"
     },
     {
       "_id": "6a85683dc4c17e061913ef5f",
@@ -723,7 +723,7 @@
       "originalPrice": 3496,
       "price": 2500,
       "shortDescription": "Graceful Anarkali suit featuring premium craftsmanship, elegant flare, and timeless ethnic charm.",
-      "slug": "anarkali-suit",
+      "slug": "anarkali-suit-2",
       "status": "published",
       "updatedAt": "2026-08-19T09:07:16.863Z",
       "subcategory": "anarkali"
@@ -1807,7 +1807,7 @@
       "originalPrice": 6890,
       "price": 4590,
       "shortDescription": "Elegant deep emerald-green lehenga with intricate gold embroidery and a statement embellished blouse, perfect for Mehandi celebrations.",
-      "slug": "mehandi-outfit",
+      "slug": "mehandi-outfit-2",
       "status": "published",
       "subcategory": "mehandi-outfit",
       "updatedAt": "2026-08-19T12:09:44.098Z"
@@ -2095,7 +2095,7 @@
       "originalPrice": 33000,
       "price": 25500,
       "shortDescription": "Regal deep red bridal lehenga with rich gold embroidery, ornate borders, and a traditional statement dupatta.",
-      "slug": "bridal-lehenga",
+      "slug": "bridal-lehenga-2",
       "status": "published",
       "subcategory": "bridal-lehenga",
       "updatedAt": "2026-08-19T12:37:12.891Z"
@@ -2321,15 +2321,15 @@
   ],
   "chapters": [
     {
-      "_id": "6a7ed7bc8d072f4cd01985bc",
-      "id": "her-beginnings",
-      "number": "01",
-      "title": "Her Beginnings",
-      "subtitle": "Young Womanhood & Celebrations",
-      "description": "Elegance in everyday luxury, college festive days, and light family celebrations.",
-      "categorySlug": "suits-anarkalis",
-      "categoryName": "Suits & Anarkalis",
-      "image": "https://odhni.com/cdn/shop/files/Gemini_Generated_Image_ybvw7yybvw7yybvw.png?v=1779367771&width=1200"
+      "_id": "6a7ed7bc8d072f4cd01985be",
+      "id": "her-new-chapter",
+      "number": "03",
+      "title": "Her Forever",
+      "subtitle": "The Quintessential Bride",
+      "description": "Heirloom bridal lehengas, royal red velvets, and hand-worked zardozi ensembles.",
+      "categorySlug": "gowns-lehengas",
+      "categoryName": "Gowns & Lehengas",
+      "image": "https://img.perniaspopupshop.com/catalog/product/n/k/NKGC072509_1.jpg?impolicy=detailimageprod"
     },
     {
       "_id": "6a7ed7bc8d072f4cd01985bd",
@@ -2343,17 +2343,6 @@
       "image": "https://bawreefashions.com/cdn/shop/files/WhatsApp_Image_2025-12-18_at_15.49.23.jpg?v=1766393862&width=1200"
     },
     {
-      "_id": "6a7ed7bc8d072f4cd01985be",
-      "id": "her-new-chapter",
-      "number": "03",
-      "title": "Her Forever",
-      "subtitle": "The Quintessential Bride",
-      "description": "Heirloom bridal lehengas, royal red velvets, and hand-worked zardozi ensembles.",
-      "categorySlug": "gowns-lehengas",
-      "categoryName": "Gowns & Lehengas",
-      "image": "https://img.perniaspopupshop.com/catalog/product/n/k/NKGC072509_1.jpg?impolicy=detailimageprod"
-    },
-    {
       "_id": "6a7ed7bc8d072f4cd01985bf",
       "id": "her-motherhood",
       "number": "04",
@@ -2363,6 +2352,17 @@
       "categorySlug": "maternity-gowns",
       "categoryName": "Maternity Gowns",
       "image": "https://themomstore.in/cdn/shop/files/elegant-wine-maternity-lace-gown-3656588.jpg?v=1782110590&width=1000"
+    },
+    {
+      "_id": "6a7ed7bc8d072f4cd01985bc",
+      "id": "her-beginnings",
+      "number": "01",
+      "title": "Her Beginnings",
+      "subtitle": "Young Womanhood & Celebrations",
+      "description": "Elegance in everyday luxury, college festive days, and light family celebrations.",
+      "categorySlug": "suits-anarkalis",
+      "categoryName": "Suits & Anarkalis",
+      "image": "https://odhni.com/cdn/shop/files/Gemini_Generated_Image_ybvw7yybvw7yybvw.png?v=1779367771&width=1200"
     },
     {
       "_id": "6a7ed7bc8d072f4cd01985c0",
@@ -2378,614 +2378,750 @@
   ],
   "gallery": [
     {
-      "_id": "6a86f36d9b633153b4978111",
+      "_id": "6a8c303e437a427cc6aa8e6f",
       "id": "lb-prod-baby-03",
       "title": "Net Ball Gown",
       "category": "Baby Girl Dresses",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142687/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-04-pm-1-1787142687169.jpg",
+      "width": 1086,
+      "height": 1448,
       "aspectRatio": "aspect-[3/4]",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b4978112",
+      "_id": "6a8c303e437a427cc6aa8e70",
       "id": "lb-prod-1787127867911",
       "title": "Patayala suit",
       "category": "Her Beginning",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787127778/designs-by-nisha/whatsapp-image-2026-08-19-at-13-39-11-1787127778293.jpg",
+      "width": 896,
+      "height": 1152,
       "aspectRatio": "aspect-[4/5]",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b4978113",
+      "_id": "6a8c303e437a427cc6aa8e71",
       "id": "lb-prod-1787137425401",
       "title": "Pink Threadwork Lehenga",
       "category": "Her Big Day",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787137354/designs-by-nisha/whatsapp-image-2026-08-19-at-14-24-42-1787137353988.jpg",
+      "width": 896,
+      "height": 1152,
       "aspectRatio": "aspect-square",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b4978114",
+      "_id": "6a8c303e437a427cc6aa8e72",
       "id": "lb-prod-1787138263085",
       "title": "Crop Top Pink lehenga",
       "category": "Her Bridal Story",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787138137/designs-by-nisha/whatsapp-image-2026-08-19-at-14-24-43-1-1787138137744.jpg",
+      "width": 896,
+      "height": 1152,
       "aspectRatio": "aspect-[3/5]",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b4978115",
+      "_id": "6a8c303e437a427cc6aa8e73",
       "id": "lb-prod-mat-01",
       "title": "Silver Crystal Diamond Maternity Mermaid Gown",
       "category": "Maternity",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787139834/designs-by-nisha/whatsapp-image-2026-08-19-at-3-26-09-pm-1787139833961.jpg",
+      "width": 1023,
+      "height": 1537,
       "aspectRatio": "aspect-[4/3]",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b4978116",
-      "id": "lb-prod-baby-04",
-      "title": "Floral Handwork Net Frock",
-      "category": "Baby Girl Dresses",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142744/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-06-pm-1787142744087.jpg",
-      "aspectRatio": "aspect-[5/6]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b4978117",
-      "id": "lb-prod-1787128184648",
-      "title": "Straight Plazo Suit",
-      "category": "Her Beginning",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787128107/designs-by-nisha/whatsapp-image-2026-08-19-at-13-39-11-1-1787128107197.jpg",
-      "aspectRatio": "aspect-[3/4]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b4978118",
-      "id": "lb-prod-1787137700376",
-      "title": "Purple Lehenga",
-      "category": "Her Big Day",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787137664/designs-by-nisha/whatsapp-image-2026-08-19-at-14-24-43-1787137664890.jpg",
-      "aspectRatio": "aspect-[4/5]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b4978119",
-      "id": "lb-prod-1787138521308",
-      "title": "White Crop Top Lehenga",
-      "category": "Her Bridal Story",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787138508/designs-by-nisha/whatsapp-image-2026-08-19-at-14-24-44-1787138508243.jpg",
-      "aspectRatio": "aspect-square",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b497811a",
-      "id": "lb-prod-mat-02",
-      "title": "Black Crystal Cascade Gown",
-      "category": "Maternity",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787140144/designs-by-nisha/whatsapp-image-2026-08-19-at-3-22-03-pm-1787140144052.jpg",
-      "aspectRatio": "aspect-[3/5]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b497811b",
-      "id": "lb-prod-baby-05",
-      "title": "Pearl Frock",
-      "category": "Baby Girl Dresses",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142777/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-06-pm-1-1787142777491.jpg",
-      "aspectRatio": "aspect-[4/3]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b497811c",
-      "id": "lb-prod-1787128348172",
-      "title": "Ruffle anarkali suit",
-      "category": "Her Beginning",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787128337/designs-by-nisha/whatsapp-image-2026-08-19-at-13-47-11-1787128336971.jpg",
-      "aspectRatio": "aspect-[5/6]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b497811d",
-      "id": "lb-prod-1787139068130",
-      "title": "Navy Blue Floral Embroidered Lehenga",
-      "category": "Her Big Day",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787138975/designs-by-nisha/whatsapp-image-2026-08-19-at-14-24-44-2-1787138975890.jpg",
-      "aspectRatio": "aspect-[3/4]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b497811e",
-      "id": "lb-prod-1787138739512",
-      "title": "Net Flaird Lehenga",
-      "category": "Her Bridal Story",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787138708/designs-by-nisha/whatsapp-image-2026-08-19-at-14-24-44-1-1787138708316.jpg",
-      "aspectRatio": "aspect-[4/5]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b497811f",
-      "id": "lb-prod-mat-03",
-      "title": "Black Ruby Cascade Gown",
-      "category": "Maternity",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787140180/designs-by-nisha/whatsapp-image-2026-08-19-at-3-14-41-pm-1787140180563.jpg",
-      "aspectRatio": "aspect-square",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b4978120",
-      "id": "lb-prod-baby-06",
-      "title": "Summer Baby Frock",
-      "category": "Baby Girl Dresses",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142805/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-03-pm-1787142805133.jpg",
-      "aspectRatio": "aspect-[3/5]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b4978121",
-      "id": "lb-prod-1787128580126",
-      "title": "Bridal anarkali suit",
-      "category": "Her Beginning",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787128526/designs-by-nisha/whatsapp-image-2026-08-19-at-13-47-11-1-1787128526197.jpg",
-      "aspectRatio": "aspect-[4/3]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b4978122",
-      "id": "lb-prod-1787140217709",
-      "title": "Fish Cut Lehenga",
-      "category": "Her Big Day",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787140147/designs-by-nisha/whatsapp-image-2026-08-19-at-14-24-45-1-1787140147887.jpg",
-      "aspectRatio": "aspect-[5/6]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b4978123",
-      "id": "lb-prod-1787139299560",
-      "title": "Elegant maroon crop top lehenga",
-      "category": "Her Bridal Story",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787139267/designs-by-nisha/whatsapp-image-2026-08-19-at-14-24-45-1787139267815.jpg",
-      "aspectRatio": "aspect-[3/4]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b4978124",
-      "id": "lb-prod-mat-04",
-      "title": "Inspired by Anne Hathaway's Maternity Gown",
-      "category": "Maternity",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787140213/designs-by-nisha/whatsapp-image-2026-08-19-at-3-11-28-pm-1787140213891.jpg",
-      "aspectRatio": "aspect-[4/5]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b4978125",
-      "id": "lb-prod-baby-07",
-      "title": "Oversized Bow Baby Frock",
-      "category": "Baby Girl Dresses",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142832/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-04-pm-1787142831900.jpg",
-      "aspectRatio": "aspect-square",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b4978126",
-      "id": "lb-prod-1787128801683",
-      "title": "White anarkali",
-      "category": "Her Beginning",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787128751/designs-by-nisha/whatsapp-image-2026-08-19-at-13-47-12-1787128751708.jpg",
-      "aspectRatio": "aspect-[3/5]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b4978127",
-      "id": "lb-prod-1787140470650",
-      "title": "Ruffle Sleeve Crop Haldi Outfit",
-      "category": "Her Big Day",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787140364/designs-by-nisha/whatsapp-image-2026-08-19-at-14-31-42-1-1787140364032.jpg",
-      "aspectRatio": "aspect-[4/3]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b4978128",
-      "id": "lb-prod-mat-05",
-      "title": "Maternity Gown with One Shoulder Golden Flower Cape",
-      "category": "Maternity",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787140814/designs-by-nisha/whatsapp-image-2026-08-19-at-3-11-27-pm-1787140814252.jpg",
-      "aspectRatio": "aspect-[5/6]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b4978129",
-      "id": "lb-prod-baby-08",
-      "title": "Hand Crafted Baby Frock",
-      "category": "Baby Girl Dresses",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142854/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-02-pm-2-1787142854845.jpg",
-      "aspectRatio": "aspect-[3/4]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b497812a",
-      "id": "lb-prod-1787128995811",
-      "title": "Madhubala style Anarkali",
-      "category": "Her Beginning",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787128931/designs-by-nisha/whatsapp-image-2026-08-19-at-13-47-12-1-1787128930964.jpg",
-      "aspectRatio": "aspect-[4/5]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b497812b",
-      "id": "lb-prod-1787140950422",
-      "title": "Mehandi Outfit",
-      "category": "Her Big Day",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787140681/designs-by-nisha/whatsapp-image-2026-08-19-at-14-35-37-1787140681760.jpg",
-      "aspectRatio": "aspect-square",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b497812c",
-      "id": "lb-prod-mat-06",
-      "title": "White Maternity Tail Gown",
-      "category": "Maternity",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787140835/designs-by-nisha/whatsapp-image-2026-08-19-at-3-05-58-pm-1787140835311.jpg",
-      "aspectRatio": "aspect-[3/5]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b497812d",
-      "id": "lb-prod-baby-09",
-      "title": "Red Ball Baby Gown",
-      "category": "Baby Girl Dresses",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142873/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-05-pm-1787142873775.jpg",
-      "aspectRatio": "aspect-[4/3]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b497812e",
-      "id": "lb-prod-1787129556600",
-      "title": "Handwork elegant Bridal sharara",
-      "category": "Her Beginning",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787129490/designs-by-nisha/whatsapp-image-2026-08-19-at-13-53-14-1787129490844.jpg",
-      "aspectRatio": "aspect-[5/6]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b497812f",
-      "id": "lb-prod-1787141384098",
-      "title": "Mehandi Outfit",
-      "category": "Her Big Day",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787141205/designs-by-nisha/whatsapp-image-2026-08-19-at-14-38-01-1787141205610.jpg",
-      "aspectRatio": "aspect-[3/4]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b4978130",
-      "id": "lb-prod-mat-07",
-      "title": "Premium Red Maternity Gown with Flower Hand Cape",
-      "category": "Maternity",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787140858/designs-by-nisha/whatsapp-image-2026-08-19-at-3-05-58-pm-1-1787140858078.jpg",
-      "aspectRatio": "aspect-[4/5]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b4978131",
-      "id": "lb-prod-baby-10",
-      "title": "Ball Gown with Detachable Tail",
-      "category": "Baby Girl Dresses",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142287/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-00-pm-1-1787142287174.jpg",
-      "aspectRatio": "aspect-square",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b4978132",
-      "id": "lb-prod-1787129705598",
-      "title": "Three Flair Sharara",
-      "category": "Her Beginning",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787129659/designs-by-nisha/whatsapp-image-2026-08-19-at-13-53-16-1787129659112.jpg",
-      "aspectRatio": "aspect-[3/5]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b4978133",
-      "id": "lb-prod-1787142202768",
-      "title": "Velvet Lehenga",
-      "category": "Her Big Day",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142018/designs-by-nisha/whatsapp-image-2026-08-19-at-14-45-04-1787142018263.jpg",
-      "aspectRatio": "aspect-[4/3]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b4978134",
-      "id": "lb-prod-mat-08",
-      "title": "Cinnamon Brown Maternity Bodycon",
-      "category": "Maternity",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787140877/designs-by-nisha/whatsapp-image-2026-08-19-at-3-05-57-pm-1787140876799.jpg",
-      "aspectRatio": "aspect-[5/6]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b4978135",
-      "id": "lb-prod-baby-11",
-      "title": "Wine Embroidered Lehenga Choli",
-      "category": "Baby Girl Dresses",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142594/designs-by-nisha/whatsapp-image-2026-08-17-at-12-44-53-pm-1787142594725.jpg",
-      "aspectRatio": "aspect-[3/4]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b4978136",
-      "id": "lb-prod-1787129865588",
-      "title": "Brocket sharara",
-      "category": "Her Beginning",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787129833/designs-by-nisha/screenshot-2026-08-19-at-2-25-56-pm-1787129833330.png",
-      "aspectRatio": "aspect-[4/5]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b4978137",
-      "id": "lb-prod-1787142315636",
-      "title": "Haldi Outfit",
-      "category": "Her Big Day",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142276/designs-by-nisha/whatsapp-image-2026-08-19-at-14-45-35-1787142276848.jpg",
-      "aspectRatio": "aspect-square",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b4978138",
-      "id": "lb-prod-mat-09",
-      "title": "Powder Blue Maternity Bodycon Gown",
-      "category": "Maternity",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787140906/designs-by-nisha/whatsapp-image-2026-08-19-at-3-05-57-pm-1-1787140906063.jpg",
-      "aspectRatio": "aspect-[3/5]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b4978139",
+      "_id": "6a8c303e437a427cc6aa8e74",
       "id": "lb-prod-baby-12",
       "title": "Halter Neck Flower Gown",
       "category": "Baby Girl Dresses",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142624/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-05-pm-1-1787142624459.jpg",
-      "aspectRatio": "aspect-[4/3]",
-      "location": "New Delhi Atelier"
-    },
-    {
-      "_id": "6a86f36d9b633153b497813a",
-      "id": "lb-prod-1787130064677",
-      "title": "Sharara -Yellow & Green",
-      "category": "Her Beginning",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787130011/designs-by-nisha/whatsapp-image-2026-08-19-at-13-53-17-1787130011105.jpg",
+      "width": 1086,
+      "height": 1448,
       "aspectRatio": "aspect-[5/6]",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b497813b",
-      "id": "lb-prod-1787142846752",
-      "title": "Bridal Lehenga",
-      "category": "Her Big Day",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142728/designs-by-nisha/whatsapp-image-2026-08-19-at-16-57-18-1787142728845.jpg",
+      "_id": "6a8c303e437a427cc6aa8e75",
+      "id": "lb-prod-1787128184648",
+      "title": "Straight Plazo Suit",
+      "category": "Her Beginning",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787128107/designs-by-nisha/whatsapp-image-2026-08-19-at-13-39-11-1-1787128107197.jpg",
+      "width": 896,
+      "height": 1152,
       "aspectRatio": "aspect-[3/4]",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b497813c",
-      "id": "lb-prod-mat-10",
-      "title": "Black Maternity Gown with White Flowers Shoulder Cape",
-      "category": "Maternity",
-      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787140931/designs-by-nisha/whatsapp-image-2026-08-19-at-3-05-57-pm-2-1787140931777.jpg",
+      "_id": "6a8c303e437a427cc6aa8e76",
+      "id": "lb-prod-1787137700376",
+      "title": "Purple Lehenga",
+      "category": "Her Big Day",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787137664/designs-by-nisha/whatsapp-image-2026-08-19-at-14-24-43-1787137664890.jpg",
+      "width": 896,
+      "height": 1152,
       "aspectRatio": "aspect-[4/5]",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b497813d",
+      "_id": "6a8c303e437a427cc6aa8e77",
+      "id": "lb-prod-1787138521308",
+      "title": "White Crop Top Lehenga",
+      "category": "Her Bridal Story",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787138508/designs-by-nisha/whatsapp-image-2026-08-19-at-14-24-44-1787138508243.jpg",
+      "width": 1024,
+      "height": 1024,
+      "aspectRatio": "aspect-square",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e78",
+      "id": "lb-prod-mat-02",
+      "title": "Black Crystal Cascade Gown",
+      "category": "Maternity",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787140144/designs-by-nisha/whatsapp-image-2026-08-19-at-3-22-03-pm-1787140144052.jpg",
+      "width": 1023,
+      "height": 1537,
+      "aspectRatio": "aspect-[3/5]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e79",
+      "id": "lb-prod-baby-07",
+      "title": "Oversized Bow Baby Frock",
+      "category": "Baby Girl Dresses",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142832/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-04-pm-1787142831900.jpg",
+      "width": 1086,
+      "height": 1448,
+      "aspectRatio": "aspect-[4/3]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e7a",
+      "id": "lb-prod-1787128348172",
+      "title": "Ruffle anarkali suit",
+      "category": "Her Beginning",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787128337/designs-by-nisha/whatsapp-image-2026-08-19-at-13-47-11-1787128336971.jpg",
+      "width": 896,
+      "height": 1152,
+      "aspectRatio": "aspect-[5/6]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e7b",
+      "id": "lb-prod-1787139068130",
+      "title": "Navy Blue Floral Embroidered Lehenga",
+      "category": "Her Big Day",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787138975/designs-by-nisha/whatsapp-image-2026-08-19-at-14-24-44-2-1787138975890.jpg",
+      "width": 896,
+      "height": 1152,
+      "aspectRatio": "aspect-[3/4]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e7c",
+      "id": "lb-prod-1787138739512",
+      "title": "Net Flaird Lehenga",
+      "category": "Her Bridal Story",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787138708/designs-by-nisha/whatsapp-image-2026-08-19-at-14-24-44-1-1787138708316.jpg",
+      "width": 896,
+      "height": 1152,
+      "aspectRatio": "aspect-[4/5]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e7d",
+      "id": "lb-prod-mat-03",
+      "title": "Black Ruby Cascade Gown",
+      "category": "Maternity",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787140180/designs-by-nisha/whatsapp-image-2026-08-19-at-3-14-41-pm-1787140180563.jpg",
+      "width": 1024,
+      "height": 1536,
+      "aspectRatio": "aspect-square",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e7e",
+      "id": "lb-prod-baby-09",
+      "title": "Red Ball Baby Gown",
+      "category": "Baby Girl Dresses",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142873/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-05-pm-1787142873775.jpg",
+      "width": 1086,
+      "height": 1448,
+      "aspectRatio": "aspect-[3/5]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e7f",
+      "id": "lb-prod-1787128580126",
+      "title": "Bridal anarkali suit",
+      "category": "Her Beginning",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787128526/designs-by-nisha/whatsapp-image-2026-08-19-at-13-47-11-1-1787128526197.jpg",
+      "width": 896,
+      "height": 1152,
+      "aspectRatio": "aspect-[4/3]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e80",
+      "id": "lb-prod-1787140217709",
+      "title": "Fish Cut Lehenga",
+      "category": "Her Big Day",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787140147/designs-by-nisha/whatsapp-image-2026-08-19-at-14-24-45-1-1787140147887.jpg",
+      "width": 896,
+      "height": 1152,
+      "aspectRatio": "aspect-[5/6]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e81",
+      "id": "lb-prod-1787139299560",
+      "title": "Elegant maroon crop top lehenga",
+      "category": "Her Bridal Story",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787139267/designs-by-nisha/whatsapp-image-2026-08-19-at-14-24-45-1787139267815.jpg",
+      "width": 1024,
+      "height": 1024,
+      "aspectRatio": "aspect-[3/4]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e82",
+      "id": "lb-prod-mat-04",
+      "title": "Inspired by Anne Hathaway's Maternity Gown",
+      "category": "Maternity",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787140213/designs-by-nisha/whatsapp-image-2026-08-19-at-3-11-28-pm-1787140213891.jpg",
+      "width": 900,
+      "height": 1600,
+      "aspectRatio": "aspect-[4/5]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e83",
+      "id": "lb-prod-baby-06",
+      "title": "Summer Baby Frock",
+      "category": "Baby Girl Dresses",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142805/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-03-pm-1787142805133.jpg",
+      "width": 1086,
+      "height": 1448,
+      "aspectRatio": "aspect-square",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e84",
+      "id": "lb-prod-1787128801683",
+      "title": "White anarkali",
+      "category": "Her Beginning",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787128751/designs-by-nisha/whatsapp-image-2026-08-19-at-13-47-12-1787128751708.jpg",
+      "width": 818,
+      "height": 1248,
+      "aspectRatio": "aspect-[3/5]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e85",
+      "id": "lb-prod-1787140470650",
+      "title": "Ruffle Sleeve Crop Haldi Outfit",
+      "category": "Her Big Day",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787140364/designs-by-nisha/whatsapp-image-2026-08-19-at-14-31-42-1-1787140364032.jpg",
+      "width": 896,
+      "height": 1152,
+      "aspectRatio": "aspect-[4/3]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e86",
+      "id": "lb-prod-mat-05",
+      "title": "Maternity Gown with One Shoulder Golden Flower Cape",
+      "category": "Maternity",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787140814/designs-by-nisha/whatsapp-image-2026-08-19-at-3-11-27-pm-1787140814252.jpg",
+      "width": 1023,
+      "height": 1537,
+      "aspectRatio": "aspect-[5/6]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e87",
+      "id": "lb-prod-baby-11",
+      "title": "Wine Embroidered Lehenga Choli",
+      "category": "Baby Girl Dresses",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142594/designs-by-nisha/whatsapp-image-2026-08-17-at-12-44-53-pm-1787142594725.jpg",
+      "width": 1023,
+      "height": 1537,
+      "aspectRatio": "aspect-[3/4]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e88",
+      "id": "lb-prod-1787128995811",
+      "title": "Madhubala style Anarkali",
+      "category": "Her Beginning",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787128931/designs-by-nisha/whatsapp-image-2026-08-19-at-13-47-12-1-1787128930964.jpg",
+      "width": 896,
+      "height": 1152,
+      "aspectRatio": "aspect-[4/5]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e89",
+      "id": "lb-prod-1787140950422",
+      "title": "Mehandi Outfit",
+      "category": "Her Big Day",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787140681/designs-by-nisha/whatsapp-image-2026-08-19-at-14-35-37-1787140681760.jpg",
+      "width": 1023,
+      "height": 1537,
+      "aspectRatio": "aspect-square",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e8a",
+      "id": "lb-prod-mat-06",
+      "title": "White Maternity Tail Gown",
+      "category": "Maternity",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787140835/designs-by-nisha/whatsapp-image-2026-08-19-at-3-05-58-pm-1787140835311.jpg",
+      "width": 1023,
+      "height": 1537,
+      "aspectRatio": "aspect-[3/5]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e8b",
       "id": "lb-prod-baby-13",
       "title": "Peach Net Embroidered Lehenga Choli",
       "category": "Baby Girl Dresses",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142134/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-01-pm-2-1787142134358.jpg",
+      "width": 1086,
+      "height": 1448,
+      "aspectRatio": "aspect-[4/3]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e8c",
+      "id": "lb-prod-1787129556600",
+      "title": "Handwork elegant Bridal sharara",
+      "category": "Her Beginning",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787129490/designs-by-nisha/whatsapp-image-2026-08-19-at-13-53-14-1787129490844.jpg",
+      "width": 896,
+      "height": 1152,
+      "aspectRatio": "aspect-[5/6]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e8d",
+      "id": "lb-prod-1787141384098",
+      "title": "Mehandi Outfit",
+      "category": "Her Big Day",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787141205/designs-by-nisha/whatsapp-image-2026-08-19-at-14-38-01-1787141205610.jpg",
+      "width": 1023,
+      "height": 1537,
+      "aspectRatio": "aspect-[3/4]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e8e",
+      "id": "lb-prod-mat-07",
+      "title": "Premium Red Maternity Gown with Flower Hand Cape",
+      "category": "Maternity",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787140858/designs-by-nisha/whatsapp-image-2026-08-19-at-3-05-58-pm-1-1787140858078.jpg",
+      "width": 704,
+      "height": 1525,
+      "aspectRatio": "aspect-[4/5]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e8f",
+      "id": "lb-prod-baby-04",
+      "title": "Floral Handwork Net Frock",
+      "category": "Baby Girl Dresses",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142744/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-06-pm-1787142744087.jpg",
+      "width": 1086,
+      "height": 1448,
       "aspectRatio": "aspect-square",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b497813e",
+      "_id": "6a8c303e437a427cc6aa8e90",
+      "id": "lb-prod-1787129705598",
+      "title": "Three Flair Sharara",
+      "category": "Her Beginning",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787129659/designs-by-nisha/whatsapp-image-2026-08-19-at-13-53-16-1787129659112.jpg",
+      "width": 896,
+      "height": 1152,
+      "aspectRatio": "aspect-[3/5]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e91",
+      "id": "lb-prod-1787142202768",
+      "title": "Velvet Lehenga",
+      "category": "Her Big Day",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142018/designs-by-nisha/whatsapp-image-2026-08-19-at-14-45-04-1787142018263.jpg",
+      "width": 1023,
+      "height": 1537,
+      "aspectRatio": "aspect-[4/3]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e92",
+      "id": "lb-prod-mat-08",
+      "title": "Cinnamon Brown Maternity Bodycon",
+      "category": "Maternity",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787140877/designs-by-nisha/whatsapp-image-2026-08-19-at-3-05-57-pm-1787140876799.jpg",
+      "width": 688,
+      "height": 1505,
+      "aspectRatio": "aspect-[5/6]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e93",
+      "id": "lb-prod-baby-05",
+      "title": "Pearl Frock",
+      "category": "Baby Girl Dresses",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142777/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-06-pm-1-1787142777491.jpg",
+      "width": 1086,
+      "height": 1448,
+      "aspectRatio": "aspect-[3/4]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e94",
+      "id": "lb-prod-1787129865588",
+      "title": "Brocket sharara",
+      "category": "Her Beginning",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787129833/designs-by-nisha/screenshot-2026-08-19-at-2-25-56-pm-1787129833330.png",
+      "width": 1060,
+      "height": 1276,
+      "aspectRatio": "aspect-[4/5]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e95",
+      "id": "lb-prod-1787142315636",
+      "title": "Haldi Outfit",
+      "category": "Her Big Day",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142276/designs-by-nisha/whatsapp-image-2026-08-19-at-14-45-35-1787142276848.jpg",
+      "width": 1023,
+      "height": 1537,
+      "aspectRatio": "aspect-square",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e96",
+      "id": "lb-prod-mat-09",
+      "title": "Powder Blue Maternity Bodycon Gown",
+      "category": "Maternity",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787140906/designs-by-nisha/whatsapp-image-2026-08-19-at-3-05-57-pm-1-1787140906063.jpg",
+      "width": 688,
+      "height": 1505,
+      "aspectRatio": "aspect-[3/5]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e97",
+      "id": "lb-prod-baby-08",
+      "title": "Hand Crafted Baby Frock",
+      "category": "Baby Girl Dresses",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142854/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-02-pm-2-1787142854845.jpg",
+      "width": 1086,
+      "height": 1448,
+      "aspectRatio": "aspect-[4/3]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e98",
+      "id": "lb-prod-1787130064677",
+      "title": "Sharara -Yellow & Green",
+      "category": "Her Beginning",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787130011/designs-by-nisha/whatsapp-image-2026-08-19-at-13-53-17-1787130011105.jpg",
+      "width": 896,
+      "height": 1152,
+      "aspectRatio": "aspect-[5/6]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e99",
+      "id": "lb-prod-1787142846752",
+      "title": "Bridal Lehenga",
+      "category": "Her Big Day",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142728/designs-by-nisha/whatsapp-image-2026-08-19-at-16-57-18-1787142728845.jpg",
+      "width": 1023,
+      "height": 1537,
+      "aspectRatio": "aspect-[3/4]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e9a",
+      "id": "lb-prod-mat-10",
+      "title": "Black Maternity Gown with White Flowers Shoulder Cape",
+      "category": "Maternity",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787140931/designs-by-nisha/whatsapp-image-2026-08-19-at-3-05-57-pm-2-1787140931777.jpg",
+      "width": 1086,
+      "height": 1448,
+      "aspectRatio": "aspect-[4/5]",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e9b",
+      "id": "lb-prod-baby-10",
+      "title": "Ball Gown with Detachable Tail",
+      "category": "Baby Girl Dresses",
+      "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142287/designs-by-nisha/whatsapp-image-2026-08-17-at-12-45-00-pm-1-1787142287174.jpg",
+      "width": 1086,
+      "height": 1448,
+      "aspectRatio": "aspect-square",
+      "location": "New Delhi Atelier"
+    },
+    {
+      "_id": "6a8c303e437a427cc6aa8e9c",
       "id": "lb-prod-1787130240054",
       "title": "Anarkali suit",
       "category": "Her Beginning",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787130191/designs-by-nisha/whatsapp-image-2026-08-19-at-13-53-17-1-1787130191597.jpg",
+      "width": 896,
+      "height": 1152,
       "aspectRatio": "aspect-[3/5]",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b497813f",
+      "_id": "6a8c303e437a427cc6aa8e9d",
       "id": "lb-prod-1787143032891",
       "title": "Bridal Lehenga",
       "category": "Her Big Day",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142980/designs-by-nisha/whatsapp-image-2026-08-19-at-17-24-50-1787142980420.jpg",
+      "width": 1023,
+      "height": 1537,
       "aspectRatio": "aspect-[4/3]",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b4978140",
+      "_id": "6a8c303e437a427cc6aa8e9e",
       "id": "lb-prod-mat-11",
       "title": "Maternity Bodycon Mermaid Gown",
       "category": "Maternity",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787141151/designs-by-nisha/whatsapp-image-2026-08-19-at-3-05-51-pm-1-1787141151577.jpg",
+      "width": 740,
+      "height": 1600,
       "aspectRatio": "aspect-[5/6]",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b4978141",
+      "_id": "6a8c303e437a427cc6aa8e9f",
       "id": "lb-prod-1787141845593",
       "title": "Oversized bow gown",
       "category": "Baby Girl Dresses",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787141830/designs-by-nisha/whatsapp-image-2026-08-19-at-2-50-47-pm-1787141830519.jpg",
+      "width": 896,
+      "height": 1185,
       "aspectRatio": "aspect-[3/4]",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b4978142",
+      "_id": "6a8c303e437a427cc6aa8ea0",
       "id": "lb-prod-1787130436863",
       "title": "Anarkali Suit",
       "category": "Her Beginning",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787130351/designs-by-nisha/whatsapp-image-2026-08-19-at-13-53-18-1787130351139.jpg",
+      "width": 896,
+      "height": 1152,
       "aspectRatio": "aspect-[4/5]",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b4978143",
+      "_id": "6a8c303e437a427cc6aa8ea1",
       "id": "lb-prod-1787143227232",
       "title": "Royal Red Heritage Lehenga",
       "category": "Her Big Day",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787143179/designs-by-nisha/whatsapp-image-2026-08-19-at-17-30-16-1787143179715.jpg",
+      "width": 1023,
+      "height": 1537,
       "aspectRatio": "aspect-square",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b4978144",
+      "_id": "6a8c303e437a427cc6aa8ea2",
       "id": "lb-prod-mat-12",
       "title": "Maternity Gown Flower Hand Cape",
       "category": "Maternity",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787141130/designs-by-nisha/whatsapp-image-2026-08-19-at-3-05-51-pm-1787141130389.jpg",
+      "width": 1024,
+      "height": 1536,
       "aspectRatio": "aspect-[3/5]",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b4978145",
+      "_id": "6a8c303e437a427cc6aa8ea3",
       "id": "lb-prod-1787141934538",
       "title": "Three flair ball gown",
       "category": "Baby Girl Dresses",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787141920/designs-by-nisha/whatsapp-image-2026-08-19-at-2-50-46-pm-1787141920583.jpg",
+      "width": 1060,
+      "height": 1484,
       "aspectRatio": "aspect-[4/3]",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b4978146",
+      "_id": "6a8c303e437a427cc6aa8ea4",
       "id": "lb-prod-1787130584232",
       "title": "Black anarkali suit",
       "category": "Her Beginning",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787130541/designs-by-nisha/whatsapp-image-2026-08-19-at-13-53-18-1-1787130541433.jpg",
+      "width": 896,
+      "height": 1152,
       "aspectRatio": "aspect-[5/6]",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b4978147",
+      "_id": "6a8c303e437a427cc6aa8ea5",
       "id": "lb-prod-mat-13",
       "title": "Maternity Bow Bodycon Gown",
       "category": "Maternity",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787141106/designs-by-nisha/whatsapp-image-2026-08-19-at-3-05-54-pm-1-1787141106718.jpg",
+      "width": 1023,
+      "height": 1537,
       "aspectRatio": "aspect-[3/4]",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b4978148",
+      "_id": "6a8c303e437a427cc6aa8ea6",
       "id": "lb-prod-1787141979750",
       "title": "Heavy ball gown",
       "category": "Baby Girl Dresses",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787141971/designs-by-nisha/whatsapp-image-2026-08-19-at-2-50-46-pm-1-1787141971497.jpg",
+      "width": 1046,
+      "height": 1504,
       "aspectRatio": "aspect-[4/5]",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b4978149",
+      "_id": "6a8c303e437a427cc6aa8ea7",
       "id": "lb-prod-1787130773594",
       "title": "Anarkali Suit  Saree",
       "category": "Her Beginning",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787130697/designs-by-nisha/whatsapp-image-2026-08-19-at-13-53-18-2-1787130697864.jpg",
+      "width": 896,
+      "height": 1152,
       "aspectRatio": "aspect-square",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b497814a",
+      "_id": "6a8c303e437a427cc6aa8ea8",
       "id": "lb-prod-mat-14",
       "title": "Black Maternity Gown with Pink Flower Hand Cape",
       "category": "Maternity",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787141083/designs-by-nisha/whatsapp-image-2026-08-19-at-3-05-54-pm-1787141083741.jpg",
+      "width": 1023,
+      "height": 1537,
       "aspectRatio": "aspect-[3/5]",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b497814b",
+      "_id": "6a8c303e437a427cc6aa8ea9",
       "id": "lb-prod-1787142028356",
       "title": "Frills gown",
       "category": "Baby Girl Dresses",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142019/designs-by-nisha/whatsapp-image-2026-08-19-at-2-48-09-pm-1787142019596.jpg",
+      "width": 1035,
+      "height": 1024,
       "aspectRatio": "aspect-[4/3]",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b497814c",
+      "_id": "6a8c303e437a427cc6aa8eaa",
       "id": "lb-prod-1787132796457",
       "title": "Pink Anarkali Suit",
       "category": "Her Beginning",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787132734/designs-by-nisha/whatsapp-image-2026-08-19-at-14-02-30-1787132734698.jpg",
+      "width": 896,
+      "height": 1152,
       "aspectRatio": "aspect-[5/6]",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b497814d",
+      "_id": "6a8c303e437a427cc6aa8eab",
       "id": "lb-prod-mat-15",
       "title": "Maternity Net Gown",
       "category": "Maternity",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787141062/designs-by-nisha/whatsapp-image-2026-08-19-at-3-05-55-pm-1-1787141061967.jpg",
+      "width": 1023,
+      "height": 1537,
       "aspectRatio": "aspect-[3/4]",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b497814e",
+      "_id": "6a8c303e437a427cc6aa8eac",
       "id": "lb-prod-1787142069373",
       "title": "Ball gown",
       "category": "Baby Girl Dresses",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787142062/designs-by-nisha/whatsapp-image-2026-08-19-at-2-48-09-pm-1-1787142062038.jpg",
+      "width": 784,
+      "height": 1359,
       "aspectRatio": "aspect-[4/5]",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b497814f",
+      "_id": "6a8c303e437a427cc6aa8ead",
       "id": "lb-prod-1787133269840",
       "title": "Anarkali From Saree",
       "category": "Her Beginning",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787133232/designs-by-nisha/whatsapp-image-2026-08-19-at-14-02-30-1-1787133232041.jpg",
+      "width": 896,
+      "height": 970,
       "aspectRatio": "aspect-square",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b4978150",
+      "_id": "6a8c303e437a427cc6aa8eae",
       "id": "lb-prod-mat-16",
       "title": "Mustard Yellow Maternity Gown with White Flower Hand Cape",
       "category": "Maternity",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787141037/designs-by-nisha/whatsapp-image-2026-08-19-at-3-05-55-pm-1787141037729.jpg",
+      "width": 1023,
+      "height": 1537,
       "aspectRatio": "aspect-[3/5]",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b4978151",
+      "_id": "6a8c303e437a427cc6aa8eaf",
       "id": "lb-prod-1787134407235",
       "title": "Organza Anarkali",
       "category": "Her Beginning",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787134359/designs-by-nisha/whatsapp-image-2026-08-19-at-14-31-42-1787134359038.jpg",
+      "width": 896,
+      "height": 1152,
       "aspectRatio": "aspect-[4/3]",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b4978152",
+      "_id": "6a8c303e437a427cc6aa8eb0",
       "id": "lb-prod-mat-17",
       "title": "Bow Maternity Gown",
       "category": "Maternity",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787141015/designs-by-nisha/whatsapp-image-2026-08-19-at-3-05-56-pm-2-1787141015076.jpg",
+      "width": 1023,
+      "height": 1537,
       "aspectRatio": "aspect-[5/6]",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b4978153",
+      "_id": "6a8c303e437a427cc6aa8eb1",
       "id": "lb-prod-mat-18",
       "title": "White Gown with Black Flower Cape",
       "category": "Maternity",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787140994/designs-by-nisha/whatsapp-image-2026-08-19-at-3-05-56-pm-1-1787140994123.jpg",
+      "width": 1086,
+      "height": 1448,
       "aspectRatio": "aspect-[3/4]",
       "location": "New Delhi Atelier"
     },
     {
-      "_id": "6a86f36d9b633153b4978154",
+      "_id": "6a8c303e437a427cc6aa8eb2",
       "id": "lb-prod-mat-19",
       "title": "Black Maternity Gown with Flower Hand Cape",
       "category": "Maternity",
       "image": "https://res.cloudinary.com/likdneok/image/upload/v1787140963/designs-by-nisha/whatsapp-image-2026-08-19-at-3-05-56-pm-1787140963320.jpg",
+      "width": 1086,
+      "height": 1448,
       "aspectRatio": "aspect-[4/5]",
       "location": "New Delhi Atelier"
     }
@@ -3033,15 +3169,40 @@
   ],
   "testimonials": [
     {
-      "id": "test-1787371252126",
-      "author": "Ananya Sharma",
-      "city": "New Delhi",
+      "_id": "6a884bfc8fdab6eae3cfb4b1",
+      "id": "gr-komal-mehta",
+      "author": "Komal Mehta",
       "rating": 5,
-      "text": "The bridal lehenga was custom-stitched to perfection! Highly recommended.",
-      "outfit": "Custom Boutique Outfit",
-      "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200",
+      "text": "The work she does is really very amazing.. Its being almost 4-5 years since I know her and get almost my very dress stiched by her.. Truly holds magic in her hands.... Very genuine person... Passionate. Would recommend very one to give it a try she will never disappoint... ❤️",
       "featured": true,
-      "createdAt": "2026-08-22T04:00:52.126Z"
+      "source": "google"
+    },
+    {
+      "_id": "6a884bfc8fdab6eae3cfb4b0",
+      "id": "gr-megha-bisht",
+      "author": "Megha Bisht",
+      "rating": 5,
+      "text": "I have visited Nisha's boutique and had such a wonderful experience! The quality of the fabrics and the finishing of each piece really stand out. What I loved the most was the personalized attention. Nisha is so polite, patient, and genuinely helpful in suggesting outfits that suited my style and body type. If you're looking for stylish outfits with great quality and excellent customer service, this boutique is definitely worth visiting. Highly recommended! Cheers to Nisha ❣️",
+      "featured": true,
+      "source": "google"
+    },
+    {
+      "_id": "6a884bfc8fdab6eae3cfb4ad",
+      "id": "gr-rini-sharma",
+      "author": "Rini Sharma",
+      "rating": 5,
+      "text": "Absolutely loved my experience here! The collection is stunning, but what really stood out was the quick and efficient service. I found exactly what I needed without any hassle. Highly recommend!",
+      "featured": true,
+      "source": "google"
+    },
+    {
+      "_id": "6a884bfc8fdab6eae3cfb4af",
+      "id": "gr-shivani-banoula",
+      "author": "Shivani Banoula",
+      "rating": 5,
+      "text": "The fitting and finishing of your outfits are very good. Nisha is undoubtedly talented in her field, she knows what she's doing.",
+      "featured": true,
+      "source": "google"
     },
     {
       "_id": "6a884bfc8fdab6eae3cfb4a8",
@@ -3058,15 +3219,6 @@
       "author": "Kaushalya Kumar",
       "rating": 5,
       "text": "The stitching of my dress is just wonderful! Every seam, lace, and frill detail is done so neatly and cleanly. The fit is absolute perfection and the finishing is top-notch. Thank you for such great work!",
-      "featured": true,
-      "source": "google"
-    },
-    {
-      "_id": "6a884bfc8fdab6eae3cfb4aa",
-      "id": "gr-pinki-tamta",
-      "author": "Pinki Tamta",
-      "rating": 5,
-      "text": "Amazing designs and great customer service. I'm very satisfied with the quality and attention to detail. Highly recommended!",
       "featured": true,
       "source": "google"
     },
@@ -3089,11 +3241,20 @@
       "source": "google"
     },
     {
-      "_id": "6a884bfc8fdab6eae3cfb4ad",
-      "id": "gr-rini-sharma",
-      "author": "Rini Sharma",
+      "_id": "6a884bfc8fdab6eae3cfb4b2",
+      "id": "gr-rashmi-singh",
+      "author": "Rashmi Singh",
       "rating": 5,
-      "text": "Absolutely loved my experience here! The collection is stunning, but what really stood out was the quick and efficient service. I found exactly what I needed without any hassle. Highly recommend!",
+      "text": "Beautiful boutique with a lovely collection. You can tell a lot of effort has gone into selecting the designs and fabrics. The service is friendly and helpful. Worth checking out if you're looking for something elegant and well-stitched.",
+      "featured": true,
+      "source": "google"
+    },
+    {
+      "_id": "6a884bfc8fdab6eae3cfb4aa",
+      "id": "gr-pinki-tamta",
+      "author": "Pinki Tamta",
+      "rating": 5,
+      "text": "Amazing designs and great customer service. I'm very satisfied with the quality and attention to detail. Highly recommended!",
       "featured": true,
       "source": "google"
     },
@@ -3107,40 +3268,16 @@
       "source": "google"
     },
     {
-      "_id": "6a884bfc8fdab6eae3cfb4af",
-      "id": "gr-shivani-banoula",
-      "author": "Shivani Banoula",
-      "rating": 5,
-      "text": "The fitting and finishing of your outfits are very good. Nisha is undoubtedly talented in her field, she knows what she's doing.",
+      "_id": "6a891ef3c4c17e0619141643",
+      "id": "test-1787371252126",
+      "author": "Ananya Sharma",
+      "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200",
+      "city": "New Delhi",
+      "createdAt": "2026-08-22T04:00:52.126Z",
       "featured": true,
-      "source": "google"
-    },
-    {
-      "_id": "6a884bfc8fdab6eae3cfb4b0",
-      "id": "gr-megha-bisht",
-      "author": "Megha Bisht",
+      "outfit": "Custom Boutique Outfit",
       "rating": 5,
-      "text": "I have visited Nisha's boutique and had such a wonderful experience! The quality of the fabrics and the finishing of each piece really stand out. What I loved the most was the personalized attention. Nisha is so polite, patient, and genuinely helpful in suggesting outfits that suited my style and body type. If you're looking for stylish outfits with great quality and excellent customer service, this boutique is definitely worth visiting. Highly recommended! Cheers to Nisha ❣️",
-      "featured": true,
-      "source": "google"
-    },
-    {
-      "_id": "6a884bfc8fdab6eae3cfb4b1",
-      "id": "gr-komal-mehta",
-      "author": "Komal Mehta",
-      "rating": 5,
-      "text": "The work she does is really very amazing.. Its being almost 4-5 years since I know her and get almost my very dress stiched by her.. Truly holds magic in her hands.... Very genuine person... Passionate. Would recommend very one to give it a try she will never disappoint... ❤️",
-      "featured": true,
-      "source": "google"
-    },
-    {
-      "_id": "6a884bfc8fdab6eae3cfb4b2",
-      "id": "gr-rashmi-singh",
-      "author": "Rashmi Singh",
-      "rating": 5,
-      "text": "Beautiful boutique with a lovely collection. You can tell a lot of effort has gone into selecting the designs and fabrics. The service is friendly and helpful. Worth checking out if you're looking for something elegant and well-stitched.",
-      "featured": true,
-      "source": "google"
+      "text": "The bridal lehenga was custom-stitched to perfection! Highly recommended."
     }
   ],
   "settings": {
@@ -3151,7 +3288,7 @@
     "phoneDisplay": "+91 82187 52043",
     "whatsappNumber": "918218752043",
     "defaultWhatsAppMessage": "Hi Designs by Nisha! I'm exploring your boutique collection and would love to enquire about bespoke outfits.",
-    "email": "info.nishaboutique@gmail.com",
+    "email": "enquire@designsbynisha.com",
     "address": "Design Studio & Boutique, Defence Colony / South Extension, New Delhi - 110024, India",
     "city": null,
     "state": null,
@@ -3171,7 +3308,7 @@
     },
     "seoTitle": "Designs by Nisha — Luxury Women's & Bridal Boutique | New Delhi",
     "seoDescription": null,
-    "updatedAt": "2026-08-13T12:27:09.224Z",
+    "updatedAt": "2026-08-25T04:59:22.244Z",
     "businessHours": "Monday – Sunday: 10 AM – 9 PM (By Appointment & Walk-ins)",
     "googleMapsUrl": "https://share.google/oMRWNqTN0EFZn8Ac9",
     "instagram": "https://www.instagram.com/designsbynisha00?igsh=Ym92OXh5emZsdm9t",
@@ -3331,6 +3468,14 @@
     ]
   },
   "auditLogs": [
+    {
+      "_id": "6a891ef4041a43db9f4dc118",
+      "id": "log-1787371252822",
+      "user": "Admin",
+      "action": "Added Testimonial",
+      "details": "Added review by Ananya Sharma",
+      "timestamp": "2026-08-22T04:00:52.822Z"
+    },
     {
       "_id": "6a86bafaf28b33e4aa247b98",
       "id": "log-1787214586530",
@@ -4122,14 +4267,6 @@
       "action": "Product Created",
       "details": "Added product \"Fish Cut Lehenga\" (ID: prod-1787140217709)",
       "timestamp": "2026-08-19T11:50:17.910Z"
-    },
-    {
-      "_id": "6a85985c2b625a15ae60d9eb",
-      "id": "log-1787140188719",
-      "user": "Admin",
-      "action": "Product Updated",
-      "details": "Updated \"Black Ruby Cascade Gown\" (ID: prod-mat-03)",
-      "timestamp": "2026-08-19T11:49:48.719Z"
     }
   ]
 }

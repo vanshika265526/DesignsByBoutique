@@ -48,30 +48,7 @@ function getSeedData() {
             seoDescription: boutiqueConfig.seo?.defaultDescription,
             updatedAt: new Date().toISOString(),
         },
-        enquiries: [
-            {
-                id: 'enq-1',
-                name: 'Priya Sharma',
-                phone: '+91 98765 43210',
-                email: 'priya@example.com',
-                productName: 'Royal Velvet Zardozi Lehenga',
-                productCategory: 'Bridal Lehengas',
-                message: 'Hi, I would like to book a bridal consultation for next month.',
-                status: 'New',
-                createdAt: new Date(Date.now() - 86400000 * 2).toISOString(),
-            },
-            {
-                id: 'enq-2',
-                name: 'Ananya Gupta',
-                phone: '+91 98111 22334',
-                email: 'ananya@example.com',
-                productName: 'Rose Gold Silk Maternity Gown',
-                productCategory: 'Maternity Gowns',
-                message: 'Is this gown available for custom fitting?',
-                status: 'Contacted',
-                createdAt: new Date(Date.now() - 86400000 * 5).toISOString(),
-            }
-        ],
+        enquiries: [],
         analytics: {
             totalPageViews: 14850,
             monthlyPageViews: 4230,

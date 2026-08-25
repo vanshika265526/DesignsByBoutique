@@ -3,7 +3,7 @@ export const dynamic = 'force-dynamic';
 
 import { NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
-import { getProductByIdAsync, updateProductAsync, deleteProductAsync, addAuditLog } from '@/lib/db';
+import { getProductByIdAsync, updateProductAsync, deleteProductAsync, addAuditLog, getDbAsync } from '@/lib/db';
 
 
 // GET single product by ID or slug
@@ -32,6 +32,20 @@ export async function PATCH(request, { params }) {
         }
 
         const targetId = existing.id;
+
+        // If the slug is changing, make sure no other product already owns
+        // it — a collision means /product/[slug] silently shows the wrong
+        // outfit to visitors who click the other one.
+        if (updates.slug && updates.slug !== existing.slug) {
+            const allProducts = (await getDbAsync()).products || [];
+            const collision = allProducts.some((p) => p.id !== targetId && p.slug === updates.slug);
+            if (collision) {
+                return NextResponse.json(
+                    { success: false, error: `Slug "${updates.slug}" is already used by another product. Choose a unique slug.` },
+                    { status: 409 }
+                );
+            }
+        }
 
         const updatedProduct = {
             ...existing,
