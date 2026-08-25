@@ -95,8 +95,8 @@ export default function RouteLoadingBar() {
     if (!loading) return null;
 
     return (
-        <div className="fixed top-24 left-1/2 -translate-x-1/2 z-[9999] animate-in fade-in zoom-in-95 duration-150 pointer-events-none">
-            <div className="relative w-10 h-10">
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-boutique-charcoal/25 backdrop-blur-sm animate-in fade-in duration-150">
+            <div className="relative w-10 h-10 animate-in zoom-in-95 duration-150">
                 <div
                     className="absolute -inset-1 rounded-full opacity-70"
                     style={{ boxShadow: "0 0 12px 2px rgba(176, 140, 79, 0.5)" }}
