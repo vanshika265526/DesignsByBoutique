@@ -95,26 +95,45 @@ export default function RouteLoadingBar() {
     if (!loading) return null;
 
     return (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-boutique-charcoal/30 backdrop-blur-[3px] animate-in fade-in duration-150">
-            <div className="flex flex-col items-center gap-4 rounded-3xl bg-boutique-bg-card/95 px-10 py-8 shadow-2xl border border-boutique-gold/30">
-                <div className="relative w-16 h-16">
-                    {/* Faint full ring + a rotating gold arc sweeping around it */}
-                    <div className="absolute inset-0 rounded-full border-2 border-boutique-gold/20" />
-                    <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-boutique-gold border-r-boutique-gold animate-spin" />
-                    {/* Boutique mark, centered */}
-                    <div className="absolute inset-[3px] rounded-full overflow-hidden bg-white flex items-center justify-center">
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-boutique-charcoal/40 backdrop-blur-[4px] animate-in fade-in duration-200">
+            <div className="flex flex-col items-center gap-5 rounded-[28px] bg-boutique-bg-card px-12 py-10 shadow-2xl border border-boutique-gold/25 animate-in zoom-in-95 fade-in duration-300">
+                {/* Jewel-frame emblem: two counter-rotating gold rings around the boutique mark, with a soft ambient glow */}
+                <div className="relative w-20 h-20">
+                    <div
+                        className="absolute -inset-2 rounded-full opacity-60"
+                        style={{ boxShadow: "0 0 24px 4px rgba(176, 140, 79, 0.35)" }}
+                    />
+                    <div className="absolute inset-0 rounded-full border border-boutique-gold/20" />
+                    <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-boutique-gold border-r-boutique-gold/70 animate-spin" />
+                    <div
+                        className="absolute inset-1 rounded-full border border-transparent border-b-boutique-rose/50"
+                        style={{ animation: "spin 2.4s linear infinite reverse" }}
+                    />
+                    <div className="absolute inset-[6px] rounded-full overflow-hidden bg-white shadow-inner flex items-center justify-center">
                         <Image
                             src="/images/logo-transparent.png"
                             alt=""
                             fill
-                            sizes="60px"
-                            className="object-contain p-1.5 animate-pulse"
+                            sizes="72px"
+                            className="object-contain p-2 animate-pulse"
                         />
                     </div>
                 </div>
-                <span className="font-serif-editorial italic text-sm text-boutique-rose tracking-wide">
-                    Just a moment…
-                </span>
+
+                {/* Brand wordmark, matching the navbar treatment */}
+                <div className="flex flex-col items-center gap-1.5">
+                    <h2 className="font-serif-editorial text-base font-bold uppercase tracking-wide leading-none">
+                        <span className="text-boutique-charcoal">Designs by </span>
+                        <span className="text-gold-gradient italic">Nisha</span>
+                    </h2>
+                    <div className="flex items-center gap-2">
+                        <span className="h-px w-4 bg-gradient-to-r from-transparent to-boutique-gold/70" />
+                        <span className="font-serif-editorial italic text-xs text-boutique-rose tracking-wide whitespace-nowrap">
+                            Curating your next chapter…
+                        </span>
+                        <span className="h-px w-4 bg-gradient-to-l from-transparent to-boutique-gold/70" />
+                    </div>
+                </div>
             </div>
         </div>
     );
