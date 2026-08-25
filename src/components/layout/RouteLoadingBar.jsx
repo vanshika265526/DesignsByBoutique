@@ -15,17 +15,38 @@ export default function RouteLoadingBar() {
     );
 }
 
+// A navigation that resolves in a handful of milliseconds (warm local dev,
+// a cached route) would otherwise make the bar flash for less than a frame —
+// invisible to a human, which reads as "no loader at all". Enforcing a floor
+// keeps it perceptible on every click regardless of how fast the route is.
+const MIN_VISIBLE_MS = 500;
+
 function RouteLoadingBarInner() {
     const [loading, setLoading] = useState(false);
     const pathname = usePathname();
     const searchParams = useSearchParams();
     const safetyTimer = useRef(null);
+    const finishTimer = useRef(null);
+    const startedAt = useRef(0);
     const mounted = useRef(false);
 
     const startLoading = () => {
+        clearTimeout(finishTimer.current);
+        startedAt.current = Date.now();
         setLoading(true);
         clearTimeout(safetyTimer.current);
         safetyTimer.current = setTimeout(() => setLoading(false), 4000);
+    };
+
+    const finishLoading = () => {
+        const elapsed = Date.now() - startedAt.current;
+        clearTimeout(finishTimer.current);
+        clearTimeout(safetyTimer.current);
+        if (elapsed >= MIN_VISIBLE_MS) {
+            setLoading(false);
+        } else {
+            finishTimer.current = setTimeout(() => setLoading(false), MIN_VISIBLE_MS - elapsed);
+        }
     };
 
     // Fast path: any real <a>/Link click — fires the instant the tap lands,
@@ -86,8 +107,7 @@ function RouteLoadingBarInner() {
 
     useEffect(() => {
         if (mounted.current) {
-            setLoading(false);
-            clearTimeout(safetyTimer.current);
+            finishLoading();
         }
         mounted.current = true;
     }, [pathname, searchParams]);
@@ -95,8 +115,11 @@ function RouteLoadingBarInner() {
     if (!loading) return null;
 
     return (
-        <div className="fixed top-0 left-0 right-0 z-[9999] h-[3px] overflow-hidden bg-transparent pointer-events-none">
-            <div className="h-full w-full bg-gradient-to-r from-[#1F4A3B] via-[#B08C4F] to-[#1F4A3B] bg-[length:200%_100%] animate-route-loading-bar" />
+        <div className="fixed top-0 left-0 right-0 z-[9999] h-[4px] overflow-hidden bg-transparent pointer-events-none">
+            <div
+                className="h-full w-full bg-gradient-to-r from-[#1F4A3B] via-[#B08C4F] to-[#1F4A3B] bg-[length:200%_100%] animate-route-loading-bar"
+                style={{ boxShadow: "0 0 10px 1px rgba(176, 140, 79, 0.85)" }}
+            />
         </div>
     );
 }
